@@ -3,6 +3,7 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import HomeScreen from './HomeScreen';
 import SettingsScreen from './SettingsScreen';
 import AntDesign from 'react-native-vector-icons/AntDesign';
+import ProfilesScreen from './ProfilesScreen';
 
 const Tab = createBottomTabNavigator();
 
@@ -12,6 +13,7 @@ const MyTabs = ({ navigation }) => {
             screenOptions={{
                 tabBarActiveTintColor: 'tomato',
                 tabBarInactiveTintColor: 'gray',
+                headerShown: false
             }}>
             <Tab.Screen
                 name="Home"
@@ -23,7 +25,25 @@ const MyTabs = ({ navigation }) => {
                     ),
                 }}
             />
-            <Tab.Screen name="Settings" component={SettingsScreen} options={{ tabBarBadge: 3 }} />
+            <Tab.Screen
+                name="Settings"
+                component={SettingsScreen} options={{
+                    tabBarLabel: 'Setting',
+                    tabBarIcon: ({ color, size }) => (
+                        <AntDesign name="setting" color={color} size={size} />
+                    ),
+                }}
+            />
+            <Tab.Screen
+                name="Profile"
+                component={ProfilesScreen}
+                options={{
+                    tabBarLabel: 'Profile',
+                    tabBarIcon: ({ color, size }) => (
+                        <AntDesign name="profile" color={color} size={size} />
+                    ),
+                }}
+            />
         </Tab.Navigator>
     );
 }
