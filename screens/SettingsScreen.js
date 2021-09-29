@@ -4,14 +4,16 @@ import { View, StyleSheet, Text } from 'react-native';
 const SettingsScreen = () => {
     return (
         <View style={styles.container}>
-            <Text>123</Text>
+            <Text>test</Text>
         </View>
     )
 }
 
 const styles = StyleSheet.create({
     container: {
-        justifyContent: "center"
+        flex: 1,
+        justifyContent: "center",
+        alignItems: 'center'
     },
 });
 
