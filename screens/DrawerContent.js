@@ -3,8 +3,35 @@ import React from 'react';
 import { View, StyleSheet, Text } from 'react-native';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 
+const links = [
+    {
+        id: 1,
+        title: 'Animal',
+        description: 'All thing about animal',
+    },
+    {
+        id: 2,
+        title: 'Fruit',
+        description: 'All thing about fruit',
+    },
+    {
+        id: 3,
+        title: 'At Home',
+        description: 'Items at home',
+    },
+    {
+        id: 4,
+        title: 'At School',
+        description: 'Items at school',
+    },
+    {
+        id: 5,
+        title: 'Travel',
+        description: 'When you travel',
+    },
+];
 
-export function DrawerContent(props) {
+export function DrawerContent({ navigation }, props) {
     return (
         <View>
             <DrawerItem
@@ -16,7 +43,9 @@ export function DrawerContent(props) {
                     />
                 )}
                 label="Animal"
-                onPress={() => {}}
+                onPress={() => {
+                    navigation.navigate("Notifications")
+                }}
             />
             <DrawerItem
                 icon={({ color, size }) => (
@@ -27,7 +56,9 @@ export function DrawerContent(props) {
                     />
                 )}
                 label="Fruit"
-                onPress={() => {}}
+                onPress={() => {
+                    navigation.goBack()
+                }}
             />
             <DrawerItem
                 icon={({ color, size }) => (
@@ -38,7 +69,7 @@ export function DrawerContent(props) {
                     />
                 )}
                 label="At Home"
-                onPress={() => {}}
+                onPress={() => { }}
             />
             <DrawerItem
                 icon={({ color, size }) => (
@@ -49,7 +80,7 @@ export function DrawerContent(props) {
                     />
                 )}
                 label="At School"
-                onPress={() => {}}
+                onPress={() => { }}
             />
             <DrawerItem
                 icon={({ color, size }) => (
@@ -60,7 +91,7 @@ export function DrawerContent(props) {
                     />
                 )}
                 label="Travel"
-                onPress={() => {}}
+                onPress={() => { }}
             />
         </View>
     );
