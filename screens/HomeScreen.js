@@ -1,12 +1,9 @@
-import Colors from 'react-native/Libraries/NewAppScreen/components/Colors';
-import type {Node} from 'react';
-import {
-  StyleSheet,
-  Text,
-  useColorScheme,
-  View,
-} from 'react-native';
-import React, {Fragment} from 'react';
+import * as React from 'react';
+import { Button, View } from 'react-native';
+import { createDrawerNavigator } from '@react-navigation/drawer';
+import { NavigationContainer } from '@react-navigation/native';
+import { AntDesign } from 'react-native-vector-icons/AntDesign';
+import { DrawerContent } from './DrawerContent'
 
 const links = [
   {
@@ -36,63 +33,34 @@ const links = [
   },
 ];
 
-const LinkList = (): Node => {
-  const isDarkMode = useColorScheme() === 'dark';
+function HomeScreens({ navigation }) {
   return (
-    <View style={styles.container}>
-      {links.map(({id, title, description}) => (
-        <Fragment key={id}>
-          <View
-            style={[
-              styles.separator,
-              {
-                backgroundColor: isDarkMode ? Colors.dark : Colors.light,
-              },
-            ]}
-          />
-            <Text style={styles.link}>{title}</Text>
-            <Text
-              style={[
-                styles.description,
-                {
-                  color: isDarkMode ? Colors.lighter : Colors.dark,
-                },
-              ]}>
-              {description}
-            </Text>
-        </Fragment>
-      ))}
+    <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
+      <Button
+        onPress={() => navigation.navigate('Notifications')}
+        title="Go to notifications"
+      />
     </View>
   );
-};
+}
 
-const styles = StyleSheet.create({
-  container: {
-    marginTop: 32,
-    paddingHorizontal: 24,
-  },
-  linkContainer: {
-    flexWrap: 'wrap',
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-    alignItems: 'center',
-    paddingVertical: 8,
-  },
-  link: {
-    flex: 2,
-    fontSize: 18,
-    fontWeight: '400',
-    color: Colors.primary,
-  },
-  description: {
-    flex: 3,
-    paddingVertical: 16,
-    fontWeight: '400',
-    fontSize: 18,
-  },
-  separator: {
-    height: StyleSheet.hairlineWidth,
-  },
-});
+function NotificationsScreen({ navigation }) {
+  return (
+    <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
+      <Button onPress={() => navigation.goBack()} title="Go back home" />
+    </View>
+  );
+}
 
-export default LinkList;
+const Drawer = createDrawerNavigator();
+
+export default function HomeScreen() {
+  return (
+    <NavigationContainer independent={true}>
+      <Drawer.Navigator initialRouteName="Home" drawerContent={props => <DrawerContent {...props} />}>
+        <Drawer.Screen name="Home" component={HomeScreens} />
+        <Drawer.Screen name="Notifications" component={NotificationsScreen} />
+      </Drawer.Navigator>
+    </NavigationContainer>
+  );
+}
