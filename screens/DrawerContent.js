@@ -3,96 +3,52 @@ import React from 'react';
 import { View, StyleSheet, Text } from 'react-native';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 
-const links = [
+const titles = [
     {
         id: 1,
         title: 'Animal',
-        description: 'All thing about animal',
+        name: 'dog',
     },
     {
         id: 2,
         title: 'Fruit',
-        description: 'All thing about fruit',
+        name: 'food-apple',
     },
     {
         id: 3,
         title: 'At Home',
-        description: 'Items at home',
+        name: 'home',
     },
     {
         id: 4,
         title: 'At School',
-        description: 'Items at school',
+        name: 'school',
     },
     {
         id: 5,
         title: 'Travel',
-        description: 'When you travel',
+        name: 'airplane-takeoff',
     },
 ];
 
 export function DrawerContent({ navigation }, props) {
     return (
         <View>
-            <DrawerItem
-                icon={({ color, size }) => (
-                    <Icon
-                        name="dog"
-                        color={color}
-                        size={size}
-                    />
-                )}
-                label="Animal"
-                onPress={() => {
-                    navigation.navigate("Notifications")
-                }}
-            />
-            <DrawerItem
-                icon={({ color, size }) => (
-                    <Icon
-                        name="food-apple"
-                        color={color}
-                        size={size}
-                    />
-                )}
-                label="Fruit"
-                onPress={() => {
-                    navigation.goBack()
-                }}
-            />
-            <DrawerItem
-                icon={({ color, size }) => (
-                    <Icon
-                        name="home"
-                        color={color}
-                        size={size}
-                    />
-                )}
-                label="At Home"
-                onPress={() => { }}
-            />
-            <DrawerItem
-                icon={({ color, size }) => (
-                    <Icon
-                        name="school"
-                        color={color}
-                        size={size}
-                    />
-                )}
-                label="At School"
-                onPress={() => { }}
-            />
-            <DrawerItem
-                icon={({ color, size }) => (
-                    <Icon
-                        name="airplane-takeoff"
-                        color={color}
-                        size={size}
-                    />
-                )}
-                label="Travel"
-                onPress={() => { }}
-            />
+            {titles.map(({id, title, name }) => (
+                <DrawerItem key={id}
+                    icon={({ color, size }) => (
+                        <Icon
+                            name={name}
+                            color={color}
+                            size={size}
+                        />
+                    )}
+                    label={title}
+                    onPress={() => {
+                        navigation.navigate("Notifications")
+                    }}
+                />
+            ))}
         </View>
     );
 }
