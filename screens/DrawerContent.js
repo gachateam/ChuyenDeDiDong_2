@@ -2,6 +2,7 @@ import { DrawerItem } from '@react-navigation/drawer';
 import React from 'react';
 import { View, StyleSheet, Text } from 'react-native';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
+import { useGlobal } from '../context/GlobalContext';
 
 const titles = [
     {
@@ -32,6 +33,8 @@ const titles = [
 ];
 
 export function DrawerContent({ navigation }, props) {
+    const {title} = useGlobal()
+    console.log(title);
     return (
         <View>
             {titles.map(({id, title, name }) => (

@@ -8,14 +8,17 @@
 
 import React from 'react';
 
-import {NavigationContainer} from '@react-navigation/native';
+import { NavigationContainer } from '@react-navigation/native';
 import MyTabs from './screens/MyTabs';
+import GlobalContextProvider from './context/GlobalContext';
 
 const App = () => {
   return (
-    <NavigationContainer>
-      <MyTabs />
-    </NavigationContainer>
+    <GlobalContextProvider>
+      <NavigationContainer>
+        <MyTabs />
+      </NavigationContainer>
+    </GlobalContextProvider>
   );
 };
 
