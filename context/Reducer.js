@@ -2,10 +2,10 @@ import { ACTIONS } from "./Action";
 
 const reducers = (state, action) => {
   switch (action.type) {
-    case ACTIONS.TRONGCAY:
+    case ACTIONS.CHOOSE_TITLES:
       return {
         ...state,
-        ruong: action.payload,
+        title: action.payload,
       };
     default:
       return state;

@@ -1,5 +1,3 @@
 export const ACTIONS = {
-    TRONGCAY: 'TRONGCAY',
-    TIEN: 'TIEN',
-    NOTIFY: 'NOTIFY',
+    CHOOSE_TITLES: "Choose titles"
 }
