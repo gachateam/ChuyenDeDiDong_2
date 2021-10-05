@@ -2,6 +2,7 @@ import { DrawerItem } from '@react-navigation/drawer';
 import React from 'react';
 import { View, StyleSheet, Text } from 'react-native';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
+import AntDesign from 'react-native-vector-icons/AntDesign';
 import { ACTIONS } from '../context/Action';
 import { useGlobal } from '../context/GlobalContext';
 
@@ -34,12 +35,23 @@ const titles = [
 ];
 
 export function DrawerContent({ navigation }, props) {
-    const {title, dispatch} = useGlobal()
-    console.log(title);
-    
+    const { title, dispatch } = useGlobal()
     return (
         <View>
-            {titles.map(({id, title, name }) => (
+            <DrawerItem
+                    icon={({ color, size }) => (
+                        <AntDesign
+                            name="home"
+                            color={color}
+                            size={size}
+                        />
+                    )}
+                    label="Home"
+                    onPress={() => {
+                        navigation.navigate("Home")
+                    }}
+                />
+            {titles.map(({ id, title, name }) => (
                 <DrawerItem key={id}
                     icon={({ color, size }) => (
                         <Icon
@@ -50,10 +62,11 @@ export function DrawerContent({ navigation }, props) {
                     )}
                     label={title}
                     onPress={() => {
-                        dispatch({type: ACTIONS.CHOOSE_TITLES, payload: title})
+                        dispatch({ type: ACTIONS.CHOOSE_TITLES, payload: title })
                         navigation.navigate("StageScreen")
                     }}
                 />
+
             ))}
         </View>
     );
