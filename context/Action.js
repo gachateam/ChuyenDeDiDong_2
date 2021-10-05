@@ -1,3 +1,3 @@
 export const ACTIONS = {
-    CHOOSE_TITLES: "Choose titles"
-}
+  CHOOSE_TITLES: 'Choose titles',
+};
