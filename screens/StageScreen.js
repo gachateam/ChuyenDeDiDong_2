@@ -1,5 +1,6 @@
-import React from 'react'
-import { Text } from 'react-native';
+import React from 'react';
+import {StyleSheet, Text} from 'react-native';
+import {useGlobal} from '../context/GlobalContext';
 
 
 import React, { Component } from 'react';
