@@ -1,8 +1,12 @@
-import React from 'react';
-import {Text} from 'react-native';
+import React from 'react'
+import { Text } from 'react-native';
 
 const QuestionScreen = () => {
-  return <Text>123</Text>;
-};
+    return (
+        <Text>
+            123
+        </Text>
+    )
+}
 
-export default QuestionScreen;
+export default QuestionScreen

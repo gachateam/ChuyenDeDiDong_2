@@ -20,9 +20,7 @@ const HomeScreen = () => {
   const { title } = useGlobal();
   return (
     <NavigationContainer independent={true}>
-      <Drawer.Navigator
-        initialRouteName="Home"
-        drawerContent={props => <DrawerContent {...props} />}>
+      <Drawer.Navigator initialRouteName="Home" drawerContent={props => <DrawerContent {...props} />}>
         <Drawer.Screen name="Home" component={HomeScreens} />
         <Drawer.Screen name="StageScreen" component={StageScreen} options={{ title: title }} />
       </Drawer.Navigator>
