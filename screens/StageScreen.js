@@ -1,53 +1,50 @@
 import React from 'react';
-import {StyleSheet, Text} from 'react-native';
-import {useGlobal} from '../context/GlobalContext';
+import {View, Button, Text} from 'react-native';
+import { NavigationContainer } from '@react-navigation/native';
 
 
-import React, { Component } from 'react';
-import {
-  StyleSheet,
-  View,
-  Dimensions
-} from 'react-native';
+function StageScreens({ navigation }) {
+  return (
+    <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
+       <Text>Tiến Độ 1 </Text>
+    
+    </View>
+  );
 
-var { height } = Dimensions.get('window');
-
-var box_count = 4;
-var box_height = height / box_count;
-
-export default class VerticalStackLayout extends Component {
-  render() {
-    return (
-        <View style={styles.container}>
-            <View style={[styles.box, styles.box1]}>Tiến độ 1 </View>
-            <View style={[styles.box, styles.box2]}>Tiến độ 2 </View>
-            <View style={[styles.box, styles.box3]}> Tiến độ 3 </View>
-            <View style={[styles.box, styles.box4]}></View>
-        </View>
-    );
-  }
+function StageScreens({ navigation }) {
+  return (
+    <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
+       <Text>Tiến Độ 2 </Text>
+    
+    </View>
+  );
+}
+function StageScreens({ navigation }) {
+  return (
+    <View style={{ flex: 2, alignItems: 'center', justifyContent: 'center' }}>
+       <Text>Tiến Độ 3 </Text>
+    
+    </View>
+  );
+}
+function NotificationsScreen({ navigation }) {
+  return (
+    <View style={{ flex: 3, alignItems: 'center', justifyContent: 'center' }}>
+      <Button onPress={() => navigation.goBack()} title="Back Home" />
+    </View>
+  );
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    flexDirection: 'column'
-  },
-  box: {
-    height: box_height
-  },
-  box1: {
-    backgroundColor: '#2196F3'
-  },
-  box2: {
-    backgroundColor: '#8BC34A'
-  },
-  box3: {
-    backgroundColor: '#e3aa1a'
-  },
-  box4: {
-      backgroundColor: '#e3aa1a'
-    }
-});
+export default function StageScreens() {
+  return (
+    <NavigationContainer independent={true}>
+      <Drawer.Navigator initialRouteName="Home" drawerContent={props => <DrawerContent {...props} />}>
+        <Drawer.Screen name="Notifications" component={NotificationsScreen} />
+      </Drawer.Navigator>
+    </NavigationContainer>
+  );
+}
+}
+
 
 export default Text
