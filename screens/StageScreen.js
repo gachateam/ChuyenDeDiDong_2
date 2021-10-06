@@ -1,53 +1,63 @@
 import React from 'react';
-import {StyleSheet, Text} from 'react-native';
-import {useGlobal} from '../context/GlobalContext';
+import {StyleSheet, SafeAreaView, ScrollView} from 'react-native';
+import DifficultLevel from '../components/DifficultLevel';
 
-
-import React, { Component } from 'react';
-import {
-  StyleSheet,
-  View,
-  Dimensions
-} from 'react-native';
-
-var { height } = Dimensions.get('window');
-
-var box_count = 4;
-var box_height = height / box_count;
-
-export default class VerticalStackLayout extends Component {
-  render() {
-    return (
-        <View style={styles.container}>
-            <View style={[styles.box, styles.box1]}>Tiến độ 1 </View>
-            <View style={[styles.box, styles.box2]}>Tiến độ 2 </View>
-            <View style={[styles.box, styles.box3]}> Tiến độ 3 </View>
-            <View style={[styles.box, styles.box4]}></View>
-        </View>
-    );
-  }
-}
+const StageScreen = () => {
+  return (
+    <SafeAreaView style={styles.container}>
+      <ScrollView style={styles.scrollView}>
+        <DifficultLevel
+          stage1={30}
+          stage2={40}
+          stage3={50}
+          challengeUnlock={false}
+          backgroundC={true}
+          disabled={false}
+        />
+        <DifficultLevel
+          stage1={0}
+          stage2={0}
+          stage3={0}
+          challengeUnlock={false}
+          backgroundC={false}
+          disabled={true}
+        />
+        <DifficultLevel
+          stage1={0}
+          stage2={0}
+          stage3={0}
+          challengeUnlock={false}
+          backgroundC={false}
+          disabled={true}
+        />
+      </ScrollView>
+    </SafeAreaView>
+  );
+};
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    flexDirection: 'column'
   },
-  box: {
-    height: box_height
+  scrollView: {},
+  stage1: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+    paddingVertical: 20,
   },
-  box1: {
-    backgroundColor: '#2196F3'
+  stage23: {
+    flex: 1,
+    flexDirection: 'row',
+    justifyContent: 'space-around',
+    paddingVertical: 20,
   },
-  box2: {
-    backgroundColor: '#8BC34A'
+  challenge: {
+    backgroundColor: 'orange',
+    height: 34,
+    justifyContent: 'center',
+    alignItems: 'center',
   },
-  box3: {
-    backgroundColor: '#e3aa1a'
-  },
-  box4: {
-      backgroundColor: '#e3aa1a'
-    }
 });
 
-export default Text
+export default StageScreen;
