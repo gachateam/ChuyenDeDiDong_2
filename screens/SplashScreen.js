@@ -3,7 +3,7 @@ import { StyleSheet, View, Text , Image} from 'react-native'
 import { TouchableOpacity } from 'react-native-gesture-handler'
 import DifficultLevel from '../components/DifficultLevel'
 
-const SplashScreen = () => {
+const SplashScreen = ({navigation}) => {
     return (
         <View style={styles.container}>
             <View style={styles.title}>
@@ -21,7 +21,7 @@ const SplashScreen = () => {
                     resizeMode = "contain"
                     />
             </View>
-            <TouchableOpacity style = {styles.button}>
+            <TouchableOpacity onPress ={() => navigation.navigate('QuestionScreen')} style = {styles.button}>
                 <Text style= {styles.buttonText}>Start</Text>
             </TouchableOpacity>
         </View>
