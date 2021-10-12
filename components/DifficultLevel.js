@@ -3,8 +3,8 @@ import { StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 import ProgressCircle from 'react-native-progress-circle';
 import Entypo from 'react-native-vector-icons/Entypo';
 
-const DifficultLevel = ({ stage1, stage2, stage3, challengeUnlock, backgroundC, disabled }) => {
-    const onPress = () => console.log(123);
+const DifficultLevel = ({ stage1, stage2, stage3, challengeUnlock, backgroundC, disabled , navigation}) => {
+    const onPress = () => navigation.navigate("SplashScreen");
     return (
         <View style={{ backgroundColor: backgroundC ? "while" : 'gray' }}>
             <View style={styles.stage1}>
