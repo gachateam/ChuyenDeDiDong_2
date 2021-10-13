@@ -2,7 +2,7 @@ import React from 'react';
 import {Text, View, StyleSheet} from 'react-native';
 import {TouchableOpacity} from 'react-native';
 
-const QuestionScreen = () => {
+const QuestionScreen = ({navigation}) => {
   return (
     <View style ={styles.container}>
         <View style={styles.top}>
@@ -30,10 +30,10 @@ const QuestionScreen = () => {
         <TouchableOpacity style={styles.button}>
           <Text style={styles.buttonText}>PREVIOUS</Text>
         </TouchableOpacity>
-        <TouchableOpacity style={styles.button}>
+        <TouchableOpacity onPress ={() => navigation.navigate('QuestionScreen')} style={styles.button}>
           <Text style={styles.buttonText}>NEXT</Text>
         </TouchableOpacity>
-        <TouchableOpacity style={styles.button}>
+        <TouchableOpacity onPress ={() => navigation.navigate('Home')} style={styles.button}>
           <Text style={styles.buttonText}>QUIT</Text>
         </TouchableOpacity>
       </View>
