@@ -1,3 +1,4 @@
+import React from 'react';
 import {StyleSheet, SafeAreaView, ScrollView} from 'react-native';
 import DifficultLevel from '../components/DifficultLevel';
 
@@ -10,7 +11,7 @@ const StageScreen = () => {
           stage2={40}
           stage3={50}
           challengeUnlock={false}
-          backgroundC={true}
+          backgroundC={"#33CC33"}
           disabled={false}
         />
         <DifficultLevel
@@ -18,7 +19,7 @@ const StageScreen = () => {
           stage2={0}
           stage3={0}
           challengeUnlock={false}
-          backgroundC={false}
+          backgroundC={'gray'}
           disabled={true}
         />
         <DifficultLevel
@@ -26,7 +27,7 @@ const StageScreen = () => {
           stage2={0}
           stage3={0}
           challengeUnlock={false}
-          backgroundC={false}
+          backgroundC={'gray'}
           disabled={true}
         />
       </ScrollView>

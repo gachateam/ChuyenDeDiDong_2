@@ -6,7 +6,7 @@ import Entypo from 'react-native-vector-icons/Entypo';
 const DifficultLevel = ({ stage1, stage2, stage3, challengeUnlock, backgroundC, disabled }) => {
     const onPress = () => console.log(123);
     return (
-        <View style={{ backgroundColor: backgroundC ? "while" : 'gray' }}>
+        <View style={{ backgroundColor: backgroundC }}>
             <View style={styles.stage1}>
                 <TouchableOpacity
                     onPress={onPress}
