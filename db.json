@@ -1,0 +1,612 @@
+{
+    "category": {
+        "animal": {
+            "easy": {
+                "vocabulary": [
+                    {
+                        "vocabulary": "dog",
+                        "mean": "con chó",
+                        "image": "https://firebasestorage.googleapis.com/v0/b/englishlearning-ec586.appspot.com/o/dog.jpg?alt=media&token=6139623a-e0b0-4aba-8942-17e8b8ac25a6"
+                    }
+                ],
+                "question": {
+                    "stage1": {
+                        "question": [
+                            {
+                                "id": 0,
+                                "type": "4image",
+                                "question": "đâu là \"con chó\"",
+                                "ans": [
+                                    "cat",
+                                    "dog",
+                                    "ant",
+                                    "fish"
+                                ],
+                                "ansC": 2
+                            },
+                            {
+                                "id": 1,
+                                "type": "4vocabulary",
+                                "question": "dịch \"con chó\"",
+                                "ans": [
+                                    "cat",
+                                    "dog",
+                                    "ant",
+                                    "fish"
+                                ],
+                                "ansC": 2
+                            },
+                            {
+                                "id": 2,
+                                "type": "listen",
+                                "question": "dog",
+                                "meanQuestion": "con chó",
+                                "ans": [
+                                    "cat",
+                                    "dog",
+                                    "ant",
+                                    "fish"
+                                ]
+                            },
+                            {
+                                "id": 3,
+                                "type": "read",
+                                "question": "dog"
+                            }
+                        ],
+                        "unit": [
+                            [
+                                1,
+                                2,
+                                3
+                            ],
+                            [
+                                3,
+                                2,
+                                1
+                            ]
+                        ]
+                    },
+                    "stage2": {
+                        "question": [
+                            {
+                                "id": 0,
+                                "type": "FillWord",
+                                "question": "Take your … for a walk",
+                                "meanQuestion": "Dắt chó của bạn đi dạo",
+                                "ans": [
+                                    "cat",
+                                    "dog",
+                                    "mouse",
+                                    "fish"
+                                ],
+                                "ansC": 2
+                            },
+                            {
+                                "id": 1,
+                                "type": "translate",
+                                "question": "The ant eating candy",
+                                "ans": [
+                                    "con kiến đang ăn kẹo",
+                                    "con chim đang ăn kẹo",
+                                    "con cua đang ăn kẹo",
+                                    "con vẹt đang ăn kẹo"
+                                ],
+                                "ansC": 1
+                            },
+                            {
+                                "id": 2,
+                                "type": "listenStage2",
+                                "question": "The ant eating candy",
+                                "meanQuestion": "con kiến đang ăn kẹo",
+                                "ans": [
+                                    "The ant eating candy",
+                                    "dog",
+                                    "ant",
+                                    "fish"
+                                ],
+                                "ansC": 1
+                            },
+                            {
+                                "id": 3,
+                                "type": "read",
+                                "question": "The ant eating candy"
+                            }
+                        ],
+                        "unit": [
+                            [
+                                1,
+                                2,
+                                3
+                            ],
+                            [
+                                3,
+                                2,
+                                1
+                            ]
+                        ]
+                    },
+                    "stage3": {
+                        "question": [
+                            {
+                                "id": 0,
+                                "type": "Pronounciacion",
+                                "ans": [
+                                    "dog",
+                                    "cat",
+                                    "mouse",
+                                    "parrot"
+                                ],
+                                "ansC": 4
+                            },
+                            {
+                                "id": 1,
+                                "type": "choiceMultiAnswer",
+                                "question": "Which animal can be your pet",
+                                "ans": [
+                                    "dog",
+                                    "cat",
+                                    "parrot",
+                                    "fish",
+                                    "mouse"
+                                ],
+                                "ansC": [
+                                    "dog",
+                                    "cat",
+                                    "mouse"
+                                ]
+                            },
+                            {
+                                "id": 2,
+                                "type": "FillWordStage3",
+                                "question": "…, …, … and … can fly",
+                                "meanQuestion": "con ruồi, con chim, con vẹt và con ong biết bay",
+                                "ans": [
+                                    "dog",
+                                    "cat",
+                                    "parrot",
+                                    "fish",
+                                    "mouse"
+                                ],
+                                "ansC": [
+                                    "fly",
+                                    "bird",
+                                    "parrot",
+                                    "bee"
+                                ]
+                            },
+                            {
+                                "id": 3,
+                                "type": "Grammar",
+                                "question": "There is … ant on your hand",
+                                "ans": [
+                                    "a",
+                                    "an",
+                                    "is",
+                                    "are"
+                                ],
+                                "ansC": 2
+                            }
+                        ],
+                        "unit": [
+                            [
+                                1,
+                                2,
+                                3
+                            ],
+                            [
+                                3,
+                                2,
+                                1
+                            ]
+                        ]
+                    }
+                }
+            },
+            "medium": {
+                "vocabulary": [
+                    {
+                        "vocabulary": "dog",
+                        "mean": "con chó",
+                        "image": "https://firebasestorage.googleapis.com/v0/b/englishlearning-ec586.appspot.com/o/dog.jpg?alt=media&token=6139623a-e0b0-4aba-8942-17e8b8ac25a6"
+                    }
+                ],
+                "question": {
+                    "stage1": {
+                        "question": [
+                            {
+                                "id": 0,
+                                "type": "4image",
+                                "question": "đâu là \"con chó\"",
+                                "ans": [
+                                    "cat",
+                                    "dog",
+                                    "ant",
+                                    "fish"
+                                ],
+                                "ansC": 2
+                            },
+                            {
+                                "id": 1,
+                                "type": "4vocabulary",
+                                "question": "dịch \"con chó\"",
+                                "ans": [
+                                    "cat",
+                                    "dog",
+                                    "ant",
+                                    "fish"
+                                ],
+                                "ansC": 2
+                            },
+                            {
+                                "id": 2,
+                                "type": "listen",
+                                "question": "dog",
+                                "meanQuestion": "con chó",
+                                "ans": [
+                                    "cat",
+                                    "dog",
+                                    "ant",
+                                    "fish"
+                                ]
+                            },
+                            {
+                                "id": 3,
+                                "type": "read",
+                                "question": "dog"
+                            }
+                        ],
+                        "unit": [
+                            [
+                                1,
+                                2,
+                                3
+                            ],
+                            [
+                                3,
+                                2,
+                                1
+                            ]
+                        ]
+                    },
+                    "stage2": {
+                        "question": [
+                            {
+                                "id": 0,
+                                "type": "FillWord",
+                                "question": "Take your … for a walk",
+                                "meanQuestion": "Dắt chó của bạn đi dạo",
+                                "ans": [
+                                    "cat",
+                                    "dog",
+                                    "mouse",
+                                    "fish"
+                                ],
+                                "ansC": 2
+                            },
+                            {
+                                "id": 1,
+                                "type": "translate",
+                                "question": "The ant eating candy",
+                                "ans": [
+                                    "con kiến đang ăn kẹo",
+                                    "con chim đang ăn kẹo",
+                                    "con cua đang ăn kẹo",
+                                    "con vẹt đang ăn kẹo"
+                                ],
+                                "ansC": 1
+                            },
+                            {
+                                "id": 2,
+                                "type": "listenStage2",
+                                "question": "The ant eating candy",
+                                "meanQuestion": "con kiến đang ăn kẹo",
+                                "ans": [
+                                    "The ant eating candy",
+                                    "dog",
+                                    "ant",
+                                    "fish"
+                                ],
+                                "ansC": 1
+                            },
+                            {
+                                "id": 3,
+                                "type": "read",
+                                "question": "The ant eating candy"
+                            }
+                        ],
+                        "unit": [
+                            [
+                                1,
+                                2,
+                                3
+                            ],
+                            [
+                                3,
+                                2,
+                                1
+                            ]
+                        ]
+                    },
+                    "stage3": {
+                        "question": [
+                            {
+                                "id": 0,
+                                "type": "Pronounciacion",
+                                "ans": [
+                                    "dog",
+                                    "cat",
+                                    "mouse",
+                                    "parrot"
+                                ],
+                                "ansC": 4
+                            },
+                            {
+                                "id": 1,
+                                "type": "choiceMultiAnswer",
+                                "question": "Which animal can be your pet",
+                                "ans": [
+                                    "dog",
+                                    "cat",
+                                    "parrot",
+                                    "fish",
+                                    "mouse"
+                                ],
+                                "ansC": [
+                                    "dog",
+                                    "cat",
+                                    "mouse"
+                                ]
+                            },
+                            {
+                                "id": 2,
+                                "type": "FillWordStage3",
+                                "question": "…, …, … and … can fly",
+                                "meanQuestion": "con ruồi, con chim, con vẹt và con ong biết bay",
+                                "ans": [
+                                    "dog",
+                                    "cat",
+                                    "parrot",
+                                    "fish",
+                                    "mouse"
+                                ],
+                                "ansC": [
+                                    "fly",
+                                    "bird",
+                                    "parrot",
+                                    "bee"
+                                ]
+                            },
+                            {
+                                "id": 3,
+                                "type": "Grammar",
+                                "question": "There is … ant on your hand",
+                                "ans": [
+                                    "a",
+                                    "an",
+                                    "is",
+                                    "are"
+                                ],
+                                "ansC": 2
+                            }
+                        ],
+                        "unit": [
+                            [
+                                1,
+                                2,
+                                3
+                            ],
+                            [
+                                3,
+                                2,
+                                1
+                            ]
+                        ]
+                    }
+                }
+            },
+            "hard": {
+                "vocabulary": [
+                    {
+                        "vocabulary": "dog",
+                        "mean": "con chó",
+                        "image": "https://firebasestorage.googleapis.com/v0/b/englishlearning-ec586.appspot.com/o/dog.jpg?alt=media&token=6139623a-e0b0-4aba-8942-17e8b8ac25a6"
+                    }
+                ],
+                "question": {
+                    "stage1": {
+                        "question": [
+                            {
+                                "id": 0,
+                                "type": "4image",
+                                "question": "đâu là \"con chó\"",
+                                "ans": [
+                                    "cat",
+                                    "dog",
+                                    "ant",
+                                    "fish"
+                                ],
+                                "ansC": 2
+                            },
+                            {
+                                "id": 1,
+                                "type": "4vocabulary",
+                                "question": "dịch \"con chó\"",
+                                "ans": [
+                                    "cat",
+                                    "dog",
+                                    "ant",
+                                    "fish"
+                                ],
+                                "ansC": 2
+                            },
+                            {
+                                "id": 2,
+                                "type": "listen",
+                                "question": "dog",
+                                "meanQuestion": "con chó",
+                                "ans": [
+                                    "cat",
+                                    "dog",
+                                    "ant",
+                                    "fish"
+                                ]
+                            },
+                            {
+                                "id": 3,
+                                "type": "read",
+                                "question": "dog"
+                            }
+                        ],
+                        "unit": [
+                            [
+                                1,
+                                2,
+                                3
+                            ],
+                            [
+                                3,
+                                2,
+                                1
+                            ]
+                        ]
+                    },
+                    "stage2": {
+                        "question": [
+                            {
+                                "id": 0,
+                                "type": "FillWord",
+                                "question": "Take your … for a walk",
+                                "meanQuestion": "Dắt chó của bạn đi dạo",
+                                "ans": [
+                                    "cat",
+                                    "dog",
+                                    "mouse",
+                                    "fish"
+                                ],
+                                "ansC": 2
+                            },
+                            {
+                                "id": 1,
+                                "type": "translate",
+                                "question": "The ant eating candy",
+                                "ans": [
+                                    "con kiến đang ăn kẹo",
+                                    "con chim đang ăn kẹo",
+                                    "con cua đang ăn kẹo",
+                                    "con vẹt đang ăn kẹo"
+                                ],
+                                "ansC": 1
+                            },
+                            {
+                                "id": 2,
+                                "type": "listenStage2",
+                                "question": "The ant eating candy",
+                                "meanQuestion": "con kiến đang ăn kẹo",
+                                "ans": [
+                                    "The ant eating candy",
+                                    "dog",
+                                    "ant",
+                                    "fish"
+                                ],
+                                "ansC": 1
+                            },
+                            {
+                                "id": 3,
+                                "type": "read",
+                                "question": "The ant eating candy"
+                            }
+                        ],
+                        "unit": [
+                            [
+                                1,
+                                2,
+                                3
+                            ],
+                            [
+                                3,
+                                2,
+                                1
+                            ]
+                        ]
+                    },
+                    "stage3": {
+                        "question": [
+                            {
+                                "id": 0,
+                                "type": "Pronounciacion",
+                                "ans": [
+                                    "dog",
+                                    "cat",
+                                    "mouse",
+                                    "parrot"
+                                ],
+                                "ansC": 4
+                            },
+                            {
+                                "id": 1,
+                                "type": "choiceMultiAnswer",
+                                "question": "Which animal can be your pet",
+                                "ans": [
+                                    "dog",
+                                    "cat",
+                                    "parrot",
+                                    "fish",
+                                    "mouse"
+                                ],
+                                "ansC": [
+                                    "dog",
+                                    "cat",
+                                    "mouse"
+                                ]
+                            },
+                            {
+                                "id": 2,
+                                "type": "FillWordStage3",
+                                "question": "…, …, … and … can fly",
+                                "meanQuestion": "con ruồi, con chim, con vẹt và con ong biết bay",
+                                "ans": [
+                                    "dog",
+                                    "cat",
+                                    "parrot",
+                                    "fish",
+                                    "mouse"
+                                ],
+                                "ansC": [
+                                    "fly",
+                                    "bird",
+                                    "parrot",
+                                    "bee"
+                                ]
+                            },
+                            {
+                                "id": 3,
+                                "type": "Grammar",
+                                "question": "There is … ant on your hand",
+                                "ans": [
+                                    "a",
+                                    "an",
+                                    "is",
+                                    "are"
+                                ],
+                                "ansC": 2
+                            }
+                        ],
+                        "unit": [
+                            [
+                                1,
+                                2,
+                                3
+                            ],
+                            [
+                                3,
+                                2,
+                                1
+                            ]
+                        ]
+                    }
+                }
+            }
+        }
+    }
+}
