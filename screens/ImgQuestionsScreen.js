@@ -56,7 +56,7 @@ const ImgQuestionsScreen = ({navigate}) => {
                     />
                 <Text style={styles.option}>Option 4</Text>
                 </TouchableOpacity>
-            </View>
+                </View>
             <View style={styles.bottom}>
                     <TouchableOpacity style={styles.button}>
                     <Text style={styles.buttonText}>PREVIOUS</Text>

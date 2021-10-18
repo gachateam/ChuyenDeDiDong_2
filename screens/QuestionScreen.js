@@ -1,6 +1,19 @@
 import React from 'react';
-import {Text, View, StyleSheet} from 'react-native';
+import {Text, View, StyleSheet, Alert} from 'react-native';
 import {TouchableOpacity} from 'react-native';
+
+
+const pressHandler = (native) => {
+  Alert.alert("Details","Are you sure you want to exit ?",[
+    {text: "Yes", onPress: ()=> console.log("Yes is pressed")},
+    {text: "No", onPress: ()=>pressHandler()}
+  ])
+}
+const noHandler = () => {
+  return(
+    <QuestionScreen/>
+  )
+}
 
 const QuestionScreen = ({navigation}) => {
   return (
@@ -33,9 +46,7 @@ const QuestionScreen = ({navigation}) => {
           style={styles.button}>
           <Text style={styles.buttonText}>NEXT</Text>
         </TouchableOpacity>
-        <TouchableOpacity
-          onPress={() => navigation.navigate('Home')}
-          style={styles.button}>
+        <TouchableOpacity onPress = {()=>pressHandler()} style={styles.button}>
           <Text style={styles.buttonText}>QUIT</Text>
         </TouchableOpacity>
       </View>
