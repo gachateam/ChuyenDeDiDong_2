@@ -502,8 +502,8 @@
                             {
                                 "id": 0,
                                 "type": "FillWord",
-                                "question": "Take your … for a walk",
-                                "meanQuestion": "Dắt chó của bạn đi dạo",
+                                "question": "Take your ... for a walk",
+                                "meanQuestion": "Dắt con chó của bạn đi dạo",
                                 "ans": [
                                     "cat",
                                     "dog",
@@ -514,6 +514,148 @@
                             },
                             {
                                 "id": 1,
+                                "type": "FillWord",
+                                "question": "The ... meowed",
+                                "meanQuestion": "Con mèo kêu meo",
+                                "ans": [
+                                    "cat",
+                                    "dog",
+                                    "mouse",
+                                    "fish"
+                                ],
+                                "ansC": 1
+                            },
+                            {
+                                "id": 2,
+                                "type": "FillWord",
+                                "question": "The ... eating candy ",
+                                "meanQuestion": "Con kiến đang ăn kẹo",
+                                "ans": [
+                                    "cat",
+                                    "dog",
+                                    "mouse",
+                                    "ant"
+                                ],
+                                "ansC": 4
+                            },
+                            {
+                                "id": 3,
+                                "type": "FillWord",
+                                "question": "The ... catches the worm",
+                                "meanQuestion": "Con chim bắt con sâu",
+                                "ans": [
+                                    "bird",
+                                    "crab",
+                                    "mouse",
+                                    "fish"
+                                ],
+                                "ansC": 1
+                                
+                            },
+                            {
+                                "id": 4,
+                                "type": "FillWord",
+                                "question": "... live in the sea",
+                                "meanQuestion": "Con cá sống ở biển",
+                                "ans": [
+                                    "cat",
+                                    "dog",
+                                    "fish",
+                                    "parrot"
+                                ],
+                                "ansC": 3
+                            },
+                            {
+                                "id": 5,
+                                "type": "FillWord",
+                                "question": "... eating cheese",
+                                "meanQuestion": "Con chuột đang ăn phô mai",
+                                "ans": [
+                                    "cat",
+                                    "dog",
+                                    "mouse",
+                                    "fish"
+                                ],
+                                "ansC": 3
+                            },
+                            {
+                                "id": 6,
+                                "type": "FillWord",
+                                "question": "... can only walk sideways",
+                                "meanQuestion": "Con cua chỉ có thể đi ngang",
+                                "ans": [
+                                    "bee",
+                                    "crab",
+                                    "fly",
+                                    "parrot"
+                                ],
+                                "ansC": 2
+                            },
+                            {
+                                "id": 7,
+                                "type": "FillWord",
+                                "question": ".. give honey",
+                                "meanQuestion": "Con ong cho mật ong",
+                                "ans": [
+                                    "ant",
+                                    "fly",
+                                    "fish",
+                                    "bee"
+                                ],
+                                "ansC": 4
+                            },
+                            {
+                                "id": 8,
+                                "type": "FillWord",
+                                "question": "The ... is flying",
+                                "meanQuestion": "Con ruồi đang bay",
+                                "ans": [
+                                    "parot",
+                                    "dog",
+                                    "fly",
+                                    "cat"
+                                ],
+                                "ansC": 3
+                            },
+                            {
+                                "id": 9,
+                                "type": "FillWord",
+                                "question": "... can imitate human speech",
+                                "meanQuestion": "Con vẹt có thể bắt chước giọng nói con người",
+                                "ans": [
+                                    "bee",
+                                    "parrot",
+                                    "mouse",
+                                    "fish"
+                                ],
+                                "ansC": 2
+                            },
+                            {
+                                "id": 10,
+                                "type": "translate",
+                                "question": "Take your dog for a walk",
+                                "ans": [
+                                    "Dắt con ong của bạn đi dạo",
+                                    "Dắt con cua của bạn đi dạo",
+                                    "Dắt con ruồi của bạn đi dạo",
+                                    "Dắt con chó của bạn đi dạo"
+                                ],
+                                "ansC": 4
+                            },
+                            {
+                                "id": 11,
+                                "type": "translate",
+                                "question": "The cat meowed",
+                                "ans": [
+                                    "Con chuột kêu meo",
+                                    "Con kiến kêu meo",
+                                    "Con mèo kêu meo",
+                                    "Con chim kêu meo"
+                                ],
+                                "ansC": 3
+                            },
+                            {
+                                "id": 12,
                                 "type": "translate",
                                 "question": "The ant eating candy",
                                 "ans": [
@@ -525,34 +667,285 @@
                                 "ansC": 1
                             },
                             {
-                                "id": 2,
-                                "type": "listenStage2",
-                                "question": "The ant eating candy",
-                                "meanQuestion": "con kiến đang ăn kẹo",
+                                "id": 13,
+                                "type": "translate",
+                                "question": "The bird catches the worm",
                                 "ans": [
-                                    "The ant eating candy",
-                                    "dog",
-                                    "ant",
-                                    "fish"
+                                    "Con cá bắt con sâu",
+                                    "Con chim bắt con sâu",
+                                    "Con ong bắt con sâu",
+                                    "Con cua bắt con sâu"
+                                ],
+                                "ansC": 2
+                            },
+                            {
+                                "id": 14,
+                                "type": "translate",
+                                "question": "Fish live in the sea",
+                                "ans": [
+                                    "Con vẹt sống ở biển",
+                                    "Con chuột sống ở biển",
+                                    "Con chó sống ở biển",
+                                    "Con cá sống ở biển"
+                                ],
+                                "ansC": 4
+                            },
+                            {
+                                "id": 15,
+                                "type": "translate",
+                                "question": "Mouse eating cheese",
+                                "ans": [
+                                    "Con chuột đang ăn phô mai",
+                                    "Con mèo đang ăn phô mai",
+                                    "Con cá đang ăn phô mai",
+                                    "Con cua đang ăn phô mai"
                                 ],
                                 "ansC": 1
                             },
                             {
-                                "id": 3,
+                                "id": 16,
+                                "type": "translate",
+                                "question": "Crab can only walk sideways",
+                                "ans": [
+                                    "Con ruồi chỉ có thể đi ngang",
+                                    "Con cua chỉ có thể đi ngang",
+                                    "Con chó chỉ có thể đi ngang",
+                                    "Con mèo chỉ có thể đi ngang"
+                                ],
+                                "ansC": 2
+                            },
+                            {
+                                "id": 17,
+                                "type": "translate",
+                                "question": "Bee give honey",
+                                "ans": [
+                                    "Con vẹt cho mật ong",
+                                    "Con cá cho mật ong",
+                                    "Con ong cho mật ong",
+                                    "Con kiến cho mật ong"
+                                ],
+                                "ansC": 3
+                            },
+                            {
+                                "id": 18,
+                                "type": "translate",
+                                "question": "The fly is flying",
+                                "ans": [
+                                    "Con ruồi đang bay",
+                                    "Con cá đang bay",
+                                    "Con mèo đang bay",
+                                    "Con chó đang bay"
+                                ],
+                                "ansC": 1
+                            },
+                            {
+                                "id": 19,
+                                "type": "translate",
+                                "question": "Parrot can imitate human speech",
+                                "ans": [
+                                    "Con kiến có thể bắt chước giọng nói con người",
+                                    "Con cua có thể bắt chước giọng nói con người",
+                                    "Con ong có thể bắt chước giọng nói con người",
+                                    "Con vẹt có thể bắt chước giọng nói con người"
+                                ],
+                                "ansC": 4
+                            },
+                            {
+                                "id": 20,
+                                "type": "listenStage2",
+                                "question": "Take your dog for a walk",
+                                "meanQuestion": "Dắt con chó của bạn đi dạo",
+                                "ans": [
+                                    "Take your bee for a walk",
+                                    "Take your crab for a walk",
+                                    "Take your fly for a walk",
+                                    "Take your dog for a walk"
+                                ],
+                                "ansC": 4
+                            },
+                            {
+                                "id": 21,
+                                "type": "listenStage2",
+                                "question": "The cat meowed",
+                                "meanQuestion": "Con mèo kêu meo",
+                                "ans": [
+                                    "The mouse meowed",
+                                    "The ant meowed",
+                                    "The cat meowed",
+                                    "The bird meowed"
+                                ],
+                                "ansC": 3
+                            },
+                            {
+                                "id": 22,
+                                "type": "listenStage2",
+                                "question": "The ant eating candy",
+                                "meanQuestion": "Con kiến đang ăn kẹo",
+                                "ans": [
+                                    "The ant eating candy",
+                                    "The bird eating candy",
+                                    "The crab eating candy",
+                                    "The parrot eating candy"
+                                ],
+                                "ansC": 1
+                            },
+                            {
+                                "id": 23,
+                                "type": "listenStage2",
+                                "question": "The bird catches the worm",
+                                "meanQuestion": "Con chim bắt con sâu",
+                                "ans": [
+                                    "The fish catches the worm",
+                                    "The bird catches the worm",
+                                    "The bee catches the worm",
+                                    "The crab catches the worm"
+                                ],
+                                "ansC": 2
+                            },
+                            {
+                                "id": 24,
+                                "type": "listenStage2",
+                                "question": "Fish live in the sea",
+                                "meanQuestion": "Con cá sống ở biển",
+                                "ans": [
+                                    "Parrot live in the sea",
+                                    "Mouse live in the sea",
+                                    "Dog live in the sea",
+                                    "Fish live in the sea"
+                                ],
+                                "ansC": 4
+                            },
+                            {
+                                "id": 25,
+                                "type": "listenStage2",
+                                "question": "Mouse eating cheese",
+                                "meanQuestion": "Con chuột đang ăn phô mai",
+                                "ans": [
+                                    "Mouse eating cheese",
+                                    "Cat eating cheese",
+                                    "Fish eating cheese",
+                                    "Crab eating cheese"
+                                ],
+                                "ansC": 1
+                            },
+                            {
+                                "id": 26,
+                                "type": "listenStage2",
+                                "question": "Crab can only walk sideways",
+                                "meanQuestion": "Con cua chỉ có thể đi ngang",
+                                "ans": [
+                                    "Fly can only walk sideways",
+                                    "Crab can only walk sideways",
+                                    "Dog can only walk sideways",
+                                    "Cat can only walk sideways"
+                                ],
+                                "ansC": 2
+                            },
+                            {
+                                "id": 27,
+                                "type": "listenStage2",
+                                "question": "Bee give honey",
+                                "meanQuestion": "Con ong cho mật ong",
+                                "ans": [
+                                    "Parrot give honey",
+                                    "Fish give honey",
+                                    "Bee give honey",
+                                    "Ant give honey"
+                                ],
+                                "ansC": 3
+                            },
+                            {
+                                "id": 28,
+                                "type": "listenStage2",
+                                "question": "The fly is flying",
+                                "meanQuestion": "Con ruồi đang bay",
+                                "ans": [
+                                    "The fly is flying",
+                                    "The fish is flying",
+                                    "The cat is flying",
+                                    "The dog is flying"
+                                ],
+                                "ansC": 1
+                            },
+                            {
+                                "id": 29,
+                                "type": "listenStage2",
+                                "question": "Parrot can imitate human speech",
+                                "meanQuestion": "Con vẹt có thể bắt chước giọng nói con người",
+                                "ans": [
+                                    "Ant can imitate human speech",
+                                    "Crab can imitate human speech",
+                                    "Bee can imitate human speech",
+                                    "Parrot can imitate human speech"
+                                ],
+                                "ansC": 4
+                            },
+                            {
+                                "id": 30,
+                                "type": "read",
+                                "question": "Take your dog for a walk"
+                            },
+                            {
+                                "id": 31,
+                                "type": "read",
+                                "question": "The cat meowed"
+                            },
+                            {
+                                "id": 32,
                                 "type": "read",
                                 "question": "The ant eating candy"
+                            },
+                            {
+                                "id": 33,
+                                "type": "read",
+                                "question": "The bird catches the worm"
+                            },
+                            {
+                                "id": 34,
+                                "type": "read",
+                                "question": "Fish live in the sea"
+                            },
+                            {
+                                "id": 35,
+                                "type": "read",
+                                "question": "Mouse eating cheese"
+                            },
+                            {
+                                "id": 36,
+                                "type": "read",
+                                "question": "Crab can only walk sideways"
+                            },
+                            {
+                                "id": 37,
+                                "type": "read",
+                                "question": "Bee give honey"
+                            },
+                            {
+                                "id": 38,
+                                "type": "read",
+                                "question": "The fly is flying"
+                            },
+                            {
+                                "id": 39,
+                                "type": "read",
+                                "question": "Parrot can imitate human speech"
                             }
                         ],
                         "unit": [
                             [
-                                1,
-                                2,
-                                3
+                                0,1,12,13,24,25,36,37
                             ],
                             [
-                                3,
-                                2,
-                                1
+                                2,3,14,15,26,27,38,39
+                            ],
+                            [
+                                4,5,16,17,28,29,30,31
+                            ],
+                            [
+                                6,7,18,19,20,21,32,33
+                            ],
+                            [
+                                8,9,10,11,22,23,34,35
                             ]
                         ]
                     },
