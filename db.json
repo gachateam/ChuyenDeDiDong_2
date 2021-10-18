@@ -954,6 +954,7 @@
                             {
                                 "id": 0,
                                 "type": "Pronounciacion",
+                                "describe": "Từ nào có âm tiết khác với các từ còn lại",
                                 "ans": [
                                     "dog",
                                     "cat",
@@ -964,14 +965,140 @@
                             },
                             {
                                 "id": 1,
+                                "type": "Pronounciacion",
+                                "describe": "Từ nào có âm tiết khác với các từ còn lại",
+                                "ans": [
+                                    "parrot",
+                                    "bird",
+                                    "fish",
+                                    "ant"
+                                ],
+                                "ansC": 1
+                            },
+                            {
+                                "id": 2,
+                                "type": "Pronounciacion",
+                                "describe": "Từ nào có âm tiết khác với các từ còn lại",
+                                "ans": [
+                                    "crab",
+                                    "parrot",
+                                    "bee",
+                                    "fly"
+                                ],
+                                "ansC": 2
+                            },
+                            {
+                                "id": 3,
+                                "type": "Pronounciacion",
+                                "describe": "Từ nào có âm tiết khác với các từ còn lại",
+                                "ans": [
+                                    "ant",
+                                    "fish",
+                                    "parrot",
+                                    "mouse"
+                                ],
+                                "ansC": 3
+                            },
+                            {
+                                "id": 4,
+                                "type": "Pronounciacion",
+                                "describe": "Từ nào có âm tiết khác với các từ còn lại",
+                                "ans": [
+                                    "crab",
+                                    "parrot",
+                                    "cat",
+                                    "bird"
+                                ],
+                                "ansC": 2
+                            },
+                            {
+                                "id": 5,
                                 "type": "choiceMultiAnswer",
                                 "question": "Which animal can be your pet",
+                                "meanQuestion": "Con vật nào có thể làm thú cưng",
                                 "ans": [
                                     "dog",
                                     "cat",
-                                    "parrot",
+                                    "ant",
+                                    "bird",
                                     "fish",
-                                    "mouse"
+                                    "mouse",
+                                    "crab",
+                                    "bee",
+                                    "fly",
+                                    "parrot"
+                                ],
+                                "ansC": [
+                                    "dog",
+                                    "cat",
+                                    "mouse",
+                                    "parrot",
+                                    "bird",
+                                    "fish"
+                                ]
+                            },
+                            {
+                                "id": 6,
+                                "type": "choiceMultiAnswer",
+                                "question": "Which animal can fly",
+                                "meanQuestion": "Con vật nào có thể bay",
+                                "ans": [
+                                    "dog",
+                                    "cat",
+                                    "ant",
+                                    "bird",
+                                    "fish",
+                                    "mouse",
+                                    "crab",
+                                    "bee",
+                                    "fly",
+                                    "parrot"
+                                ],
+                                "ansC": [
+                                    "bird",
+                                    "parrot",
+                                    "bee",
+                                    "fly"
+                                ]
+                            },
+                            {
+                                "id": 7,
+                                "type": "choiceMultiAnswer",
+                                "question": "Which animal live in the sea",
+                                "meanQuestion": "Con vật nào sống ở biển",
+                                "ans": [
+                                    "dog",
+                                    "cat",
+                                    "ant",
+                                    "bird",
+                                    "fish",
+                                    "mouse",
+                                    "crab",
+                                    "bee",
+                                    "fly",
+                                    "parrot"
+                                ],
+                                "ansC": [
+                                    "fish",
+                                    "crab"
+                                ]
+                            },
+                            {
+                                "id": 8,
+                                "type": "choiceMultiAnswer",
+                                "question": "Which animal have four legs",
+                                "meanQuestion": "Con vật nào có bốn chân",
+                                "ans": [
+                                    "dog",
+                                    "cat",
+                                    "ant",
+                                    "bird",
+                                    "fish",
+                                    "mouse",
+                                    "crab",
+                                    "bee",
+                                    "fly",
+                                    "parrot"
                                 ],
                                 "ansC": [
                                     "dog",
@@ -980,16 +1107,43 @@
                                 ]
                             },
                             {
-                                "id": 2,
+                                "id": 9,
+                                "type": "choiceMultiAnswer",
+                                "question": "Which animal have two legs",
+                                "meanQuestion": "Con vật nào có hai chân",
+                                "ans": [
+                                    "dog",
+                                    "cat",
+                                    "ant",
+                                    "bird",
+                                    "fish",
+                                    "mouse",
+                                    "crab",
+                                    "bee",
+                                    "fly",
+                                    "parrot"
+                                ],
+                                "ansC": [
+                                    "bird",
+                                    "parrot"
+                                ]
+                            },
+                            {
+                                "id": 10,
                                 "type": "FillWordStage3",
-                                "question": "…, …, … and … can fly",
+                                "question": "..., ..., ... and ... can fly",
                                 "meanQuestion": "con ruồi, con chim, con vẹt và con ong biết bay",
                                 "ans": [
                                     "dog",
                                     "cat",
-                                    "parrot",
+                                    "ant",
+                                    "bird",
                                     "fish",
-                                    "mouse"
+                                    "mouse",
+                                    "crab",
+                                    "bee",
+                                    "fly",
+                                    "parrot"
                                 ],
                                 "ansC": [
                                     "fly",
@@ -999,9 +1153,97 @@
                                 ]
                             },
                             {
-                                "id": 3,
+                                "id": 11,
+                                "type": "FillWordStage3",
+                                "question": "You can catch ... and ... at the beach ",
+                                "meanQuestion": "Bạn có thể bắt cua và cá ở biển",
+                                "ans": [
+                                    "dog",
+                                    "cat",
+                                    "ant",
+                                    "bird",
+                                    "fish",
+                                    "mouse",
+                                    "crab",
+                                    "bee",
+                                    "fly",
+                                    "parrot"
+                                ],
+                                "ansC": [
+                                    "crab",
+                                    "fish"
+                                ]
+                            },
+                            {
+                                "id": 12,
+                                "type": "FillWordStage3",
+                                "question": "The ... is chasing the ... inside the house",
+                                "meanQuestion": "Con mèo đang đuổi con chuột trong nhà",
+                                "ans": [
+                                    "dog",
+                                    "cat",
+                                    "ant",
+                                    "bird",
+                                    "fish",
+                                    "mouse",
+                                    "crab",
+                                    "bee",
+                                    "fly",
+                                    "parrot"
+                                ],
+                                "ansC": [
+                                    "cat",
+                                    "mouse"
+                                ]
+                            },
+                            {
+                                "id": 13,
+                                "type": "FillWordStage3",
+                                "question": "You walk the ... in the park and saw an ... nest",
+                                "meanQuestion": "Bạn dắt con chó đi dạo trong công viên và thấy một tổ kiến",
+                                "ans": [
+                                    "dog",
+                                    "cat",
+                                    "ant",
+                                    "bird",
+                                    "fish",
+                                    "mouse",
+                                    "crab",
+                                    "bee",
+                                    "fly",
+                                    "parrot"
+                                ],
+                                "ansC": [
+                                    "dog",
+                                    "ant"
+                                ]
+                            },
+                            {
+                                "id": 14,
+                                "type": "FillWordStage3",
+                                "question": "Your ... and ... don't get along well",
+                                "meanQuestion": "Con chó và mèo của bạn không hợp nhau",
+                                "ans": [
+                                    "dog",
+                                    "cat",
+                                    "ant",
+                                    "bird",
+                                    "fish",
+                                    "mouse",
+                                    "crab",
+                                    "bee",
+                                    "fly",
+                                    "parrot"
+                                ],
+                                "ansC": [
+                                    "dog",
+                                    "cat"
+                                ]
+                            },
+                            {
+                                "id": 15,
                                 "type": "Grammar",
-                                "question": "There is … ant on your hand",
+                                "question": "There is ... ant on your hand",
                                 "ans": [
                                     "a",
                                     "an",
@@ -1009,6 +1251,234 @@
                                     "are"
                                 ],
                                 "ansC": 2
+                            },
+                            {
+                                "id": 16,
+                                "type": "Grammar",
+                                "question": "There is ... bird on your hand",
+                                "ans": [
+                                    "a",
+                                    "an",
+                                    "is",
+                                    "are"
+                                ],
+                                "ansC": 1
+                            },
+                            {
+                                "id": 17,
+                                "type": "Grammar",
+                                "question": "There is ... bee on your hand",
+                                "ans": [
+                                    "a",
+                                    "an",
+                                    "is",
+                                    "are"
+                                ],
+                                "ansC": 1
+                            },
+                            {
+                                "id": 18,
+                                "type": "Grammar",
+                                "question": "There is ... fly on your hand",
+                                "ans": [
+                                    "a",
+                                    "an",
+                                    "is",
+                                    "are"
+                                ],
+                                "ansC": 1
+                            },
+                            {
+                                "id": 19,
+                                "type": "Grammar",
+                                "question": "There is ... mouse on your hand",
+                                "ans": [
+                                    "a",
+                                    "an",
+                                    "is",
+                                    "are"
+                                ],
+                                "ansC": 1
+                            },
+                            {
+                                "id": 20,
+                                "type": "Grammar",
+                                "question": "How many fish ... you catch yesterday",
+                                "ans": [
+                                    "do",
+                                    "did",
+                                    "done",
+                                    "that"
+                                ],
+                                "ansC": 2
+                            },
+                            {
+                                "id": 21,
+                                "type": "Grammar",
+                                "question": "How many bird ... you catch yesterday",
+                                "ans": [
+                                    "do",
+                                    "did",
+                                    "done",
+                                    "that"
+                                ],
+                                "ansC": 2
+                            },
+                            {
+                                "id": 22,
+                                "type": "Grammar",
+                                "question": "How many mouse ... you catch yesterday",
+                                "ans": [
+                                    "do",
+                                    "did",
+                                    "done",
+                                    "that"
+                                ],
+                                "ansC": 2
+                            },
+                            {
+                                "id": 23,
+                                "type": "Grammar",
+                                "question": "How many crab ... you catch yesterday",
+                                "ans": [
+                                    "do",
+                                    "did",
+                                    "done",
+                                    "that"
+                                ],
+                                "ansC": 2
+                            },
+                            {
+                                "id": 24,
+                                "type": "Grammar",
+                                "question": "How many ant ... you catch yesterday",
+                                "ans": [
+                                    "do",
+                                    "did",
+                                    "done",
+                                    "that"
+                                ],
+                                "ansC": 2
+                            },
+                            {
+                                "id": 25,
+                                "type": "Grammar",
+                                "question": "I ... a dog lover",
+                                "ans": [
+                                    "do",
+                                    "is",
+                                    "are",
+                                    "am"
+                                ],
+                                "ansC": 4
+                            },
+                            {
+                                "id": 26,
+                                "type": "Grammar",
+                                "question": "I ... a cat love",
+                                "ans": [
+                                    "do",
+                                    "is",
+                                    "are",
+                                    "am"
+                                ],
+                                "ansC": 4
+                            },
+                            {
+                                "id": 27,
+                                "type": "Grammar",
+                                "question": "I ... a fish love",
+                                "ans": [
+                                    "do",
+                                    "is",
+                                    "are",
+                                    "am"
+                                ],
+                                "ansC": 4
+                            },
+                            {
+                                "id": 28,
+                                "type": "Grammar",
+                                "question": "I ... a mouse love",
+                                "ans": [
+                                    "do",
+                                    "is",
+                                    "are",
+                                    "am"
+                                ],
+                                "ansC": 4
+                            },
+                            {
+                                "id": 29,
+                                "type": "Grammar",
+                                "question": "I ... a bird love",
+                                "ans": [
+                                    "do",
+                                    "is",
+                                    "are",
+                                    "am"
+                                ],
+                                "ansC": 4
+                            },
+                            {
+                                "id": 30,
+                                "type": "Grammar",
+                                "question": "My cat ... beautiful",
+                                "ans": [
+                                    "that",
+                                    "am",
+                                    "is",
+                                    "are"
+                                ],
+                                "ansC": 3
+                            },
+                            {
+                                "id": 31,
+                                "type": "Grammar",
+                                "question": "My dog ... beautiful",
+                                "ans": [
+                                    "that",
+                                    "am",
+                                    "is",
+                                    "are"
+                                ],
+                                "ansC": 3
+                            },
+                            {
+                                "id": 32,
+                                "type": "Grammar",
+                                "question": "My parrot ... beautiful",
+                                "ans": [
+                                    "that",
+                                    "am",
+                                    "is",
+                                    "are"
+                                ],
+                                "ansC": 3
+                            },
+                            {
+                                "id": 33,
+                                "type": "Grammar",
+                                "question": "My bird ... beautiful",
+                                "ans": [
+                                    "that",
+                                    "am",
+                                    "is",
+                                    "are"
+                                ],
+                                "ansC": 3
+                            },
+                            {
+                                "id": 34,
+                                "type": "Grammar",
+                                "question": "My fish ... beautiful",
+                                "ans": [
+                                    "that",
+                                    "am",
+                                    "is",
+                                    "are"
+                                ],
+                                "ansC": 3
                             }
                         ],
                         "unit": [
