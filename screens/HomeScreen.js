@@ -7,6 +7,7 @@ import StageScreen from './StageScreen';
 import {useGlobal} from '../context/GlobalContext';
 import SplashScreen from './SplashScreen';
 import QuestionScreen from './QuestionScreen';
+import ImgQuestionsScreen from './ImgQuestionsScreen';
 
 function HomeScreens({navigation}) {
   return (
@@ -40,6 +41,11 @@ const HomeScreen = () => {
           name="QuestionScreen"
           component={QuestionScreen}
           options={{title: 'question'}}
+        />
+        <Drawer.Screen
+          name="ImgQuestionsScreen"
+          component={ImgQuestionsScreen}
+          options={{title: 'imgquestion'}}
         />
       </Drawer.Navigator>
     </NavigationContainer>
