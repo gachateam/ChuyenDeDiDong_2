@@ -13,7 +13,6 @@
                     "stage1": {
                         "question": [
                             {
-                                "id": 0,
                                 "type": "4image",
                                 "question": "đâu là \"con chó\"",
                                 "ans": [
@@ -25,7 +24,6 @@
                                 "ansC": 2
                             },
                             {
-                                "id": 1,
                                 "type": "4vocabulary",
                                 "question": "dịch \"con chó\"",
                                 "ans": [
@@ -37,7 +35,6 @@
                                 "ansC": 2
                             },
                             {
-                                "id": 2,
                                 "type": "listen",
                                 "question": "dog",
                                 "meanQuestion": "con chó",
@@ -49,28 +46,14 @@
                                 ]
                             },
                             {
-                                "id": 3,
                                 "type": "read",
                                 "question": "dog"
                             }
-                        ],
-                        "unit": [
-                            [
-                                1,
-                                2,
-                                3
-                            ],
-                            [
-                                3,
-                                2,
-                                1
-                            ]
                         ]
                     },
                     "stage2": {
                         "question": [
                             {
-                                "id": 0,
                                 "type": "FillWord",
                                 "question": "Take your … for a walk",
                                 "meanQuestion": "Dắt chó của bạn đi dạo",
@@ -83,7 +66,6 @@
                                 "ansC": 2
                             },
                             {
-                                "id": 1,
                                 "type": "translate",
                                 "question": "The ant eating candy",
                                 "ans": [
@@ -95,7 +77,6 @@
                                 "ansC": 1
                             },
                             {
-                                "id": 2,
                                 "type": "listenStage2",
                                 "question": "The ant eating candy",
                                 "meanQuestion": "con kiến đang ăn kẹo",
@@ -108,28 +89,14 @@
                                 "ansC": 1
                             },
                             {
-                                "id": 3,
                                 "type": "read",
                                 "question": "The ant eating candy"
                             }
-                        ],
-                        "unit": [
-                            [
-                                1,
-                                2,
-                                3
-                            ],
-                            [
-                                3,
-                                2,
-                                1
-                            ]
                         ]
                     },
                     "stage3": {
                         "question": [
                             {
-                                "id": 0,
                                 "type": "Pronounciacion",
                                 "ans": [
                                     "dog",
@@ -140,7 +107,6 @@
                                 "ansC": 4
                             },
                             {
-                                "id": 1,
                                 "type": "choiceMultiAnswer",
                                 "question": "Which animal can be your pet",
                                 "ans": [
@@ -157,7 +123,6 @@
                                 ]
                             },
                             {
-                                "id": 2,
                                 "type": "FillWordStage3",
                                 "question": "…, …, … and … can fly",
                                 "meanQuestion": "con ruồi, con chim, con vẹt và con ong biết bay",
@@ -176,7 +141,6 @@
                                 ]
                             },
                             {
-                                "id": 3,
                                 "type": "Grammar",
                                 "question": "There is … ant on your hand",
                                 "ans": [
@@ -187,18 +151,6 @@
                                 ],
                                 "ansC": 2
                             }
-                        ],
-                        "unit": [
-                            [
-                                1,
-                                2,
-                                3
-                            ],
-                            [
-                                3,
-                                2,
-                                1
-                            ]
                         ]
                     }
                 }
@@ -215,7 +167,6 @@
                     "stage1": {
                         "question": [
                             {
-                                "id": 0,
                                 "type": "4image",
                                 "question": "đâu là \"con chó\"",
                                 "ans": [
@@ -227,7 +178,6 @@
                                 "ansC": 2
                             },
                             {
-                                "id": 1,
                                 "type": "4vocabulary",
                                 "question": "dịch \"con chó\"",
                                 "ans": [
@@ -239,7 +189,6 @@
                                 "ansC": 2
                             },
                             {
-                                "id": 2,
                                 "type": "listen",
                                 "question": "dog",
                                 "meanQuestion": "con chó",
@@ -251,28 +200,14 @@
                                 ]
                             },
                             {
-                                "id": 3,
                                 "type": "read",
                                 "question": "dog"
                             }
-                        ],
-                        "unit": [
-                            [
-                                1,
-                                2,
-                                3
-                            ],
-                            [
-                                3,
-                                2,
-                                1
-                            ]
                         ]
                     },
                     "stage2": {
                         "question": [
                             {
-                                "id": 0,
                                 "type": "FillWord",
                                 "question": "Take your … for a walk",
                                 "meanQuestion": "Dắt chó của bạn đi dạo",
@@ -285,7 +220,6 @@
                                 "ansC": 2
                             },
                             {
-                                "id": 1,
                                 "type": "translate",
                                 "question": "The ant eating candy",
                                 "ans": [
@@ -297,7 +231,6 @@
                                 "ansC": 1
                             },
                             {
-                                "id": 2,
                                 "type": "listenStage2",
                                 "question": "The ant eating candy",
                                 "meanQuestion": "con kiến đang ăn kẹo",
@@ -310,28 +243,14 @@
                                 "ansC": 1
                             },
                             {
-                                "id": 3,
                                 "type": "read",
                                 "question": "The ant eating candy"
                             }
-                        ],
-                        "unit": [
-                            [
-                                1,
-                                2,
-                                3
-                            ],
-                            [
-                                3,
-                                2,
-                                1
-                            ]
                         ]
                     },
                     "stage3": {
                         "question": [
                             {
-                                "id": 0,
                                 "type": "Pronounciacion",
                                 "ans": [
                                     "dog",
@@ -342,7 +261,6 @@
                                 "ansC": 4
                             },
                             {
-                                "id": 1,
                                 "type": "choiceMultiAnswer",
                                 "question": "Which animal can be your pet",
                                 "ans": [
@@ -359,7 +277,6 @@
                                 ]
                             },
                             {
-                                "id": 2,
                                 "type": "FillWordStage3",
                                 "question": "…, …, … and … can fly",
                                 "meanQuestion": "con ruồi, con chim, con vẹt và con ong biết bay",
@@ -378,7 +295,6 @@
                                 ]
                             },
                             {
-                                "id": 3,
                                 "type": "Grammar",
                                 "question": "There is … ant on your hand",
                                 "ans": [
@@ -389,18 +305,6 @@
                                 ],
                                 "ansC": 2
                             }
-                        ],
-                        "unit": [
-                            [
-                                1,
-                                2,
-                                3
-                            ],
-                            [
-                                3,
-                                2,
-                                1
-                            ]
                         ]
                     }
                 }
@@ -417,7 +321,6 @@
                     "stage1": {
                         "question": [
                             {
-                                "id": 0,
                                 "type": "4image",
                                 "question": "đâu là \"con chó\"",
                                 "ans": [
@@ -429,7 +332,6 @@
                                 "ansC": 2
                             },
                             {
-                                "id": 1,
                                 "type": "4vocabulary",
                                 "question": "dịch \"con chó\"",
                                 "ans": [
@@ -441,7 +343,6 @@
                                 "ansC": 2
                             },
                             {
-                                "id": 2,
                                 "type": "listen",
                                 "question": "dog",
                                 "meanQuestion": "con chó",
@@ -453,28 +354,14 @@
                                 ]
                             },
                             {
-                                "id": 3,
                                 "type": "read",
                                 "question": "dog"
                             }
-                        ],
-                        "unit": [
-                            [
-                                1,
-                                2,
-                                3
-                            ],
-                            [
-                                3,
-                                2,
-                                1
-                            ]
                         ]
                     },
                     "stage2": {
                         "question": [
                             {
-                                "id": 0,
                                 "type": "FillWord",
                                 "question": "Take your … for a walk",
                                 "meanQuestion": "Dắt chó của bạn đi dạo",
@@ -487,7 +374,6 @@
                                 "ansC": 2
                             },
                             {
-                                "id": 1,
                                 "type": "translate",
                                 "question": "The ant eating candy",
                                 "ans": [
@@ -499,7 +385,6 @@
                                 "ansC": 1
                             },
                             {
-                                "id": 2,
                                 "type": "listenStage2",
                                 "question": "The ant eating candy",
                                 "meanQuestion": "con kiến đang ăn kẹo",
@@ -512,28 +397,14 @@
                                 "ansC": 1
                             },
                             {
-                                "id": 3,
                                 "type": "read",
                                 "question": "The ant eating candy"
                             }
-                        ],
-                        "unit": [
-                            [
-                                1,
-                                2,
-                                3
-                            ],
-                            [
-                                3,
-                                2,
-                                1
-                            ]
                         ]
                     },
                     "stage3": {
                         "question": [
                             {
-                                "id": 0,
                                 "type": "Pronounciacion",
                                 "ans": [
                                     "dog",
@@ -544,7 +415,6 @@
                                 "ansC": 4
                             },
                             {
-                                "id": 1,
                                 "type": "choiceMultiAnswer",
                                 "question": "Which animal can be your pet",
                                 "ans": [
@@ -561,7 +431,6 @@
                                 ]
                             },
                             {
-                                "id": 2,
                                 "type": "FillWordStage3",
                                 "question": "…, …, … and … can fly",
                                 "meanQuestion": "con ruồi, con chim, con vẹt và con ong biết bay",
@@ -580,7 +449,6 @@
                                 ]
                             },
                             {
-                                "id": 3,
                                 "type": "Grammar",
                                 "question": "There is … ant on your hand",
                                 "ans": [
@@ -591,18 +459,6 @@
                                 ],
                                 "ansC": 2
                             }
-                        ],
-                        "unit": [
-                            [
-                                1,
-                                2,
-                                3
-                            ],
-                            [
-                                3,
-                                2,
-                                1
-                            ]
                         ]
                     }
                 }
