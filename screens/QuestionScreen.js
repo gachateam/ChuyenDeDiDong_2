@@ -3,7 +3,7 @@ import {Text, View, StyleSheet, Alert} from 'react-native';
 import {TouchableOpacity} from 'react-native';
 
 
-const pressHandler = (native) => {
+const pressHandler = (navigation) => {
   Alert.alert("Message","Are you sure you want to exit ?",[
     {text: "Yes", onPress: ()=> console.log("Yes is pressed")},
     {text: "No", onPress: ()=>pressHandler()}

@@ -8,6 +8,7 @@ import {useGlobal} from '../context/GlobalContext';
 import SplashScreen from './SplashScreen';
 import QuestionScreen from './QuestionScreen';
 import ImgQuestionsScreen from './ImgQuestionsScreen';
+import { BottomModal } from 'react-native-lightning-modal';
 
 function HomeScreens({navigation}) {
   return (
@@ -46,6 +47,11 @@ const HomeScreen = () => {
           name="ImgQuestionsScreen"
           component={ImgQuestionsScreen}
           options={{title: 'imgquestion'}}
+        />
+        <Drawer.Screen
+          name="BottomModal"
+          component={BottomModal}
+          options={{title: 'bottomModal'}}
         />
       </Drawer.Navigator>
     </NavigationContainer>
