@@ -4,7 +4,7 @@ import {TouchableOpacity} from 'react-native';
 
 
 const pressHandler = (native) => {
-  Alert.alert("Details","Are you sure you want to exit ?",[
+  Alert.alert("Message","Are you sure you want to exit ?",[
     {text: "Yes", onPress: ()=> console.log("Yes is pressed")},
     {text: "No", onPress: ()=>pressHandler()}
   ])

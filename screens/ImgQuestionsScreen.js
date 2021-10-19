@@ -79,7 +79,7 @@ export default ImgQuestionsScreen
 
 const styles = StyleSheet.create({
     container: {
-        paddingTop: 40,
+        flex: 1,
         paddingHorizontal: 20,
         height: '100%',
       },
@@ -90,7 +90,7 @@ const styles = StyleSheet.create({
         fontSize: 28,
       },
       banner: {
-        height: 250,
+        height: 190,
         width :170,
     },
     options:{
@@ -98,6 +98,11 @@ const styles = StyleSheet.create({
         flexWrap : 'wrap',
         flexDirection: 'row',
         justifyContent: 'space-between'
+    },
+    option:{
+        fontSize: 18,
+        color: 'white',
+        fontWeight: '300',
     },
     optionButton: {
         backgroundColor: 'green',
