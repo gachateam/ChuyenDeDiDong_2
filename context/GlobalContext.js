@@ -9,12 +9,13 @@ export const useGlobal = () => {
 }
 
 const GlobalContextProvider = ({ children }) => {
-    const initialState = { title: "" };
+    const initialState = { title: "", typeQuestion: "4image" };
     const [state, dispatch] = useReducer(reducers, initialState);
-    const { title } = state
+    const { title,typeQuestion } = state
     const value = {
         dispatch,
-        title
+        title,
+        typeQuestion
     }
     return (
         <GlobalContext.Provider value={value}>
