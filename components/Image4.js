@@ -1,10 +1,9 @@
 import React from 'react'
-import { Image, ImageBackground, ImageEditor, StyleSheet, Text, View, TouchableOpacity, Dimensions } from 'react-native'
+import { Image, StyleSheet, Text, View, TouchableOpacity, Dimensions } from 'react-native'
 
 const height = Dimensions.get('screen').height
 
-
-const ImgQuestionsScreen = ({ navigation }) => {
+const Image4 = ({ navigation }) => {
     return (
         <View style={styles.container}>
             <View style={styles.top}>
@@ -73,7 +72,7 @@ const ImgQuestionsScreen = ({ navigation }) => {
     )
 }
 
-export default ImgQuestionsScreen
+export default Image4
 
 const styles = StyleSheet.create({
     container: {
@@ -89,10 +88,6 @@ const styles = StyleSheet.create({
     },
     questions: {
         fontSize: 28,
-    },
-    banner: {
-        height: 190,
-        width: 170,
     },
     banner: {
         height: height / 4.5,

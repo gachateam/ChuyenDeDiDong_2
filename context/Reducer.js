@@ -7,6 +7,11 @@ const reducers = (state, action) => {
         ...state,
         title: action.payload,
       };
+    case ACTIONS.TYPE_QUESTION:
+      return {
+        ...state,
+        typeQuestion: action.payload,
+      };
     default:
       return state;
   }
