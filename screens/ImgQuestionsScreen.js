@@ -5,75 +5,104 @@ const height = Dimensions.get('screen').height
 
 const ImgQuestionsScreen = ({ navigate }) => {
 
-    return (
-        <View style={styles.container}>
-            <View style={styles.top}>
-                <Text style={styles.questions}>Question</Text>
+    const ImgQuestionsScreen = ({ navigation }) => {
+        return (
+            <View style={styles.container}>
+                <View style={styles.top}>
+                    <Text style={styles.questions}>
+                        Q: Đâu là con Mèo ?
+                    </Text>
+                </View>
+                <View style={styles.options}>
+                    <TouchableOpacity style={styles.optionButton}>
+                        <Image
+                            source={{
+                                uri: 'https://cdni.iconscout.com/illustration/premium/thumb/dog-holding-bone-in-mouth-4238889-3518614.png',
+
+                            }}
+                            style={styles.banner}
+                            resizeMode="contain"
+                        />
+                        <Text style={styles.option}>DOG</Text>
+                    </TouchableOpacity>
+                    <TouchableOpacity style={styles.optionButton}>
+                        <Image
+                            source={{
+                                uri: 'https://cdni.iconscout.com/illustration/premium/thumb/cat-playing-with-ball-4238780-3518541.png',
+
+                            }}
+                            style={styles.banner}
+                            resizeMode="contain"
+                        />
+                        <Text style={styles.option}>CAT</Text>
+                    </TouchableOpacity>
+                    <TouchableOpacity style={styles.optionButton}>
+                        <Image
+                            source={{
+                                uri: 'https://cdni.iconscout.com/illustration/premium/thumb/tiger-with-face-mask-4238787-3518546.png',
+
+                            }}
+                            style={styles.banner}
+                            resizeMode="contain"
+                        />
+                        <Text style={styles.option}>TIGER</Text>
+                    </TouchableOpacity>
+                    <TouchableOpacity style={styles.optionButton}>
+                        <Image
+                            source={{
+                                uri: 'https://cdni.iconscout.com/illustration/premium/thumb/parrot-singing-song-4278579-3581473.png',
+
+                            }}
+                            style={styles.banner}
+                            resizeMode="contain"
+                        />
+                        <Text style={styles.option}>PARROT</Text>
+                    </TouchableOpacity>
+                </View>
+                <View style={styles.bottom}>
+                    <TouchableOpacity style={styles.button} onPress={() => navigation.navigate('BottomModal')}>
+                        <Text style={styles.buttonText}>KIỂM TRA</Text>
+                    </TouchableOpacity>
+                    {/* <TouchableOpacity
+                    style={styles.button}>
+                    <Text style={styles.buttonText}>NEXT</Text>
+                    </TouchableOpacity>
+                    <TouchableOpacity
+                    style={styles.button}>
+                    <Text style={styles.buttonText}>QUIT</Text>
+                    </TouchableOpacity> */}
+                </View>
+
+                <View style={styles.bottom}>
+                    <TouchableOpacity style={styles.button}>
+                        <Text style={styles.buttonText}>Kiểm tra</Text>
+                    </TouchableOpacity>
+                </View>
             </View>
-            <View style={styles.options}>
-                <TouchableOpacity style={styles.optionButton}>
-                    <Image
-                        source={{
-                            uri: 'https://cdni.iconscout.com/illustration/premium/thumb/giving-different-feedback-and-review-in-websites-2112230-1779230.png',
-                        }}
-                        style={styles.banner}
-                        resizeMode="contain"
-                    />
-                    <Text style={styles.option}>Option 1</Text>
-                </TouchableOpacity>
-                <TouchableOpacity style={styles.optionButton}>
-                    <Image
-                        source={{
-                            uri: 'https://cdni.iconscout.com/illustration/premium/thumb/giving-different-feedback-and-review-in-websites-2112230-1779230.png',
-                        }}
-                        style={styles.banner}
-                        resizeMode="contain"
-                    />
-                    <Text style={styles.option}>Option 2</Text>
-                </TouchableOpacity>
-                <TouchableOpacity style={styles.optionButton}>
-                    <Image
-                        source={{
-                            uri: 'https://cdni.iconscout.com/illustration/premium/thumb/giving-different-feedback-and-review-in-websites-2112230-1779230.png',
-                        }}
-                        style={styles.banner}
-                        resizeMode="contain"
-                    />
-                    <Text style={styles.option}>Option 3</Text>
-                </TouchableOpacity>
-                <TouchableOpacity style={styles.optionButton}>
-                    <Image
-                        source={{
-                            uri: 'https://cdni.iconscout.com/illustration/premium/thumb/giving-different-feedback-and-review-in-websites-2112230-1779230.png',
-                        }}
-                        style={styles.banner}
-                        resizeMode="contain"
-                    />
-                    <Text style={styles.option}>Option 4</Text>
-                </TouchableOpacity>
-            </View>
-            
-            <View style={styles.bottom}>
-                <TouchableOpacity style={styles.button}>
-                    <Text style={styles.buttonText}>Kiểm tra</Text>
-                </TouchableOpacity>
-            </View>
-        </View>
-    )
+        )
+    }
 }
 
 export default ImgQuestionsScreen
 
 const styles = StyleSheet.create({
     container: {
+        flex: 1,
         paddingHorizontal: 20,
         height: '100%',
     },
     top: {
         marginVertical: 16,
+        textAlign: 'center',
+        justifyContent: 'center',
+        alignItems: 'center',
     },
     questions: {
         fontSize: 28,
+    },
+    banner: {
+        height: 190,
+        width: 170,
     },
     banner: {
         height: height / 4.5,
@@ -84,6 +113,13 @@ const styles = StyleSheet.create({
         flexWrap: 'wrap',
         flexDirection: 'row',
         justifyContent: 'space-between'
+    },
+    option: {
+        fontSize: 18,
+        color: 'white',
+        fontWeight: '300',
+        fontStyle: 'normal',
+        textAlign: 'auto',
     },
     optionButton: {
         backgroundColor: 'green',
@@ -114,5 +150,5 @@ const styles = StyleSheet.create({
         fontSize: 18,
         fontWeight: '400',
         color: 'white',
-    },
+    }
 })
