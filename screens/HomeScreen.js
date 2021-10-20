@@ -48,11 +48,6 @@ const HomeScreen = () => {
           component={ImgQuestionsScreen}
           options={{title: 'imgquestion'}}
         />
-        <Drawer.Screen
-          name="BottomModal"
-          component={BottomModal}
-          options={{title: 'bottomModal'}}
-        />
       </Drawer.Navigator>
     </NavigationContainer>
   );

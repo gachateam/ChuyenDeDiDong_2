@@ -58,7 +58,7 @@ const ImgQuestionsScreen = ({navigation}) => {
                 </TouchableOpacity>
                 </View>
             <View style={styles.bottom}>
-                    <TouchableOpacity style={styles.button} onPress={() => navigation.navigate('BottomModal')}>
+                    <TouchableOpacity style={styles.button}>
                     <Text style={styles.buttonText}>KIỂM TRA</Text>
                     </TouchableOpacity>
                     {/* <TouchableOpacity
