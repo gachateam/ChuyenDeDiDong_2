@@ -1,20 +1,17 @@
 import React from 'react';
-import { Text, View, StyleSheet, Alert } from 'react-native';
-import { TouchableOpacity } from 'react-native';
-import { useGlobal } from '../context/GlobalContext';
-import { TYPE_QUESTION } from './../context/TypeQuestion';
+import {useGlobal} from '../context/GlobalContext';
+import {TYPE_QUESTION} from './../context/TypeQuestion';
 import Image4 from './../components/Image4';
 import Vocabulary4 from '../components/Vocabulary4';
 
-const QuestionScreen = ({ navigation }) => {
-
-  const { typeQuestion } = useGlobal()
+const QuestionScreen = ({navigation}) => {
+  const {typeQuestion} = useGlobal();
 
   switch (typeQuestion) {
     case TYPE_QUESTION.IMAGE_4:
-      return <Image4 />
+      return <Image4 />;
     case TYPE_QUESTION.VOCABULARY_4:
-      return <Vocabulary4 />
+      return <Vocabulary4 />;
     default:
       break;
   }
