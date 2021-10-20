@@ -235,7 +235,7 @@
                                     "fly",                                    
                                     "crab"
                                 ],
-                                "ansC": 3
+                                "ansC": 1
                             },
                             {
                                 "id": 15,
@@ -321,7 +321,7 @@
                                     "ant",
                                     "fish"
                                 ],
-                                "ansC": 1
+                                "ansC": 2
                             },
                             {
                                 "id": 22,
@@ -347,7 +347,7 @@
                                     "ant",
                                     "fish"
                                 ],
-                                "ansC": 1
+                                "ansC": 2
                             },
                             {
                                 "id": 24,
@@ -394,7 +394,7 @@
                                 "question": "mouse",
                                 "meanQuestion": "con chuột",
                                 "ans": [
-                                    "ant",
+                                    "parrot",
                                     "mouse",
                                     "ant",
                                     "fish"
@@ -1375,7 +1375,7 @@
                             {
                                 "id": 26,
                                 "type": "Grammar",
-                                "question": "I ... a cat love",
+                                "question": "I ... a cat lover",
                                 "ans": [
                                     "do",
                                     "is",
@@ -1387,7 +1387,7 @@
                             {
                                 "id": 27,
                                 "type": "Grammar",
-                                "question": "I ... a fish love",
+                                "question": "I ... a fish lover",
                                 "ans": [
                                     "do",
                                     "is",
@@ -1399,7 +1399,7 @@
                             {
                                 "id": 28,
                                 "type": "Grammar",
-                                "question": "I ... a mouse love",
+                                "question": "I ... a mouse lover",
                                 "ans": [
                                     "do",
                                     "is",
@@ -1411,7 +1411,7 @@
                             {
                                 "id": 29,
                                 "type": "Grammar",
-                                "question": "I ... a bird love",
+                                "question": "I ... a bird lover",
                                 "ans": [
                                     "do",
                                     "is",
@@ -1479,18 +1479,240 @@
                                     "are"
                                 ],
                                 "ansC": 3
+                            },
+                            {
+                                "id": 35,
+                                "type": "FillWord",
+                                "question": "Take your ... for a walk",
+                                "meanQuestion": "Dắt con chó của bạn đi dạo",
+                                "ans": [
+                                    "cat",
+                                    "dog",
+                                    "mouse",
+                                    "fish"
+                                ],
+                                "ansC": 2
+                            },
+                            {
+                                "id": 36,
+                                "type": "FillWord",
+                                "question": "The ... meowed",
+                                "meanQuestion": "Con mèo kêu meo",
+                                "ans": [
+                                    "cat",
+                                    "dog",
+                                    "mouse",
+                                    "fish"
+                                ],
+                                "ansC": 1
+                            },
+                            {
+                                "id": 37,
+                                "type": "FillWord",
+                                "question": "The ... eating candy ",
+                                "meanQuestion": "Con kiến đang ăn kẹo",
+                                "ans": [
+                                    "cat",
+                                    "dog",
+                                    "mouse",
+                                    "ant"
+                                ],
+                                "ansC": 4
+                            },
+                            {
+                                "id": 38,
+                                "type": "FillWord",
+                                "question": "The ... catches the worm",
+                                "meanQuestion": "Con chim bắt con sâu",
+                                "ans": [
+                                    "bird",
+                                    "crab",
+                                    "mouse",
+                                    "fish"
+                                ],
+                                "ansC": 1
+                                
+                            },
+                            {
+                                "id": 39,
+                                "type": "FillWord",
+                                "question": "... live in the sea",
+                                "meanQuestion": "Con cá sống ở biển",
+                                "ans": [
+                                    "cat",
+                                    "dog",
+                                    "fish",
+                                    "parrot"
+                                ],
+                                "ansC": 3
+                            },
+                            {
+                                "id": 40,
+                                "type": "translate",
+                                "question": "Mouse eating cheese",
+                                "ans": [
+                                    "Con chuột đang ăn phô mai",
+                                    "Con mèo đang ăn phô mai",
+                                    "Con cá đang ăn phô mai",
+                                    "Con cua đang ăn phô mai"
+                                ],
+                                "ansC": 1
+                            },
+                            {
+                                "id": 41,
+                                "type": "translate",
+                                "question": "Crab can only walk sideways",
+                                "ans": [
+                                    "Con ruồi chỉ có thể đi ngang",
+                                    "Con cua chỉ có thể đi ngang",
+                                    "Con chó chỉ có thể đi ngang",
+                                    "Con mèo chỉ có thể đi ngang"
+                                ],
+                                "ansC": 2
+                            },
+                            {
+                                "id": 42,
+                                "type": "translate",
+                                "question": "Bee give honey",
+                                "ans": [
+                                    "Con vẹt cho mật ong",
+                                    "Con cá cho mật ong",
+                                    "Con ong cho mật ong",
+                                    "Con kiến cho mật ong"
+                                ],
+                                "ansC": 3
+                            },
+                            {
+                                "id": 43,
+                                "type": "translate",
+                                "question": "The fly is flying",
+                                "ans": [
+                                    "Con ruồi đang bay",
+                                    "Con cá đang bay",
+                                    "Con mèo đang bay",
+                                    "Con chó đang bay"
+                                ],
+                                "ansC": 1
+                            },
+                            {
+                                "id": 44,
+                                "type": "translate",
+                                "question": "Parrot can imitate human speech",
+                                "ans": [
+                                    "Con kiến có thể bắt chước giọng nói con người",
+                                    "Con cua có thể bắt chước giọng nói con người",
+                                    "Con ong có thể bắt chước giọng nói con người",
+                                    "Con vẹt có thể bắt chước giọng nói con người"
+                                ],
+                                "ansC": 4
+                            },
+                            {
+                                "id": 45,
+                                "type": "listenStage2",
+                                "question": "The bird catches the worm",
+                                "meanQuestion": "Con chim bắt con sâu",
+                                "ans": [
+                                    "The fish catches the worm",
+                                    "The bird catches the worm",
+                                    "The bee catches the worm",
+                                    "The crab catches the worm"
+                                ],
+                                "ansC": 2
+                            },
+                            {
+                                "id": 46,
+                                "type": "listenStage2",
+                                "question": "Fish live in the sea",
+                                "meanQuestion": "Con cá sống ở biển",
+                                "ans": [
+                                    "Parrot live in the sea",
+                                    "Mouse live in the sea",
+                                    "Dog live in the sea",
+                                    "Fish live in the sea"
+                                ],
+                                "ansC": 4
+                            },
+                            {
+                                "id": 47,
+                                "type": "listenStage2",
+                                "question": "Mouse eating cheese",
+                                "meanQuestion": "Con chuột đang ăn phô mai",
+                                "ans": [
+                                    "Mouse eating cheese",
+                                    "Cat eating cheese",
+                                    "Fish eating cheese",
+                                    "Crab eating cheese"
+                                ],
+                                "ansC": 1
+                            },
+                            {
+                                "id": 48,
+                                "type": "listenStage2",
+                                "question": "Crab can only walk sideways",
+                                "meanQuestion": "Con cua chỉ có thể đi ngang",
+                                "ans": [
+                                    "Fly can only walk sideways",
+                                    "Crab can only walk sideways",
+                                    "Dog can only walk sideways",
+                                    "Cat can only walk sideways"
+                                ],
+                                "ansC": 2
+                            },
+                            {
+                                "id": 49,
+                                "type": "listenStage2",
+                                "question": "Bee give honey",
+                                "meanQuestion": "Con ong cho mật ong",
+                                "ans": [
+                                    "Parrot give honey",
+                                    "Fish give honey",
+                                    "Bee give honey",
+                                    "Ant give honey"
+                                ],
+                                "ansC": 3
+                            },
+                            {
+                                "id": 50,
+                                "type": "read",
+                                "question": "The fly is flying"
+                            },
+                            {
+                                "id": 51,
+                                "type": "read",
+                                "question": "Parrot can imitate human speech"
+                            },
+                            {
+                                "id": 52,
+                                "type": "read",
+                                "question": "Take your dog for a walk"
+                            },
+                            {
+                                "id": 53,
+                                "type": "read",
+                                "question": "The cat meowed"
+                            },
+                            {
+                                "id": 54,
+                                "type": "read",
+                                "question": "The ant eating candy"
                             }
+                            
                         ],
                         "unit": [
                             [
-                                1,
-                                2,
-                                3
+                                0,5,10,15,20,25,30,35,40,45,50
                             ],
                             [
-                                3,
-                                2,
-                                1
+                                1,6,11,16,21,26,31,36,41,46,51
+                            ],
+                            [
+                                2,7,12,17,22,27,32,37,42,47,52
+                            ],
+                            [
+                                3,8,13,18,23,28,33,38,43,48,53
+                            ],
+                            [
+                                4,9,14,19,24,29,34,39,44,49,54
                             ]
                         ]
                     }
@@ -1499,8 +1721,8 @@
             "medium": {
                 "vocabulary": [
                     {
-                        "vocabulary": "dog",
-                        "mean": "con chó",
+                        "vocabulary": "frog",
+                        "mean": "con ếch",
                         "image": "https://firebasestorage.googleapis.com/v0/b/englishlearning-ec586.appspot.com/o/dog.jpg?alt=media&token=6139623a-e0b0-4aba-8942-17e8b8ac25a6"
                     }
                 ],
@@ -1510,56 +1732,441 @@
                             {
                                 "id": 0,
                                 "type": "4image",
-                                "question": "đâu là \"con chó\"",
+                                "question": "đâu là \"con ếch\"",
                                 "ans": [
-                                    "cat",
-                                    "dog",
-                                    "ant",
-                                    "fish"
+                                    "cow",
+                                    "frog",
+                                    "horse",
+                                    "chicken"
                                 ],
                                 "ansC": 2
                             },
                             {
                                 "id": 1,
-                                "type": "4vocabulary",
-                                "question": "dịch \"con chó\"",
+                                "type": "4image",
+                                "question": "đâu là \"con bò\"",
                                 "ans": [
-                                    "cat",
-                                    "dog",
-                                    "ant",
-                                    "fish"
+                                    "cow",
+                                    "chicken",
+                                    "horse",
+                                    "frog"
+                                ],
+                                "ansC": 1
+                            },
+                            {
+                                "id": 2,
+                                "type": "4image",
+                                "question": "đâu là \"con ngựa\"",
+                                "ans": [
+                                    "frog",
+                                    "cow",                                    
+                                    "chicken",
+                                    "horse"
+                                ],
+                                "ansC": 4
+                            },
+                            {
+                                "id": 3,
+                                "type": "4image",
+                                "question": "đâu là \"con thỏ\"",
+                                "ans": [
+                                    "frog",
+                                    "rabbit",
+                                    "horse",
+                                    "cow"
                                 ],
                                 "ansC": 2
                             },
                             {
-                                "id": 2,
-                                "type": "listen",
-                                "question": "dog",
-                                "meanQuestion": "con chó",
+                                "id": 4,
+                                "type": "4image",
+                                "question": "dịch \"con gà\"",
                                 "ans": [
-                                    "cat",
-                                    "dog",
-                                    "ant",
-                                    "fish"
-                                ]
+                                    "horse",
+                                    "pig",
+                                    "chicken",
+                                    "rabbit"
+                                ],
+                                "ansC": 3
                             },
                             {
-                                "id": 3,
+                                "id": 5,
+                                "type": "4image",
+                                "question": "dịch \"con heo\"",
+                                "ans": [
+                                    "pig",
+                                    "cow",
+                                    "rabbit",
+                                    "horse"
+                                ],
+                                "ansC": 1
+                            },
+                            {
+                                "id": 6,
+                                "type": "4image",
+                                "question": "đâu là \"con cừu\"",
+                                "ans": [
+                                    "sheep",
+                                    "snake",
+                                    "horse",
+                                    "pig"
+                                ],
+                                "ansC": 1
+                            },
+                            {
+                                "id": 7,
+                                "type": "4image",
+                                "question": "đâu là \"con rắn\"",
+                                "ans": [
+                                    "pigeon",
+                                    "chicken",
+                                    "snake",
+                                    "duck"
+                                ],
+                                "ansC": 3
+                            },
+                            {
+                                "id": 8,
+                                "type": "4image",
+                                "question": "đâu là \"con vịt\"",
+                                "ans": [
+                                    "snake",
+                                    "duck",                                    
+                                    "pigeon",
+                                    "sheep"
+                                ],
+                                "ansC": 2
+                            },
+                            {
+                                "id": 9,
+                                "type": "4image",
+                                "question": "đâu là \"chim bồ câu\"",
+                                "ans": [
+                                    "duck",
+                                    "sheep",
+                                    "horse",
+                                    "pigeon"
+                                ],
+                                "ansC": 4
+                            },
+                            {
+                                "id": 10,
+                                "type": "4vocabulary",
+                                "question": "dịch \"con heo\"",
+                                "ans": [
+                                    "cow",
+                                    "pig",
+                                    "horse",
+                                    "chicken"
+                                ],
+                                "ansC": 2
+                            },
+                            {
+                                "id": 11,
+                                "type": "4vocabulary",
+                                "question": "dịch \"con thỏ\"",
+                                "ans": [
+                                    "rabbit",
+                                    "pig",
+                                    "horse",
+                                    "chicken"
+                                ],
+                                "ansC": 1
+                            },
+                            {
+                                "id": 12,
+                                "type": "4vocabulary",
+                                "question": "dịch \"con ngựa\"",
+                                "ans": [
+                                    "cow",
+                                    "chicken",
+                                    "horse",
+                                    "frog"
+                                ],
+                                "ansC": 3
+                            },
+                            {
+                                "id": 13,
+                                "type": "4vocabulary",
+                                "question": "dịch \"con gà\"",
+                                "ans": [
+                                    "pig",
+                                    "frog",
+                                    "rabbit",
+                                    "chicken"
+                                ],
+                                "ansC": 4
+                            },
+                            {
+                                "id": 14,
+                                "type": "4vocabulary",
+                                "question": "dịch \"con bồ câu\"",
+                                "ans": [
+                                    "pigeon",
+                                    "snake",
+                                    "duck",                                    
+                                    "sheep"
+                                ],
+                                "ansC": 1
+                            },
+                            {
+                                "id": 15,
+                                "type": "4vocabulary",
+                                "question": "dịch \"con vịt\"",
+                                "ans": [
+                                    "sheep",
+                                    "snake",
+                                    "duck",
+                                    "pig"
+                                ],
+                                "ansC": 3
+                            },
+                            {
+                                "id": 16,
+                                "type": "4vocabulary",
+                                "question": "dịch \"con cừu\"",
+                                "ans": [
+                                    "duck",
+                                    "sheep",
+                                    "horse",
+                                    "pigeon"
+                                ],
+                                "ansC": 2
+                            },
+                            {
+                                "id": 17,
+                                "type": "4vocabulary",
+                                "question": "dịch \"con rắn\"",
+                                "ans": [
+                                    "pigeon",
+                                    "chicken",
+                                    "duck",
+                                    "snake"
+                                ],
+                                "ansC": 4
+                            },
+                            {
+                                "id": 18,
+                                "type": "4vocabulary",
+                                "question": "dịch \"con ếch\"",
+                                "ans": [
+                                    "chicken",
+                                    "sheep",
+                                    "horse",
+                                    "frog"
+                                ],
+                                "ansC": 4
+                            },
+                            {
+                                "id": 19,
+                                "type": "4vocabulary",
+                                "question": "dịch \"con bò\"",
+                                "ans": [
+                                    "pigeon",
+                                    "chicken",
+                                    "cow",
+                                    "snake"
+                                ],
+                                "ansC": 3
+                            },
+                            {
+                                "id": 20,
+                                "type": "listen",
+                                "question": "horse",
+                                "meanQuestion": "con ngựa",
+                                "ans": [
+                                    "rabbit",
+                                    "pig",
+                                    "frog",
+                                    "horse"
+                                ],
+                                "ansC": 4
+                            },
+                            {
+                                "id": 21,
+                                "type": "listen",
+                                "question": "cow",
+                                "meanQuestion": "con bò",
+                                "ans": [
+                                    "pig",
+                                    "cow",
+                                    "horse",
+                                    "chicken"
+                                ],
+                                "ansC": 2
+                            },
+                            {
+                                "id": 22,
+                                "type": "listen",
+                                "question": "pigeon",
+                                "meanQuestion": "con bồ câu",
+                                "ans": [
+                                    "rabbit",
+                                    "pig",
+                                    "frog",
+                                    "pigeon"
+                                ],
+                                "ansC": 4
+                            },
+                            {
+                                "id": 23,
+                                "type": "listen",
+                                "question": "duck",
+                                "meanQuestion": "con vịt",
+                                "ans": [
+                                    "pig",
+                                    "duck",
+                                    "horse",
+                                    "chicken"
+                                ],
+                                "ansC": 2
+                            },
+                            {
+                                "id": 24,
+                                "type": "listen",
+                                "question": "frog",
+                                "meanQuestion": "con ếch",
+                                "ans": [
+                                    "rabbit",
+                                    "pig",
+                                    "frog",
+                                    "horse"
+                                ],
+                                "ansC": 3
+                            },
+                            {
+                                "id": 25,
+                                "type": "listen",
+                                "question": "rabbit",
+                                "meanQuestion": "con thỏ",
+                                "ans": [
+                                    "rabbit",
+                                    "cow",
+                                    "horse",
+                                    "chicken"
+                                ],
+                                "ansC": 1
+                            },
+                            {
+                                "id": 26,
+                                "type": "listen",
+                                "question": "chicken",
+                                "meanQuestion": "con gà",
+                                "ans": [
+                                    "rabbit",
+                                    "pig",
+                                    "frog",
+                                    "chicken"
+                                ],
+                                "ansC": 4
+                            },
+                            {
+                                "id": 27,
+                                "type": "listen",
+                                "question": "pig",
+                                "meanQuestion": "con heo",
+                                "ans": [
+                                    "pigeon",
+                                    "pig",
+                                    "horse",
+                                    "chicken"
+                                ],
+                                "ansC": 2
+                            },
+                            {
+                                "id": 28,
+                                "type": "listen",
+                                "question": "sheep",
+                                "meanQuestion": "con cừu",
+                                "ans": [
+                                    "rabbit",
+                                    "pig",
+                                    "sheep",
+                                    "pigeon"
+                                ],
+                                "ansC": 3
+                            },
+                            {
+                                "id": 29,
+                                "type": "listen",
+                                "question": "snake",
+                                "meanQuestion": "con rắn",
+                                "ans": [
+                                    "pig",
+                                    "duck",
+                                    "horse",
+                                    "snake"
+                                ],
+                                "ansC": 4
+                            },
+                            {
+                                "id": 30,
                                 "type": "read",
-                                "question": "dog"
+                                "question": "rabbit"
+                            },
+                            {
+                                "id": 31,
+                                "type": "read",
+                                "question": "chicken"
+                            },
+                            {
+                                "id": 32,
+                                "type": "read",
+                                "question": "snake"
+                            },
+                            {
+                                "id": 33,
+                                "type": "read",
+                                "question": "sheep"
+                            },
+                            {
+                                "id": 34,
+                                "type": "read",
+                                "question": "frog"
+                            },
+                            {
+                                "id": 35,
+                                "type": "read",
+                                "question": "cow"
+                            },
+                            {
+                                "id": 36,
+                                "type": "read",
+                                "question": "pig"
+                            },
+                            {
+                                "id": 37,
+                                "type": "read",
+                                "question": "horse"
+                            },
+                            {
+                                "id": 38,
+                                "type": "read",
+                                "question": "duck"
+                            },
+                            {
+                                "id": 39,
+                                "type": "read",
+                                "question": "pigeon"
                             }
                         ],
                         "unit": [
                             [
-                                1,
-                                2,
-                                3
+                                0,1,2,3,4,5,6,7,8,9,10,11,20,21,30,31
                             ],
                             [
-                                3,
-                                2,
-                                1
+                                9,7,5,3,1,8,6,4,2,0,12,13,22,23,32,33
+                            ],
+                            [
+                                8,6,4,2,0,9,7,5,3,1,14,15,24,25,34,35
+                            ],
+                            [
+                                2,3,6,7,0,1,4,5,8,9,16,17,26,27,36,37
+                            ],
+                            [
+                                9,8,7,6,5,4,3,2,1,0,18,19,28,29,38,39
                             ]
+                            
                         ]
                     },
                     "stage2": {
@@ -1567,57 +2174,450 @@
                             {
                                 "id": 0,
                                 "type": "FillWord",
-                                "question": "Take your … for a walk",
-                                "meanQuestion": "Dắt chó của bạn đi dạo",
+                                "question": "... can jump and lay eggs",
+                                "meanQuestion": "Con ếch có thể nhảy và đẻ trứng",
                                 "ans": [
-                                    "cat",
-                                    "dog",
-                                    "mouse",
-                                    "fish"
+                                    "cow",
+                                    "frog",
+                                    "pig",
+                                    "chicken"
                                 ],
                                 "ansC": 2
                             },
                             {
                                 "id": 1,
-                                "type": "translate",
-                                "question": "The ant eating candy",
+                                "type": "FillWord",
+                                "question": "... give milk",
+                                "meanQuestion": "Con bò cho sữa",
                                 "ans": [
-                                    "con kiến đang ăn kẹo",
-                                    "con chim đang ăn kẹo",
-                                    "con cua đang ăn kẹo",
-                                    "con vẹt đang ăn kẹo"
+                                    "cow",
+                                    "frog",
+                                    "snake",
+                                    "chicken"
                                 ],
                                 "ansC": 1
                             },
                             {
                                 "id": 2,
-                                "type": "listenStage2",
-                                "question": "The ant eating candy",
-                                "meanQuestion": "con kiến đang ăn kẹo",
+                                "type": "FillWord",
+                                "question": "You can ride a ...",
+                                "meanQuestion": "Bạn có thể cưỡi ngựa",
                                 "ans": [
-                                    "The ant eating candy",
-                                    "dog",
-                                    "ant",
-                                    "fish"
+                                    "duck",
+                                    "frog",
+                                    "rabbit",
+                                    "horse"
+                                ],
+                                "ansC": 4
+                            },
+                            {
+                                "id": 3,
+                                "type": "FillWord",
+                                "question": "... eat carrot",
+                                "meanQuestion": "Con thỏ ăn cà rốt",
+                                "ans": [
+                                    "rabbit",
+                                    "frog",
+                                    "snake",
+                                    "pigeon"
+                                ],
+                                "ansC": 1
+                                
+                            },
+                            {
+                                "id": 4,
+                                "type": "FillWord",
+                                "question": "... lay eggs",
+                                "meanQuestion": "Con gà đẻ trứng",
+                                "ans": [
+                                    "cow",
+                                    "sheep",
+                                    "chicken",
+                                    "rabbit"
+                                ],
+                                "ansC": 3
+                            },
+                            {
+                                "id": 5,
+                                "type": "FillWord",
+                                "question": "... has a curly tail and short legs ",
+                                "meanQuestion": "Con heo có đuôi xoăn và chân ngắn",
+                                "ans": [
+                                    "cow",
+                                    "frog",
+                                    "pig",
+                                    "chicken"
+                                ],
+                                "ansC": 3
+                            },
+                            {
+                                "id": 6,
+                                "type": "FillWord",
+                                "question": "... provide us with wool",
+                                "meanQuestion": "Con cừu cho len",
+                                "ans": [
+                                    "snake",
+                                    "sheep",
+                                    "duck",
+                                    "pigeon"
+                                ],
+                                "ansC": 2
+                            },
+                            {
+                                "id": 7,
+                                "type": "FillWord",
+                                "question": "Some ... are poisonous",
+                                "meanQuestion": "Một vài con rắn có độc",
+                                "ans": [
+                                    "horses",
+                                    "ducks",
+                                    "chickens",
+                                    "snakes"
+                                ],
+                                "ansC": 4
+                            },
+                            {
+                                "id": 8,
+                                "type": "FillWord",
+                                "question": "... can swim and fly",
+                                "meanQuestion": "Con vịt có thể bơi và bay",
+                                "ans": [
+                                    "pigeon",
+                                    "frog",
+                                    "duck",
+                                    "cow"
+                                ],
+                                "ansC": 3
+                            },
+                            {
+                                "id": 9,
+                                "type": "FillWord",
+                                "question": "Feeding the ... pigeon in the park",
+                                "meanQuestion": "Cho con bồ câu ăn ở công viên",
+                                "ans": [
+                                    "snake",
+                                    "pigeon",
+                                    "pig",
+                                    "chicken"
+                                ],
+                                "ansC": 2
+                            },
+                            {
+                                "id": 10,
+                                "type": "translate",
+                                "question": "Frog can jump and lay eggs",
+                                "ans": [
+                                    "Con thỏ có thể nhảy và đẻ trứng",
+                                    "Con cừu có thể nhảy và đẻ trứng",
+                                    "Con bò có thể nhảy và đẻ trứng",
+                                    "Con ếch có thể nhảy và đẻ trứng"
+                                ],
+                                "ansC": 4
+                            },
+                            {
+                                "id": 11,
+                                "type": "translate",
+                                "question": "Cow give milk",
+                                "ans": [
+                                    "Con vịt cho sữa",
+                                    "Con ếch cho sữa",
+                                    "Con bò cho sữa",
+                                    "Con rắn cho sữa"
+                                ],
+                                "ansC": 3
+                            },
+                            {
+                                "id": 12,
+                                "type": "translate",
+                                "question": "You can ride a horse",
+                                "ans": [
+                                    "Bạn có thể cưỡi ngựa",
+                                    "Bạn có thể cưỡi vịt",
+                                    "Bạn có thể cưỡi bồ câu",
+                                    "Bạn có thể cưỡi gà"
                                 ],
                                 "ansC": 1
                             },
                             {
-                                "id": 3,
-                                "type": "read",
-                                "question": "The ant eating candy"
+                                "id": 13,
+                                "type": "translate",
+                                "question": "Rabbbit eat carrot",
+                                "ans": [
+                                    "Con bồ câu ăn cà rốt",
+                                    "Con thỏ ăn cà rốt",
+                                    "Con rắn ăn cà rốt",
+                                    "Con ếch ăn cà rốt"
+                                ],
+                                "ansC": 2
+                            },
+                            {
+                                "id": 14,
+                                "type": "translate",
+                                "question": "Chicken lay eggs",
+                                "ans": [
+                                    "Con bò đẻ trứng",
+                                    "Con cừu đẻ trứng",
+                                    "Con ngựa đẻ trứng",
+                                    "Con gà đẻ trứng"
+                                ],
+                                "ansC": 4
+                            },
+                            {
+                                "id": 15,
+                                "type": "translate",
+                                "question": "Pig has a curly tail and short legs",
+                                "ans": [
+                                    "Con heo có đuôi xoăn và chân ngắn",
+                                    "Con ngựa có đuôi xoăn và chân ngắn",
+                                    "Con thỏ có đuôi xoăn và chân ngắn",
+                                    "Con cừu có đuôi xoăn và chân ngắn"
+                                ],
+                                "ansC": 1
+                            },
+                            {
+                                "id": 16,
+                                "type": "translate",
+                                "question": "Sheep provide us with wool",
+                                "ans": [
+                                    "Con bò cho len",
+                                    "Con cừu cho len",
+                                    "Con gà cho len",
+                                    "Con heo cho len"
+                                ],
+                                "ansC": 2
+                            },
+                            {
+                                "id": 17,
+                                "type": "translate",
+                                "question": "Some snakes are poisonous",
+                                "ans": [
+                                    "Một vài con bồ câu có độc",
+                                    "Một vài con cừu có độc",
+                                    "Một vài con rắn có độc",
+                                    "Một vài con thỏ có độc"
+                                ],
+                                "ansC": 3
+                            },
+                            {
+                                "id": 18,
+                                "type": "translate",
+                                "question": "Duck can swim and fly",
+                                "ans": [
+                                    "Con vịt có thể bơi và bay",
+                                    "Con ếch có thể bơi và bay",
+                                    "Con ngựa có thể bơi và bay",
+                                    "Con gà có thể bơi và bay"
+                                ],
+                                "ansC": 1
+                            },
+                            {
+                                "id": 19,
+                                "type": "translate",
+                                "question": "Feeding the pigeon in the park",
+                                "ans": [
+                                    "Cho con cừu câu ăn ở công viên",
+                                    "Cho con rắn câu ăn ở công viên",
+                                    "Cho con ngựa ăn ở công viên",
+                                    "Cho con bồ câu ăn ở công viên"
+                                ],
+                                "ansC": 4
+                            },
+                            {
+                                "id": 20,
+                                "type": "listenStage2",
+                                "question": "Frog can jump and lay eggs",
+                                "meanQuestion": "Con ếch có thể nhảy và đẻ trứng",
+                                "ans": [
+                                    "Rabbit can jump and lay eggs",
+                                    "Sheep can jump and lay eggs",
+                                    "Cow can jump and lay eggs",
+                                    "Frog can jump and lay eggs"
+                                ],
+                                "ansC": 4
+                            },
+                            {
+                                "id": 21,
+                                "type": "listenStage2",
+                                "question": "Cow give milk",
+                                "meanQuestion": "Con bò cho sữa",
+                                "ans": [
+                                    "Cow give milk",
+                                    "Cow give milk",
+                                    "Cow give milk",
+                                    "Cow give milk"
+                                ],
+                                "ansC": 3
+                            },
+                            {
+                                "id": 22,
+                                "type": "listenStage2",
+                                "question": "You can ride a horse",
+                                "meanQuestion": "Bạn có thể cưỡi ngựa",
+                                "ans": [
+                                    "You can ride a horse",
+                                    "You can ride a duck",
+                                    "You can ride a pigeon",
+                                    "You can ride a chicken"
+                                ],
+                                "ansC": 1
+                            },
+                            {
+                                "id": 23,
+                                "type": "listenStage2",
+                                "question": "Rabbbit eat carrot",
+                                "meanQuestion": "Con thỏ ăn cà rốt",
+                                "ans": [
+                                    "Pigeon eat carrot",
+                                    "Rabbbit eat carrot",
+                                    "Snake eat carrot",
+                                    "Frog eat carrot"
+                                ],
+                                "ansC": 2
+                            },
+                            {
+                                "id": 24,
+                                "type": "listenStage2",
+                                "question": "Chicken lay eggs",
+                                "meanQuestion": "Con gà đẻ trứng",
+                                "ans": [
+                                    "Cow lay eggs",
+                                    "Sheep lay eggs",
+                                    "Horse lay eggs",
+                                    "Chicken lay eggs"
+                                ],
+                                "ansC": 4
+                            },
+                            {
+                                "id": 25,
+                                "type": "listenStage2",
+                                "question": "Pig has a curly tail and short legs",
+                                "meanQuestion": "Con heo có đuôi xoăn và chân ngắn",
+                                "ans": [
+                                    "Pig has a curly tail and short legs",
+                                    "Horse has a curly tail and short legs",
+                                    "Rabbit has a curly tail and short legs",
+                                    "Sheep has a curly tail and short legs"
+                                ],
+                                "ansC": 1
+                            },
+                            {
+                                "id": 26,
+                                "type": "listenStage2",
+                                "question": "Sheep provide us with wool",
+                                "meanQuestion": "Con cừu cho len",
+                                "ans": [
+                                    "Cow provide us with wool",
+                                    "Sheep provide us with wool",
+                                    "Chicken provide us with wool",
+                                    "Pig provide us with wool"
+                                ],
+                                "ansC": 2
+                            },
+                            {
+                                "id": 27,
+                                "type": "listenStage2",
+                                "question": "Some snakes are poisonous",
+                                "meanQuestion": "Một vài con rắn có độc",
+                                "ans": [
+                                    "Some pigeons are poisonous",
+                                    "Some sheeps are poisonous",
+                                    "Some snakes are poisonous",
+                                    "Some rabbits are poisonous"
+                                ],
+                                "ansC": 3
+                            },
+                            {
+                                "id": 28,
+                                "type": "listenStage2",
+                                "question": "Duck can swim and fly",
+                                "meanQuestion": "Con vịt có thể bơi và bay",
+                                "ans": [
+                                    "Duck can swim and fly",
+                                    "Frog can swim and fly",
+                                    "Horse can swim and fly",
+                                    "Chicken can swim and fly"
+                                ],
+                                "ansC": 1
+                            },
+                            {
+                                "id": 29,
+                                "type": "listenStage2",
+                                "question": "Feeding the pigeon in the park",
+                                "meanQuestion": "Cho con bồ câu ăn ở công viên",
+                                "ans": [
+                                    "Feeding the sheep in the park",
+                                    "Feeding the snake in the park",
+                                    "Feeding the horse in the park",
+                                    "Feeding the pigeon in the park"
+                                ],
+                                "ansC": 4
+                            },
+                            {
+                                "id": 30,
+                                "type": "readStage2",
+                                "question": "Frog can jump and lay eggs"
+                            },
+                            {
+                                "id": 31,
+                                "type": "readStage2",
+                                "question": "Cow give milk"
+                            },
+                            {
+                                "id": 32,
+                                "type": "readStage2",
+                                "question": "You can ride a horse"
+                            },
+                            {
+                                "id": 33,
+                                "type": "readStage2",
+                                "question": "Rabbbit eat carrot"
+                            },
+                            {
+                                "id": 34,
+                                "type": "readStage2",
+                                "question": "Chicken lay eggs"
+                            },
+                            {
+                                "id": 35,
+                                "type": "readStage2",
+                                "question": "Pig has a curly tail and short legs"
+                            },
+                            {
+                                "id": 36,
+                                "type": "readStage2",
+                                "question": "Sheep provide us with wool"
+                            },
+                            {
+                                "id": 37,
+                                "type": "readStage2",
+                                "question": "Some snakes are poisonous"
+                            },
+                            {
+                                "id": 38,
+                                "type": "readStage2",
+                                "question": "Duck can swim and fly"
+                            },
+                            {
+                                "id": 39,
+                                "type": "readStage2",
+                                "question": "Feeding the pigeon in the park"
                             }
                         ],
                         "unit": [
                             [
-                                1,
-                                2,
-                                3
+                                0,1,12,13,24,25,36,37
                             ],
                             [
-                                3,
-                                2,
-                                1
+                                2,3,14,15,26,27,38,39
+                            ],
+                            [
+                                4,5,16,17,28,29,30,31
+                            ],
+                            [
+                                6,7,18,19,20,21,32,33
+                            ],
+                            [
+                                8,9,10,11,22,23,34,35
                             ]
                         ]
                     },
@@ -1626,73 +2626,774 @@
                             {
                                 "id": 0,
                                 "type": "Pronounciacion",
+                                "describe": "Từ nào có âm tiết khác với các từ còn lại",
                                 "ans": [
-                                    "dog",
-                                    "cat",
-                                    "mouse",
-                                    "parrot"
+                                    "rabbit",
+                                    "chicken",
+                                    "pigeon",
+                                    "duck"
                                 ],
                                 "ansC": 4
                             },
                             {
                                 "id": 1,
-                                "type": "choiceMultiAnswer",
-                                "question": "Which animal can be your pet",
+                                "type": "Pronounciacion",
+                                "describe": "Từ nào có âm tiết khác với các từ còn lại",
                                 "ans": [
-                                    "dog",
-                                    "cat",
-                                    "parrot",
-                                    "fish",
-                                    "mouse"
+                                    "frog",
+                                    "rabbit",
+                                    "pigeon",
+                                    "chicken"
                                 ],
-                                "ansC": [
-                                    "dog",
-                                    "cat",
-                                    "mouse"
-                                ]
+                                "ansC": 1
                             },
                             {
                                 "id": 2,
-                                "type": "FillWordStage3",
-                                "question": "…, …, … and … can fly",
-                                "meanQuestion": "con ruồi, con chim, con vẹt và con ong biết bay",
+                                "type": "Pronounciacion",
+                                "describe": "Từ nào có âm tiết khác với các từ còn lại",
                                 "ans": [
-                                    "dog",
-                                    "cat",
-                                    "parrot",
-                                    "fish",
-                                    "mouse"
+                                    "sheep",
+                                    "pigeon",
+                                    "cow",
+                                    "snake"
                                 ],
-                                "ansC": [
-                                    "fly",
-                                    "bird",
-                                    "parrot",
-                                    "bee"
-                                ]
+                                "ansC": 2
                             },
                             {
                                 "id": 3,
-                                "type": "Grammar",
-                                "question": "There is … ant on your hand",
+                                "type": "Pronounciacion",
+                                "describe": "Từ nào có âm tiết khác với các từ còn lại",
                                 "ans": [
-                                    "a",
+                                    "chicken",
+                                    "pigeon",
+                                    "horse",
+                                    "rabbit"
+                                ],
+                                "ansC": 3
+                            },
+                            {
+                                "id": 4,
+                                "type": "Pronounciacion",
+                                "describe": "Từ nào có âm tiết khác với các từ còn lại",
+                                "ans": [
+                                    "pig",
+                                    "rabbit",
+                                    "cow",
+                                    "horse"
+                                ],
+                                "ansC": 2
+                            },
+                            {
+                                "id": 5,
+                                "type": "choiceMultiAnswer",
+                                "question": "Which animal meat that you eat in everyday meal",
+                                "meanQuestion": "Thịt con vật nào mà bạn ăn trong bữa ăn hàng ngày",
+                                "ans": [
+                                    "frog",
+                                    "cow",
+                                    "horse",
+                                    "rabbit",
+                                    "chicken",
+                                    "pig",
+                                    "sheep",
+                                    "snake",
+                                    "duck",
+                                    "pigeon"
+                                ],
+                                "ansC": [
+                                    "cow",
+                                    "chicken",
+                                    "pig",
+                                    "duck"
+                                ]
+                            },
+                            {
+                                "id": 6,
+                                "type": "choiceMultiAnswer",
+                                "question": "Which animal live in farm",
+                                "meanQuestion": "Con vật nào sống trong trang trại",
+                                "ans": [
+                                    "frog",
+                                    "cow",
+                                    "horse",
+                                    "rabbit",
+                                    "chicken",
+                                    "pig",
+                                    "sheep",
+                                    "snake",
+                                    "duck",
+                                    "pigeon"
+                                ],
+                                "ansC": [
+                                    "cow",
+                                    "horse",
+                                    "chicken",
+                                    "pig",
+                                    "sheep",
+                                    "duck"
+                                ]
+                            },
+                            {
+                                "id": 7,
+                                "type": "choiceMultiAnswer",
+                                "question": "Which animal can jump high",
+                                "meanQuestion": "Con vật nào có thể nhảy cao",
+                                "ans": [
+                                    "frog",
+                                    "cow",
+                                    "horse",
+                                    "rabbit",
+                                    "chicken",
+                                    "pig",
+                                    "sheep",
+                                    "snake",
+                                    "duck",
+                                    "pigeon"
+                                ],
+                                "ansC": [
+                                    "frog",
+                                    "rabbit"
+                                ]
+                            },
+                            {
+                                "id": 8,
+                                "type": "choiceMultiAnswer",
+                                "question": "Which animal is a wild animal",
+                                "meanQuestion": "Con vật nào là động vật hoang dã",
+                                "ans": [
+                                    "frog",
+                                    "cow",
+                                    "horse",
+                                    "rabbit",
+                                    "chicken",
+                                    "pig",
+                                    "sheep",
+                                    "snake",
+                                    "duck",
+                                    "pigeon"
+                                ],
+                                "ansC": [
+                                    "frog",
+                                    "rabbit",
+                                    "snake",
+                                    "pigeon"
+                                ]
+                            },
+                            {
+                                "id": 9,
+                                "type": "choiceMultiAnswer",
+                                "question": "Which animal is poisonous",
+                                "meanQuestion": "Con vật nào có độc",
+                                "ans": [
+                                    "frog",
+                                    "cow",
+                                    "horse",
+                                    "rabbit",
+                                    "chicken",
+                                    "pig",
+                                    "sheep",
+                                    "snake",
+                                    "duck",
+                                    "pigeon"
+                                ],
+                                "ansC": [
+                                    "frog",
+                                    "snake"
+                                ]
+                            },
+                            {
+                                "id": 10,
+                                "type": "FillWordStage3",
+                                "question": "Farm animal are: ..., ..., ..., ..., ..., ...",
+                                "meanQuestion": "Động vật trang trại là: con bò, con ngựa, con heo, con gà, con vịt, con cừu",
+                                "ans": [
+                                    "frog",
+                                    "cow",
+                                    "horse",
+                                    "rabbit",
+                                    "chicken",
+                                    "pig",
+                                    "sheep",
+                                    "snake",
+                                    "duck",
+                                    "pigeon"
+                                ],
+                                "ansC": [
+                                    "cow",
+                                    "horse",
+                                    "pig",
+                                    "chicken",
+                                    "duck",
+                                    "sheep"
+                                ]
+                            },
+                            {
+                                "id": 11,
+                                "type": "FillWordStage3",
+                                "question": "Wild animal are: ..., ..., ..., ...",
+                                "meanQuestion": "Động vật hoang dã là: con ếch, con thỏ, con rắn, bồ câu",
+                                "ans": [
+                                    "frog",
+                                    "cow",
+                                    "horse",
+                                    "rabbit",
+                                    "chicken",
+                                    "pig",
+                                    "sheep",
+                                    "snake",
+                                    "duck",
+                                    "pigeon"
+                                ],
+                                "ansC": [
+                                    "frog",
+                                    "rabbit",
+                                    "snake",
+                                    "pigeon"
+                                ]
+                            },
+                            {
+                                "id": 12,
+                                "type": "FillWordStage3",
+                                "question": "... and ... live near the lake ",
+                                "meanQuestion": "con ếch và con vịt sống gần hồ",
+                                "ans": [
+                                    "frog",
+                                    "cow",
+                                    "horse",
+                                    "rabbit",
+                                    "chicken",
+                                    "pig",
+                                    "sheep",
+                                    "snake",
+                                    "duck",
+                                    "pigeon"
+                                ],
+                                "ansC": [
+                                    "frog",
+                                    "duck"
+                                ]
+                            },
+                            {
+                                "id": 13,
+                                "type": "FillWordStage3",
+                                "question": "Some ... and ... are poisonous ",
+                                "meanQuestion": "Một vài con rắn và con ếch có độc",
+                                "ans": [
+                                    "frog",
+                                    "cow",
+                                    "horse",
+                                    "rabbit",
+                                    "chicken",
+                                    "pig",
+                                    "sheep",
+                                    "snake",
+                                    "duck",
+                                    "pigeon"
+                                ],
+                                "ansC": [
+                                    "snake",
+                                    "frog"
+                                ]
+                            },
+                            {
+                                "id": 14,
+                                "type": "FillWordStage3",
+                                "question": "... can eat ..., ..., ..., ..., ...",
+                                "meanQuestion": "Con rắn có thể ăn được con ếch, con thỏ, con gà, con vịt, bồ câu",
+                                "ans": [
+                                    "frog",
+                                    "cow",
+                                    "horse",
+                                    "rabbit",
+                                    "chicken",
+                                    "pig",
+                                    "sheep",
+                                    "snake",
+                                    "duck",
+                                    "pigeon"
+                                ],
+                                "ansC": [
+                                    "snake",
+                                    "frog",
+                                    "rabbit",
+                                    "chicken",
+                                    "duck",
+                                    "pigeon"
+                                ]
+                            },
+                            {
+                                "id": 15,
+                                "type": "Grammar",
+                                "question": "How ... chickens and ducks in your yard?",
+                                "ans": [
+                                    "much",
                                     "an",
+                                    "are",
+                                    "many"
+                                ],
+                                "ansC": 4
+                            },
+                            {
+                                "id": 16,
+                                "type": "Grammar",
+                                "question": "How ... sheeps and horses in your yard?",
+                                "ans": [
+                                    "much",
+                                    "an",
+                                    "are",
+                                    "many"
+                                ],
+                                "ansC": 4
+                            },
+                            {
+                                "id": 17,
+                                "type": "Grammar",
+                                "question": "How ... frogs and cows in your yard?",
+                                "ans": [
+                                    "much",
+                                    "an",
+                                    "are",
+                                    "many"
+                                ],
+                                "ansC": 4
+                            },
+                            {
+                                "id": 18,
+                                "type": "Grammar",
+                                "question": "How ... rabbbits and pigs in your yard?",
+                                "ans": [
+                                    "much",
+                                    "an",
+                                    "are",
+                                    "many"
+                                ],
+                                "ansC": 4
+                            },
+                            {
+                                "id": 19,
+                                "type": "Grammar",
+                                "question": "How ... ducks and pigeons in your yard?",
+                                "ans": [
+                                    "much",
+                                    "an",
+                                    "are",
+                                    "many"
+                                ],
+                                "ansC": 4
+                            },
+                            {
+                                "id": 20,
+                                "type": "Grammar",
+                                "question": "There ... two frogs inside my house",
+                                "ans": [
+                                    "is",
+                                    "are",
+                                    "a",
+                                    "any"
+                                ],
+                                "ansC": 2
+                            },
+                            {
+                                "id": 21,
+                                "type": "Grammar",
+                                "question": "There ... two snakes inside my house",
+                                "ans": [
+                                    "is",
+                                    "are",
+                                    "a",
+                                    "any"
+                                ],
+                                "ansC": 2
+                            },
+                            {
+                                "id": 22,
+                                "type": "Grammar",
+                                "question": "There ... two pigeons inside my house",
+                                "ans": [
+                                    "is",
+                                    "are",
+                                    "a",
+                                    "any"
+                                ],
+                                "ansC": 2
+                            },
+                            {
+                                "id": 23,
+                                "type": "Grammar",
+                                "question": "There ... two ducks inside my house",
+                                "ans": [
+                                    "is",
+                                    "are",
+                                    "a",
+                                    "any"
+                                ],
+                                "ansC": 2
+                            },
+                            {
+                                "id": 24,
+                                "type": "Grammar",
+                                "question": "There ... two chickens inside my house",
+                                "ans": [
+                                    "is",
+                                    "are",
+                                    "a",
+                                    "any"
+                                ],
+                                "ansC": 2
+                            },
+                            {
+                                "id": 25,
+                                "type": "Grammar",
+                                "question": "... snakes are poisonous",
+                                "ans": [
+                                    "have",
+                                    "are",
+                                    "an",
+                                    "some"
+                                ],
+                                "ansC": 4
+                            },
+                            {
+                                "id": 26,
+                                "type": "Grammar",
+                                "question": "... frogs are poisonous",
+                                "ans": [
+                                    "have",
+                                    "are",
+                                    "an",
+                                    "some"
+                                ],
+                                "ansC": 4
+                            },
+                            {
+                                "id": 27,
+                                "type": "Grammar",
+                                "question": "Do you have ... food for my chicken?",
+                                "ans": [
+                                    "have",
+                                    "are",
+                                    "an",
+                                    "some"
+                                ],
+                                "ansC": 4
+                            },
+                            {
+                                "id": 28,
+                                "type": "Grammar",
+                                "question": "Do you have ... food for my duck?",
+                                "ans": [
+                                    "have",
+                                    "are",
+                                    "an",
+                                    "some"
+                                ],
+                                "ansC": 4
+                            },
+                            {
+                                "id": 29,
+                                "type": "Grammar",
+                                "question": "Do you have ... food for my rabbit?",
+                                "ans": [
+                                    "have",
+                                    "are",
+                                    "an",
+                                    "some"
+                                ],
+                                "ansC": 4
+                            },
+                            {
+                                "id": 30,
+                                "type": "Grammar",
+                                "question": "How ... is this chicken",
+                                "ans": [
+                                    "that",
+                                    "am",
                                     "is",
                                     "are"
                                 ],
+                                "ansC": 3
+                            },
+                            {
+                                "id": 31,
+                                "type": "Grammar",
+                                "question": "How ... is this duck",
+                                "ans": [
+                                    "that",
+                                    "am",
+                                    "is",
+                                    "are"
+                                ],
+                                "ansC": 3
+                            },
+                            {
+                                "id": 32,
+                                "type": "Grammar",
+                                "question": "How ... is this pig",
+                                "ans": [
+                                    "that",
+                                    "am",
+                                    "is",
+                                    "are"
+                                ],
+                                "ansC": 3
+                            },
+                            {
+                                "id": 33,
+                                "type": "Grammar",
+                                "question": "How ... is this cow",
+                                "ans": [
+                                    "that",
+                                    "am",
+                                    "is",
+                                    "are"
+                                ],
+                                "ansC": 3
+                            },
+                            {
+                                "id": 34,
+                                "type": "Grammar",
+                                "question": "How ... is this horse",
+                                "ans": [
+                                    "that",
+                                    "am",
+                                    "is",
+                                    "are"
+                                ],
+                                "ansC": 3
+                            },
+                            {
+                                "id": 35,
+                                "type": "FillWord",
+                                "question": "... can jump and lay eggs",
+                                "meanQuestion": "Con ếch có thể nhảy và đẻ trứng",
+                                "ans": [
+                                    "cow",
+                                    "frog",
+                                    "pig",
+                                    "chicken"
+                                ],
                                 "ansC": 2
+                            },
+                            {
+                                "id": 36,
+                                "type": "FillWord",
+                                "question": "... give milk",
+                                "meanQuestion": "Con bò cho sữa",
+                                "ans": [
+                                    "cow",
+                                    "frog",
+                                    "snake",
+                                    "chicken"
+                                ],
+                                "ansC": 1
+                            },
+                            {
+                                "id": 37,
+                                "type": "FillWord",
+                                "question": "You can ride a ...",
+                                "meanQuestion": "Bạn có thể cưỡi ngựa",
+                                "ans": [
+                                    "duck",
+                                    "frog",
+                                    "rabbit",
+                                    "horse"
+                                ],
+                                "ansC": 4
+                            },
+                            {
+                                "id": 38,
+                                "type": "FillWord",
+                                "question": "... eat carrot",
+                                "meanQuestion": "Con thỏ ăn cà rốt",
+                                "ans": [
+                                    "rabbit",
+                                    "frog",
+                                    "snake",
+                                    "pigeon"
+                                ],
+                                "ansC": 1
+                                
+                            },
+                            {
+                                "id": 39,
+                                "type": "FillWord",
+                                "question": "... lay eggs",
+                                "meanQuestion": "Con gà đẻ trứng",
+                                "ans": [
+                                    "cow",
+                                    "sheep",
+                                    "chicken",
+                                    "rabbit"
+                                ],
+                                "ansC": 3
+                            },
+                            {
+                                "id": 40,
+                                "type": "translate",
+                                "question": "Pig has a curly tail and short legs",
+                                "ans": [
+                                    "Con heo có đuôi xoăn và chân ngắn",
+                                    "Con ngựa có đuôi xoăn và chân ngắn",
+                                    "Con thỏ có đuôi xoăn và chân ngắn",
+                                    "Con cừu có đuôi xoăn và chân ngắn"
+                                ],
+                                "ansC": 1
+                            },
+                            {
+                                "id": 41,
+                                "type": "translate",
+                                "question": "Sheep provide us with wool",
+                                "ans": [
+                                    "Con bò cho len",
+                                    "Con cừu cho len",
+                                    "Con gà cho len",
+                                    "Con heo cho len"
+                                ],
+                                "ansC": 2
+                            },
+                            {
+                                "id": 42,
+                                "type": "translate",
+                                "question": "Some snakes are poisonous",
+                                "ans": [
+                                    "Một vài con bồ câu có độc",
+                                    "Một vài con cừu có độc",
+                                    "Một vài con rắn có độc",
+                                    "Một vài con thỏ có độc"
+                                ],
+                                "ansC": 3
+                            },
+                            {
+                                "id": 43,
+                                "type": "translate",
+                                "question": "Duck can swim and fly",
+                                "ans": [
+                                    "Con vịt có thể bơi và bay",
+                                    "Con ếch có thể bơi và bay",
+                                    "Con ngựa có thể bơi và bay",
+                                    "Con gà có thể bơi và bay"
+                                ],
+                                "ansC": 1
+                            },
+                            {
+                                "id": 44,
+                                "type": "translate",
+                                "question": "Feeding the pigeon in the park",
+                                "ans": [
+                                    "Cho con cừu câu ăn ở công viên",
+                                    "Cho con rắn câu ăn ở công viên",
+                                    "Cho con ngựa ăn ở công viên",
+                                    "Cho con bồ câu ăn ở công viên"
+                                ],
+                                "ansC": 4
+                            },
+                            {
+                                "id": 45,
+                                "type": "listenStage3",
+                                "question": "Rabbbit eat carrot",
+                                "meanQuestion": "Con thỏ ăn cà rốt",
+                                "ans": [
+                                    "Pigeon eat carrot",
+                                    "Rabbbit eat carrot",
+                                    "Snake eat carrot",
+                                    "Frog eat carrot"
+                                ],
+                                "ansC": 2
+                            },
+                            {
+                                "id": 46,
+                                "type": "listenStage3",
+                                "question": "Chicken lay eggs",
+                                "meanQuestion": "Con gà đẻ trứng",
+                                "ans": [
+                                    "Cow lay eggs",
+                                    "Sheep lay eggs",
+                                    "Horse lay eggs",
+                                    "Chicken lay eggs"
+                                ],
+                                "ansC": 4
+                            },
+                            {
+                                "id": 47,
+                                "type": "listenStage3",
+                                "question": "Pig has a curly tail and short legs",
+                                "meanQuestion": "Con heo có đuôi xoăn và chân ngắn",
+                                "ans": [
+                                    "Pig has a curly tail and short legs",
+                                    "Horse has a curly tail and short legs",
+                                    "Rabbit has a curly tail and short legs",
+                                    "Sheep has a curly tail and short legs"
+                                ],
+                                "ansC": 1
+                            },
+                            {
+                                "id": 48,
+                                "type": "listenStage3",
+                                "question": "Sheep provide us with wool",
+                                "meanQuestion": "Con cừu cho len",
+                                "ans": [
+                                    "Cow provide us with wool",
+                                    "Sheep provide us with wool",
+                                    "Chicken provide us with wool",
+                                    "Pig provide us with wool"
+                                ],
+                                "ansC": 2
+                            },
+                            {
+                                "id": 49,
+                                "type": "listenStage3",
+                                "question": "Some snakes are poisonous",
+                                "meanQuestion": "Một vài con rắn có độc",
+                                "ans": [
+                                    "Some pigeons are poisonous",
+                                    "Some sheeps are poisonous",
+                                    "Some snakes are poisonous",
+                                    "Some rabbits are poisonous"
+                                ],
+                                "ansC": 3
+                            },
+                            {
+                                "id": 50,
+                                "type": "readStage3",
+                                "question": "Duck can swim and fly"
+                            },
+                            {
+                                "id": 51,
+                                "type": "readStage3",
+                                "question": "Feeding the pigeon in the park"
+                            },
+                            {
+                                "id": 52,
+                                "type": "readStage3",
+                                "question": "Frog can jump and lay eggs"
+                            },
+                            {
+                                "id": 53,
+                                "type": "readStage3",
+                                "question": "Cow give milk"
+                            },
+                            {
+                                "id": 54,
+                                "type": "readStage3",
+                                "question": "You can ride a horse"
                             }
+                            
                         ],
                         "unit": [
                             [
-                                1,
-                                2,
-                                3
+                                0,5,10,15,20,25,30,35,40,45,50
                             ],
                             [
-                                3,
-                                2,
-                                1
+                                1,6,11,16,21,26,31,36,41,46,51
+                            ],
+                            [
+                                2,7,12,17,22,27,32,37,42,47,52
+                            ],
+                            [
+                                3,8,13,18,23,28,33,38,43,48,53
+                            ],
+                            [
+                                4,9,14,19,24,29,34,39,44,49,54
                             ]
                         ]
                     }
@@ -1712,56 +3413,441 @@
                             {
                                 "id": 0,
                                 "type": "4image",
-                                "question": "đâu là \"con chó\"",
+                                "question": "đâu là \"con voi\"",
                                 "ans": [
-                                    "cat",
-                                    "dog",
-                                    "ant",
-                                    "fish"
+                                    "tiger",
+                                    "elephant",
+                                    "lion",
+                                    "whale"
                                 ],
                                 "ansC": 2
                             },
                             {
                                 "id": 1,
-                                "type": "4vocabulary",
-                                "question": "dịch \"con chó\"",
+                                "type": "4image",
+                                "question": "đâu là \"con hổ\"",
                                 "ans": [
-                                    "cat",
-                                    "dog",
-                                    "ant",
-                                    "fish"
+                                    "tiger",
+                                    "whale",
+                                    "lion",
+                                    "elephant"
+                                ],
+                                "ansC": 1
+                            },
+                            {
+                                "id": 2,
+                                "type": "4image",
+                                "question": "đâu là \"con sư tử\"",
+                                "ans": [
+                                    "elephant",
+                                    "tiger",                                    
+                                    "whale",
+                                    "lion"
+                                ],
+                                "ansC": 4
+                            },
+                            {
+                                "id": 3,
+                                "type": "4image",
+                                "question": "đâu là \"con cá voi\"",
+                                "ans": [
+                                    "elephant",
+                                    "whale",
+                                    "lion",
+                                    "tiger"
                                 ],
                                 "ansC": 2
                             },
                             {
-                                "id": 2,
-                                "type": "listen",
-                                "question": "dog",
-                                "meanQuestion": "con chó",
+                                "id": 4,
+                                "type": "4image",
+                                "question": "dịch \"con sói\"",
                                 "ans": [
-                                    "cat",
-                                    "dog",
-                                    "ant",
-                                    "fish"
-                                ]
+                                    "lion",
+                                    "monkey",
+                                    "wolf",
+                                    "whale"
+                                ],
+                                "ansC": 3
                             },
                             {
-                                "id": 3,
+                                "id": 5,
+                                "type": "4image",
+                                "question": "dịch \"con khỉ\"",
+                                "ans": [
+                                    "monkey",
+                                    "tiger",
+                                    "whale",
+                                    "lion"
+                                ],
+                                "ansC": 1
+                            },
+                            {
+                                "id": 6,
+                                "type": "4image",
+                                "question": "đâu là \"con sóc\"",
+                                "ans": [
+                                    "squirrel",
+                                    "leopard",
+                                    "lion",
+                                    "monkey"
+                                ],
+                                "ansC": 1
+                            },
+                            {
+                                "id": 7,
+                                "type": "4image",
+                                "question": "đâu là \"con báo\"",
+                                "ans": [
+                                    "zebra",
+                                    "whale",
+                                    "leopard",
+                                    "giraffe"
+                                ],
+                                "ansC": 3
+                            },
+                            {
+                                "id": 8,
+                                "type": "4image",
+                                "question": "đâu là \"con hươu cao cổ\"",
+                                "ans": [
+                                    "leopard",
+                                    "giraffe",                                    
+                                    "zebra",
+                                    "squirrel"
+                                ],
+                                "ansC": 2
+                            },
+                            {
+                                "id": 9,
+                                "type": "4image",
+                                "question": "đâu là \"con ngựa vằn\"",
+                                "ans": [
+                                    "giraffe",
+                                    "squirrek",
+                                    "lion",
+                                    "zebra"
+                                ],
+                                "ansC": 4
+                            },
+                            {
+                                "id": 10,
+                                "type": "4vocabulary",
+                                "question": "dịch \"con khỉ\"",
+                                "ans": [
+                                    "tiger",
+                                    "monkey",
+                                    "lion",
+                                    "whale"
+                                ],
+                                "ansC": 2
+                            },
+                            {
+                                "id": 11,
+                                "type": "4vocabulary",
+                                "question": "dịch \"con sói\"",
+                                "ans": [
+                                    "wolf",
+                                    "monkey",
+                                    "lion",
+                                    "whale"
+                                ],
+                                "ansC": 1
+                            },
+                            {
+                                "id": 12,
+                                "type": "4vocabulary",
+                                "question": "dịch \"con sư tử\"",
+                                "ans": [
+                                    "tiger",
+                                    "whale",
+                                    "lion",
+                                    "elephant"
+                                ],
+                                "ansC": 3
+                            },
+                            {
+                                "id": 13,
+                                "type": "4vocabulary",
+                                "question": "dịch \"con cá voi\"",
+                                "ans": [
+                                    "monkey",
+                                    "elephant",
+                                    "wolf",
+                                    "whale"
+                                ],
+                                "ansC": 4
+                            },
+                            {
+                                "id": 14,
+                                "type": "4vocabulary",
+                                "question": "dịch \"con ngựa vằn\"",
+                                "ans": [
+                                    "zebra",
+                                    "leopard",
+                                    "giraffe",                                    
+                                    "squirrel"
+                                ],
+                                "ansC": 3
+                            },
+                            {
+                                "id": 15,
+                                "type": "4vocabulary",
+                                "question": "dịch \"con hươu cao cổ\"",
+                                "ans": [
+                                    "squirrel",
+                                    "leopard",
+                                    "giraffe",
+                                    "monkey"
+                                ],
+                                "ansC": 3
+                            },
+                            {
+                                "id": 16,
+                                "type": "4vocabulary",
+                                "question": "dịch \"con sóc\"",
+                                "ans": [
+                                    "giraffe",
+                                    "squirrel",
+                                    "lion",
+                                    "zebra"
+                                ],
+                                "ansC": 2
+                            },
+                            {
+                                "id": 17,
+                                "type": "4vocabulary",
+                                "question": "dịch \"con báo\"",
+                                "ans": [
+                                    "zebra",
+                                    "whale",
+                                    "giraffe",
+                                    "leopard"
+                                ],
+                                "ansC": 4
+                            },
+                            {
+                                "id": 18,
+                                "type": "4vocabulary",
+                                "question": "dịch \"con voi\"",
+                                "ans": [
+                                    "giraffe",
+                                    "squirrel",
+                                    "lion",
+                                    "elephant"
+                                ],
+                                "ansC": 4
+                            },
+                            {
+                                "id": 19,
+                                "type": "4vocabulary",
+                                "question": "dịch \"con hổ\"",
+                                "ans": [
+                                    "zebra",
+                                    "whale",
+                                    "tiger",
+                                    "leopard"
+                                ],
+                                "ansC": 3
+                            },
+                            {
+                                "id": 20,
+                                "type": "listen",
+                                "question": "lion",
+                                "meanQuestion": "con sư tử",
+                                "ans": [
+                                    "wolf",
+                                    "monkey",
+                                    "elephant",
+                                    "lion"
+                                ],
+                                "ansC": 4
+                            },
+                            {
+                                "id": 21,
+                                "type": "listen",
+                                "question": "tiger",
+                                "meanQuestion": "con hổ",
+                                "ans": [
+                                    "monkey",
+                                    "tiger",
+                                    "lion",
+                                    "whale"
+                                ],
+                                "ansC": 1
+                            },
+                            {
+                                "id": 22,
+                                "type": "listen",
+                                "question": "zebra",
+                                "meanQuestion": "con ngựa vằn",
+                                "ans": [
+                                    "wolf",
+                                    "monkey",
+                                    "elephant",
+                                    "zebra"
+                                ],
+                                "ansC": 4
+                            },
+                            {
+                                "id": 23,
+                                "type": "listen",
+                                "question": "giraffe",
+                                "meanQuestion": "con hươu cao cổ",
+                                "ans": [
+                                    "monkey",
+                                    "giraffe",
+                                    "lion",
+                                    "whale"
+                                ],
+                                "ansC": 2
+                            },
+                            {
+                                "id": 24,
+                                "type": "listen",
+                                "question": "elephant",
+                                "meanQuestion": "con voi",
+                                "ans": [
+                                    "whale",
+                                    "monkey",
+                                    "elephant",
+                                    "lion"
+                                ],
+                                "ansC": 3
+                            },
+                            {
+                                "id": 25,
+                                "type": "listen",
+                                "question": "wolf",
+                                "meanQuestion": "con sói",
+                                "ans": [
+                                    "wolf",
+                                    "tiger",
+                                    "lion",
+                                    "whale"
+                                ],
+                                "ansC": 1
+                            },
+                            {
+                                "id": 26,
+                                "type": "listen",
+                                "question": "whale",
+                                "meanQuestion": "con cá voi",
+                                "ans": [
+                                    "wolf",
+                                    "monkey",
+                                    "elephant",
+                                    "whale"
+                                ],
+                                "ansC": 4
+                            },
+                            {
+                                "id": 27,
+                                "type": "listen",
+                                "question": "monkey",
+                                "meanQuestion": "con khỉ",
+                                "ans": [
+                                    "zebra",
+                                    "monkey",
+                                    "tiger",
+                                    "whale"
+                                ],
+                                "ansC": 2
+                            },
+                            {
+                                "id": 28,
+                                "type": "listen",
+                                "question": "squirrel",
+                                "meanQuestion": "con sóc",
+                                "ans": [
+                                    "wolf",
+                                    "monkey",
+                                    "squirrel",
+                                    "zebra"
+                                ],
+                                "ansC": 3
+                            },
+                            {
+                                "id": 29,
+                                "type": "listen",
+                                "question": "leopard",
+                                "meanQuestion": "con báo",
+                                "ans": [
+                                    "monkey",
+                                    "giraffe",
+                                    "tiger",
+                                    "leopard"
+                                ],
+                                "ansC": 4
+                            },
+                            {
+                                "id": 30,
                                 "type": "read",
-                                "question": "dog"
+                                "question": "wolf"
+                            },
+                            {
+                                "id": 31,
+                                "type": "read",
+                                "question": "whale"
+                            },
+                            {
+                                "id": 32,
+                                "type": "read",
+                                "question": "leopard"
+                            },
+                            {
+                                "id": 33,
+                                "type": "read",
+                                "question": "squirrel"
+                            },
+                            {
+                                "id": 34,
+                                "type": "read",
+                                "question": "elephant"
+                            },
+                            {
+                                "id": 35,
+                                "type": "read",
+                                "question": "lion"
+                            },
+                            {
+                                "id": 36,
+                                "type": "read",
+                                "question": "monkey"
+                            },
+                            {
+                                "id": 37,
+                                "type": "read",
+                                "question": "tiger"
+                            },
+                            {
+                                "id": 38,
+                                "type": "read",
+                                "question": "giraffe"
+                            },
+                            {
+                                "id": 39,
+                                "type": "read",
+                                "question": "zebra"
                             }
                         ],
                         "unit": [
                             [
-                                1,
-                                2,
-                                3
+                                0,1,2,3,4,5,6,7,8,9,10,11,20,21,30,31
                             ],
                             [
-                                3,
-                                2,
-                                1
+                                9,7,5,3,1,8,6,4,2,0,12,13,22,23,32,33
+                            ],
+                            [
+                                8,6,4,2,0,9,7,5,3,1,14,15,24,25,34,35
+                            ],
+                            [
+                                2,3,6,7,0,1,4,5,8,9,16,17,26,27,36,37
+                            ],
+                            [
+                                9,8,7,6,5,4,3,2,1,0,18,19,28,29,38,39
                             ]
+                            
                         ]
                     },
                     "stage2": {
@@ -1769,57 +3855,450 @@
                             {
                                 "id": 0,
                                 "type": "FillWord",
-                                "question": "Take your … for a walk",
-                                "meanQuestion": "Dắt chó của bạn đi dạo",
+                                "question": "An ... has a long nose",
+                                "meanQuestion": "Con voi có cái mũi dài",
                                 "ans": [
-                                    "cat",
-                                    "dog",
-                                    "mouse",
-                                    "fish"
+                                    "giraffe",
+                                    "elephant",
+                                    "whale",
+                                    "wolf"
                                 ],
                                 "ansC": 2
                             },
                             {
                                 "id": 1,
-                                "type": "translate",
-                                "question": "The ant eating candy",
+                                "type": "FillWord",
+                                "question": "... have stripes",
+                                "meanQuestion": "Con hổ có sọc vằn",
                                 "ans": [
-                                    "con kiến đang ăn kẹo",
-                                    "con chim đang ăn kẹo",
-                                    "con cua đang ăn kẹo",
-                                    "con vẹt đang ăn kẹo"
+                                    "tiger",
+                                    "squirrel",
+                                    "monkey",
+                                    "leopard"
                                 ],
                                 "ansC": 1
                             },
                             {
                                 "id": 2,
-                                "type": "listenStage2",
-                                "question": "The ant eating candy",
-                                "meanQuestion": "con kiến đang ăn kẹo",
+                                "type": "FillWord",
+                                "question": "The ... is the king of beasts",
+                                "meanQuestion": "Con sư tử là vua của các loài thú",
                                 "ans": [
-                                    "The ant eating candy",
-                                    "dog",
-                                    "ant",
-                                    "fish"
+                                    "monkey",
+                                    "wolf",
+                                    "whale",
+                                    "lion"
+                                ],
+                                "ansC": 4
+                            },
+                            {
+                                "id": 3,
+                                "type": "FillWord",
+                                "question": "The ... is howling at the full moon",
+                                "meanQuestion": "Con sói hú vào lúc trăng tròn",
+                                "ans": [
+                                    "wolf",
+                                    "zebra",
+                                    "giraffe",
+                                    "squirrel"
+                                ],
+                                "ansC": 1
+                                
+                            },
+                            {
+                                "id": 4,
+                                "type": "FillWord",
+                                "question": "... is the biggest animal",
+                                "meanQuestion": "Con cá voi là loài động vật lớn nhất",
+                                "ans": [
+                                    "tiger",
+                                    "elephant",
+                                    "whale",
+                                    "giraffe"
+                                ],
+                                "ansC": 3
+                            },
+                            {
+                                "id": 5,
+                                "type": "FillWord",
+                                "question": "... eat banana",
+                                "meanQuestion": "Con khỉ ăn chuối",
+                                "ans": [
+                                    "tiger",
+                                    "leopard",
+                                    "monkey",
+                                    "whale"
+                                ],
+                                "ansC": 3
+                            },
+                            {
+                                "id": 6,
+                                "type": "FillWord",
+                                "question": "... eat chestnut and can climb tree",
+                                "meanQuestion": "Con sóc ăn hạt dẻ và có thể leo cây",
+                                "ans": [
+                                    "leopard",
+                                    "squirrel",
+                                    "giraffe",
+                                    "zebra"
+                                ],
+                                "ansC": 2
+                            },
+                            {
+                                "id": 7,
+                                "type": "FillWord",
+                                "question": "... have spots",
+                                "meanQuestion": "Con báo có đốm",
+                                "ans": [
+                                    "lion",
+                                    "elephant",
+                                    "whale",
+                                    "leopard"
+                                ],
+                                "ansC": 4
+                            },
+                            {
+                                "id": 8,
+                                "type": "FillWord",
+                                "question": "... is the tallest animal",
+                                "meanQuestion": "Con hươu cao cổ là loài động vật cao nhất",
+                                "ans": [
+                                    "zebra",
+                                    "elephant",
+                                    "giraffe",
+                                    "tiger"
+                                ],
+                                "ansC": 3
+                            },
+                            {
+                                "id": 9,
+                                "type": "FillWord",
+                                "question": "... have stripes and eat grass",
+                                "meanQuestion": "Con ngựa vằn có sọc vằn và ăn cỏ",
+                                "ans": [
+                                    "leopard",
+                                    "zebra",
+                                    "monkey",
+                                    "whale"
+                                ],
+                                "ansC": 2
+                            },
+                            {
+                                "id": 10,
+                                "type": "translate",
+                                "question": "An elephant has a long nose",
+                                "ans": [
+                                    "Con báo có cái mũi dài",
+                                    "Con sóc có cái mũi dài",
+                                    "Con hươu cao cổ có cái mũi dài",
+                                    "Con voi có cái mũi dài"
+                                ],
+                                "ansC": 4
+                            },
+                            {
+                                "id": 11,
+                                "type": "translate",
+                                "question": "Tiger have stripes",
+                                "ans": [
+                                    "Con khỉ có sọc",
+                                    "Con sư tử có sọc",
+                                    "Con hổ có sọc",
+                                    "Con sói có sọc"
+                                ],
+                                "ansC": 3
+                            },
+                            {
+                                "id": 12,
+                                "type": "translate",
+                                "question": "The lion is the king of beasts",
+                                "ans": [
+                                    "Con sư tử là vua của các loài thú",
+                                    "Con sói là vua của các loài thú",
+                                    "Con sóc là vua của các loài thú",
+                                    "Con ngựa vằn là vua của các loài thú"
                                 ],
                                 "ansC": 1
                             },
                             {
-                                "id": 3,
-                                "type": "read",
-                                "question": "The ant eating candy"
+                                "id": 13,
+                                "type": "translate",
+                                "question": "The wolf is howling at the full moon",
+                                "ans": [
+                                    "Con cá voi hú vào lúc trăng tròn",
+                                    "Con sói hú vào lúc trăng tròn",
+                                    "Con báo hú vào lúc trăng tròn",
+                                    "Con sóc hú vào lúc trăng tròn"
+                                ],
+                                "ansC": 2
+                            },
+                            {
+                                "id": 14,
+                                "type": "translate",
+                                "question": "Whale is the biggest animal",
+                                "ans": [
+                                    "Con ngựa vằn là loài động vật lớn nhất",
+                                    "Con khỉ là loài động vật lớn nhất",
+                                    "Con voi là loài động vật lớn nhất",
+                                    "Con cá voi là loài động vật lớn nhất"
+                                ],
+                                "ansC": 4
+                            },
+                            {
+                                "id": 15,
+                                "type": "translate",
+                                "question": "Monkey eat banana",
+                                "ans": [
+                                    "Con khỉ ăn chuối",
+                                    "Con hổ ăn chuối",
+                                    "Con cá voi ăn chuối",
+                                    "Con sóc ăn chuối"
+                                ],
+                                "ansC": 1
+                            },
+                            {
+                                "id": 16,
+                                "type": "translate",
+                                "question": "Squirrels eat chestnut and can climb tree",
+                                "ans": [
+                                    "Con hươu cao cổ ăn hạt dẻ và có thể leo cây",
+                                    "Con sóc ăn hạt dẻ và có thể leo cây",
+                                    "Con voi ăn hạt dẻ và có thể leo cây",
+                                    "Con hổ ăn hạt dẻ và có thể leo cây"
+                                ],
+                                "ansC": 2
+                            },
+                            {
+                                "id": 17,
+                                "type": "translate",
+                                "question": "Leopard have spots",
+                                "ans": [
+                                    "Con ngựa vằn có đốm",
+                                    "Con cá voi có đốm",
+                                    "Con báo có đốm",
+                                    "Con sư tử có đốm"
+                                ],
+                                "ansC": 3
+                            },
+                            {
+                                "id": 18,
+                                "type": "translate",
+                                "question": "Giraffe is the tallest animal",
+                                "ans": [
+                                    "Con hươu cao cổ là loài động vật cao nhất",
+                                    "Con cá voi là loài động vật cao nhất",
+                                    "Con hổ là loài động vật cao nhất",
+                                    "Con voi là loài động vật cao nhất"
+                                ],
+                                "ansC": 1
+                            },
+                            {
+                                "id": 19,
+                                "type": "translate",
+                                "question": "Zebra have stripes and eat grass",
+                                "ans": [
+                                    "Con sư tử có sọc vằn và ăn cỏ",
+                                    "Con sóc có sọc vằn và ăn cỏ",
+                                    "Con báo có sọc vằn và ăn cỏ",
+                                    "Con ngựa vằn có sọc vằn và ăn cỏ"
+                                ],
+                                "ansC": 4
+                            },
+                            {
+                                "id": 20,
+                                "type": "listenStage2",
+                                "question": "An elephant has a long nose",
+                                "meanQuestion": "Con voi có cái mũi dài",
+                                "ans": [
+                                    "An leopard has a long nose",
+                                    "An squirrel has a long nose",
+                                    "An giraffe has a long nose",
+                                    "An elephant has a long nose"
+                                ],
+                                "ansC": 4
+                            },
+                            {
+                                "id": 21,
+                                "type": "listenStage2",
+                                "question": "Tiger have stripes",
+                                "meanQuestion": "Con hổ có sọc",
+                                "ans": [
+                                    "Monkey have stripes",
+                                    "Lion have stripes",
+                                    "Tiger have stripes",
+                                    "Wolf have stripes"
+                                ],
+                                "ansC": 3
+                            },
+                            {
+                                "id": 22,
+                                "type": "listenStage2",
+                                "question": "The lion is the king of beasts",
+                                "meanQuestion": "Con sư tử là vua của các loài thú",
+                                "ans": [
+                                    "The lion is the king of beasts",
+                                    "The wolf is the king of beastsdy",
+                                    "The squirrel is the king of beasts",
+                                    "The zebra is the king of beasts"
+                                ],
+                                "ansC": 1
+                            },
+                            {
+                                "id": 23,
+                                "type": "listenStage2",
+                                "question": "The wolf is howling at the full moon",
+                                "meanQuestion": "Con sóc hú vào lúc trăng tròn",
+                                "ans": [
+                                    "The whale is howling at the full moon",
+                                    "The wolf is howling at the full moon",
+                                    "The leopard is howling at the full moon",
+                                    "The squirrel is howling at the full moon"
+                                ],
+                                "ansC": 2
+                            },
+                            {
+                                "id": 24,
+                                "type": "listenStage2",
+                                "question": "Whale is the biggest animal",
+                                "meanQuestion": "Con cá voi là loài động vật lớn nhất",
+                                "ans": [
+                                    "Zebra is the biggest animal",
+                                    "Monkey is the biggest animal",
+                                    "Elephant is the biggest animal",
+                                    "Whale is the biggest animal"
+                                ],
+                                "ansC": 4
+                            },
+                            {
+                                "id": 25,
+                                "type": "listenStage2",
+                                "question": "Monkey eat banana",
+                                "meanQuestion": "Con khỉ ăn chuối",
+                                "ans": [
+                                    "Monkey eat banana",
+                                    "Tiger eat banana",
+                                    "Whale eat banana",
+                                    "Squirrel eat banana"
+                                ],
+                                "ansC": 1
+                            },
+                            {
+                                "id": 26,
+                                "type": "listenStage2",
+                                "question": "Squirrels eat chestnut and can climb tree",
+                                "meanQuestion": "Con sóc ăn hạt dẻ và có thể leo cây",
+                                "ans": [
+                                    "Giraffe eat chestnut and can climb tree",
+                                    "Squirrels eat chestnut and can climb tree",
+                                    "Elephant eat chestnut and can climb tree",
+                                    "Tiger eat chestnut and can climb tree"
+                                ],
+                                "ansC": 2
+                            },
+                            {
+                                "id": 27,
+                                "type": "listenStage2",
+                                "question": "Leopard have spots",
+                                "meanQuestion": "Con báo có đốm",
+                                "ans": [
+                                    "Zebra have spots",
+                                    "Whale have spots",
+                                    "Leopard have spots",
+                                    "Lion have spots"
+                                ],
+                                "ansC": 3
+                            },
+                            {
+                                "id": 28,
+                                "type": "listenStage2",
+                                "question": "Giraffe is the tallest animal",
+                                "meanQuestion": "Con hươu cao cổ là loài động vật cao nhất",
+                                "ans": [
+                                    "Giraffe is the tallest animal",
+                                    "Whale is the tallest animal",
+                                    "Tiger is the tallest animal",
+                                    "Elephant is the tallest animal"
+                                ],
+                                "ansC": 1
+                            },
+                            {
+                                "id": 29,
+                                "type": "listenStage2",
+                                "question": "Zebra have stripes and eat grass",
+                                "meanQuestion": "Con ngựa vằn có sọc vằn và ăn cỏ",
+                                "ans": [
+                                    "Lion have stripes and eat grass",
+                                    "Squirrel have stripes and eat grass",
+                                    "Leopard have stripes and eat grass",
+                                    "Zebra have stripes and eat grass"
+                                ],
+                                "ansC": 4
+                            },
+                            {
+                                "id": 30,
+                                "type": "readStage2",
+                                "question": "An elephant has a long nose"
+                            },
+                            {
+                                "id": 31,
+                                "type": "readStage2",
+                                "question": "Tiger have stripes"
+                            },
+                            {
+                                "id": 32,
+                                "type": "readStage2",
+                                "question": "The lion is the king of beasts"
+                            },
+                            {
+                                "id": 33,
+                                "type": "readStage2",
+                                "question": "The wolf is howling at the full moon"
+                            },
+                            {
+                                "id": 34,
+                                "type": "readStage2",
+                                "question": "Whale is the biggest animal"
+                            },
+                            {
+                                "id": 35,
+                                "type": "readStage2",
+                                "question": "Monkey eat banana"
+                            },
+                            {
+                                "id": 36,
+                                "type": "readStage2",
+                                "question": "Squirrels eat chestnut and can climb tree"
+                            },
+                            {
+                                "id": 37,
+                                "type": "readStage2",
+                                "question": "Leopard have spots"
+                            },
+                            {
+                                "id": 38,
+                                "type": "readStage2",
+                                "question": "Giraffe is the tallest animal"
+                            },
+                            {
+                                "id": 39,
+                                "type": "readStage2",
+                                "question": "Zebra have stripes and eat grass"
                             }
                         ],
                         "unit": [
                             [
-                                1,
-                                2,
-                                3
+                                0,1,12,13,24,25,36,37
                             ],
                             [
-                                3,
-                                2,
-                                1
+                                2,3,14,15,26,27,38,39
+                            ],
+                            [
+                                4,5,16,17,28,29,30,31
+                            ],
+                            [
+                                6,7,18,19,20,21,32,33
+                            ],
+                            [
+                                8,9,10,11,22,23,34,35
                             ]
                         ]
                     },
@@ -1828,73 +4307,768 @@
                             {
                                 "id": 0,
                                 "type": "Pronounciacion",
+                                "describe": "Từ nào có âm tiết khác với các từ còn lại",
                                 "ans": [
-                                    "dog",
-                                    "cat",
-                                    "mouse",
-                                    "parrot"
+                                    "tiger",
+                                    "lion",
+                                    "zebra",
+                                    "elephant"
                                 ],
                                 "ansC": 4
                             },
                             {
                                 "id": 1,
-                                "type": "choiceMultiAnswer",
-                                "question": "Which animal can be your pet",
+                                "type": "Pronounciacion",
+                                "describe": "Từ nào có âm tiết khác với các từ còn lại",
                                 "ans": [
-                                    "dog",
-                                    "cat",
-                                    "parrot",
-                                    "fish",
-                                    "mouse"
+                                    "wolf",
+                                    "monkey",
+                                    "giraffe",
+                                    "squirrel"
                                 ],
-                                "ansC": [
-                                    "dog",
-                                    "cat",
-                                    "mouse"
-                                ]
+                                "ansC": 1
                             },
                             {
                                 "id": 2,
-                                "type": "FillWordStage3",
-                                "question": "…, …, … and … can fly",
-                                "meanQuestion": "con ruồi, con chim, con vẹt và con ong biết bay",
+                                "type": "Pronounciacion",
+                                "describe": "Từ nào có âm tiết khác với các từ còn lại",
                                 "ans": [
-                                    "dog",
-                                    "cat",
-                                    "parrot",
-                                    "fish",
-                                    "mouse"
+                                    "leopard",
+                                    "whale",
+                                    "monkey",
+                                    "giraffe"
                                 ],
-                                "ansC": [
-                                    "fly",
-                                    "bird",
-                                    "parrot",
-                                    "bee"
-                                ]
+                                "ansC": 2
                             },
                             {
                                 "id": 3,
-                                "type": "Grammar",
-                                "question": "There is … ant on your hand",
+                                "type": "Pronounciacion",
+                                "describe": "Từ nào có âm tiết khác với các từ còn lại",
                                 "ans": [
-                                    "a",
-                                    "an",
-                                    "is",
-                                    "are"
+                                    "lion",
+                                    "squirrel",
+                                    "elephant",
+                                    "leopard"
+                                ],
+                                "ansC": 3
+                            },
+                            {
+                                "id": 4,
+                                "type": "Pronounciacion",
+                                "describe": "Từ nào có âm tiết khác với các từ còn lại",
+                                "ans": [
+                                    "zebra",
+                                    "tiger",
+                                    "lion",
+                                    "monkey"
                                 ],
                                 "ansC": 2
+                            },
+                            {
+                                "id": 5,
+                                "type": "choiceMultiAnswer",
+                                "question": "Which animal eat meat",
+                                "meanQuestion": "Con vật nào ăn thịt",
+                                "ans": [
+                                    "elephant",
+                                    "tiger",
+                                    "lion",
+                                    "wolf",
+                                    "whale",
+                                    "monkey",
+                                    "squirrel",
+                                    "leopard",
+                                    "giraffe",
+                                    "zebra"
+                                ],
+                                "ansC": [
+                                    "tiger",
+                                    "lion",
+                                    "wolf",
+                                    "whale",
+                                    "leopard"
+                                ]
+                            },
+                            {
+                                "id": 6,
+                                "type": "choiceMultiAnswer",
+                                "question": "Which animal can't eat meat",
+                                "meanQuestion": "Con vật nào không thể ăn thịt",
+                                "ans": [
+                                    "elephant",
+                                    "tiger",
+                                    "lion",
+                                    "wolf",
+                                    "whale",
+                                    "monkey",
+                                    "squirrel",
+                                    "leopard",
+                                    "giraffe",
+                                    "zebra"
+                                ],
+                                "ansC": [
+                                    "elephant",
+                                    "giraffe",
+                                    "zebra"
+                                ]
+                            },
+                            {
+                                "id": 7,
+                                "type": "choiceMultiAnswer",
+                                "question": "Which animal can climb tree",
+                                "meanQuestion": "Con vật nào sống ở biển",
+                                "ans": [
+                                    "elephant",
+                                    "tiger",
+                                    "lion",
+                                    "wolf",
+                                    "whale",
+                                    "monkey",
+                                    "squirrel",
+                                    "leopard",
+                                    "giraffe",
+                                    "zebra"
+                                ],
+                                "ansC": [
+                                    "monkey",
+                                    "squirrel",
+                                    "leopard"
+                                ]
+                            },
+                            {
+                                "id": 8,
+                                "type": "choiceMultiAnswer",
+                                "question": "Which animal have four legs",
+                                "meanQuestion": "Con vật nào có bốn chân",
+                                "ans": [
+                                    "elephant",
+                                    "tiger",
+                                    "lion",
+                                    "wolf",
+                                    "whale",
+                                    "monkey",
+                                    "squirrel",
+                                    "leopard",
+                                    "giraffe",
+                                    "zebra"
+                                ],
+                                "ansC": [
+                                    "elephant",
+                                    "tiger",
+                                    "lion",
+                                    "wolf",
+                                    "leopard",
+                                    "giraffe",
+                                    "zebra"
+                                ]
+                            },
+                            {
+                                "id": 9,
+                                "type": "choiceMultiAnswer",
+                                "question": "Which animal have two legs",
+                                "meanQuestion": "Con vật nào có hai chân",
+                                "ans": [
+                                    "elephant",
+                                    "tiger",
+                                    "lion",
+                                    "wolf",
+                                    "whale",
+                                    "monkey",
+                                    "squirrel",
+                                    "leopard",
+                                    "giraffe",
+                                    "zebra"
+                                ],
+                                "ansC": [
+                                    "monkey",
+                                    "squirrel"
+                                ]
+                            },
+                            {
+                                "id": 10,
+                                "type": "FillWordStage3",
+                                "question": "..., ..., ... can climb tree",
+                                "meanQuestion": "con báo, con khỉ, con sóc có thể leo cây",
+                                "ans": [
+                                    "elephant",
+                                    "tiger",
+                                    "lion",
+                                    "wolf",
+                                    "whale",
+                                    "monkey",
+                                    "squirrel",
+                                    "leopard",
+                                    "giraffe",
+                                    "zebra"
+                                ],
+                                "ansC": [
+                                    "leopard",
+                                    "monkey",
+                                    "squirrel"
+                                ]
+                            },
+                            {
+                                "id": 11,
+                                "type": "FillWordStage3",
+                                "question": "... is the largeset animal in the sea and ... is the biggest animal on the land",
+                                "meanQuestion": "con cá voi là động vật lớn nhất ở biển và con voi là động vật to nhất ở đất liền",
+                                "ans": [
+                                    "elephant",
+                                    "tiger",
+                                    "lion",
+                                    "wolf",
+                                    "whale",
+                                    "monkey",
+                                    "squirrel",
+                                    "leopard",
+                                    "giraffe",
+                                    "zebra"
+                                ],
+                                "ansC": [
+                                    "whale",
+                                    "elephant"
+                                ]
+                            },
+                            {
+                                "id": 12,
+                                "type": "FillWordStage3",
+                                "question": "..., ..., ... can’t eat meat",
+                                "meanQuestion": "con voi, con ngựa vằn, con hươu cao cổ không thể ăn được thịt",
+                                "ans": [
+                                    "elephant",
+                                    "tiger",
+                                    "lion",
+                                    "wolf",
+                                    "whale",
+                                    "monkey",
+                                    "squirrel",
+                                    "leopard",
+                                    "giraffe",
+                                    "zebra"
+                                ],
+                                "ansC": [
+                                    "elephant",
+                                    "zebra",
+                                    "giraffe"
+                                ]
+                            },
+                            {
+                                "id": 13,
+                                "type": "FillWordStage3",
+                                "question": "... and ... hunt in group",
+                                "meanQuestion": "con sư tử và con sói săn theo bầy",
+                                "ans": [
+                                    "elephant",
+                                    "tiger",
+                                    "lion",
+                                    "wolf",
+                                    "whale",
+                                    "monkey",
+                                    "squirrel",
+                                    "leopard",
+                                    "giraffe",
+                                    "zebra"
+                                ],
+                                "ansC": [
+                                    "lion",
+                                    "wolf"
+                                ]
+                            },
+                            {
+                                "id": 14,
+                                "type": "FillWordStage3",
+                                "question": "A pack of ... is hunting down a ...",
+                                "meanQuestion": "một bầy sói đang săn một con ngựa vằn",
+                                "ans": [
+                                    "elephant",
+                                    "tiger",
+                                    "lion",
+                                    "wolf",
+                                    "whale",
+                                    "monkey",
+                                    "squirrel",
+                                    "leopard",
+                                    "giraffe",
+                                    "zebra"
+                                ],
+                                "ansC": [
+                                    "wolf",
+                                    "zebra"
+                                ]
+                            },
+                            {
+                                "id": 15,
+                                "type": "Grammar",
+                                "question": "Lion is stronger ... tiger",
+                                "ans": [
+                                    "an",
+                                    "than",
+                                    "with",
+                                    "more"
+                                ],
+                                "ansC": 2
+                            },
+                            {
+                                "id": 16,
+                                "type": "Grammar",
+                                "question": "Elephant is stronger ... lion",
+                                "ans": [
+                                    "than",
+                                    "with",
+                                    "more",
+                                    "an"
+                                ],
+                                "ansC": 1
+                            },
+                            {
+                                "id": 17,
+                                "type": "Grammar",
+                                "question": "Leopard is stronger ... wolf",
+                                "ans": [
+                                    "than",
+                                    "with",
+                                    "more",
+                                    "an"
+                                ],
+                                "ansC": 1
+                            },
+                            {
+                                "id": 18,
+                                "type": "Grammar",
+                                "question": "Tiger is stronger ... zebra",
+                                "ans": [
+                                    "than",
+                                    "with",
+                                    "more",
+                                    "an"
+                                ],
+                                "ansC": 1
+                            },
+                            {
+                                "id": 19,
+                                "type": "Grammar",
+                                "question": "Lion is stronger ... wolf",
+                                "ans": [
+                                    "than",
+                                    "with",
+                                    "more",
+                                    "an"
+                                ],
+                                "ansC": 1
+                            },
+                            {
+                                "id": 20,
+                                "type": "Grammar",
+                                "question": "Elephant is the ...",
+                                "ans": [
+                                    "big",
+                                    "biggest",
+                                    "small",
+                                    "smallest"
+                                ],
+                                "ansC": 2
+                            },
+                            {
+                                "id": 21,
+                                "type": "Grammar",
+                                "question": "This wolf is the ... in the pack",
+                                "ans": [
+                                    "high",
+                                    "smallest",
+                                    "tall",
+                                    "small"
+                                ],
+                                "ansC": 2
+                            },
+                            {
+                                "id": 22,
+                                "type": "Grammar",
+                                "question": "This lion is the ... one",
+                                "ans": [
+                                    "smart",
+                                    "strongest",
+                                    "weak",
+                                    "strong"
+                                ],
+                                "ansC": 2
+                            },
+                            {
+                                "id": 23,
+                                "type": "Grammar",
+                                "question": "Whale is the ... animal in the sea",
+                                "ans": [
+                                    "smart",
+                                    "largest",
+                                    "weak",
+                                    "strong"
+                                ],
+                                "ansC": 2
+                            },
+                            {
+                                "id": 24,
+                                "type": "Grammar",
+                                "question": "This is the ... monkey",
+                                "ans": [
+                                    "weak",
+                                    "smartest",
+                                    "tall",
+                                    "short"
+                                ],
+                                "ansC": 2
+                            },
+                            {
+                                "id": 25,
+                                "type": "Grammar",
+                                "question": "Wolf is ... than leopard",
+                                "ans": [
+                                    "weak",
+                                    "small",
+                                    "high",
+                                    "smaller"
+                                ],
+                                "ansC": 4
+                            },
+                            {
+                                "id": 26,
+                                "type": "Grammar",
+                                "question": "Whale is ... than elephant",
+                                "ans": [
+                                    "big",
+                                    "strong",
+                                    "short",
+                                    "bigger"
+                                ],
+                                "ansC": 4
+                            },
+                            {
+                                "id": 27,
+                                "type": "Grammar",
+                                "question": "Lion is ... than tiger",
+                                "ans": [
+                                    "weak",
+                                    "high",
+                                    "small",
+                                    "stronger"
+                                ],
+                                "ansC": 4
+                            },
+                            {
+                                "id": 28,
+                                "type": "Grammar",
+                                "question": "Leopard is ... than lion",
+                                "ans": [
+                                    "fast",
+                                    "slow",
+                                    "short",
+                                    "faster"
+                                ],
+                                "ansC": 4
+                            },
+                            {
+                                "id": 29,
+                                "type": "Grammar",
+                                "question": "Squirrel is ... than zebra",
+                                "ans": [
+                                    "high",
+                                    "big",
+                                    "small",
+                                    "smarter"
+                                ],
+                                "ansC": 4
+                            },
+                            {
+                                "id": 30,
+                                "type": "Grammar",
+                                "question": "Giraffe ... long neck",
+                                "ans": [
+                                    "have",
+                                    "is",
+                                    "has",
+                                    "had"
+                                ],
+                                "ansC": 3
+                            },
+                            {
+                                "id": 31,
+                                "type": "Grammar",
+                                "question": "Elephant ... long nose",
+                                "ans": [
+                                    "have",
+                                    "is",
+                                    "has",
+                                    "had"
+                                ],
+                                "ansC": 3
+                            },
+                            {
+                                "id": 32,
+                                "type": "Grammar",
+                                "question": "Tiger ... stripes",
+                                "ans": [
+                                    "have",
+                                    "is",
+                                    "has",
+                                    "had"
+                                ],
+                                "ansC": 3
+                            },
+                            {
+                                "id": 33,
+                                "type": "Grammar",
+                                "question": "Leopard ... spot",
+                                "ans": [
+                                    "have",
+                                    "is",
+                                    "has",
+                                    "had"
+                                ],
+                                "ansC": 3
+                            },
+                            {
+                                "id": 34,
+                                "type": "Grammar",
+                                "question": "Zebra ... stripes",
+                                "ans": [
+                                    "have",
+                                    "is",
+                                    "has",
+                                    "had"
+                                ],
+                                "ansC": 3
+                            },
+                            {
+                                "id": 35,
+                                "type": "FillWord",
+                                "question": "An ... has a long nose",
+                                "meanQuestion": "Con voi có cái mũi dài",
+                                "ans": [
+                                    "giraffe",
+                                    "elephant",
+                                    "whale",
+                                    "wolf"
+                                ],
+                                "ansC": 2
+                            },
+                            {
+                                "id": 36,
+                                "type": "FillWord",
+                                "question": "... have stripes",
+                                "meanQuestion": "Con hổ có sọc vằn",
+                                "ans": [
+                                    "tiger",
+                                    "squirrel",
+                                    "monkey",
+                                    "leopard"
+                                ],
+                                "ansC": 1
+                            },
+                            {
+                                "id": 37,
+                                "type": "FillWord",
+                                "question": "The ... is the king of beasts",
+                                "meanQuestion": "Con sư tử là vua của các loài thú",
+                                "ans": [
+                                    "monkey",
+                                    "wolf",
+                                    "whale",
+                                    "lion"
+                                ],
+                                "ansC": 4
+                            },
+                            {
+                                "id": 38,
+                                "type": "FillWord",
+                                "question": "The ... is howling at the full moon",
+                                "meanQuestion": "Con sói hú vào lúc trăng tròn",
+                                "ans": [
+                                    "wolf",
+                                    "zebra",
+                                    "giraffe",
+                                    "squirrel"
+                                ],
+                                "ansC": 1
+                                
+                            },
+                            {
+                                "id": 39,
+                                "type": "FillWord",
+                                "question": "... is the biggest animal",
+                                "meanQuestion": "Con cá voi là loài động vật lớn nhất",
+                                "ans": [
+                                    "tiger",
+                                    "elephant",
+                                    "whale",
+                                    "giraffe"
+                                ],
+                                "ansC": 3
+                            },
+                            {
+                                "id": 40,
+                                "type": "translate",
+                                "question": "Monkey eat banana",
+                                "ans": [
+                                    "Con khỉ ăn chuối",
+                                    "Con hổ ăn chuối",
+                                    "Con cá voi ăn chuối",
+                                    "Con sóc ăn chuối"
+                                ],
+                                "ansC": 1
+                            },
+                            {
+                                "id": 41,
+                                "type": "translate",
+                                "question": "Squirrels eat chestnut and can climb tree",
+                                "ans": [
+                                    "Con hươu cao cổ ăn hạt dẻ và có thể leo cây",
+                                    "Con sóc ăn hạt dẻ và có thể leo cây",
+                                    "Con voi ăn hạt dẻ và có thể leo cây",
+                                    "Con hổ ăn hạt dẻ và có thể leo cây"
+                                ],
+                                "ansC": 2
+                            },
+                            {
+                                "id": 42,
+                                "type": "translate",
+                                "question": "Leopard have spots",
+                                "ans": [
+                                    "Con ngựa vằn có đốm",
+                                    "Con cá voi có đốm",
+                                    "Con báo có đốm",
+                                    "Con sư tử có đốm"
+                                ],
+                                "ansC": 3
+                            },
+                            {
+                                "id": 43,
+                                "type": "translate",
+                                "question": "Giraffe is the tallest animal",
+                                "ans": [
+                                    "Con hươu cao cổ là loài động vật cao nhất",
+                                    "Con cá voi là loài động vật cao nhất",
+                                    "Con hổ là loài động vật cao nhất",
+                                    "Con voi là loài động vật cao nhất"
+                                ],
+                                "ansC": 1
+                            },
+                            {
+                                "id": 44,
+                                "type": "translate",
+                                "question": "Zebra have stripes and eat grass",
+                                "ans": [
+                                    "Con sư tử có sọc vằn và ăn cỏ",
+                                    "Con sóc có sọc vằn và ăn cỏ",
+                                    "Con báo có sọc vằn và ăn cỏ",
+                                    "Con ngựa vằn có sọc vằn và ăn cỏ"
+                                ],
+                                "ansC": 4
+                            },
+                            {
+                                "id": 45,
+                                "type": "listenStage3",
+                                "question": "The wolf is howling at the full moon",
+                                "meanQuestion": "Con sóc hú vào lúc trăng tròn",
+                                "ans": [
+                                    "The whale is howling at the full moon",
+                                    "The wolf is howling at the full moon",
+                                    "The leopard is howling at the full moon",
+                                    "The squirrel is howling at the full moon"
+                                ],
+                                "ansC": 2
+                            },
+                            {
+                                "id": 46,
+                                "type": "listenStage3",
+                                "question": "Whale is the biggest animal",
+                                "meanQuestion": "Con cá voi là loài động vật lớn nhất",
+                                "ans": [
+                                    "Zebra is the biggest animal",
+                                    "Monkey is the biggest animal",
+                                    "Elephant is the biggest animal",
+                                    "Whale is the biggest animal"
+                                ],
+                                "ansC": 4
+                            },
+                            {
+                                "id": 47,
+                                "type": "listenStage3",
+                                "question": "Monkey eat banana",
+                                "meanQuestion": "Con khỉ ăn chuối",
+                                "ans": [
+                                    "Monkey eat banana",
+                                    "Tiger eat banana",
+                                    "Whale eat banana",
+                                    "Squirrel eat banana"
+                                ],
+                                "ansC": 1
+                            },
+                            {
+                                "id": 48,
+                                "type": "listenStage3",
+                                "question": "Squirrels eat chestnut and can climb tree",
+                                "meanQuestion": "Con sóc ăn hạt dẻ và có thể leo cây",
+                                "ans": [
+                                    "Giraffe eat chestnut and can climb tree",
+                                    "Squirrels eat chestnut and can climb tree",
+                                    "Elephant eat chestnut and can climb tree",
+                                    "Tiger eat chestnut and can climb tree"
+                                ],
+                                "ansC": 2
+                            },
+                            {
+                                "id": 49,
+                                "type": "listenStage3",
+                                "question": "Leopard have spots",
+                                "meanQuestion": "Con báo có đốm",
+                                "ans": [
+                                    "Zebra have spots",
+                                    "Whale have spots",
+                                    "Leopard have spots",
+                                    "Lion have spots"
+                                ],
+                                "ansC": 3
+                            },
+                            {
+                                "id": 50,
+                                "type": "readStage3",
+                                "question": "Giraffe is the tallest animal"
+                            },
+                            {
+                                "id": 51,
+                                "type": "readStage3",
+                                "question": "Zebra have stripes and eat grass"
+                            },
+                            {
+                                "id": 52,
+                                "type": "readStage3",
+                                "question": "An elephant has a long nose"
+                            },
+                            {
+                                "id": 53,
+                                "type": "readStage3",
+                                "question": "Tiger have stripes"
+                            },
+                            {
+                                "id": 54,
+                                "type": "readStage3",
+                                "question": "The lion is the king of beasts"
                             }
+                            
                         ],
                         "unit": [
                             [
-                                1,
-                                2,
-                                3
+                                0,5,10,15,20,25,30,35,40,45,50
                             ],
                             [
-                                3,
-                                2,
-                                1
+                                1,6,11,16,21,26,31,36,41,46,51
+                            ],
+                            [
+                                2,7,12,17,22,27,32,37,42,47,52
+                            ],
+                            [
+                                3,8,13,18,23,28,33,38,43,48,53
+                            ],
+                            [
+                                4,9,14,19,24,29,34,39,44,49,54
                             ]
                         ]
                     }
