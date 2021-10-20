@@ -3,84 +3,74 @@ import { Image, ImageBackground, ImageEditor, StyleSheet, Text, View, TouchableO
 
 const height = Dimensions.get('screen').height
 
-const ImgQuestionsScreen = ({ navigate }) => {
 
-    const ImgQuestionsScreen = ({ navigation }) => {
-        return (
-            <View style={styles.container}>
-                <View style={styles.top}>
-                    <Text style={styles.questions}>
-                        Q: Đâu là con Mèo ?
-                    </Text>
-                </View>
-                <View style={styles.options}>
-                    <TouchableOpacity style={styles.optionButton}>
-                        <Image
-                            source={{
-                                uri: 'https://cdni.iconscout.com/illustration/premium/thumb/dog-holding-bone-in-mouth-4238889-3518614.png',
-
-                            }}
-                            style={styles.banner}
-                            resizeMode="contain"
-                        />
-                        <Text style={styles.option}>DOG</Text>
-                    </TouchableOpacity>
-                    <TouchableOpacity style={styles.optionButton}>
-                        <Image
-                            source={{
-                                uri: 'https://cdni.iconscout.com/illustration/premium/thumb/cat-playing-with-ball-4238780-3518541.png',
-
-                            }}
-                            style={styles.banner}
-                            resizeMode="contain"
-                        />
-                        <Text style={styles.option}>CAT</Text>
-                    </TouchableOpacity>
-                    <TouchableOpacity style={styles.optionButton}>
-                        <Image
-                            source={{
-                                uri: 'https://cdni.iconscout.com/illustration/premium/thumb/tiger-with-face-mask-4238787-3518546.png',
-
-                            }}
-                            style={styles.banner}
-                            resizeMode="contain"
-                        />
-                        <Text style={styles.option}>TIGER</Text>
-                    </TouchableOpacity>
-                    <TouchableOpacity style={styles.optionButton}>
-                        <Image
-                            source={{
-                                uri: 'https://cdni.iconscout.com/illustration/premium/thumb/parrot-singing-song-4278579-3581473.png',
-
-                            }}
-                            style={styles.banner}
-                            resizeMode="contain"
-                        />
-                        <Text style={styles.option}>PARROT</Text>
-                    </TouchableOpacity>
-                </View>
-                <View style={styles.bottom}>
-                    <TouchableOpacity style={styles.button} onPress={() => navigation.navigate('BottomModal')}>
-                        <Text style={styles.buttonText}>KIỂM TRA</Text>
-                    </TouchableOpacity>
-                    {/* <TouchableOpacity
-                    style={styles.button}>
-                    <Text style={styles.buttonText}>NEXT</Text>
-                    </TouchableOpacity>
-                    <TouchableOpacity
-                    style={styles.button}>
-                    <Text style={styles.buttonText}>QUIT</Text>
-                    </TouchableOpacity> */}
-                </View>
-
-                <View style={styles.bottom}>
-                    <TouchableOpacity style={styles.button}>
-                        <Text style={styles.buttonText}>Kiểm tra</Text>
-                    </TouchableOpacity>
-                </View>
+const ImgQuestionsScreen = ({ navigation }) => {
+    return (
+        <View style={styles.container}>
+            <View style={styles.top}>
+                <Text style={styles.questions}>
+                    Q: Đâu là con Mèo ?
+                </Text>
             </View>
-        )
-    }
+            <View style={styles.options}>
+                <TouchableOpacity style={styles.optionButton}>
+                    <Image
+                        source={{
+                            uri: 'https://cdni.iconscout.com/illustration/premium/thumb/dog-holding-bone-in-mouth-4238889-3518614.png',
+
+                        }}
+                        style={styles.banner}
+                        resizeMode="contain"
+                    />
+                    <Text style={styles.option}>DOG</Text>
+                </TouchableOpacity>
+                <TouchableOpacity style={styles.optionButton}>
+                    <Image
+                        source={{
+                            uri: 'https://cdni.iconscout.com/illustration/premium/thumb/cat-playing-with-ball-4238780-3518541.png',
+
+                        }}
+                        style={styles.banner}
+                        resizeMode="contain"
+                    />
+                    <Text style={styles.option}>CAT</Text>
+                </TouchableOpacity>
+                <TouchableOpacity style={styles.optionButton}>
+                    <Image
+                        source={{
+                            uri: 'https://cdni.iconscout.com/illustration/premium/thumb/tiger-with-face-mask-4238787-3518546.png',
+
+                        }}
+                        style={styles.banner}
+                        resizeMode="contain"
+                    />
+                    <Text style={styles.option}>TIGER</Text>
+                </TouchableOpacity>
+                <TouchableOpacity style={styles.optionButton}>
+                    <Image
+                        source={{
+                            uri: 'https://cdni.iconscout.com/illustration/premium/thumb/parrot-singing-song-4278579-3581473.png',
+
+                        }}
+                        style={styles.banner}
+                        resizeMode="contain"
+                    />
+                    <Text style={styles.option}>PARROT</Text>
+                </TouchableOpacity>
+            </View>
+            <View style={styles.bottom}>
+                <TouchableOpacity style={styles.button} onPress={() => navigation.navigate('BottomModal')}>
+                    <Text style={styles.buttonText}>KIỂM TRA</Text>
+                </TouchableOpacity>
+            </View>
+
+            <View style={styles.bottom}>
+                <TouchableOpacity style={styles.button}>
+                    <Text style={styles.buttonText}>Kiểm tra</Text>
+                </TouchableOpacity>
+            </View>
+        </View>
+    )
 }
 
 export default ImgQuestionsScreen
