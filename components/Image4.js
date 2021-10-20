@@ -62,12 +62,6 @@ const Image4 = ({ navigation }) => {
                     <Text style={styles.buttonText}>KIỂM TRA</Text>
                 </TouchableOpacity>
             </View>
-
-            <View style={styles.bottom}>
-                <TouchableOpacity style={styles.button}>
-                    <Text style={styles.buttonText}>Kiểm tra</Text>
-                </TouchableOpacity>
-            </View>
         </View>
     )
 }
@@ -91,7 +85,7 @@ const styles = StyleSheet.create({
     },
     banner: {
         height: height / 4.5,
-        width: 170,
+        width: 171,
     },
     options: {
         display: 'flex',
@@ -101,20 +95,23 @@ const styles = StyleSheet.create({
     },
     option: {
         fontSize: 18,
-        color: 'white',
-        fontWeight: '300',
+        color: 'black',
+        fontWeight: 'bold',
         fontStyle: 'normal',
         textAlign: 'auto',
+
     },
     optionButton: {
-        backgroundColor: 'green',
-        borderRadius: 2,
+        borderRadius: 5,
         textAlign: 'center',
-        marginBottom: 13,
+        marginBottom: 5,
         alignItems: 'center',
         justifyContent: 'center',
         color: 'white',
-        backgroundColor: '#6699CC',
+        backgroundColor: 'white',
+        borderWidth: 2,
+        borderColor: 'black',
+
     },
     bottom: {
         marginBottom: 12,
