@@ -20,6 +20,21 @@ import { SafeAreaView,
 } from 'react-native'
 import { BottomPopup } from './screens/BottomPopup'
 
+const popupList = [
+  {
+    id:1,
+    name:'Task'
+  },
+  {
+    id:2,
+    name:'Message'
+  },
+  {
+    id:3,
+    name:'Note'
+  },
+]
+
 
 
 const App = () => {
@@ -45,9 +60,10 @@ const App = () => {
           <Text style={styles.txtSize}> Test Show Popup</Text>
         </TouchableWithoutFeedback>
         <BottomPopup
-          title="Demo Popup"
+          title="Bạn đã chọn đúng"
           ref={(target) => popupRef = target}
           onTouchOutside={onClosePopup}
+          data={popupList}
           />
       </SafeAreaView>
 
