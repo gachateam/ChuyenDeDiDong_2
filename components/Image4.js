@@ -60,8 +60,7 @@ const Image4 = ({navigation}) => {
       </View>
       <View style={styles.bottom}>
         <TouchableOpacity
-          style={styles.button}
-          onPress={() => navigation.navigate('BottomModal')}>
+          style={styles.button}>
           <Text style={styles.buttonText}>KIỂM TRA</Text>
         </TouchableOpacity>
       </View>
@@ -112,7 +111,7 @@ const styles = StyleSheet.create({
     color: 'white',
     backgroundColor: 'white',
     borderWidth: 2,
-    borderColor: 'black',
+    borderColor: '#99FFFF',
   },
   bottom: {
     marginBottom: 12,
@@ -124,7 +123,7 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: '#3399CC',
     padding: 16,
-    borderRadius: 8,
+    borderRadius: 50,
     alignItems: 'center',
     marginBottom: 30,
     textAlign: 'center',
