@@ -77,10 +77,16 @@ const styles = StyleSheet.create({
     height: '100%',
   },
   top: {
-    marginVertical: 16,
+    marginVertical: 15,
     textAlign: 'center',
     justifyContent: 'center',
     alignItems: 'center',
+    borderWidth: 1,
+    borderColor: '#99FFCC',
+    borderRadius: 12,
+    backgroundColor: '#CCFFCC',
+    height: 70,
+
   },
   questions: {
     fontSize: 28,
