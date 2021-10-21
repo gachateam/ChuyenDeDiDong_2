@@ -1,8 +1,16 @@
-import React from 'react';
-import {StyleSheet, SafeAreaView, ScrollView} from 'react-native';
+import React, { useEffect } from 'react';
+import { StyleSheet, SafeAreaView, ScrollView } from 'react-native';
 import DifficultLevel from '../components/DifficultLevel';
+import { useDrawerStatus } from '@react-navigation/drawer';
+import { useGlobal } from '../context/GlobalContext';
+import { ACTIONS } from '../context/Action';
 
-const StageScreen = ({navigation}) => {
+const StageScreen = ({ navigation }) => {
+  const isDrawerOpen = useDrawerStatus() === 'open';
+  const { dispatch } = useGlobal();
+  useEffect(() => {
+    dispatch({ type: ACTIONS.HIDE_TAB_BAR, payload: isDrawerOpen })
+  }, [isDrawerOpen])
   return (
     <SafeAreaView style={styles.container}>
       <ScrollView style={styles.scrollView}>

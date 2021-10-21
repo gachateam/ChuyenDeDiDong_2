@@ -7,6 +7,7 @@ import StageScreen from './StageScreen';
 import { useGlobal } from '../context/GlobalContext';
 import SplashScreen from './SplashScreen';
 import QuestionScreen from './QuestionScreen';
+import { useDrawerStatus } from '@react-navigation/drawer';
 
 function HomeScreens({ navigation }) {
   return (

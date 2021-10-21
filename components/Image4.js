@@ -10,7 +10,7 @@ import {
 
 const height = Dimensions.get('screen').height;
 
-const Image4 = ({navigation}) => {
+const Image4 = ({ navigation }) => {
   return (
     <View style={styles.container}>
       <View style={styles.top}>
@@ -37,7 +37,7 @@ const Image4 = ({navigation}) => {
           />
           <Text style={styles.option}>CAT</Text>
         </TouchableOpacity>
-        <TouchableOpacity style={styles.optionButton}>
+        <TouchableOpacity style={[styles.optionButton, { backgroundColor: "#0099FF" }]}>
           <Image
             source={{
               uri: 'https://cdni.iconscout.com/illustration/premium/thumb/tiger-with-face-mask-4238787-3518546.png',
@@ -86,7 +86,7 @@ const styles = StyleSheet.create({
     fontSize: 28,
   },
   banner: {
-    height: height / 4.5,
+    height: height / 4,
     width: 171,
   },
   options: {
@@ -109,7 +109,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
     color: 'white',
-    backgroundColor: 'white',
+    backgroundColor: '#ffffff',
     borderWidth: 2,
     borderColor: '#99FFFF',
   },
