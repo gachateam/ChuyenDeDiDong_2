@@ -4,6 +4,7 @@ import HomeScreen from './HomeScreen';
 import SettingsScreen from './SettingsScreen';
 import AntDesign from 'react-native-vector-icons/AntDesign';
 import ProfilesScreen from './ProfilesScreen';
+import SignUpScreen from './SignUpScreen';
 
 const Tab = createBottomTabNavigator();
 
@@ -37,7 +38,7 @@ const MyTabs = ({navigation}) => {
       />
       <Tab.Screen
         name="Profile"
-        component={ProfilesScreen}
+        component={SignUpScreen}
         options={{
           tabBarLabel: 'Profile',
           tabBarIcon: ({color, size}) => (
