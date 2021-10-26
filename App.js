@@ -52,21 +52,7 @@ const App = () => {
       <NavigationContainer>
         <MyTabs />
       </NavigationContainer>
-    </GlobalContextProvider>
-
-      <StatusBar barStyle="dark-content"/>
-      <SafeAreaView style={styles.container}>
-        <TouchableWithoutFeedback onPress={onShowPopup}>
-          <Text style={styles.txtSize}> Test Show Popup</Text>
-        </TouchableWithoutFeedback>
-        <BottomPopup
-          title="Bạn đã chọn đúng"
-          ref={(target) => popupRef = target}
-          onTouchOutside={onClosePopup}
-          data={popupList}
-          />
-      </SafeAreaView>
-
+    </GlobalContextProvider>     
     </>
   )
 }

@@ -17,7 +17,7 @@ export class BottomPopup extends React.Component {
         this.setState({show: true})
     }
     close = () =>{
-        this.setState({show: flase})
+        this.setState({show: false})
     }
     renderOutsideTouchable (onTouch) {
         const view = <View style = {{flex: 1, width:'100%'}}/>
@@ -115,7 +115,7 @@ export class BottomPopup extends React.Component {
                     }}>
                         
                     {this.renderTitle()}
-                    {this.renderContent()}
+                    {this.renderContent}
                     </View>
 
                 </View>
