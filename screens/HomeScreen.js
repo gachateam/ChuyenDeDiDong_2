@@ -51,7 +51,7 @@ const popupList = [
 
 const Drawer = createDrawerNavigator();
 
-const HomeScreen = () => {
+const HomeScreen = ({navigation}) => {
   const {title} = useGlobal();
   return (
     <NavigationContainer independent={true}>
@@ -72,7 +72,7 @@ const HomeScreen = () => {
         <Drawer.Screen
           name="QuestionScreen"
           component={QuestionScreen}
-          options={{title: 'question'}}
+          options={{title: 'question', headerShown: false}}
         />
       </Drawer.Navigator>
     </NavigationContainer>

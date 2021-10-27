@@ -1,92 +1,23 @@
 import React from 'react';
-import {Text, View, StyleSheet} from 'react-native';
-import {TouchableOpacity} from 'react-native';
+import {useGlobal} from '../context/GlobalContext';
+import {TYPE_QUESTION} from './../context/TypeQuestion';
+import Image4 from './../components/Image4';
+import Vocabulary4 from '../components/Vocabulary4';
+import Read from '../components/Read';
 
 const QuestionScreen = ({navigation}) => {
-  return (
-    <View style ={styles.container}>
-        <View style={styles.top}>
-            <Text style={styles.questions}>Questions</Text>
-        </View>
+  const {typeQuestion} = useGlobal();
 
-      <View style ={styles.options}>
-        <TouchableOpacity style={styles.optionButton}>
-          <Text style={styles.option}>Option 1</Text>
-        </TouchableOpacity>
-        <TouchableOpacity style={styles.optionButton}>
-          <Text style={styles.option}>Option 2</Text>
-        </TouchableOpacity>
-        <TouchableOpacity style={styles.optionButton}>
-          <Text style={styles.option}>Option 3</Text>
-        </TouchableOpacity>
-        <TouchableOpacity style={styles.optionButton}>
-          <Text style={styles.option}>Option 4</Text>
-        </TouchableOpacity>
-
-
-      </View>
-
-      <View style={styles.bottom}>
-        <TouchableOpacity style={styles.button}>
-          <Text style={styles.buttonText}>PREVIOUS</Text>
-        </TouchableOpacity>
-        <TouchableOpacity onPress ={() => navigation.navigate('QuestionScreen')} style={styles.button}>
-          <Text style={styles.buttonText}>NEXT</Text>
-        </TouchableOpacity>
-        <TouchableOpacity onPress ={() => navigation.navigate('Home')} style={styles.button}>
-          <Text style={styles.buttonText}>QUIT</Text>
-        </TouchableOpacity>
-      </View>
-    </View>
-  );
+  switch (typeQuestion) {
+    case TYPE_QUESTION.IMAGE_4:
+      return <Image4 navigation={navigation} />;
+    case TYPE_QUESTION.VOCABULARY_4:
+      return <Vocabulary4 navigation={navigation} />;
+    case TYPE_QUESTION.READ:
+      return <Read navigation={navigation} />;
+    default:
+      break;
+  }
 };
 
 export default QuestionScreen;
-const styles = StyleSheet.create({
-    container: {
-        paddingTop: 40,
-        paddingHorizontal: 20,
-        height: '100%',
-    },
-    top:{
-        marginVertical: 16,
-    },
-    options:{
-        marginVertical: 16,
-        flex: 1
-    },
-    bottom: {
-        marginBottom: 12,
-        marginVertical: 16,
-        justifyContent: 'space-between',
-        flexDirection: 'row'
-    },
-    button:{
-        backgroundColor: '#3399CC',
-        padding: 16,
-        borderRadius:5,
-        alignItems: 'center',
-        marginBottom: 30,   
-        textAlign: 'center'
-    },
-    buttonText:{
-        fontSize: 18,
-        fontWeight: '400',
-        color: 'white'
-    },
-    questions:{
-        fontSize: 28,
-    },
-    option:{
-        fontSize: 20,
-        fontWeight: '500',
-        color: 'white'
-    },
-    optionButton:{
-        paddingVertical: 12,
-        marginVertical: 16,
-        backgroundColor: '#6699CC',
-        paddingHorizontal: 12,
-        borderRadius: 12,
-    }
-});
