@@ -1,10 +1,19 @@
-import React from 'react';
+import React, {useState} from 'react';
 import {Text, View, StyleSheet, Image} from 'react-native';
 import {TouchableOpacity} from 'react-native';
+import Header from './Header';
 
 const Vocabulary4 = ({navigation}) => {
+  const [ansChoice, setAnsChoice] = useState(0);
+
+  const question = {
+    question: 'dịch "con chuột"',
+    ans: ['cat', 'mouse', 'ant', 'fish'],
+  };
+
   return (
     <View style={styles.container}>
+      <Header navigation={navigation} />
       <View style={styles.top}>
         <Image
           source={{
@@ -13,22 +22,27 @@ const Vocabulary4 = ({navigation}) => {
           style={styles.banner}
           resizeMode="contain"
         />
-        <Text style={styles.questions}>Questions</Text>
+        <Text style={styles.questions}>{question.question}</Text>
       </View>
 
       <View style={styles.options}>
-        <TouchableOpacity style={styles.optionButton}>
-          <Text style={styles.option}>Option 1</Text>
-        </TouchableOpacity>
-        <TouchableOpacity style={styles.optionButton}>
-          <Text style={styles.option}>Option 2</Text>
-        </TouchableOpacity>
-        <TouchableOpacity style={styles.optionButton}>
-          <Text style={styles.option}>Option 3</Text>
-        </TouchableOpacity>
-        <TouchableOpacity style={styles.optionButton}>
-          <Text style={styles.option}>Option 4</Text>
-        </TouchableOpacity>
+        {question.ans.map((e, i) => {
+          const hanldePress = () => {
+            setAnsChoice(i + 1);
+          };
+
+          return (
+            <TouchableOpacity
+              onPress={hanldePress}
+              style={[
+                styles.optionButton,
+                ansChoice === i + 1 ? styles.choice : null,
+              ]}
+              key={i}>
+              <Text style={styles.option}>{e}</Text>
+            </TouchableOpacity>
+          );
+        })}
       </View>
 
       <View style={styles.bottom}>
@@ -43,9 +57,8 @@ const Vocabulary4 = ({navigation}) => {
 export default Vocabulary4;
 const styles = StyleSheet.create({
   container: {
-    paddingTop: 40,
+    flex: 1,
     paddingHorizontal: 20,
-    height: '100%',
   },
   top: {
     marginVertical: 20,
@@ -56,6 +69,9 @@ const styles = StyleSheet.create({
     borderRadius: 12,
     borderWidth: 1,
     borderColor: '#99FFCC',
+  },
+  choice: {
+    backgroundColor: '#0099FF',
   },
   banner: {
     height: 40,
@@ -91,6 +107,7 @@ const styles = StyleSheet.create({
     fontSize: 28,
     textAlign: 'center',
     alignItems: 'center',
+    textTransform: 'capitalize',
   },
   option: {
     fontSize: 20,
@@ -98,6 +115,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     textAlign: 'center',
     fontWeight: 'bold',
+    textTransform: 'capitalize',
   },
   optionButton: {
     paddingVertical: 12,

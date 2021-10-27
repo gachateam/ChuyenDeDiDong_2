@@ -22,7 +22,7 @@ const Image4 = ({navigation}) => {
 
   return (
     <SafeAreaView style={styles.container}>
-      <Header navigation={navigation}/>
+      <Header navigation={navigation} />
       <View style={styles.top}>
         <Text style={styles.questions}>{question.question}</Text>
       </View>
@@ -67,7 +67,6 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     paddingHorizontal: 20,
-    height: '100%',
   },
   choice: {
     backgroundColor: '#0099FF',

@@ -9,7 +9,11 @@ export const useGlobal = () => {
 };
 
 const GlobalContextProvider = ({children}) => {
-  const initialState = {title: '', typeQuestion: '4vocabulary', hideTabBar: false};
+  const initialState = {
+    title: '',
+    typeQuestion: '4vocabulary',
+    hideTabBar: false,
+  };
   const [state, dispatch] = useReducer(reducers, initialState);
   const {title, typeQuestion, hideTabBar} = state;
   const value = {
