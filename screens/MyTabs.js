@@ -1,46 +1,52 @@
-import React, { useEffect, useRef } from 'react';
-import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import React, {useEffect, useRef} from 'react';
+import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import HomeScreen from './HomeScreen';
 import SettingsScreen from './SettingsScreen';
 import AntDesign from 'react-native-vector-icons/AntDesign';
 import ProfilesScreen from './ProfilesScreen';
-import { StyleSheet, View, TouchableOpacity } from 'react-native';
+import {StyleSheet, TouchableOpacity} from 'react-native';
 import * as Animatable from 'react-native-animatable';
-import { useGlobal } from '../context/GlobalContext';
+import {useGlobal} from '../context/GlobalContext';
 
 const Tab = createBottomTabNavigator();
 
-const TabButton = (props) => {
-  const { name, onPress, accessibilityState } = props
-  const focused = accessibilityState.selected
-  const viewRef = useRef(null)
+const TabButton = props => {
+  const {name, onPress, accessibilityState} = props;
+  const focused = accessibilityState.selected;
+  const viewRef = useRef(null);
 
   useEffect(() => {
     if (focused) {
-      viewRef.current.animate({ 0: { scale: 1, rotate: '0deg' }, 1: { scale: 1.5, rotate: '360deg' } })
+      viewRef.current.animate({
+        0: {scale: 1, rotate: '0deg'},
+        1: {scale: 1.5, rotate: '360deg'},
+      });
     } else {
-      viewRef.current.animate({ 0: { scale: 1.5, rotate: '360deg' }, 1: { scale: 1, rotate: '0deg' } })
+      viewRef.current.animate({
+        0: {scale: 1.5, rotate: '360deg'},
+        1: {scale: 1, rotate: '0deg'},
+      });
     }
-  }, [focused])
+  }, [focused]);
 
   return (
     <TouchableOpacity
       onPress={onPress}
       style={styles.container}
-      activeOpacity={1}
-    >
-      <Animatable.View
-        ref={viewRef}
-        style={styles.container}
-        duration={1000}>
-        <AntDesign name={name} size={24} color={focused ? '#FF0033' : "#000066"} />
+      activeOpacity={1}>
+      <Animatable.View ref={viewRef} style={styles.container} duration={1000}>
+        <AntDesign
+          name={name}
+          size={24}
+          color={focused ? '#FF0033' : '#000066'}
+        />
       </Animatable.View>
     </TouchableOpacity>
-  )
-}
+  );
+};
 
-const MyTabs = ({ navigation }) => {
-  const { hideTabBar } = useGlobal()
+const MyTabs = ({navigation}) => {
+  const {hideTabBar} = useGlobal();
   return (
     <Tab.Navigator
       screenOptions={{
@@ -61,7 +67,7 @@ const MyTabs = ({ navigation }) => {
         component={HomeScreen}
         options={{
           tabBarShowLabel: false,
-          tabBarButton: (props) => <TabButton {...props} name="home" />
+          tabBarButton: props => <TabButton {...props} name="home" />,
         }}
       />
       <Tab.Screen
@@ -69,7 +75,7 @@ const MyTabs = ({ navigation }) => {
         component={SettingsScreen}
         options={{
           tabBarShowLabel: false,
-          tabBarButton: (props) => <TabButton {...props} name="setting" />
+          tabBarButton: props => <TabButton {...props} name="setting" />,
         }}
       />
       <Tab.Screen
@@ -77,7 +83,7 @@ const MyTabs = ({ navigation }) => {
         component={ProfilesScreen}
         options={{
           tabBarShowLabel: false,
-          tabBarButton: (props) => <TabButton {...props} name="profile" />
+          tabBarButton: props => <TabButton {...props} name="profile" />,
         }}
       />
     </Tab.Navigator>
@@ -85,7 +91,6 @@ const MyTabs = ({ navigation }) => {
 };
 
 export default MyTabs;
-
 
 const styles = StyleSheet.create({
   container: {

@@ -94,7 +94,6 @@ const styles = StyleSheet.create({
   },
   option: {
     fontSize: 20,
-    fontWeight: '300',
     color: 'black',
     alignItems: 'center',
     textAlign: 'center',
