@@ -1,7 +1,6 @@
 import React from 'react';
 import { View, StyleSheet, Text, SafeAreaView, TouchableOpacity } from 'react-native';
 import { Avatar, IconButton, Title, Colors, Caption } from 'react-native-paper';
-import {createStackNavigation} from '@react-navigation/stack'
 import SignInScreen from './SignInScreen';
 import SignUpScreen from './SignUpScreen';
 
@@ -35,26 +34,6 @@ const ProfilesScreen = ({ navigation }) => {
   );
 };
 
-const Stack = createStackNavigation();
-
-const Profile = () => {
-  return (
-    <NavigationContainer independent={true}>
-      <Stack.Navigator>
-        <Stack.Screen name="Profile" component={ProfilesScreen} />
-        <Stack.Screen
-          name="SignInScreen"
-          component={SignInScreen}
-        />
-        <Drawer.Screen
-          name="SignUpScreen"
-          component={SignUpScreen}
-        />
-      </Stack.Navigator>
-    </NavigationContainer>
-  );
-};
-
 const styles = StyleSheet.create({
   container: {
     flex: 1,
@@ -65,4 +44,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default Profile;
+export default ProfilesScreen;
