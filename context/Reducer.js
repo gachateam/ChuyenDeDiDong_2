@@ -12,6 +12,11 @@ const reducers = (state, action) => {
         ...state,
         typeQuestion: action.payload,
       };
+    case ACTIONS.HIDE_TAB_BAR:
+      return {
+        ...state,
+        hideTabBar: action.payload,
+      };
     default:
       return state;
   }

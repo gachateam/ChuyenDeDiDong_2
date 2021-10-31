@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import {
   Image,
   StyleSheet,
@@ -6,66 +6,58 @@ import {
   View,
   TouchableOpacity,
   Dimensions,
+  SafeAreaView,
 } from 'react-native';
+import Header from './Header';
 
 const height = Dimensions.get('screen').height;
 
 const Image4 = ({navigation}) => {
+  const [ansChoice, setAnsChoice] = useState(0);
+
+  const question = {
+    question: 'đâu là "con chó"',
+    ans: ['cat', 'dog', 'ant', 'fish'],
+  };
+
   return (
-    <View style={styles.container}>
+    <SafeAreaView style={styles.container}>
+      <Header navigation={navigation} />
       <View style={styles.top}>
-        <Text style={styles.questions}>Q: Đâu là con Mèo ?</Text>
+        <Text style={styles.questions}>{question.question}</Text>
       </View>
       <View style={styles.options}>
-        <TouchableOpacity style={styles.optionButton}>
-          <Image
-            source={{
-              uri: 'https://cdni.iconscout.com/illustration/premium/thumb/dog-holding-bone-in-mouth-4238889-3518614.png',
-            }}
-            style={styles.banner}
-            resizeMode="contain"
-          />
-          <Text style={styles.option}>DOG</Text>
-        </TouchableOpacity>
-        <TouchableOpacity style={styles.optionButton}>
-          <Image
-            source={{
-              uri: 'https://cdni.iconscout.com/illustration/premium/thumb/cat-playing-with-ball-4238780-3518541.png',
-            }}
-            style={styles.banner}
-            resizeMode="contain"
-          />
-          <Text style={styles.option}>CAT</Text>
-        </TouchableOpacity>
-        <TouchableOpacity style={styles.optionButton}>
-          <Image
-            source={{
-              uri: 'https://cdni.iconscout.com/illustration/premium/thumb/tiger-with-face-mask-4238787-3518546.png',
-            }}
-            style={styles.banner}
-            resizeMode="contain"
-          />
-          <Text style={styles.option}>TIGER</Text>
-        </TouchableOpacity>
-        <TouchableOpacity style={styles.optionButton}>
-          <Image
-            source={{
-              uri: 'https://cdni.iconscout.com/illustration/premium/thumb/parrot-singing-song-4278579-3581473.png',
-            }}
-            style={styles.banner}
-            resizeMode="contain"
-          />
-          <Text style={styles.option}>PARROT</Text>
-        </TouchableOpacity>
+        {question.ans.map((e, i) => {
+          const hanldePress = () => {
+            setAnsChoice(i + 1);
+          };
+
+          return (
+            <TouchableOpacity
+              onPress={hanldePress}
+              style={[
+                styles.optionButton,
+                ansChoice === i + 1 ? styles.choice : null,
+              ]}
+              key={i}>
+              <Image
+                source={{
+                  uri: 'https://cdni.iconscout.com/illustration/premium/thumb/dog-holding-bone-in-mouth-4238889-3518614.png',
+                }}
+                style={styles.banner}
+                resizeMode="contain"
+              />
+              <Text style={styles.option}>{e}</Text>
+            </TouchableOpacity>
+          );
+        })}
       </View>
       <View style={styles.bottom}>
-        <TouchableOpacity
-          style={styles.button}
-          onPress={() => navigation.navigate('BottomModal')}>
+        <TouchableOpacity style={styles.button}>
           <Text style={styles.buttonText}>KIỂM TRA</Text>
         </TouchableOpacity>
       </View>
-    </View>
+    </SafeAreaView>
   );
 };
 
@@ -75,19 +67,27 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     paddingHorizontal: 20,
-    height: '100%',
+  },
+  choice: {
+    backgroundColor: '#0099FF',
   },
   top: {
-    marginVertical: 16,
+    marginVertical: 15,
     textAlign: 'center',
     justifyContent: 'center',
     alignItems: 'center',
+    borderWidth: 1,
+    borderColor: '#99FFCC',
+    borderRadius: 12,
+    backgroundColor: '#CCFFCC',
+    height: 70,
   },
   questions: {
     fontSize: 28,
+    textTransform: 'capitalize',
   },
   banner: {
-    height: height / 4.5,
+    height: height / 4,
     width: 171,
   },
   options: {
@@ -102,6 +102,7 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
     fontStyle: 'normal',
     textAlign: 'auto',
+    textTransform: 'capitalize',
   },
   optionButton: {
     borderRadius: 5,
@@ -110,9 +111,9 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
     color: 'white',
-    backgroundColor: 'white',
+    backgroundColor: '#ffffff',
     borderWidth: 2,
-    borderColor: 'black',
+    borderColor: '#99FFFF',
   },
   bottom: {
     marginBottom: 12,
@@ -124,7 +125,7 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: '#3399CC',
     padding: 16,
-    borderRadius: 5,
+    borderRadius: 50,
     alignItems: 'center',
     marginBottom: 30,
     textAlign: 'center',
