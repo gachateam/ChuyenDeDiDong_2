@@ -1,47 +1,53 @@
-import { Modal, TouchableWithoutFeedback, View, Text, Dimensions, StyleSheet } from 'react-native'
-import React from 'react'
-import { FlatList } from 'react-native-gesture-handler'
+import {
+  Modal,
+  TouchableWithoutFeedback,
+  View,
+  Text,
+  Dimensions,
+  StyleSheet,
+} from 'react-native';
+import React from 'react';
+import {FlatList} from 'react-native-gesture-handler';
 
-const deviceHeight = Dimensions.get("window").height
+const deviceHeight = Dimensions.get('window').height;
 export class BottomPopup extends React.Component {
   constructor(props) {
-    super(props)
+    super(props);
     this.state = {
-      show: false
-    }
+      show: false,
+    };
   }
 
   show = () => {
-    this.setState({ show: true })
-  }
+    this.setState({show: true});
+  };
   close = () => {
-    this.setState({ show: false })
-  }
+    this.setState({show: false});
+  };
   renderOutsideTouchable(onTouch) {
-    const view = <View style={styles.container} />
-    if (!onTouch) return view
+    const view = <View style={styles.container} />;
+    if (!onTouch) {
+      return view;
+    }
 
     return (
       <TouchableWithoutFeedback onPress={onTouch} style={styles.container}>
         {view}
       </TouchableWithoutFeedback>
-    )
+    );
   }
 
   renderTitle = () => {
-    const { title } = this.props
+    const {title} = this.props;
     return (
       <View style={styles.alignCenter}>
-        <Text style={styles.title}>
-          {title}
-        </Text>
+        <Text style={styles.title}>{title}</Text>
       </View>
-
-    )
-  }
+    );
+  };
 
   renderContent = () => {
-    const { data } = this.props
+    const {data} = this.props;
     return (
       <View>
         <FlatList
@@ -55,33 +61,30 @@ export class BottomPopup extends React.Component {
           contentContainerStyle={styles.padding40}
         />
       </View>
-    )
-  }
+    );
+  };
 
-  renderItem = ({ item }) => {
+  renderItem = ({item}) => {
     return (
       <View style={styles.itemView}>
         <Text style={styles.itemText}>{item.name}</Text>
       </View>
-    )
-  }
+    );
+  };
 
-  renderSeparator = () => <View style={styles.separater} />
+  renderSeparator = () => <View style={styles.separater} />;
 
   render() {
-    let { show } = this.state
-    const { onTouchOutside, title } = this.props
+    let {show} = this.state;
+    const {onTouchOutside} = this.props;
 
     return (
       <Modal
         animationType={'fade'}
         transparent={true}
         visible={show}
-        onRequestClose={this.close}
-      >
-        <View
-          style={styles.topModel}
-        >
+        onRequestClose={this.close}>
+        <View style={styles.topModel}>
           {this.renderOutsideTouchable(onTouchOutside)}
           <View style={styles.model}>
             {this.renderTitle()}
@@ -89,10 +92,9 @@ export class BottomPopup extends React.Component {
           </View>
         </View>
       </Modal>
-    )
+    );
   }
 }
-
 
 const styles = StyleSheet.create({
   container: {
@@ -133,7 +135,7 @@ const styles = StyleSheet.create({
     alignItems: 'flex-start',
     justifyContent: 'center',
   },
-  itemText: { fontSize: 18, fontWeight: 'normal', color: '#182E44' },
-  padding20: { paddingBottom: 20 },
-  padding40: { paddingBottom: 40 },
+  itemText: {fontSize: 18, fontWeight: 'normal', color: '#182E44'},
+  padding20: {paddingBottom: 20},
+  padding40: {paddingBottom: 40},
 });
