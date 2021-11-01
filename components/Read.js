@@ -1,33 +1,40 @@
 import React from 'react';
-import {StyleSheet, Text, View, Image, TouchableOpacity} from 'react-native';
+import {StyleSheet, Text, View, Image, TouchableOpacity, PointPropType} from 'react-native';
+import Tts from 'react-native-tts';
 
+const handleVoice = () => {
+  Tts.speak('Hello everybody');
+};
 const Read = ({navigation}) => {
   return (
     <View style={styles.container}>
       <View style={styles.top}>
         <Text style={styles.questions}>Questions</Text>
+        <Text style={styles.meaning}>The meaning of the question</Text>
       </View>
-
-      <TouchableOpacity style={styles.listen}>
+      
+      <TouchableOpacity style={styles.listen} onPress={() => handleVoice()}> 
         <Image
           source={{
-            uri: 'https://cdn.iconscout.com/icon/premium/png-64-thumb/listening-music-2742467-2276710.png',
+            uri: 'https://cdn.iconscout.com/icon/free/png-64/music-1128-1131524.png',
           }}
           style={styles.banner1}
           resizeMode="contain"
         />
       </TouchableOpacity>
-
       <View style={styles.bannerbottom}>
         <TouchableOpacity style={styles.listen}>
           <Image
             source={{
-              uri: 'https://cdn.iconscout.com/icon/premium/png-64-thumb/voice-recorder-3334898-2789123.png',
+              uri: 'https://cdn.iconscout.com/icon/free/png-64/recording-voice-recognization-speech-audio-record-4-14005.png',
             }}
             style={styles.banner2}
             resizeMode="contain"
           />
         </TouchableOpacity>
+      </View>
+      <View style ={styles.answer}>
+        <Text style={styles.answertext}>Answer</Text>
       </View>
       <View style={styles.bottom}>
         <TouchableOpacity style={styles.button}>
@@ -55,19 +62,18 @@ const styles = StyleSheet.create({
     borderColor: '#99FFCC',
     borderRadius: 12,
     backgroundColor: '#CCFFCC',
-    height: 150,
+    height: 100,
   },
   questions: {
     fontSize: 28,
   },
   banner1: {
-    height: 100,
+    height: 70,
     width: 60,
   },
   banner2: {
-    height: 110,
-    width: 80,
-    paddingTop: 600,
+    width: 70,
+    paddingTop: 280,
   },
   bottom: {
     marginBottom: 12,
@@ -81,7 +87,6 @@ const styles = StyleSheet.create({
     padding: 16,
     borderRadius: 50,
     alignItems: 'center',
-    marginBottom: 30,
     textAlign: 'center',
   },
   buttonText: {
@@ -95,7 +100,17 @@ const styles = StyleSheet.create({
     marginHorizontal: 10,
   },
   bannerbottom: {
-    height: 340,
     borderRadius: 50,
   },
+  answer: {
+    marginVertical: 15,
+    textAlign: 'center',
+    justifyContent: 'center',
+    alignItems: 'center',
+    borderWidth: 1,
+    borderColor: '#99FFCC',
+    borderRadius: 12,
+    backgroundColor: '#CCFFCC',
+    height: 100,
+  }
 });
