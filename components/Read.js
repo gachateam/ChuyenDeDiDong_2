@@ -1,9 +1,11 @@
 import React from 'react';
 import {StyleSheet, Text, View, Image, TouchableOpacity} from 'react-native';
+import Header from './Header';
 
 const Read = ({navigation}) => {
   return (
     <View style={styles.container}>
+      <Header navigation={navigation} />
       <View style={styles.top}>
         <Text style={styles.questions}>Questions</Text>
       </View>
