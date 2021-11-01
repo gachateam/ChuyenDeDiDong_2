@@ -1,6 +1,7 @@
 import React from 'react';
 import {StyleSheet, Text, View, Image, TouchableOpacity} from 'react-native';
 import Header from './Header';
+import Tts from 'react-native-tts';
 
 const handleVoice = () => {
   Tts.speak('Hello everybody');
