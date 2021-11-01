@@ -1,6 +1,6 @@
 import React from 'react';
-import {StyleSheet, Text, View, Image, TouchableOpacity, PointPropType} from 'react-native';
-import Tts from 'react-native-tts';
+import {StyleSheet, Text, View, Image, TouchableOpacity} from 'react-native';
+import Header from './Header';
 
 const handleVoice = () => {
   Tts.speak('Hello everybody');
@@ -8,6 +8,7 @@ const handleVoice = () => {
 const Read = ({navigation}) => {
   return (
     <View style={styles.container}>
+      <Header navigation={navigation} />
       <View style={styles.top}>
         <Text style={styles.questions}>Questions</Text>
         <Text style={styles.meaning}>The meaning of the question</Text>
