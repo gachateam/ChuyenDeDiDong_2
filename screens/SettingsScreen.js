@@ -1,8 +1,10 @@
 import React from 'react';
-import {View, StyleSheet, Text, TouchableOpacity} from 'react-native';
+import {View, StyleSheet, Text, TouchableOpacity, MaterialIcons} from 'react-native';
 import { ScrollView } from 'react-native-gesture-handler';
 import { color } from 'react-native-reanimated';
-import { Colors } from 'react-native/Libraries/NewAppScreen';
+import Icon from 'react-native-vector-icons/AntDesign';
+
+
 
 const SettingsScreen = () => {
   return (
@@ -11,23 +13,23 @@ const SettingsScreen = () => {
         <Text style={styles.txtTitle}>Settings</Text>
       </View>
        <ScrollView style = {styles.SelectionView}>
-            <TouchableOpacity style={styles.Selection}>
-              <Text style={styles.text}>My Info</Text>
+            <TouchableOpacity  style={styles.Selection}>
+            <Text style={styles.text}><Icon style ={styles.icon} name="user" size={40}/>My Info</Text>
             </TouchableOpacity>
             <TouchableOpacity style={styles.Selection}>
-              <Text style={styles.text}>Account</Text>
+              <Text style={styles.text}><Icon style ={styles.icon} name="user" size={40}/>Account</Text>
             </TouchableOpacity >
             <TouchableOpacity style={styles.Selection}>
-              <Text style={styles.text}>Dark Mode</Text>
+              <Text style={styles.text}><Icon style ={styles.icon} name="login" size={40}/>Dark Mode</Text>
             </TouchableOpacity>
             <TouchableOpacity style={styles.Selection}>
-              <Text style={styles.text}>Language</Text>
+              <Text style={styles.text}><Icon style ={styles.icon} name="user" size={40}/>Language</Text>
             </TouchableOpacity>
             <TouchableOpacity style={styles.Selection}>
-              <Text style={styles.text}>LogOut</Text>
+              <Text style={styles.text}><Icon style ={styles.icon} name="logout" size={40}/>LogOut</Text>
             </TouchableOpacity>
        </ScrollView>
-    
+
     </View>
   );
 };
@@ -58,6 +60,13 @@ const styles = StyleSheet.create({
     flex: 1,
     paddingVertical: 20,
     paddingHorizontal: 10,
+
+  },
+  icon: {
+    flex: 1,
+    paddingVertical: 20,
+    paddingHorizontal: 10,
+    paddingLeft: 30,
   }
 
 });

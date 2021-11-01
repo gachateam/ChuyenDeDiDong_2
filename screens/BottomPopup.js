@@ -2,6 +2,7 @@ import { Modal, TouchableWithoutFeedback, View, Text, Dimensions, StyleSheet } f
 import React from 'react'
 import { FlatList } from 'react-native-gesture-handler'
 
+
 const deviceHeight = Dimensions.get("window").height
 export class BottomPopup extends React.Component {
   constructor(props) {
