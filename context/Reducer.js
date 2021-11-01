@@ -7,11 +7,6 @@ const reducers = (state, action) => {
         ...state,
         title: action.payload,
       };
-    case ACTIONS.TYPE_QUESTION:
-      return {
-        ...state,
-        typeQuestion: action.payload,
-      };
     case ACTIONS.HIDE_TAB_BAR:
       return {
         ...state,
