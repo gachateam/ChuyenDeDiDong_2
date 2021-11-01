@@ -1,8 +1,10 @@
 import React from 'react';
-import {View, StyleSheet, Text, TouchableOpacity, MaterialIcons} from 'react-native';
+import {View, StyleSheet, Text, TouchableOpacity} from 'react-native';
 import { ScrollView } from 'react-native-gesture-handler';
 import { color } from 'react-native-reanimated';
 import Icon from 'react-native-vector-icons/AntDesign';
+import AntDesign from 'react-native-vector-icons/AntDesign';
+
 
 
 
@@ -14,19 +16,19 @@ const SettingsScreen = () => {
       </View>
        <ScrollView style = {styles.SelectionView}>
             <TouchableOpacity  style={styles.Selection}>
-            <Text style={styles.text}><Icon style ={styles.icon} name="user" size={40}/>My Info</Text>
+            <Text style={styles.text}><Icon style ={styles.icon} name="home" size={40}/>My Info</Text>
             </TouchableOpacity>
             <TouchableOpacity style={styles.Selection}>
-              <Text style={styles.text}><Icon style ={styles.icon} name="user" size={40}/>Account</Text>
+              <Text style={styles.text}><Icon style ={styles.icon} name="user" size={30}/>  Account</Text>
             </TouchableOpacity >
             <TouchableOpacity style={styles.Selection}>
-              <Text style={styles.text}><Icon style ={styles.icon} name="login" size={40}/>Dark Mode</Text>
+              <Text style={styles.text}><AntDesign name="home" size={30}/>  Dark Mode</Text>
             </TouchableOpacity>
             <TouchableOpacity style={styles.Selection}>
-              <Text style={styles.text}><Icon style ={styles.icon} name="user" size={40}/>Language</Text>
+              <Text style={styles.text}><Icon style ={styles.icon} name="home" size={30}/>  Language</Text>
             </TouchableOpacity>
             <TouchableOpacity style={styles.Selection}>
-              <Text style={styles.text}><Icon style ={styles.icon} name="logout" size={40}/>LogOut</Text>
+              <Text style={styles.text}><Icon style ={styles.icon} name="logout" size={30}/>  LogOut</Text>
             </TouchableOpacity>
        </ScrollView>
 
