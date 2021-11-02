@@ -1744,6 +1744,16 @@
                         "vocabulary": "frog",
                         "mean": "con ếch",
                         "image": "https://firebasestorage.googleapis.com/v0/b/englishlearning-ec586.appspot.com/o/dog.jpg?alt=media&token=6139623a-e0b0-4aba-8942-17e8b8ac25a6"
+                    },
+                    {
+                        "vocabulary": "cow",
+                        "mean": "con bò",
+                        "image": "https://firebasestorage.googleapis.com/v0/b/englishlearning-ec586.appspot.com/o/dog.jpg?alt=media&token=6139623a-e0b0-4aba-8942-17e8b8ac25a6"
+                    },
+                    {
+                        "vocabulary": "horse",
+                        "mean": "con ngựa",
+                        "image": "https://firebasestorage.googleapis.com/v0/b/englishlearning-ec586.appspot.com/o/dog.jpg?alt=media&token=6139623a-e0b0-4aba-8942-17e8b8ac25a6"
                     }
                 ],
                 "question": {
