@@ -1244,6 +1244,7 @@
                                 "id": 15,
                                 "type": "Grammar",
                                 "question": "There is ... ant on your hand",
+                                "meanQuestion": "Có một con kiến trên tay bạn",
                                 "ans": [
                                     "a",
                                     "an",
@@ -1256,6 +1257,7 @@
                                 "id": 16,
                                 "type": "Grammar",
                                 "question": "There is ... bird on your hand",
+                                "meanQuestion": "Có một con chim trên tay bạn",
                                 "ans": [
                                     "a",
                                     "an",
@@ -1268,6 +1270,7 @@
                                 "id": 17,
                                 "type": "Grammar",
                                 "question": "There is ... bee on your hand",
+                                "meanQuestion": "Có một con ong trên tay bạn",
                                 "ans": [
                                     "a",
                                     "an",
@@ -1280,6 +1283,7 @@
                                 "id": 18,
                                 "type": "Grammar",
                                 "question": "There is ... fly on your hand",
+                                "meanQuestion": "Có một con ruồi trên tay bạn",
                                 "ans": [
                                     "a",
                                     "an",
@@ -1292,6 +1296,7 @@
                                 "id": 19,
                                 "type": "Grammar",
                                 "question": "There is ... mouse on your hand",
+                                "meanQuestion": "Có một con chuột trên tay bạn",
                                 "ans": [
                                     "a",
                                     "an",
@@ -1304,6 +1309,7 @@
                                 "id": 20,
                                 "type": "Grammar",
                                 "question": "How many fish ... you catch yesterday",
+                                "meanQuestion": "Bạn đã bắt được bao nhiêu con cá hôm qua",
                                 "ans": [
                                     "do",
                                     "did",
@@ -1316,6 +1322,7 @@
                                 "id": 21,
                                 "type": "Grammar",
                                 "question": "How many bird ... you catch yesterday",
+                                "meanQuestion": "Bạn đã bắt được bao nhiêu con chim hôm qua",
                                 "ans": [
                                     "do",
                                     "did",
@@ -1328,6 +1335,7 @@
                                 "id": 22,
                                 "type": "Grammar",
                                 "question": "How many mouse ... you catch yesterday",
+                                "meanQuestion": "Bạn đã bắt được bao nhiêu con chuột hôm qua",
                                 "ans": [
                                     "do",
                                     "did",
@@ -1340,6 +1348,7 @@
                                 "id": 23,
                                 "type": "Grammar",
                                 "question": "How many crab ... you catch yesterday",
+                                "meanQuestion": "Bạn đã bắt được bao nhiêu con cua hôm qua",
                                 "ans": [
                                     "do",
                                     "did",
@@ -1352,6 +1361,7 @@
                                 "id": 24,
                                 "type": "Grammar",
                                 "question": "How many ant ... you catch yesterday",
+                                "meanQuestion": "Bạn đã bắt được bao nhiêu con kiến hôm qua",
                                 "ans": [
                                     "do",
                                     "did",
@@ -1364,6 +1374,7 @@
                                 "id": 25,
                                 "type": "Grammar",
                                 "question": "I ... a dog lover",
+                                "meanQuestion": "Tôi là một người yêu chó",
                                 "ans": [
                                     "do",
                                     "is",
@@ -1376,6 +1387,7 @@
                                 "id": 26,
                                 "type": "Grammar",
                                 "question": "I ... a cat lover",
+                                "meanQuestion": "Tôi là một người yêu mèo",
                                 "ans": [
                                     "do",
                                     "is",
@@ -1388,6 +1400,7 @@
                                 "id": 27,
                                 "type": "Grammar",
                                 "question": "I ... a fish lover",
+                                "meanQuestion": "Tôi là một người yêu cá",
                                 "ans": [
                                     "do",
                                     "is",
@@ -1400,6 +1413,7 @@
                                 "id": 28,
                                 "type": "Grammar",
                                 "question": "I ... a mouse lover",
+                                "meanQuestion": "Tôi là một người yêu chuột",
                                 "ans": [
                                     "do",
                                     "is",
@@ -1412,6 +1426,7 @@
                                 "id": 29,
                                 "type": "Grammar",
                                 "question": "I ... a bird lover",
+                                "meanQuestion": "Tôi là một người yêu chim",
                                 "ans": [
                                     "do",
                                     "is",
@@ -1424,6 +1439,7 @@
                                 "id": 30,
                                 "type": "Grammar",
                                 "question": "My cat ... beautiful",
+                                "meanQuestion": "Con mèo của tôi thật đẹp",
                                 "ans": [
                                     "that",
                                     "am",
@@ -1436,6 +1452,7 @@
                                 "id": 31,
                                 "type": "Grammar",
                                 "question": "My dog ... beautiful",
+                                "meanQuestion": "Con chó của tôi thật đẹp",
                                 "ans": [
                                     "that",
                                     "am",
@@ -1448,6 +1465,7 @@
                                 "id": 32,
                                 "type": "Grammar",
                                 "question": "My parrot ... beautiful",
+                                "meanQuestion": "Con vẹt của tôi thật đẹp",
                                 "ans": [
                                     "that",
                                     "am",
@@ -1460,6 +1478,7 @@
                                 "id": 33,
                                 "type": "Grammar",
                                 "question": "My bird ... beautiful",
+                                "meanQuestion": "Con chim của tôi thật đẹp",
                                 "ans": [
                                     "that",
                                     "am",
@@ -1472,6 +1491,7 @@
                                 "id": 34,
                                 "type": "Grammar",
                                 "question": "My fish ... beautiful",
+                                "meanQuestion": "Con cá của tôi thật đẹp",
                                 "ans": [
                                     "that",
                                     "am",
@@ -2925,6 +2945,7 @@
                                 "id": 15,
                                 "type": "Grammar",
                                 "question": "How ... chickens and ducks in your yard?",
+                                "meanQuestion": "Có bao nhiêu con gà và con vịt ở sân của bạn?",
                                 "ans": [
                                     "much",
                                     "an",
@@ -2937,6 +2958,7 @@
                                 "id": 16,
                                 "type": "Grammar",
                                 "question": "How ... sheeps and horses in your yard?",
+                                "meanQuestion": "Có bao nhiêu con cừu và con ngựa ở sân của bạn?",
                                 "ans": [
                                     "much",
                                     "an",
@@ -2949,6 +2971,7 @@
                                 "id": 17,
                                 "type": "Grammar",
                                 "question": "How ... frogs and cows in your yard?",
+                                "meanQuestion": "Có bao nhiêu con ếch và con bò ở sân của bạn?",
                                 "ans": [
                                     "much",
                                     "an",
@@ -2961,6 +2984,7 @@
                                 "id": 18,
                                 "type": "Grammar",
                                 "question": "How ... rabbbits and pigs in your yard?",
+                                "meanQuestion": "Có bao nhiêu con thỏ và con heo ở sân của bạn?",
                                 "ans": [
                                     "much",
                                     "an",
@@ -2973,6 +2997,7 @@
                                 "id": 19,
                                 "type": "Grammar",
                                 "question": "How ... ducks and pigeons in your yard?",
+                                "meanQuestion": "Có bao nhiêu con vịt và con bồ câu ở sân của bạn?",
                                 "ans": [
                                     "much",
                                     "an",
@@ -2985,6 +3010,7 @@
                                 "id": 20,
                                 "type": "Grammar",
                                 "question": "There ... two frogs inside my house",
+                                "meanQuestion": "Có hai con ếch ở trong nhà của tôi",
                                 "ans": [
                                     "is",
                                     "are",
@@ -2997,6 +3023,7 @@
                                 "id": 21,
                                 "type": "Grammar",
                                 "question": "There ... two snakes inside my house",
+                                "meanQuestion": "Có hai con rắn ở trong nhà của tôi",
                                 "ans": [
                                     "is",
                                     "are",
@@ -3009,6 +3036,7 @@
                                 "id": 22,
                                 "type": "Grammar",
                                 "question": "There ... two pigeons inside my house",
+                                "meanQuestion": "Có hai con bồ câu ở trong nhà của tôi",
                                 "ans": [
                                     "is",
                                     "are",
@@ -3021,6 +3049,7 @@
                                 "id": 23,
                                 "type": "Grammar",
                                 "question": "There ... two ducks inside my house",
+                                "meanQuestion": "Có hai con vịt ở trong nhà của tôi",
                                 "ans": [
                                     "is",
                                     "are",
@@ -3033,6 +3062,7 @@
                                 "id": 24,
                                 "type": "Grammar",
                                 "question": "There ... two chickens inside my house",
+                                "meanQuestion": "Có hai con gà ở trong nhà của tôi",
                                 "ans": [
                                     "is",
                                     "are",
@@ -3045,6 +3075,7 @@
                                 "id": 25,
                                 "type": "Grammar",
                                 "question": "... snakes are poisonous",
+                                "meanQuestion": "Một vài con rắn có độc",
                                 "ans": [
                                     "have",
                                     "are",
@@ -3057,6 +3088,7 @@
                                 "id": 26,
                                 "type": "Grammar",
                                 "question": "... frogs are poisonous",
+                                "meanQuestion": "Một vài con ếch có độc",
                                 "ans": [
                                     "have",
                                     "are",
@@ -3069,6 +3101,7 @@
                                 "id": 27,
                                 "type": "Grammar",
                                 "question": "Do you have ... food for my chicken?",
+                                "meanQuestion": "Bạn có đồ ăn cho con gà của tôi?",
                                 "ans": [
                                     "have",
                                     "are",
@@ -3081,6 +3114,7 @@
                                 "id": 28,
                                 "type": "Grammar",
                                 "question": "Do you have ... food for my duck?",
+                                "meanQuestion": "Bạn có đồ ăn cho con vịt của tôi?",
                                 "ans": [
                                     "have",
                                     "are",
@@ -3093,6 +3127,7 @@
                                 "id": 29,
                                 "type": "Grammar",
                                 "question": "Do you have ... food for my rabbit?",
+                                "meanQuestion": "Bạn có đồ ăn cho con thỏ của tôi?",
                                 "ans": [
                                     "have",
                                     "are",
@@ -3104,7 +3139,8 @@
                             {
                                 "id": 30,
                                 "type": "Grammar",
-                                "question": "How ... is this chicken",
+                                "question": "How ... is this chicken?",
+                                "meanQuestion": "Con gà này bao nhiêu tiền?",
                                 "ans": [
                                     "that",
                                     "am",
@@ -3116,7 +3152,8 @@
                             {
                                 "id": 31,
                                 "type": "Grammar",
-                                "question": "How ... is this duck",
+                                "question": "How ... is this duck?",
+                                "meanQuestion": "Con vịt này bao nhiêu tiền?",
                                 "ans": [
                                     "that",
                                     "am",
@@ -3128,7 +3165,8 @@
                             {
                                 "id": 32,
                                 "type": "Grammar",
-                                "question": "How ... is this pig",
+                                "question": "How ... is this pig?",
+                                "meanQuestion": "Con heo này bao nhiêu tiền?",
                                 "ans": [
                                     "that",
                                     "am",
@@ -3140,7 +3178,8 @@
                             {
                                 "id": 33,
                                 "type": "Grammar",
-                                "question": "How ... is this cow",
+                                "question": "How ... is this cow?",
+                                "meanQuestion": "Con bò này bao nhiêu tiền?",
                                 "ans": [
                                     "that",
                                     "am",
@@ -3152,7 +3191,8 @@
                             {
                                 "id": 34,
                                 "type": "Grammar",
-                                "question": "How ... is this horse",
+                                "question": "How ... is this horse?",
+                                "meanQuestion": "Con ngựa này bao nhiêu tiền?",
                                 "ans": [
                                     "that",
                                     "am",
@@ -4600,6 +4640,7 @@
                                 "id": 15,
                                 "type": "Grammar",
                                 "question": "Lion is stronger ... tiger",
+                                "meanQuestion": "Con sư tử khỏe hơn con hổ",
                                 "ans": [
                                     "an",
                                     "than",
@@ -4612,6 +4653,7 @@
                                 "id": 16,
                                 "type": "Grammar",
                                 "question": "Elephant is stronger ... lion",
+                                "meanQuestion": "Con voi khỏe hơn con sư tử",
                                 "ans": [
                                     "than",
                                     "with",
@@ -4624,6 +4666,7 @@
                                 "id": 17,
                                 "type": "Grammar",
                                 "question": "Leopard is stronger ... wolf",
+                                "meanQuestion": "Con báo khỏe hơn con sói",
                                 "ans": [
                                     "than",
                                     "with",
@@ -4636,6 +4679,7 @@
                                 "id": 18,
                                 "type": "Grammar",
                                 "question": "Tiger is stronger ... zebra",
+                                "meanQuestion": "Con hổ khỏe hơn con ngựa vằn",
                                 "ans": [
                                     "than",
                                     "with",
@@ -4648,6 +4692,7 @@
                                 "id": 19,
                                 "type": "Grammar",
                                 "question": "Lion is stronger ... wolf",
+                                "meanQuestion": "Con sư tử khỏe hơn con sói",
                                 "ans": [
                                     "than",
                                     "with",
@@ -4660,6 +4705,7 @@
                                 "id": 20,
                                 "type": "Grammar",
                                 "question": "Elephant is the ...",
+                                "meanQuestion": "Con voi bự nhất",
                                 "ans": [
                                     "big",
                                     "biggest",
@@ -4672,6 +4718,7 @@
                                 "id": 21,
                                 "type": "Grammar",
                                 "question": "This wolf is the ... in the pack",
+                                "meanQuestion": "Đây là con sói nhỏ nhất trong đàn",
                                 "ans": [
                                     "high",
                                     "smallest",
@@ -4684,6 +4731,7 @@
                                 "id": 22,
                                 "type": "Grammar",
                                 "question": "This lion is the ... one",
+                                "meanQuestion": "Đây là con sư tử khỏe nhất trong đàn",
                                 "ans": [
                                     "smart",
                                     "strongest",
@@ -4696,6 +4744,7 @@
                                 "id": 23,
                                 "type": "Grammar",
                                 "question": "Whale is the ... animal in the sea",
+                                "meanQuestion": "Cá voi là loài động vật lớn nhất ở biển",
                                 "ans": [
                                     "smart",
                                     "largest",
@@ -4708,6 +4757,7 @@
                                 "id": 24,
                                 "type": "Grammar",
                                 "question": "This is the ... monkey",
+                                "meanQuestion": "Đây là con khỉ thông minh nhất",
                                 "ans": [
                                     "weak",
                                     "smartest",
@@ -4720,6 +4770,7 @@
                                 "id": 25,
                                 "type": "Grammar",
                                 "question": "Wolf is ... than leopard",
+                                "meanQuestion": "Con sói nhỏ hơn con báo",
                                 "ans": [
                                     "weak",
                                     "small",
@@ -4732,6 +4783,7 @@
                                 "id": 26,
                                 "type": "Grammar",
                                 "question": "Whale is ... than elephant",
+                                "meanQuestion": "Con cá voi bự hơn con voi",
                                 "ans": [
                                     "big",
                                     "strong",
@@ -4744,6 +4796,7 @@
                                 "id": 27,
                                 "type": "Grammar",
                                 "question": "Lion is ... than tiger",
+                                "meanQuestion": "Con sư tử khỏe hơn con hổ",
                                 "ans": [
                                     "weak",
                                     "high",
@@ -4756,6 +4809,7 @@
                                 "id": 28,
                                 "type": "Grammar",
                                 "question": "Leopard is ... than lion",
+                                "meanQuestion": "Con báo nhanh hơn con sư tử",
                                 "ans": [
                                     "fast",
                                     "slow",
@@ -4768,6 +4822,7 @@
                                 "id": 29,
                                 "type": "Grammar",
                                 "question": "Squirrel is ... than zebra",
+                                "meanQuestion": "Con sóc thông minh hơn con ngựa vằn",
                                 "ans": [
                                     "high",
                                     "big",
@@ -4780,6 +4835,7 @@
                                 "id": 30,
                                 "type": "Grammar",
                                 "question": "Giraffe ... long neck",
+                                "meanQuestion": "Con hươu cao cổ có cái cổ dài",
                                 "ans": [
                                     "have",
                                     "is",
@@ -4792,6 +4848,7 @@
                                 "id": 31,
                                 "type": "Grammar",
                                 "question": "Elephant ... long nose",
+                                "meanQuestion": "Con voi có cái mũi dài",
                                 "ans": [
                                     "have",
                                     "is",
@@ -4804,6 +4861,7 @@
                                 "id": 32,
                                 "type": "Grammar",
                                 "question": "Tiger ... stripes",
+                                "meanQuestion": "Con hổ có sọc",
                                 "ans": [
                                     "have",
                                     "is",
@@ -4816,6 +4874,7 @@
                                 "id": 33,
                                 "type": "Grammar",
                                 "question": "Leopard ... spot",
+                                "meanQuestion": "Con báo có đốm",
                                 "ans": [
                                     "have",
                                     "is",
@@ -4828,6 +4887,7 @@
                                 "id": 34,
                                 "type": "Grammar",
                                 "question": "Zebra ... stripes",
+                                "meanQuestion": "Con ngựa vằn có sọc",
                                 "ans": [
                                     "have",
                                     "is",
