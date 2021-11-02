@@ -11,7 +11,7 @@ const QuestionBoxVocabulary = ({question}) => {
                 style={styles.banner}
                 resizeMode="contain"
             />
-            <Text style={styles.questions}>{question}</Text>
+             <Text style={styles.questions}>{question}</Text>
         </View>
     )
 }
