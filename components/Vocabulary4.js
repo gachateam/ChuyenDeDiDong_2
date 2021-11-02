@@ -1,9 +1,10 @@
-import React, {useState} from 'react';
-import {Text, View, StyleSheet, Image} from 'react-native';
-import {TouchableOpacity} from 'react-native';
+import React, { useState } from 'react';
+import { Text, View, StyleSheet, Image } from 'react-native';
+import { TouchableOpacity } from 'react-native';
 import Header from './Header';
+import QuestionBoxVocabulary from './QuestionBoxVocabulary';
 
-const Vocabulary4 = ({navigation}) => {
+const Vocabulary4 = ({ navigation }) => {
   const [ansChoice, setAnsChoice] = useState(0);
 
   const question = {
@@ -14,16 +15,7 @@ const Vocabulary4 = ({navigation}) => {
   return (
     <View style={styles.container}>
       <Header navigation={navigation} />
-      <View style={styles.top}>
-        <Image
-          source={{
-            uri: 'https://cdn.iconscout.com/icon/premium/png-64-thumb/question-answer-2100724-1765054.png',
-          }}
-          style={styles.banner}
-          resizeMode="contain"
-        />
-        <Text style={styles.questions}>{question.question}</Text>
-      </View>
+      <QuestionBoxVocabulary question={question.question} />
 
       <View style={styles.options}>
         {question.ans.map((e, i) => {

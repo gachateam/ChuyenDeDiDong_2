@@ -1,12 +1,12 @@
 import React from 'react';
-import {StyleSheet, Text, View, Image, TouchableOpacity} from 'react-native';
+import { StyleSheet, Text, View, Image, TouchableOpacity } from 'react-native';
 import Header from './Header';
 import Tts from 'react-native-tts';
 
 const handleVoice = () => {
   Tts.speak('Hello everybody');
 };
-const Read = ({navigation}) => {
+const Read = ({ navigation }) => {
   return (
     <View style={styles.container}>
       <Header navigation={navigation} />
@@ -14,8 +14,8 @@ const Read = ({navigation}) => {
         <Text style={styles.questions}>Questions</Text>
         <Text style={styles.meaning}>The meaning of the question</Text>
       </View>
-      
-      <TouchableOpacity style={styles.listen} onPress={() => handleVoice()}> 
+
+      <TouchableOpacity style={styles.listen} onPress={() => handleVoice()}>
         <Image
           source={{
             uri: 'https://cdn.iconscout.com/icon/free/png-64/music-1128-1131524.png',
@@ -24,18 +24,16 @@ const Read = ({navigation}) => {
           resizeMode="contain"
         />
       </TouchableOpacity>
-      <View style={styles.bannerbottom}>
-        <TouchableOpacity style={styles.listen}>
-          <Image
-            source={{
-              uri: 'https://cdn.iconscout.com/icon/free/png-64/recording-voice-recognization-speech-audio-record-4-14005.png',
-            }}
-            style={styles.banner2}
-            resizeMode="contain"
-          />
-        </TouchableOpacity>
-      </View>
-      <View style ={styles.answer}>
+      <TouchableOpacity style={styles.listen}>
+        <Image
+          source={{
+            uri: 'https://cdn.iconscout.com/icon/free/png-64/recording-voice-recognization-speech-audio-record-4-14005.png',
+          }}
+          style={styles.banner2}
+          resizeMode="contain"
+        />
+      </TouchableOpacity>
+      <View style={styles.answer}>
         <Text style={styles.answertext}>Answer</Text>
       </View>
       <View style={styles.bottom}>
@@ -70,12 +68,12 @@ const styles = StyleSheet.create({
     fontSize: 28,
   },
   banner1: {
-    height: 70,
-    width: 60,
+    width: "25%",
+    height: "25%",
   },
   banner2: {
-    width: 70,
-    paddingTop: 280,
+    width: "15%",
+    paddingVertical: 80,
   },
   bottom: {
     marginBottom: 12,
@@ -100,9 +98,6 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
     marginHorizontal: 10,
-  },
-  bannerbottom: {
-    borderRadius: 50,
   },
   answer: {
     marginVertical: 15,

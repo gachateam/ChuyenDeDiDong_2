@@ -8,9 +8,9 @@ import {
   Dimensions,
   SafeAreaView,
 } from 'react-native';
-import { useQuestion } from '../context/QuestionContext';
 import Header from './Header';
 import { ACTIONS } from './../context/QuestionContext/Action';
+import { useQuestion } from '../context/QuestionContext';
 
 const height = Dimensions.get('screen').height;
 
