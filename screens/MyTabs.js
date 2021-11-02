@@ -3,7 +3,6 @@ import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import HomeScreen from './HomeScreen';
 import SettingsScreen from './SettingsScreen';
 import AntDesign from 'react-native-vector-icons/AntDesign';
-import ProfilesScreen from './ProfilesScreen';
 import {StyleSheet, TouchableOpacity} from 'react-native';
 import * as Animatable from 'react-native-animatable';
 import {useGlobal} from '../context/GlobalContext';

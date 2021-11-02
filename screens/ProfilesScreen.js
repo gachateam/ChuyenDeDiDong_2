@@ -1,18 +1,20 @@
 import React from 'react';
-import { View, StyleSheet, Text, SafeAreaView, TouchableOpacity } from 'react-native';
-import { Avatar, IconButton, Title, Colors, Caption } from 'react-native-paper';
-import SignInScreen from './SignInScreen';
-import SignUpScreen from './SignUpScreen';
+import {View, StyleSheet, SafeAreaView, TouchableOpacity} from 'react-native';
+import {Avatar, Title} from 'react-native-paper';
 
-const ProfilesScreen = ({ navigation }) => {
+const ProfilesScreen = ({navigation}) => {
   return (
     <SafeAreaView style={styles.container}>
       <View style={styles.userInfor}>
-        <View style={{ flexDirection: 'row', marginTop: 15 }}>
-          <Avatar.Image size={70} source={{ uri: 'https://cdn6.aptoide.com/imgs/3/7/b/37bdd8cc95f5aac3a85b0f2a2f1b6dc3_icon.png' }} />
+        <View style={{flexDirection: 'row', marginTop: 15}}>
+          <Avatar.Image
+            size={70}
+            source={{
+              uri: 'https://cdn6.aptoide.com/imgs/3/7/b/37bdd8cc95f5aac3a85b0f2a2f1b6dc3_icon.png',
+            }}
+          />
           <View>
-            <View style={{ marginLeft: 20, marginTop: 4, flexDirection: 'row' }}>
-
+            <View style={{marginLeft: 20, marginTop: 4, flexDirection: 'row'}}>
               <TouchableOpacity
                 onPress={() => navigation.navigate('SignInScreen')}>
                 <Title>Đăng nhập /</Title>
