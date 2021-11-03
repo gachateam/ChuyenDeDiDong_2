@@ -1,15 +1,14 @@
 import React from 'react'
 import { StyleSheet, Text, View } from 'react-native'
 
-const QuestionBoxListen = ({question}) => {
+const QuestionBoxListen = ({ question }) => {
     return (
-    <View>
-      <View style={styles.top}>
-      <Text style={styles.questions}>{question}</Text>
-        <Text style={styles.meaning}>The meaning of the question</Text>
-      </View>
-    </View>
-    
+        <View>
+            <View style={styles.top}>
+                <Text style={styles.questions}>{question}</Text>
+                <Text style={styles.meaning}>The meaning of the question</Text>
+            </View>
+        </View>
     )
 }
 
@@ -32,5 +31,5 @@ const styles = StyleSheet.create({
         textAlign: 'center',
         alignItems: 'center',
         textTransform: 'capitalize',
-      },
+    },
 })
