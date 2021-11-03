@@ -1,5 +1,6 @@
 import React from 'react';
 import { StyleSheet, Text, TouchableOpacity, View } from 'react-native';
+import { Colors, IconButton } from 'react-native-paper';
 import ProgressCircle from 'react-native-progress-circle';
 import Entypo from 'react-native-vector-icons/Entypo';
 import { ACTIONS } from '../context/Action';
@@ -26,10 +27,12 @@ const DifficultLevel = ({
             percent={stage1}
             radius={50}
             borderWidth={4}
-            color="#3399FF"
+            color="#1597E5"
             shadowColor="#999"
             bgColor="#fff">
-            <Text style={styles.text}>{'Tiến độ 1'}</Text>
+            <IconButton icon="ballot-outline"
+            color={Colors.gray}
+            size={60}/>
           </ProgressCircle>
         </TouchableOpacity>
       </View>
@@ -39,10 +42,12 @@ const DifficultLevel = ({
             percent={stage2}
             radius={50}
             borderWidth={4}
-            color="#3399FF"
+            color="#1597E5"
             shadowColor="#999"
             bgColor="#fff">
-            <Text style={styles.text}>{'Tiến độ 2'}</Text>
+            <IconButton icon="book-open-page-variant"
+            color={Colors.gray}
+            size={60}/>
           </ProgressCircle>
         </TouchableOpacity>
         <TouchableOpacity onPress={onPress} disabled={disabled}>
@@ -50,10 +55,12 @@ const DifficultLevel = ({
             percent={stage3}
             radius={50}
             borderWidth={4}
-            color="#3399FF"
+            color="#1597E5"
             shadowColor="#999"
             bgColor="#fff">
-            <Text style={styles.text}>{'Tiến độ 3'}</Text>
+            <IconButton icon="brain"
+            color={Colors.gray}
+            size={60}/>
           </ProgressCircle>
         </TouchableOpacity>
       </View>
@@ -96,7 +103,7 @@ const styles = StyleSheet.create({
     width: "25%",
     justifyContent: 'flex-start',
     alignItems: 'center',
-    backgroundColor: '#0000CD',
+    backgroundColor: '#3399FF',
     borderRadius: 50,
     padding: 4,
     flexDirection: 'row'
