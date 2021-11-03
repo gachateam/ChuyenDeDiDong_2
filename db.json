@@ -1724,7 +1724,54 @@
                         "vocabulary": "frog",
                         "mean": "con ếch",
                         "image": "https://firebasestorage.googleapis.com/v0/b/englishlearning-ec586.appspot.com/o/dog.jpg?alt=media&token=6139623a-e0b0-4aba-8942-17e8b8ac25a6"
+                    },
+                    {
+                        "word": "cow",
+                        "mean": "con bò ",
+                        "image": "https://firebasestorage.googleapis.com/v0/b/englishlearning-ec586.appspot.com/o/cow.jpg?alt=media&token=328ff88e-5049-4c59-9364-34374e1187a7"
+                    },
+                    {
+                        "word": "horse",
+                        "mean": "con ngựa ",
+                        "image": "https://firebasestorage.googleapis.com/v0/b/englishlearning-ec586.appspot.com/o/horse.jpg?alt=media&token=5e8c20d0-3a11-43ac-8b64-2a6fd16598e7"
+                    },
+                    {
+                        "word": "rabbit",
+                        "mean": "con thỏ ",
+                        "image": "https://firebasestorage.googleapis.com/v0/b/englishlearning-ec586.appspot.com/o/rabbit.jpg?alt=media&token=415d3949-959c-4df1-b3a8-f0b92aff5a80"
+                    },
+                    {
+                        "word": "chicken",
+                        "mean": "con gà",
+                        "image": "https://firebasestorage.googleapis.com/v0/b/englishlearning-ec586.appspot.com/o/chicken.jpg?alt=media&token=312c59d3-c139-4fd4-90ea-9276e26e75b4"
+                    },
+                    {
+                        "word": "pig",
+                        "mean": "con heo",
+                        "image": "https://firebasestorage.googleapis.com/v0/b/englishlearning-ec586.appspot.com/o/pig.jpg?alt=media&token=e61c8799-69eb-4c6f-9ac2-2607bb173f0a"
+                    },
+                    {
+                        "word": "sheep",
+                        "mean": "con cừu",
+                        "image": "https://firebasestorage.googleapis.com/v0/b/englishlearning-ec586.appspot.com/o/sheep.jpg?alt=media&token=c086d1b0-a7de-48b3-9896-63e54204e866"
+                    },
+                    {
+                        "word": "snake",
+                        "mean": "con rắn",
+                        "image": "https://firebasestorage.googleapis.com/v0/b/englishlearning-ec586.appspot.com/o/snake.jpg?alt=media&token=56c09755-cead-4c53-8bc6-6068c3b1990b"
+                    },
+                    {
+                        "word": "duck",
+                        "mean": "con vịt",
+                        "image": "https://firebasestorage.googleapis.com/v0/b/englishlearning-ec586.appspot.com/o/duck.jpg?alt=media&token=b48fe09c-9561-491a-8660-c85eef8ac45b"
+                    },
+                    {
+                        "word": "pigeon",
+                        "mean": "bồ câu ",
+                        "image": "https://firebasestorage.googleapis.com/v0/b/englishlearning-ec586.appspot.com/o/pigeon.jpg?alt=media&token=acf53df9-4d11-4480-8d0a-af8ea8de8fc5"
                     }
+                    
+
                 ],
                 "question": {
                     "stage1": {
@@ -3402,10 +3449,57 @@
             "hard": {
                 "vocabulary": [
                     {
-                        "vocabulary": "dog",
-                        "mean": "con chó",
-                        "image": "https://firebasestorage.googleapis.com/v0/b/englishlearning-ec586.appspot.com/o/dog.jpg?alt=media&token=6139623a-e0b0-4aba-8942-17e8b8ac25a6"
+                        "vocabulary": "elephant",
+                        "mean": "con voi",
+                        "image": "https://firebasestorage.googleapis.com/v0/b/englishlearning-ec586.appspot.com/o/elephant.jpg?alt=media&token=1464786b-c19a-4266-9676-1fa9782f2439"
+                    },
+                    {
+                        "vocabulary": "tiger",
+                        "mean": "con hổ",
+                        "image": "https://firebasestorage.googleapis.com/v0/b/englishlearning-ec586.appspot.com/o/tiger.jpg?alt=media&token=53e7ede0-7c16-4a9e-af54-99eed3ca1c3e"
+                    },
+                    {
+                        "word": "lion",
+                        "mean": "con sư tử ",
+                        "image": "https://firebasestorage.googleapis.com/v0/b/englishlearning-ec586.appspot.com/o/lion.jpg?alt=media&token=fdec9b21-9ac2-45e9-a551-b255c1778c04"
+                    },
+                    {
+                        "word": "wolf",
+                        "mean": "con sói ",
+                        "image": "https://firebasestorage.googleapis.com/v0/b/englishlearning-ec586.appspot.com/o/wolf.jpg?alt=media&token=a260e0c3-427d-4cb0-bbc7-89577632f885"
+                    },
+                    {
+                        "word": "whale",
+                        "mean": "con cá voi",
+                        "image": "https://firebasestorage.googleapis.com/v0/b/englishlearning-ec586.appspot.com/o/whale.jpg?alt=media&token=7639b6f7-3b6c-4f54-a770-b351e94a4e4e"
+                    },
+                    {
+                        "word": "monkey",
+                        "mean": "con khỉ",
+                        "image": "https://firebasestorage.googleapis.com/v0/b/englishlearning-ec586.appspot.com/o/monkey.jpg?alt=media&token=16b20235-88e7-45a0-924a-9d927cb58a83"
+                    },
+                    {
+                        "word": "squirrel",
+                        "mean": "con sóc",
+                        "image": "https://firebasestorage.googleapis.com/v0/b/englishlearning-ec586.appspot.com/o/squirrel.jpg?alt=media&token=6eb42d2b-0850-45ef-bff3-a982e433dae3"
+                    },
+                    {
+                        "word": "leopard",
+                        "mean": "con báo",
+                        "image": "https://firebasestorage.googleapis.com/v0/b/englishlearning-ec586.appspot.com/o/leopard.jpg?alt=media&token=0727b7b0-8362-4150-8427-196558d2281c"
+                    },
+                    {
+                        "word": "giraffe",
+                        "mean": "con hươu cao cổ ",
+                        "image": "https://firebasestorage.googleapis.com/v0/b/englishlearning-ec586.appspot.com/o/giraffe.jpg?alt=media&token=9a9d6cf6-cf95-4bd3-b600-a47588fa3fc8"
+                    },
+                    {
+                        "word": "zebra",
+                        "mean": "con ngựa vằn ",
+                        "image": "https://firebasestorage.googleapis.com/v0/b/englishlearning-ec586.appspot.com/o/zebra.jpg?alt=media&token=65421ec5-a837-4c90-b173-c8dc5859df70"
                     }
+                    
+                    
                 ],
                 "question": {
                     "stage1": {
