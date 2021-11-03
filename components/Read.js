@@ -1,23 +1,23 @@
 import React from 'react';
-import { StyleSheet, Text, View, Image, TouchableOpacity } from 'react-native';
+import {StyleSheet, Text, View, Image, TouchableOpacity} from 'react-native';
 import Header from './Header';
 import Tts from 'react-native-tts';
 import QuestionBoxListen from './QuestionBoxListen';
 
 const handleVoice = () => {
-  Tts.speak('Hello everyone',{
+  Tts.speak('Hello everyone', {
     language: 'en',
-  })
+  });
 };
 const question = {
   question: 'Reading',
   ans: ['Hello everyone'],
 };
-const Read = ({ navigation }) => {
+const Read = ({navigation}) => {
   return (
     <View style={styles.container}>
-        <Header navigation={navigation} />
-        <QuestionBoxListen question={question.question} />
+      <Header navigation={navigation} />
+      <QuestionBoxListen question={question.question} />
 
       <TouchableOpacity style={styles.listen} onPress={() => handleVoice()}>
         <Image
@@ -58,11 +58,11 @@ const styles = StyleSheet.create({
     height: '100%',
   },
   banner1: {
-    width: "25%",
-    height: "25%",
+    width: '25%',
+    height: '25%',
   },
   banner2: {
-    width: "15%",
+    width: '15%',
     paddingVertical: 80,
   },
   bottom: {
@@ -99,5 +99,5 @@ const styles = StyleSheet.create({
     borderRadius: 12,
     backgroundColor: '#CCFFCC',
     height: 100,
-  }
+  },
 });

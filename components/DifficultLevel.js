@@ -1,9 +1,9 @@
 import React from 'react';
-import { StyleSheet, Text, TouchableOpacity, View } from 'react-native';
+import {StyleSheet, Text, TouchableOpacity, View} from 'react-native';
 import ProgressCircle from 'react-native-progress-circle';
 import Entypo from 'react-native-vector-icons/Entypo';
-import { ACTIONS } from '../context/Action';
-import { useGlobal } from '../context/GlobalContext';
+import {ACTIONS} from '../context/Action';
+import {useGlobal} from '../context/GlobalContext';
 
 const DifficultLevel = ({
   stage1,
@@ -13,9 +13,9 @@ const DifficultLevel = ({
   disabled,
   navigation,
 }) => {
-  const { hideTabBar, dispatch } = useGlobal();
+  const {hideTabBar, dispatch} = useGlobal();
   const onPress = () => {
-    dispatch({ type: ACTIONS.HIDE_TAB_BAR, payload: !hideTabBar });
+    dispatch({type: ACTIONS.HIDE_TAB_BAR, payload: !hideTabBar});
     navigation.navigate('SplashScreen');
   };
   return (
@@ -59,9 +59,7 @@ const DifficultLevel = ({
       </View>
 
       <View style={styles.challenge}>
-        <View
-          style={styles.challengeBox}
-        >
+        <View style={styles.challengeBox}>
           <Entypo
             name={challengeUnlock ? 'lock-open' : 'lock'}
             size={32}
@@ -93,13 +91,13 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   challengeBox: {
-    width: "25%",
+    width: '25%',
     justifyContent: 'flex-start',
     alignItems: 'center',
     backgroundColor: '#0000CD',
     borderRadius: 50,
     padding: 4,
-    flexDirection: 'row'
+    flexDirection: 'row',
   },
   text: {
     fontSize: 18,
@@ -115,8 +113,8 @@ const styles = StyleSheet.create({
     flex: 1,
     color: '#fff',
     fontWeight: 'bold',
-    marginLeft:8
-  }
+    marginLeft: 8,
+  },
 });
 
 export default DifficultLevel;

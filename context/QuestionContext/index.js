@@ -10,17 +10,19 @@ export const useQuestion = () => {
 
 const QuestionContextProvider = ({children}) => {
   const initialState = {
-    typeQuestion: 'read',
-    ansChoice: 0
+    typeQuestion: '4vocabulary',
+    ansChoice: 0,
   };
   const [state, dispatch] = useReducer(reducers, initialState);
   const {typeQuestion} = state;
   const value = {
     dispatch,
-    typeQuestion
+    typeQuestion,
   };
   return (
-    <QuestionContext.Provider value={value}>{children}</QuestionContext.Provider>
+    <QuestionContext.Provider value={value}>
+      {children}
+    </QuestionContext.Provider>
   );
 };
 

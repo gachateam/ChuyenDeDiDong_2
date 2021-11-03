@@ -1,10 +1,10 @@
-import React, { useState } from 'react';
-import { Text, View, StyleSheet, Image } from 'react-native';
-import { TouchableOpacity } from 'react-native';
+import React, {useState} from 'react';
+import {Text, View, StyleSheet} from 'react-native';
+import {TouchableOpacity} from 'react-native';
 import Header from './Header';
 import QuestionBoxVocabulary from './QuestionBoxVocabulary';
 
-const Vocabulary4 = ({ navigation }) => {
+const Vocabulary4 = ({navigation}) => {
   const [ansChoice, setAnsChoice] = useState(0);
 
   const question = {
