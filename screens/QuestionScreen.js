@@ -1,12 +1,13 @@
-import React from 'react'
-import { Text } from 'react-native';
+import React from 'react';
+import QuestionContextProvider from './../context/QuestionContext/index';
+import Question from './../components/Question';
 
-const QuestionScreen = () => {
-    return (
-        <Text>
-            123
-        </Text>
-    )
-}
+const QuestionScreen = ({navigation}) => {
+  return (
+    <QuestionContextProvider>
+      <Question navigation={navigation} />
+    </QuestionContextProvider>
+  );
+};
 
-export default QuestionScreen
+export default QuestionScreen;

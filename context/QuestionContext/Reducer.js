@@ -2,15 +2,15 @@ import {ACTIONS} from './Action';
 
 const reducers = (state, action) => {
   switch (action.type) {
-    case ACTIONS.CHOOSE_TITLES:
+    case ACTIONS.TYPE_QUESTION:
       return {
         ...state,
-        title: action.payload,
+        typeQuestion: action.payload,
       };
-    case ACTIONS.HIDE_TAB_BAR:
+    case ACTIONS.CHOICE_ANS:
       return {
         ...state,
-        hideTabBar: action.payload,
+        ansChoice: action.payload,
       };
     default:
       return state;
