@@ -6,8 +6,6 @@ import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 
 
 
-
-
 const SettingsScreen = () => {
   return (
     <View style={styles.container}>
@@ -22,11 +20,17 @@ const SettingsScreen = () => {
               <Text style={styles.text}><Icon style ={styles.icon} name="home" size={30}/>   Account</Text>
             </TouchableOpacity >
             <TouchableOpacity style={styles.Selection}>
-              <Text style={styles.text}><Icon name="home" size={30}/>  Dark Theme  <Switch/></Text>
+              <View style={styles.preference}> 
+              <Text style={styles.text}><Icon name="home" size={30}/>  Dark Theme </Text> 
+                                <View pointerEvents="none">
+                                    <Switch/>
+                                </View>
+              </View>
             </TouchableOpacity>
             <TouchableOpacity style={styles.Selection}>
               <Text style={styles.text}><Icon style ={styles.icon} name="home" size={30}/>   Language</Text>
             </TouchableOpacity>
+            
             <TouchableOpacity style={styles.Selection}>
               <Text style={styles.text}><Icon style ={styles.icon} name="home" size={30}/>   LogOut</Text>
             </TouchableOpacity>
@@ -69,7 +73,11 @@ const styles = StyleSheet.create({
     paddingVertical: 20,
     paddingHorizontal: 10,
     paddingLeft: 30,
-  }
+  },
+  preference: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+  },
 
 });
 
