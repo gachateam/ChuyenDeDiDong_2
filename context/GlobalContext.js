@@ -14,7 +14,7 @@ const GlobalContextProvider = ({children}) => {
     hideTabBar: false,
   };
   const [state, dispatch] = useReducer(reducers, initialState);
-  const {title,  hideTabBar} = state;
+  const {title, hideTabBar} = state;
   const value = {
     dispatch,
     title,

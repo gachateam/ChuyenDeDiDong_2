@@ -6,43 +6,52 @@ import {useGlobal} from '../context/GlobalContext';
 import {ACTIONS} from '../context/Action';
 import ImageBackground from 'react-native/Libraries/Image/ImageBackground';
 
-const image = {uri: "https://firebasestorage.googleapis.com/v0/b/englishlearning-ec586.appspot.com/o/250966642_559763815111848_1955696526273842802_n.png?alt=media&token=2378d749-8cfc-4722-b4e4-c00d51fdda78"}
+const image = {
+  uri: 'https://firebasestorage.googleapis.com/v0/b/englishlearning-ec586.appspot.com/o/250966642_559763815111848_1955696526273842802_n.png?alt=media&token=2378d749-8cfc-4722-b4e4-c00d51fdda78',
+};
 
 const StageScreen = ({navigation}) => {
   const isDrawerOpen = useDrawerStatus() === 'open';
   const {dispatch} = useGlobal();
+  const handleScroll = e => {
+    dispatch({
+      type: ACTIONS.HIDE_TAB_BAR,
+      payload: e.nativeEvent.contentOffset.y > 10,
+    });
+  };
+
   useEffect(() => {
     dispatch({type: ACTIONS.HIDE_TAB_BAR, payload: isDrawerOpen});
   }, [isDrawerOpen, dispatch]);
   return (
     <SafeAreaView style={styles.container}>
       <ImageBackground source={image} resizeMode="cover" style={styles.image}>
-      <ScrollView style={styles.scrollView}>
-        <DifficultLevel
-          stage1={30}
-          stage2={40}
-          stage3={50}
-          challengeUnlock={false}
-          disabled={false}
-          navigation={navigation}
-        />
-        <DifficultLevel
-          stage1={0}
-          stage2={0}
-          stage3={0}
-          challengeUnlock={false}
-          disabled={true}
-          navigation={navigation}
-        />
-        <DifficultLevel
-          stage1={0}
-          stage2={0}
-          stage3={0}
-          challengeUnlock={false}
-          disabled={true}
-          navigation={navigation}
-        />
-      </ScrollView>
+        <ScrollView style={styles.scrollView} onScroll={handleScroll}>
+          <DifficultLevel
+            stage1={30}
+            stage2={40}
+            stage3={50}
+            challengeUnlock={false}
+            disabled={false}
+            navigation={navigation}
+          />
+          <DifficultLevel
+            stage1={0}
+            stage2={0}
+            stage3={0}
+            challengeUnlock={false}
+            disabled={true}
+            navigation={navigation}
+          />
+          <DifficultLevel
+            stage1={0}
+            stage2={0}
+            stage3={0}
+            challengeUnlock={false}
+            disabled={true}
+            navigation={navigation}
+          />
+        </ScrollView>
       </ImageBackground>
     </SafeAreaView>
   );
@@ -51,7 +60,6 @@ const StageScreen = ({navigation}) => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-
   },
   scrollView: {},
   stage1: {
@@ -72,10 +80,10 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
   },
-  image:{
+  image: {
     flex: 1,
-    justifyContent: "center"
-  }
+    justifyContent: 'center',
+  },
 });
 
 export default StageScreen;

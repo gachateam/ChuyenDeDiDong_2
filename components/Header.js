@@ -1,10 +1,13 @@
 import React, {useEffect, useState} from 'react';
 import {Animated, StyleSheet, View} from 'react-native';
 import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
+import {useGlobal} from '../context/GlobalContext';
+import {ACTIONS} from './../context/Action';
 
 const Header = ({navigation}) => {
   const [progressStatus, setProgressStatus] = useState(0);
 
+  const {hideTabBar, dispatch} = useGlobal();
   const anim = new Animated.Value(0);
 
   useEffect(() => {
@@ -24,6 +27,7 @@ const Header = ({navigation}) => {
 
   const handlePress = () => {
     // navigation.navigate('Home');
+    dispatch({type: ACTIONS.HIDE_TAB_BAR, payload: !hideTabBar});
     navigation.reset({
       index: 0,
       routes: [
