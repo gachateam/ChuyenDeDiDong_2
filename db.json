@@ -1746,16 +1746,6 @@
                         "image": "https://firebasestorage.googleapis.com/v0/b/englishlearning-ec586.appspot.com/o/dog.jpg?alt=media&token=6139623a-e0b0-4aba-8942-17e8b8ac25a6"
                     },
                     {
-<<<<<<< Updated upstream
-                        "vocabulary": "cow",
-                        "mean": "con bò",
-                        "image": "https://firebasestorage.googleapis.com/v0/b/englishlearning-ec586.appspot.com/o/dog.jpg?alt=media&token=6139623a-e0b0-4aba-8942-17e8b8ac25a6"
-                    },
-                    {
-                        "vocabulary": "horse",
-                        "mean": "con ngựa",
-                        "image": "https://firebasestorage.googleapis.com/v0/b/englishlearning-ec586.appspot.com/o/dog.jpg?alt=media&token=6139623a-e0b0-4aba-8942-17e8b8ac25a6"
-=======
                         "word": "cat",
                         "mean": "con mèo",
                         "image": "https://firebasestorage.googleapis.com/v0/b/englishlearning-ec586.appspot.com/o/cat.jpg?alt=media&token=b7cf924c-38df-49db-9614-1047edcfdf51"
@@ -1799,7 +1789,6 @@
                         "word": "parrot",
                         "mean": "con vẹt",
                         "image": "https://firebasestorage.googleapis.com/v0/b/englishlearning-ec586.appspot.com/o/parrot.jpg?alt=media&token=2cb89e4c-54be-4723-a665-65f307b40492"
->>>>>>> Stashed changes
                     }
                 ],
                 "question": {
