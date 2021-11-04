@@ -4,6 +4,7 @@ import Image4 from './Image4';
 import Vocabulary4 from './Vocabulary4';
 import Read from './Read';
 import {TYPE_QUESTION} from './../context/TypeQuestion';
+import Sound from './Sound';
 
 const Question = ({navigation}) => {
   const {typeQuestion} = useQuestion();
@@ -15,6 +16,8 @@ const Question = ({navigation}) => {
       return <Vocabulary4 navigation={navigation} />;
     case TYPE_QUESTION.READ:
       return <Read navigation={navigation} />;
+    case TYPE_QUESTION.SOUND:
+        return <Sound navigation={navigation} />;
     default:
       break;
   }
