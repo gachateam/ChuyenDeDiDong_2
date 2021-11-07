@@ -5,15 +5,9 @@ import Header from './Header';
 import QuestionBoxVocabulary from './QuestionBoxVocabulary';
 import Tts from 'react-native-tts';
 
-const Vocabulary4 = ({navigation}) => {
+const Sound = ({navigation}) => {
   const [ansChoice, setAnsChoice] = useState(0);
 
-
-  const handleVoice = () => {
-    Tts.speak('cat', 'mouse', 'ant', 'fish', {
-      language: 'en',
-    });
-  };
   const question = {
     question: 'dịch "con chuột"',
     ans: ['cat', 'mouse', 'ant', 'fish'],
@@ -29,6 +23,14 @@ const Vocabulary4 = ({navigation}) => {
           const hanldePress = () => {
             setAnsChoice(i + 1);
           };
+          const handleVoice = () => {
+            Tts.speak('cat');
+            Tts.speak('mouse');
+            Tts.speak('ant');
+            Tts.speak('fish');
+            Tts.setDefaultLanguage('en'); 
+            setAnsChoice(i + 1);
+          };
           return (
             <TouchableOpacity
               onPress={hanldePress}
@@ -36,9 +38,9 @@ const Vocabulary4 = ({navigation}) => {
               style={[
                 styles.optionButton,
                 ansChoice === i + 1 ? styles.choice : null,
-              ]}
+              ] }
               key={i}>
-              <Text style={styles.option}>{e}</Text>
+              <Text style={styles.option} >{e}</Text>
             </TouchableOpacity>
           );
         })}
@@ -53,7 +55,7 @@ const Vocabulary4 = ({navigation}) => {
   );
 };
 
-export default Vocabulary4;
+export default Sound;
 const styles = StyleSheet.create({
   container: {
     flex: 1,
