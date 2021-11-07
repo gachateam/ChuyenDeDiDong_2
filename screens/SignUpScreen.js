@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import {
   View,
   Text,
@@ -13,8 +13,108 @@ import * as Animatable from 'react-native-animatable';
 import LinearGradient from 'react-native-linear-gradient';
 import FontAwesome from 'react-native-vector-icons/FontAwesome';
 import Feather from 'react-native-vector-icons/Feather';
+import auth from '@react-native-firebase/auth';
+import firestore from '@react-native-firebase/firestore';
 
-const SignUpScreen = ({navigation}) => {
+
+
+const SignUpScreen = ({ navigation }) => {
+
+  const [data, setData] = React.useState({
+    username: '',
+    email: '',
+    password: '',
+    confirm_password: '',
+    check_textInputChange: false,
+  });
+
+  const usernameCharacter = 24;
+  const emailRegex = /^[\w-.]+@([\w-]+\.)+[\w-]{2,4}$/;
+  const passCharacter = 6;
+  const [errUsername, setErrUsername] = useState('');
+  const [errEmail, setErrEmail] = useState('');
+  const [errPass, setErrPass] = useState('');
+  const [errConfirmPass, setErrConfirmPass] = useState('');
+  // login error when sent email and password to firebase
+  const [loginError, setLoginError] = React.useState('');
+
+  const handleUsernameChange = val => {
+    setData({
+      ...data,
+      username: val.trim(),
+    });
+    if (val.trim().length > usernameCharacter) {
+      return setErrUsername(`Username can't be ${usernameCharacter} characters long.`);
+    } else {
+      return setErrUsername('');
+    }
+  };
+
+  const handleEmailChange = val => {
+    setData({
+      ...data,
+      email: val.trim(),
+      check_textInputChange: val.trim().length !== 0,
+    });
+    if (!emailRegex.test(val.trim())) {
+      return setErrEmail('Please enter valid email');
+    } else {
+      return setErrEmail('');
+    }
+  };
+
+  const handlePasswordChange = val => {
+    setData({
+      ...data,
+      password: val.trim(),
+    });
+    if (val.trim().length < passCharacter - 1) {
+      return setErrPass(`Password must be ${passCharacter} characters long.`);
+    } else {
+      return setErrPass('');
+    }
+  };
+
+  const handleConfirmPasswordChange = val => {
+    setData({
+      ...data,
+      confirm_password: val.trim(),
+    });
+    if (val.trim().length < passCharacter - 1) {
+      return setErrConfirmPass(
+        `Password must be ${passCharacter} characters long.`,
+      );
+    } else {
+      return setErrConfirmPass('');
+    }
+  };
+
+  const handleSignUp = () => {
+
+    if (
+      data.username === '' ||
+      data.email === '' ||
+      data.password === '' ||
+      data.confirm_password === ''
+    ) {
+      return setLoginError("Can't empty username, email, password, comfirm password.");
+    }
+
+    if (errUsername || errEmail || errPass || errConfirmPass) {
+      return setLoginError(
+        'Please enter valid username, email, password, comfirm password.',
+      );
+    }
+
+    if (data.password !== data.confirm_password) {
+      return setLoginError('Please enter valid password and comfirm password.');
+    }
+
+    auth()
+      .createUserWithEmailAndPassword(data.email, data.password)
+      .then(() => setLoginError(''))
+      .catch(err => setLoginError(err.message));
+  };
   return (
     <View style={styles.container}>
       <StatusBar backgroundColor="#009387" barStyle="light-content" />
@@ -30,9 +130,14 @@ const SignUpScreen = ({navigation}) => {
               placeholderTextColor="grey"
               style={styles.textInput}
               autoCapitalize="none"
+              onChangeText={val => handleUsernameChange(val)}
             />
           </View>
-
+          {!(errUsername === '') && (
+            <Animatable.View animation="fadeInLeft" duration={500}>
+              <Text style={styles.errorMsg}>{errUsername}</Text>
+            </Animatable.View>
+          )}
           <View style={styles.action}>
             <Feather name="mail" color="#05375a" size={20} />
             <TextInput
@@ -40,8 +145,14 @@ const SignUpScreen = ({navigation}) => {
               placeholderTextColor="grey"
               style={styles.textInput}
               autoCapitalize="none"
+              onChangeText={val => handleEmailChange(val)}
             />
           </View>
+          {!(errEmail === '') && (
+            <Animatable.View animation="fadeInLeft" duration={500}>
+              <Text style={styles.errorMsg}>{errEmail}</Text>
+            </Animatable.View>
+          )}
           <View style={styles.action}>
             <Feather name="lock" color="#05375a" size={20} />
             <TextInput
@@ -50,8 +161,14 @@ const SignUpScreen = ({navigation}) => {
               style={styles.textInput}
               autoCapitalize="none"
               secureTextEntry={true}
+              onChangeText={val => handlePasswordChange(val)}
             />
           </View>
+          {!(errPass === '') && (
+            <Animatable.View animation="fadeInLeft" duration={500}>
+              <Text style={styles.errorMsg}>{errPass}</Text>
+            </Animatable.View>
+          )}
           <View style={styles.action}>
             <Feather name="lock" color="#05375a" size={20} />
             <TextInput
@@ -60,22 +177,35 @@ const SignUpScreen = ({navigation}) => {
               style={styles.textInput}
               autoCapitalize="none"
               secureTextEntry={true}
+              onChangeText={val => handleConfirmPasswordChange(val)}
             />
           </View>
+          {!(errConfirmPass === '') && (
+            <Animatable.View animation="fadeInLeft" duration={500}>
+              <Text style={styles.errorMsg}>{errConfirmPass}</Text>
+            </Animatable.View>
+          )}
+          {!(loginError === '') && (
+            <Animatable.View animation="tada" duration={1000}>
+              <Text style={[styles.errorMsg, styles.errLoginMess]}>
+                {loginError}
+              </Text>
+            </Animatable.View>
+          )}
           <View style={styles.textPrivate}>
             <Text style={styles.color_textPrivate}>
               By signing up you agree to our
             </Text>
-            <Text style={[styles.color_textPrivate, {fontWeight: 'bold'}]}>
+            <Text style={[styles.color_textPrivate, { fontWeight: 'bold' }]}>
               Terms of service
             </Text>
             <Text style={styles.color_textPrivate}> and</Text>
-            <Text style={[styles.color_textPrivate, {fontWeight: 'bold'}]}>
+            <Text style={[styles.color_textPrivate, { fontWeight: 'bold' }]}>
               Privacy policy
             </Text>
           </View>
           <View style={styles.button}>
-            <TouchableOpacity style={styles.signIn} onPress={() => {}}>
+            <TouchableOpacity style={styles.signIn} onPress={() => handleSignUp()}>
               <LinearGradient
                 colors={['#08d4c4', '#01ab9d']}
                 style={styles.signIn}>
@@ -92,7 +222,7 @@ const SignUpScreen = ({navigation}) => {
             </TouchableOpacity>
 
             <TouchableOpacity
-              onPress={() => navigation.goBack()}
+              onPress={() => navigation.navigate('SignInScreen')}
               style={[
                 styles.signIn,
                 {

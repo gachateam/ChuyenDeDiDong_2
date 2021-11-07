@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "269142696824",
+    "project_id": "englishlearning-ec586",
+    "storage_bucket": "englishlearning-ec586.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:269142696824:android:1823112a347a7f4794de8d",
+        "android_client_info": {
+          "package_name": "com.englishlearning"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "269142696824-qqfi3h5d5oi0uokvl0mer95rmct73u9e.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB4-k8eK5bX42S6edKu1lmtB6yX-U_rEiM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "269142696824-qqfi3h5d5oi0uokvl0mer95rmct73u9e.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
