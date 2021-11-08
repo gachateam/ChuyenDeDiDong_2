@@ -1,16 +1,16 @@
-import React, {useState} from 'react';
-import {Text, View, StyleSheet} from 'react-native';
-import {TouchableOpacity} from 'react-native';
+import React, { useState } from 'react';
+import { Text, View, StyleSheet } from 'react-native';
+import { TouchableOpacity } from 'react-native';
 import Header from './Header';
 import QuestionBoxVocabulary from './QuestionBoxVocabulary';
 import Tts from 'react-native-tts';
 
-const Vocabulary4 = ({navigation}) => {
+const Vocabulary4 = ({ navigation }) => {
   const [ansChoice, setAnsChoice] = useState(0);
 
-
-  const handleVoice = () => {
-    Tts.speak('cat', 'mouse', 'ant', 'fish', {
+  const handleVoice = (tu) => {
+    Tts.stop()
+    Tts.speak(tu, {
       language: 'en',
     });
   };
@@ -32,7 +32,7 @@ const Vocabulary4 = ({navigation}) => {
           return (
             <TouchableOpacity
               onPress={hanldePress}
-              onPress={ handleVoice}
+              onPress={() => handleVoice(e)}
               style={[
                 styles.optionButton,
                 ansChoice === i + 1 ? styles.choice : null,

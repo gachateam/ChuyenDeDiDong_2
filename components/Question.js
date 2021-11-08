@@ -16,7 +16,7 @@ const Question = ({navigation}) => {
       return <Vocabulary4 navigation={navigation} />;
     case TYPE_QUESTION.READ:
       return <Read navigation={navigation} />;
-    case TYPE_QUESTION.SOUND:
+    case TYPE_QUESTION.PRONOUNCIACION:
         return <Sound navigation={navigation} />;
     default:
       break;

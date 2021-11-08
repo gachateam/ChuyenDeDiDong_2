@@ -10,7 +10,7 @@ export const useGlobal = () => {
 
 const GlobalContextProvider = ({children}) => {
   const initialState = {
-    title: 'read',
+    title: 'Pronounciacion',
     hideTabBar: false,
   };
   const [state, dispatch] = useReducer(reducers, initialState);

@@ -11,5 +11,4 @@ export const TYPE_QUESTION = {
   CHOICE_MULTI_ANSWER: 'choiceMultiAnswer',
   FILL_WORD_STAGE_3: 'FillWordStage3',
   GRAMMAR: 'Grammar',
-  SOUND: 'sound',
 };
