@@ -5,15 +5,16 @@ import Header from './Header';
 import QuestionBoxVocabulary from './QuestionBoxVocabulary';
 import Tts from 'react-native-tts';
 
-const Vocabulary4 = ({ navigation }) => {
+Tts.setDefaultLanguage('en');
+
+const Sound = ({ navigation }) => {
   const [ansChoice, setAnsChoice] = useState(0);
 
   const handleVoice = (tu) => {
     Tts.stop()
-    Tts.speak(tu, {
-      language: 'en',
-    });
+    Tts.speak(tu);
   };
+
   const question = {
     question: 'dịch "con chuột"',
     ans: ['cat', 'mouse', 'ant', 'fish'],
@@ -38,7 +39,7 @@ const Vocabulary4 = ({ navigation }) => {
                 ansChoice === i + 1 ? styles.choice : null,
               ]}
               key={i}>
-              <Text style={styles.option}>{e}</Text>
+              <Text style={styles.option} >{e}</Text>
             </TouchableOpacity>
           );
         })}
@@ -53,7 +54,7 @@ const Vocabulary4 = ({ navigation }) => {
   );
 };
 
-export default Vocabulary4;
+export default Sound;
 const styles = StyleSheet.create({
   container: {
     flex: 1,

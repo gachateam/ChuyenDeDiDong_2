@@ -5,9 +5,8 @@ import Tts from 'react-native-tts';
 import QuestionBoxListen from './QuestionBoxListen';
 
 const handleVoice = () => {
-  Tts.speak('Hello everyone', {
-    language: 'en',
-  });
+  Tts.speak('Hello everyone');
+  Tts.setDefaultLanguage('en');
 };
 const question = {
   question: 'Reading',
