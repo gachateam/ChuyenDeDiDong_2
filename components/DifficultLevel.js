@@ -1,6 +1,6 @@
 import React from 'react';
-import { StyleSheet, Text, TouchableOpacity, View } from 'react-native';
-import { IconButton } from 'react-native-paper';
+import {StyleSheet, Text, TouchableOpacity, View} from 'react-native';
+import {IconButton} from 'react-native-paper';
 import ProgressCircle from 'react-native-progress-circle';
 import Entypo from 'react-native-vector-icons/Entypo';
 import {ACTIONS} from '../context/Action';
@@ -30,9 +30,11 @@ const DifficultLevel = ({
             color="#1597E5"
             shadowColor="#999"
             bgColor="#fff">
-            <IconButton icon="ballot-outline"
-            // color="#69DADB"
-            size={60}/>
+            <IconButton
+              icon="ballot-outline"
+              // color="#69DADB"
+              size={60}
+            />
           </ProgressCircle>
         </TouchableOpacity>
       </View>
@@ -45,9 +47,11 @@ const DifficultLevel = ({
             color="#1597E5"
             shadowColor="#999"
             bgColor="#fff">
-            <IconButton icon="book-open-page-variant"
-            // color="#69DADB"
-            size={60}/>
+            <IconButton
+              icon="book-open-page-variant"
+              // color="#69DADB"
+              size={60}
+            />
           </ProgressCircle>
         </TouchableOpacity>
         <TouchableOpacity onPress={onPress} disabled={disabled}>
@@ -58,9 +62,11 @@ const DifficultLevel = ({
             color="#1597E5"
             shadowColor="#999"
             bgColor="#fff">
-            <IconButton icon="brain"
-            // color="#69DADB"
-            size={60}/>
+            <IconButton
+              icon="brain"
+              // color="#69DADB"
+              size={60}
+            />
           </ProgressCircle>
         </TouchableOpacity>
       </View>

@@ -1,5 +1,5 @@
 import * as React from 'react';
-import {Text, View} from 'react-native';
+import {StyleSheet, Text, View} from 'react-native';
 import {createDrawerNavigator} from '@react-navigation/drawer';
 import {NavigationContainer} from '@react-navigation/native';
 import {DrawerContent} from './DrawerContent';
@@ -34,7 +34,7 @@ function HomeScreens({navigation}) {
   };
 
   return (
-    <View style={{flex: 1, alignItems: 'center', justifyContent: 'center'}}>
+    <View style={styles.showPopup}>
       <Text onPress={onShowPopup}>123</Text>
       <BottomPopup
         title="YOU đã chọn đúng , tiếp tục phát huy đi ...."
@@ -77,3 +77,11 @@ const HomeScreen = ({navigation}) => {
 };
 
 export default HomeScreen;
+
+const styles = StyleSheet.create({
+  showPopup: {
+    flex: 1,
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+});

@@ -14,12 +14,9 @@ import LinearGradient from 'react-native-linear-gradient';
 import FontAwesome from 'react-native-vector-icons/FontAwesome';
 import Feather from 'react-native-vector-icons/Feather';
 import auth from '@react-native-firebase/auth';
-import firestore from '@react-native-firebase/firestore';
-
-
+// import firestore from '@react-native-firebase/firestore';
 
 const SignUpScreen = ({ navigation }) => {
-
   const [data, setData] = React.useState({
     username: '',
     email: '',
@@ -44,7 +41,9 @@ const SignUpScreen = ({ navigation }) => {
       username: val.trim(),
     });
     if (val.trim().length > usernameCharacter) {
-      return setErrUsername(`Username can't be ${usernameCharacter} characters long.`);
+      return setErrUsername(
+        `Username can't be ${usernameCharacter} characters long.`,
+      );
     } else {
       return setErrUsername('');
     }
@@ -90,14 +89,15 @@ const SignUpScreen = ({ navigation }) => {
   };
 
   const handleSignUp = () => {
-
     if (
       data.username === '' ||
       data.email === '' ||
       data.password === '' ||
       data.confirm_password === ''
     ) {
-      return setLoginError("Can't empty username, email, password, comfirm password.");
+      return setLoginError(
+        "Can't empty username, email, password, comfirm password.",
+      );
     }
 
     if (errUsername || errEmail || errPass || errConfirmPass) {
@@ -196,51 +196,32 @@ const SignUpScreen = ({ navigation }) => {
             <Text style={styles.color_textPrivate}>
               By signing up you agree to our
             </Text>
-            <Text style={[styles.color_textPrivate, { fontWeight: 'bold' }]}>
+            <Text style={styles.color_textPrivateBold}>
               Terms of service
             </Text>
             <Text style={styles.color_textPrivate}> and</Text>
-            <Text style={[styles.color_textPrivate, { fontWeight: 'bold' }]}>
+            <Text style={styles.color_textPrivateBold}>
               Privacy policy
             </Text>
           </View>
           <View style={styles.button}>
-            <TouchableOpacity style={styles.signIn} onPress={() => handleSignUp()}>
+            <TouchableOpacity
+              style={styles.signIn}
+              onPress={() => handleSignUp()}>
               <LinearGradient
                 colors={['#08d4c4', '#01ab9d']}
                 style={styles.signIn}>
-                <Text
-                  style={[
-                    styles.textSign,
-                    {
-                      color: '#fff',
-                    },
-                  ]}>
+                <Text style={styles.textSignUp}>
                   Sign Up
                 </Text>
               </LinearGradient>
             </TouchableOpacity>
 
             <TouchableOpacity
-              onPress={() => navigation.navigate('SignInScreen')}
-              style={[
-                styles.signIn,
-                {
-                  borderColor: '#009387',
-                  borderWidth: 1,
-                  marginTop: 15,
-                },
-              ]}>
-              <Text
-                style={[
-                  styles.textSign,
-                  {
-                    color: '#009387',
-                  },
-                ]}>
-                Sign In
-              </Text>
-            </TouchableOpacity>
+            onPress={() => navigation.navigate('SignInScreen')}
+            style={[styles.signIn, styles.buttonSignIn]}>
+            <Text style={styles.textSignIn}>Sign In</Text>
+          </TouchableOpacity>
           </View>
         </ScrollView>
       </Animatable.View>
@@ -302,9 +283,10 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     borderRadius: 10,
   },
-  textSign: {
+  textSignUp: {
     fontSize: 18,
     fontWeight: 'bold',
+    color: '#fff',
   },
   textPrivate: {
     flexDirection: 'row',
@@ -313,5 +295,23 @@ const styles = StyleSheet.create({
   },
   color_textPrivate: {
     color: 'grey',
+  },
+  color_textPrivateBold: {
+    color: 'grey',
+    fontWeight: 'bold',
+  },
+  buttonSignIn: {
+    borderColor: '#009387',
+    borderWidth: 1,
+    marginTop: 15,
+  },
+  textSignIn: {
+    fontSize: 18,
+    fontWeight: 'bold',
+    color: '#009387',
+  },
+  errorMsg: {
+    color: '#FF0000',
+    fontSize: 14,
   },
 });

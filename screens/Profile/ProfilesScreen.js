@@ -6,7 +6,7 @@ const ProfilesScreen = ({navigation}) => {
   return (
     <SafeAreaView style={styles.container}>
       <View style={styles.userInfor}>
-        <View style={{flexDirection: 'row', marginTop: 15}}>
+        <View style={styles.innerUserInfor}>
           <Avatar.Image
             size={70}
             source={{
@@ -14,7 +14,7 @@ const ProfilesScreen = ({navigation}) => {
             }}
           />
           <View>
-            <View style={{marginLeft: 20, marginTop: 4, flexDirection: 'row'}}>
+            <View style={styles.content}>
               <TouchableOpacity
                 onPress={() => navigation.navigate('SignInScreen')}>
                 <Title>Đăng nhập /</Title>
@@ -24,11 +24,6 @@ const ProfilesScreen = ({navigation}) => {
                 <Title> Đăng kí</Title>
               </TouchableOpacity>
             </View>
-            {/* <IconButton icon="square-edit-outline"
-            color={Colors.red500}
-            size={20}
-            onPress={() => console.log('Pressed')}
-            style={{marginLeft: 'auto'}} /> */}
           </View>
         </View>
       </View>
@@ -43,6 +38,15 @@ const styles = StyleSheet.create({
   userInfor: {
     paddingHorizontal: 30,
     marginBottom: 25,
+  },
+  content: {
+    marginLeft: 20,
+    marginTop: 4,
+    flexDirection: 'row',
+  },
+  innerUserInfor: {
+    flexDirection: 'row',
+    marginTop: 15,
   },
 });
 
