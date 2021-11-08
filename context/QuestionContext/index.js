@@ -10,7 +10,7 @@ export const useQuestion = () => {
 
 const QuestionContextProvider = ({children}) => {
   const initialState = {
-    typeQuestion: 'sound',
+    typeQuestion: 'Pronounciacion',
     ansChoice: 0,
   };
   const [state, dispatch] = useReducer(reducers, initialState);
