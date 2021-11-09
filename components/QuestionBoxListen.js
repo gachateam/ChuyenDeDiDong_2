@@ -1,17 +1,23 @@
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import {StyleSheet, Text, View} from 'react-native';
 import AntDesign from 'react-native-vector-icons/AntDesign';
 import Tts from 'react-native-tts';
 
-const QuestionBoxListen = ({ question, meanQuestion }) => {
+const QuestionBoxListen = ({question, meanQuestion}) => {
   return (
     <View style={styles.top}>
-      <AntDesign style={styles.icon} name="sound" size={32} color="blue" onPress={() => {
-        Tts.stop()
-        Tts.speak(question, {
-          language: 'vi',
-        })
-      }} />
+      <AntDesign
+        style={styles.icon}
+        name="sound"
+        size={32}
+        color="blue"
+        onPress={() => {
+          Tts.stop();
+          Tts.speak(question, {
+            language: 'vi',
+          });
+        }}
+      />
       <View>
         <Text style={styles.questions}>{question}</Text>
         <Text style={styles.meaning}>{meanQuestion}</Text>
@@ -31,7 +37,7 @@ const styles = StyleSheet.create({
     borderRadius: 12,
     backgroundColor: '#CCFFCC',
     height: 100,
-    flexDirection: "row"
+    flexDirection: 'row',
   },
   questions: {
     fontSize: 28,
@@ -40,6 +46,6 @@ const styles = StyleSheet.create({
     textTransform: 'capitalize',
   },
   icon: {
-    paddingHorizontal: 30
-  }
+    paddingHorizontal: 30,
+  },
 });

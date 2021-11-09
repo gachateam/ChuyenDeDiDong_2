@@ -2,7 +2,7 @@ import React from 'react';
 import QuestionBoxVocabulary from './QuestionBoxVocabulary';
 import FourChoice from './FourChoice';
 
-const Vocabulary4 = ({ navigation }) => {
+const Vocabulary4 = ({navigation}) => {
   const question = {
     question: 'dịch "con chuột"',
     ans: ['cat', 'mouse', 'ant', 'fish'],

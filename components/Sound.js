@@ -1,17 +1,12 @@
-import React, { useState } from 'react';
-import { Text, View, StyleSheet } from 'react-native';
-import { TouchableOpacity } from 'react-native';
+import React, {useState} from 'react';
+import {Text, View, StyleSheet} from 'react-native';
+import {TouchableOpacity} from 'react-native';
 import Header from './Header';
 import QuestionBoxVocabulary from './QuestionBoxVocabulary';
 import Tts from 'react-native-tts';
 
-const Sound = ({ navigation }) => {
+const Sound = ({navigation}) => {
   const [ansChoice, setAnsChoice] = useState(0);
-
-  const handleVoice = (tu) => {
-    Tts.stop()
-    Tts.speak(tu);
-  };
 
   const question = {
     question: 'dịch "con chuột"',
@@ -27,17 +22,18 @@ const Sound = ({ navigation }) => {
         {question.ans.map((e, i) => {
           const hanldePress = () => {
             setAnsChoice(i + 1);
+            Tts.stop();
+            Tts.speak(e);
           };
           return (
             <TouchableOpacity
               onPress={hanldePress}
-              onPress={() => handleVoice(e)}
               style={[
                 styles.optionButton,
                 ansChoice === i + 1 ? styles.choice : null,
               ]}
               key={i}>
-              <Text style={styles.option} >{e}</Text>
+              <Text style={styles.option}>{e}</Text>
             </TouchableOpacity>
           );
         })}

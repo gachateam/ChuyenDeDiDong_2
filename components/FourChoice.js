@@ -2,11 +2,10 @@ import React from 'react';
 import {Text, View, StyleSheet} from 'react-native';
 import {TouchableOpacity} from 'react-native';
 import Header from './Header';
-import QuestionBoxListen from './QuestionBoxListen';
-import { ACTIONS } from './../context/QuestionContext/Action';
-import { useQuestion } from '../context/QuestionContext';
+import {ACTIONS} from './../context/QuestionContext/Action';
+import {useQuestion} from '../context/QuestionContext';
 
-const FourChoice = ({navigation,children,ans}) => {
+const FourChoice = ({navigation, children, ans}) => {
   const {ansChoice, dispatch} = useQuestion();
 
   return (
