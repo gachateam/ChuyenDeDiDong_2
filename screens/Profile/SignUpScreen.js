@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, {useState} from 'react';
 import {
   View,
   Text,
@@ -14,9 +14,9 @@ import LinearGradient from 'react-native-linear-gradient';
 import FontAwesome from 'react-native-vector-icons/FontAwesome';
 import Feather from 'react-native-vector-icons/Feather';
 import auth from '@react-native-firebase/auth';
-// import firestore from '@react-native-firebase/firestore';
+import firestore from '@react-native-firebase/firestore';
 
-const SignUpScreen = ({ navigation }) => {
+const SignUpScreen = ({navigation}) => {
   const [data, setData] = React.useState({
     username: '',
     email: '',
@@ -112,7 +112,20 @@ const SignUpScreen = ({ navigation }) => {
 
     auth()
       .createUserWithEmailAndPassword(data.email, data.password)
-      .then(() => setLoginError(''))
+      .then(() => {
+        firestore()
+          .collection('users')
+          .doc(auth().currentUser.uid)
+          .set({
+            username: data.username,
+          })
+          .catch(error => {
+            console.log(
+              'Something went wrong with added user to firestore: ',
+              error,
+            );
+          });
+      })
       .catch(err => setLoginError(err.message));
   };
   return (
@@ -189,6 +202,7 @@ const SignUpScreen = ({ navigation }) => {
             <Animatable.View animation="tada" duration={1000}>
               <Text style={[styles.errorMsg, styles.errLoginMess]}>
                 {loginError}
+                {console.log(loginError)}
               </Text>
             </Animatable.View>
           )}
@@ -196,13 +210,9 @@ const SignUpScreen = ({ navigation }) => {
             <Text style={styles.color_textPrivate}>
               By signing up you agree to our
             </Text>
-            <Text style={styles.color_textPrivateBold}>
-              Terms of service
-            </Text>
+            <Text style={styles.color_textPrivateBold}>Terms of service</Text>
             <Text style={styles.color_textPrivate}> and</Text>
-            <Text style={styles.color_textPrivateBold}>
-              Privacy policy
-            </Text>
+            <Text style={styles.color_textPrivateBold}>Privacy policy</Text>
           </View>
           <View style={styles.button}>
             <TouchableOpacity
@@ -211,17 +221,15 @@ const SignUpScreen = ({ navigation }) => {
               <LinearGradient
                 colors={['#08d4c4', '#01ab9d']}
                 style={styles.signIn}>
-                <Text style={styles.textSignUp}>
-                  Sign Up
-                </Text>
+                <Text style={styles.textSignUp}>Sign Up</Text>
               </LinearGradient>
             </TouchableOpacity>
 
             <TouchableOpacity
-            onPress={() => navigation.navigate('SignInScreen')}
-            style={[styles.signIn, styles.buttonSignIn]}>
-            <Text style={styles.textSignIn}>Sign In</Text>
-          </TouchableOpacity>
+              onPress={() => navigation.navigate('SignInScreen')}
+              style={[styles.signIn, styles.buttonSignIn]}>
+              <Text style={styles.textSignIn}>Sign In</Text>
+            </TouchableOpacity>
           </View>
         </ScrollView>
       </Animatable.View>
