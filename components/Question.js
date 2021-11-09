@@ -8,6 +8,7 @@ import Sound from './Sound';
 import Listen from './Listen';
 import Tts from 'react-native-tts';
 import FillWord from './FillWord';
+import Translate from './Translate';
 
 Tts.setDefaultLanguage('en');
 
@@ -25,6 +26,8 @@ const Question = ({ navigation }) => {
       return <Listen navigation={navigation} />;
     case TYPE_QUESTION.FILLWORD:
       return <FillWord navigation={navigation} />;
+    case TYPE_QUESTION.TRANSLATE:
+      return <Translate navigation={navigation} />;
     case TYPE_QUESTION.PRONOUNCIACION:
       return <Sound navigation={navigation} />;
     default:
