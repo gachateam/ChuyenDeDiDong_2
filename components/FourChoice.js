@@ -1,43 +1,34 @@
-import React, { useState } from 'react';
-import { Text, View, StyleSheet } from 'react-native';
-import { TouchableOpacity } from 'react-native';
+import React from 'react';
+import {Text, View, StyleSheet} from 'react-native';
+import {TouchableOpacity} from 'react-native';
 import Header from './Header';
-import QuestionBoxVocabulary from './QuestionBoxVocabulary';
-import Tts from 'react-native-tts';
+import QuestionBoxListen from './QuestionBoxListen';
+import { ACTIONS } from './../context/QuestionContext/Action';
+import { useQuestion } from '../context/QuestionContext';
 
-const Sound = ({ navigation }) => {
-  const [ansChoice, setAnsChoice] = useState(0);
-
-  const handleVoice = (tu) => {
-    Tts.stop()
-    Tts.speak(tu);
-  };
-
-  const question = {
-    question: 'dịch "con chuột"',
-    ans: ['cat', 'mouse', 'ant', 'fish'],
-  };
+const FourChoice = ({navigation,children,ans}) => {
+  const {ansChoice, dispatch} = useQuestion();
 
   return (
     <View style={styles.container}>
       <Header navigation={navigation} />
-      <QuestionBoxVocabulary question={question.question} />
+      {children}
 
       <View style={styles.options}>
-        {question.ans.map((e, i) => {
+        {ans.map((e, i) => {
           const hanldePress = () => {
-            setAnsChoice(i + 1);
+            dispatch({type: ACTIONS.CHOICE_ANS, payload: i + 1});
           };
+
           return (
             <TouchableOpacity
               onPress={hanldePress}
-              onPress={() => handleVoice(e)}
               style={[
                 styles.optionButton,
                 ansChoice === i + 1 ? styles.choice : null,
               ]}
               key={i}>
-              <Text style={styles.option} >{e}</Text>
+              <Text style={styles.option}>{e}</Text>
             </TouchableOpacity>
           );
         })}
@@ -52,7 +43,7 @@ const Sound = ({ navigation }) => {
   );
 };
 
-export default Sound;
+export default FourChoice;
 const styles = StyleSheet.create({
   container: {
     flex: 1,

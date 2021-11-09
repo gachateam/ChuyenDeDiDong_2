@@ -7,11 +7,8 @@ import {StyleSheet, TouchableOpacity} from 'react-native';
 import * as Animatable from 'react-native-animatable';
 import {useGlobal} from '../context/GlobalContext';
 import StackScreen from './StackScreen';
-import Tts from 'react-native-tts';
 
 const Tab = createBottomTabNavigator();
-
-Tts.getInitStatus()
 
 const TabButton = props => {
   const {name, onPress, accessibilityState} = props;

@@ -13,7 +13,6 @@ const QuestionBoxVocabulary = ({question}) => {
       />
       <View style={styles.textBox}>
         <Text style={styles.questions}>{question}</Text>
-        <Text style={styles.meaning}>The meaning of the question</Text>
       </View>
     </View>
   );
@@ -37,7 +36,7 @@ const styles = StyleSheet.create({
   banner: {
     height: '40%',
     width: '20%',
-    left: '-30%',
+    left: '-20%',
   },
   questions: {
     fontSize: 28,
