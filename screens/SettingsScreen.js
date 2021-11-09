@@ -1,15 +1,20 @@
-import React from 'react';
+import React, {useState, useContext} from 'react';
 import {View, StyleSheet, Text, TouchableOpacity} from 'react-native';
 import { ScrollView, Switch } from 'react-native-gesture-handler';
 import { color } from 'react-native-reanimated';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
+import {EventRegister} from 'react-native-event-listeners';
+import themeContext from "../config/themeContext";
+
+
 
 
 
 const SettingsScreen = () => {
-
+  const theme = useContext(themeContext);
+  const [mode,setMode] = useState(false);
   return (
-    <View style={styles.container}>
+    <View style={[styles.container, {backgroundColor: theme.background}]} >
       <View style={styles.top}>
         <Text style={styles.txtTitle}>Settings</Text>
       </View>
@@ -19,12 +24,17 @@ const SettingsScreen = () => {
             </TouchableOpacity>
             <TouchableOpacity style={styles.Selection}>
               <Text style={styles.text}><Icon style ={styles.icon} name="home" size={30}/>   Account</Text>
-            </TouchableOpacity >
+            </TouchableOpacity>
             <View style={styles.Selection}>
               <View style={styles.preference}> 
               <Text style={styles.text}><Icon name="home" size={30}/>  Dark Theme </Text> 
-                                <TouchableOpacity pointerEvents="none">
-                                    <Switch value = {false,true} />
+                                <TouchableOpacity>
+                                    <Switch value = {mode}
+                                    onValueChange = {(value) =>{
+                                      setMode(value);  
+                                      EventRegister.emit("ChangeTheme",value);
+                                    }}             
+                                    />
                                 </TouchableOpacity>
               </View>
             </View>
@@ -58,6 +68,7 @@ const styles = StyleSheet.create({
   }, 
   text: {
     fontSize: 20,
+    color: theme.color,
   },
   SelectionView: {
     backgroundColor:color.grey,
