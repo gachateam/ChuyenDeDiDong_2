@@ -1,9 +1,9 @@
 import React from 'react';
 import {StyleSheet, Text, View} from 'react-native';
-import AntDesign from 'react-native-vector-icons/AntDesign';
 import Tts from 'react-native-tts';
+import AntDesign from 'react-native-vector-icons/AntDesign';
 
-const QuestionBoxListen = ({question, meanQuestion}) => {
+const QuestionBoxTranslate = ({question}) => {
   return (
     <View style={styles.top}>
       <AntDesign
@@ -14,18 +14,18 @@ const QuestionBoxListen = ({question, meanQuestion}) => {
         onPress={() => {
           Tts.stop();
           Tts.speak(question, {
-            language: 'vi',
+            language: 'en',
           });
         }}
       />
       <View>
-        <Text style={styles.questions}>{meanQuestion}</Text>
+        <Text style={styles.questions}>{question}</Text>
       </View>
     </View>
   );
 };
 
-export default QuestionBoxListen;
+export default QuestionBoxTranslate;
 
 const styles = StyleSheet.create({
   top: {
