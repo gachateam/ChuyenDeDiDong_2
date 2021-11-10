@@ -19,8 +19,7 @@ const QuestionBoxListen = ({question, meanQuestion}) => {
         }}
       />
       <View>
-        <Text style={styles.questions}>{question}</Text>
-        <Text style={styles.meaning}>{meanQuestion}</Text>
+        <Text style={styles.questions}>{meanQuestion}</Text>
       </View>
     </View>
   );

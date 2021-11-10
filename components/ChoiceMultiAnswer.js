@@ -1,36 +1,53 @@
-import React, {useState} from 'react';
-import {Text, View, StyleSheet} from 'react-native';
-import {TouchableOpacity} from 'react-native';
+import React, {useEffect} from 'react';
+import {StyleSheet, Text, View, TouchableOpacity} from 'react-native';
 import Header from './Header';
-import QuestionBoxVocabulary from './QuestionBoxVocabulary';
-import Tts from 'react-native-tts';
+import {useQuestion} from '../context/QuestionContext';
+import {ACTIONS} from './../context/QuestionContext/Action';
+import QuestionBoxFillWord from './QuestionBoxFillWord';
 
-const Sound = ({navigation}) => {
-  const [ansChoice, setAnsChoice] = useState(0);
+const ChoiceMultiAnswer = ({navigation}) => {
+  const {ansChoice, dispatch} = useQuestion();
+
+  console.log(ansChoice);
 
   const question = {
-    question: 'dịch "con chuột"',
-    ans: ['cat', 'mouse', 'ant', 'fish'],
+    question: "Which animal can't eat meat",
+    meanQuestion: 'Con vật nào không thể ăn thịt',
+    ans: [
+      'elephant',
+      'tiger',
+      'lion',
+      'wolf',
+      'whale',
+      'monkey',
+      'squirrel',
+      'leopard',
+      'giraffe',
+      'zebra',
+    ],
   };
-
   return (
     <View style={styles.container}>
       <Header navigation={navigation} />
-      <QuestionBoxVocabulary question={question.question} />
+      <QuestionBoxFillWord question={question.question} meanQuestion={question.meanQuestion}/>
 
       <View style={styles.options}>
         {question.ans.map((e, i) => {
           const hanldePress = () => {
-            setAnsChoice(i + 1);
-            Tts.stop();
-            Tts.speak(e);
+            dispatch({
+              type: ACTIONS.CHOICE_ANS,
+              payload: ansChoice.includes(i + 1)
+                ? ansChoice.filter(item => item !== i + 1)
+                : ansChoice.concat(i + 1),
+            });
           };
+
           return (
             <TouchableOpacity
               onPress={hanldePress}
               style={[
                 styles.optionButton,
-                ansChoice === i + 1 ? styles.choice : null,
+                ansChoice.includes(i + 1) ? styles.choice : null,
               ]}
               key={i}>
               <Text style={styles.option}>{e}</Text>
@@ -48,7 +65,8 @@ const Sound = ({navigation}) => {
   );
 };
 
-export default Sound;
+export default ChoiceMultiAnswer;
+
 const styles = StyleSheet.create({
   container: {
     flex: 1,
@@ -71,11 +89,6 @@ const styles = StyleSheet.create({
     height: 40,
     width: 100,
     right: 150,
-  },
-  options: {
-    marginVertical: 5,
-    flex: 1,
-    marginHorizontal: 10,
   },
   bottom: {
     marginBottom: 5,
@@ -103,21 +116,23 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     textTransform: 'capitalize',
   },
-  option: {
+  options: {
     fontSize: 20,
     color: 'black',
     alignItems: 'center',
     textAlign: 'center',
     fontWeight: 'bold',
     textTransform: 'capitalize',
+    flexWrap: 'wrap',
+    flexDirection: 'row',
   },
   optionButton: {
-    paddingVertical: 12,
+    padding: 12,
     marginVertical: 10,
     backgroundColor: 'white',
-    paddingHorizontal: 12,
     borderRadius: 10,
     borderWidth: 1,
     borderColor: '#99FFFF',
+    marginHorizontal: 10,
   },
 });

@@ -1,6 +1,7 @@
 import React from 'react';
 import {createContext, useContext, useReducer} from 'react';
 import reducers from './Reducer';
+import {TYPE_QUESTION} from './../TypeQuestion';
 
 export const QuestionContext = createContext();
 
@@ -10,8 +11,8 @@ export const useQuestion = () => {
 
 const QuestionContextProvider = ({children}) => {
   const initialState = {
-    typeQuestion: 'translate',
-    ansChoice: 0,
+    typeQuestion: TYPE_QUESTION.GRAMMAR,
+    ansChoice: [],
   };
   const [state, dispatch] = useReducer(reducers, initialState);
   const {typeQuestion, ansChoice} = state;

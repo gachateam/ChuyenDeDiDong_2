@@ -1130,7 +1130,7 @@
                             },
                             {
                                 "id": 10,
-                                "type": "FillWordStage3",
+                                "type": "choiceMultiAnswer",
                                 "question": "..., ..., ... and ... can fly",
                                 "meanQuestion": "con ruồi, con chim, con vẹt và con ong biết bay",
                                 "ans": [
@@ -1154,7 +1154,7 @@
                             },
                             {
                                 "id": 11,
-                                "type": "FillWordStage3",
+                                "type": "choiceMultiAnswer",
                                 "question": "You can catch ... and ... at the beach ",
                                 "meanQuestion": "Bạn có thể bắt cua và cá ở biển",
                                 "ans": [
@@ -1176,7 +1176,7 @@
                             },
                             {
                                 "id": 12,
-                                "type": "FillWordStage3",
+                                "type": "choiceMultiAnswer",
                                 "question": "The ... is chasing the ... inside the house",
                                 "meanQuestion": "Con mèo đang đuổi con chuột trong nhà",
                                 "ans": [
@@ -1198,7 +1198,7 @@
                             },
                             {
                                 "id": 13,
-                                "type": "FillWordStage3",
+                                "type": "choiceMultiAnswer",
                                 "question": "You walk the ... in the park and saw an ... nest",
                                 "meanQuestion": "Bạn dắt con chó đi dạo trong công viên và thấy một tổ kiến",
                                 "ans": [
@@ -1220,7 +1220,7 @@
                             },
                             {
                                 "id": 14,
-                                "type": "FillWordStage3",
+                                "type": "choiceMultiAnswer",
                                 "question": "Your ... and ... don't get along well",
                                 "meanQuestion": "Con chó và mèo của bạn không hợp nhau",
                                 "ans": [
@@ -2850,7 +2850,7 @@
                             },
                             {
                                 "id": 10,
-                                "type": "FillWordStage3",
+                                "type": "choiceMultiAnswer",
                                 "question": "Farm animal are: ..., ..., ..., ..., ..., ...",
                                 "meanQuestion": "Động vật trang trại là: con bò, con ngựa, con heo, con gà, con vịt, con cừu",
                                 "ans": [
@@ -2876,7 +2876,7 @@
                             },
                             {
                                 "id": 11,
-                                "type": "FillWordStage3",
+                                "type": "choiceMultiAnswer",
                                 "question": "Wild animal are: ..., ..., ..., ...",
                                 "meanQuestion": "Động vật hoang dã là: con ếch, con thỏ, con rắn, bồ câu",
                                 "ans": [
@@ -2900,7 +2900,7 @@
                             },
                             {
                                 "id": 12,
-                                "type": "FillWordStage3",
+                                "type": "choiceMultiAnswer",
                                 "question": "... and ... live near the lake ",
                                 "meanQuestion": "con ếch và con vịt sống gần hồ",
                                 "ans": [
@@ -2922,7 +2922,7 @@
                             },
                             {
                                 "id": 13,
-                                "type": "FillWordStage3",
+                                "type": "choiceMultiAnswer",
                                 "question": "Some ... and ... are poisonous ",
                                 "meanQuestion": "Một vài con rắn và con ếch có độc",
                                 "ans": [
@@ -2944,7 +2944,7 @@
                             },
                             {
                                 "id": 14,
-                                "type": "FillWordStage3",
+                                "type": "choiceMultiAnswer",
                                 "question": "... can eat ..., ..., ..., ..., ...",
                                 "meanQuestion": "Con rắn có thể ăn được con ếch, con thỏ, con gà, con vịt, bồ câu",
                                 "ans": [
@@ -4580,7 +4580,7 @@
                             },
                             {
                                 "id": 10,
-                                "type": "FillWordStage3",
+                                "type": "choiceMultiAnswer",
                                 "question": "..., ..., ... can climb tree",
                                 "meanQuestion": "con báo, con khỉ, con sóc có thể leo cây",
                                 "ans": [
@@ -4603,7 +4603,7 @@
                             },
                             {
                                 "id": 11,
-                                "type": "FillWordStage3",
+                                "type": "choiceMultiAnswer",
                                 "question": "... is the largeset animal in the sea and ... is the biggest animal on the land",
                                 "meanQuestion": "con cá voi là động vật lớn nhất ở biển và con voi là động vật to nhất ở đất liền",
                                 "ans": [
@@ -4625,7 +4625,7 @@
                             },
                             {
                                 "id": 12,
-                                "type": "FillWordStage3",
+                                "type": "choiceMultiAnswer",
                                 "question": "..., ..., ... can’t eat meat",
                                 "meanQuestion": "con voi, con ngựa vằn, con hươu cao cổ không thể ăn được thịt",
                                 "ans": [
@@ -4648,7 +4648,7 @@
                             },
                             {
                                 "id": 13,
-                                "type": "FillWordStage3",
+                                "type": "choiceMultiAnswer",
                                 "question": "... and ... hunt in group",
                                 "meanQuestion": "con sư tử và con sói săn theo bầy",
                                 "ans": [
@@ -4670,7 +4670,7 @@
                             },
                             {
                                 "id": 14,
-                                "type": "FillWordStage3",
+                                "type": "choiceMultiAnswer",
                                 "question": "A pack of ... is hunting down a ...",
                                 "meanQuestion": "một bầy sói đang săn một con ngựa vằn",
                                 "ans": [

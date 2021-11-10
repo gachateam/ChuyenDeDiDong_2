@@ -7,6 +7,5 @@ export const TYPE_QUESTION = {
   TRANSLATE: 'translate',
   PRONOUNCIACION: 'Pronounciacion',
   CHOICE_MULTI_ANSWER: 'choiceMultiAnswer',
-  FILL_WORD_STAGE_3: 'FillWordStage3',
   GRAMMAR: 'Grammar',
 };

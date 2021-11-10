@@ -1,11 +1,11 @@
 import React from 'react';
-import {Text, View, StyleSheet} from 'react-native';
-import {TouchableOpacity} from 'react-native';
+import {Text, View, StyleSheet, TouchableOpacity} from 'react-native';
 import Header from './Header';
 import {ACTIONS} from './../context/QuestionContext/Action';
 import {useQuestion} from '../context/QuestionContext';
+import Tts from 'react-native-tts';
 
-const FourChoice = ({navigation, children, ans}) => {
+const FourChoice = ({navigation, children, ans, speak}) => {
   const {ansChoice, dispatch} = useQuestion();
 
   return (
@@ -17,6 +17,10 @@ const FourChoice = ({navigation, children, ans}) => {
         {ans.map((e, i) => {
           const hanldePress = () => {
             dispatch({type: ACTIONS.CHOICE_ANS, payload: i + 1});
+            if (speak) {
+              Tts.stop();
+              Tts.speak(e);
+            }
           };
 
           return (
