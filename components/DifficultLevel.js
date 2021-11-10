@@ -10,7 +10,6 @@ const DifficultLevel = ({
   stage2,
   stage3,
   challengeUnlock,
-  backgroundC,
   disabled,
   navigation,
 }) => {
@@ -20,13 +19,13 @@ const DifficultLevel = ({
     navigation.navigate('SplashScreen');
   };
   return (
-    <View style={{backgroundColor: backgroundC}}>
+    <View>
       <View style={styles.stage1}>
         <TouchableOpacity onPress={onPress} disabled={disabled}>
           <ProgressCircle
             percent={stage1}
             radius={50}
-            borderWidth={8}
+            borderWidth={4}
             color="#3399FF"
             shadowColor="#999"
             bgColor="#fff">
@@ -39,7 +38,7 @@ const DifficultLevel = ({
           <ProgressCircle
             percent={stage2}
             radius={50}
-            borderWidth={8}
+            borderWidth={4}
             color="#3399FF"
             shadowColor="#999"
             bgColor="#fff">
@@ -50,7 +49,7 @@ const DifficultLevel = ({
           <ProgressCircle
             percent={stage3}
             radius={50}
-            borderWidth={8}
+            borderWidth={4}
             color="#3399FF"
             shadowColor="#999"
             bgColor="#fff">
@@ -60,11 +59,14 @@ const DifficultLevel = ({
       </View>
 
       <View style={styles.challenge}>
-        <Entypo
-          name={challengeUnlock ? 'lock-open' : 'lock'}
-          size={32}
-          style={styles.lock}
-        />
+        <View style={styles.challengeBox}>
+          <Entypo
+            name={challengeUnlock ? 'lock-open' : 'lock'}
+            size={32}
+            style={styles.lock}
+          />
+          <Text style={styles.textOnTap}>Ôn tập</Text>
+        </View>
       </View>
     </View>
   );
@@ -84,13 +86,34 @@ const styles = StyleSheet.create({
     paddingVertical: 20,
   },
   challenge: {
-    backgroundColor: 'orange',
     height: 34,
     justifyContent: 'center',
     alignItems: 'center',
   },
+  challengeBox: {
+    width: '25%',
+    justifyContent: 'flex-start',
+    alignItems: 'center',
+    backgroundColor: '#0000CD',
+    borderRadius: 50,
+    padding: 4,
+    flexDirection: 'row',
+  },
   text: {
     fontSize: 18,
+  },
+  lock: {
+    fontSize: 18,
+    backgroundColor: '#fff',
+    borderRadius: 50,
+    padding: 5,
+  },
+  textOnTap: {
+    justifyContent: 'center',
+    flex: 1,
+    color: '#fff',
+    fontWeight: 'bold',
+    marginLeft: 8,
   },
 });
 

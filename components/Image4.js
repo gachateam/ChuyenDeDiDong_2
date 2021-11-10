@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import {
   Image,
   StyleSheet,
@@ -8,14 +8,14 @@ import {
   Dimensions,
   SafeAreaView,
 } from 'react-native';
-import { useQuestion } from '../context/QuestionContext';
 import Header from './Header';
-import { ACTIONS } from './../context/QuestionContext/Action';
+import {ACTIONS} from './../context/QuestionContext/Action';
+import {useQuestion} from '../context/QuestionContext';
 
 const height = Dimensions.get('screen').height;
 
-const Image4 = ({ navigation }) => {
-  const { ansChoice, dispatch } = useQuestion()
+const Image4 = ({navigation}) => {
+  const {ansChoice, dispatch} = useQuestion();
 
   const question = {
     question: 'đâu là "con chó"',
@@ -31,7 +31,7 @@ const Image4 = ({ navigation }) => {
       <View style={styles.options}>
         {question.ans.map((e, i) => {
           const hanldePress = () => {
-            dispatch({ type: ACTIONS.CHOICE_ANS, payload: i + 1 })
+            dispatch({type: ACTIONS.CHOICE_ANS, payload: i + 1});
           };
 
           return (
@@ -116,6 +116,7 @@ const styles = StyleSheet.create({
     backgroundColor: '#ffffff',
     borderWidth: 2,
     borderColor: '#99FFFF',
+    width: "49%"
   },
   bottom: {
     marginBottom: 12,
