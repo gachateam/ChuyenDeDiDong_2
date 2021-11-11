@@ -6,7 +6,7 @@ import AntDesign from 'react-native-vector-icons/AntDesign';
 import {StyleSheet, TouchableOpacity} from 'react-native';
 import * as Animatable from 'react-native-animatable';
 import {useGlobal} from '../context/GlobalContext';
-import StackScreen from './StackScreen';
+import AuthChange from './Profile/AuthChange';
 
 const Tab = createBottomTabNavigator();
 
@@ -80,7 +80,7 @@ const MyTabs = ({navigation}) => {
       />
       <Tab.Screen
         name="Profile"
-        component={StackScreen}
+        component={AuthChange}
         options={{
           tabBarShowLabel: false,
           tabBarButton: props => <TabButton {...props} name="profile" />,

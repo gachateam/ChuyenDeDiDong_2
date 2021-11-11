@@ -5,7 +5,7 @@ import {useGlobal} from '../context/GlobalContext';
 import {ACTIONS} from './../context/Action';
 
 const Header = ({navigation}) => {
-  const [progressStatus, setProgressStatus] = useState(0);
+  const [progressStatus, setProgressStatus] = useState(10);
 
   const {hideTabBar, dispatch} = useGlobal();
   const anim = new Animated.Value(0);
