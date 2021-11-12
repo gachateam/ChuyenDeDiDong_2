@@ -1,4 +1,4 @@
-import React, {useEffect} from 'react';
+import React from 'react';
 import {StyleSheet, Text, View, TouchableOpacity} from 'react-native';
 import Header from './Header';
 import {useQuestion} from '../context/QuestionContext';
@@ -29,7 +29,10 @@ const ChoiceMultiAnswer = ({navigation}) => {
   return (
     <View style={styles.container}>
       <Header navigation={navigation} />
-      <QuestionBoxFillWord question={question.question} meanQuestion={question.meanQuestion}/>
+      <QuestionBoxFillWord
+        question={question.question}
+        meanQuestion={question.meanQuestion}
+      />
 
       <View style={styles.options}>
         {question.ans.map((e, i) => {

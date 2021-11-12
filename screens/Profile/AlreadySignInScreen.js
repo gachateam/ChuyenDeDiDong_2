@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, {useEffect, useState} from 'react';
 import {
   View,
   StyleSheet,
@@ -6,18 +6,19 @@ import {
   TouchableOpacity,
   Text,
 } from 'react-native';
-import { Avatar, IconButton, Title } from 'react-native-paper';
+import {Avatar, IconButton, Title} from 'react-native-paper';
 import auth from '@react-native-firebase/auth';
 import firestore from '@react-native-firebase/firestore';
 
-const AlreadySignInScreen = ({ navigation }) => {
+const AlreadySignInScreen = ({navigation}) => {
   const handleSignout = () => {
-    auth().signOut();
+    // auth().signOut();
   };
   console.log(auth().currentUser.uid);
   const [username, setUsername] = useState(null);
   useEffect(() => {
-    firestore().collection('users')
+    firestore()
+      .collection('users')
       .doc(auth().currentUser.uid)
       .get()
       .then(documentSnapshot => {
@@ -25,23 +26,23 @@ const AlreadySignInScreen = ({ navigation }) => {
 
         if (documentSnapshot.exists) {
           console.log('User data: ', documentSnapshot.data().username);
-          setUsername(documentSnapshot.data().username)
-          
+          setUsername(documentSnapshot.data().username);
         }
-      })
-
+      });
   }, [username]);
-  console.log(firestore().collection('users')
-    .doc(auth().currentUser.uid)
-    .get()
-    .then(documentSnapshot => {
-      console.log('User exists: ', documentSnapshot.exists);
+  console.log(
+    firestore()
+      .collection('users')
+      .doc(auth().currentUser.uid)
+      .get()
+      .then(documentSnapshot => {
+        console.log('User exists: ', documentSnapshot.exists);
 
-      if (documentSnapshot.exists) {
-        console.log('User data: ', documentSnapshot.data().username);
-
-      }
-    }));
+        if (documentSnapshot.exists) {
+          console.log('User data: ', documentSnapshot.data().username);
+        }
+      }),
+  );
   return (
     <SafeAreaView style={styles.container}>
       <View style={styles.userInfor}>

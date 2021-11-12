@@ -11,13 +11,16 @@ import React from 'react';
 import {NavigationContainer} from '@react-navigation/native';
 import MyTabs from './screens/MyTabs';
 import GlobalContextProvider from './context/GlobalContext';
+import AuthContextProvider from './context/AuthContext';
 
 const App = () => {
   return (
     <GlobalContextProvider>
-      <NavigationContainer>
-        <MyTabs />
-      </NavigationContainer>
+      <AuthContextProvider>
+        <NavigationContainer>
+          <MyTabs />
+        </NavigationContainer>
+      </AuthContextProvider>
     </GlobalContextProvider>
   );
 };

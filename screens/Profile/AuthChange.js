@@ -1,15 +1,13 @@
 import React from 'react';
 
-import auth from '@react-native-firebase/auth';
 import StackProfileScreen from './StackProfileScreen';
 import StackScreen from './StackScreen';
+import {useAuth} from '../../context/AuthContext';
 
 const AuthChange = () => {
-  const [user, setUser] = React.useState(null);
+  const {user} = useAuth();
 
-  auth().onAuthStateChanged(u => setUser(u));
-
-  return user ? <StackProfileScreen /> : <StackScreen />;
+  return user && !user.isAnonymous ? <StackProfileScreen /> : <StackScreen />;
 };
 
 export default AuthChange;
