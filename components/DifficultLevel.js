@@ -1,10 +1,10 @@
 import React from 'react';
-import {StyleSheet, Text, TouchableOpacity, View} from 'react-native';
-import {IconButton} from 'react-native-paper';
+import { StyleSheet, Text, TouchableOpacity, View } from 'react-native';
+import { IconButton } from 'react-native-paper';
 import ProgressCircle from 'react-native-progress-circle';
 import Entypo from 'react-native-vector-icons/Entypo';
-import {ACTIONS} from '../context/Action';
-import {useGlobal} from '../context/GlobalContext';
+import { ACTIONS } from '../context/Action';
+import { useGlobal } from '../context/GlobalContext';
 
 const DifficultLevel = ({
   stage1,
@@ -14,7 +14,6 @@ const DifficultLevel = ({
   disabled,
   navigation,
 }) => {
-  const {hideTabBar, dispatch} = useGlobal();
   const { hideTabBar, dispatch } = useGlobal();
   const onPress = () => {
     dispatch({ type: ACTIONS.HIDE_TAB_BAR, payload: !hideTabBar });
