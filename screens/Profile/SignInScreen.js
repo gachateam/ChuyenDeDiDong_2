@@ -14,12 +14,13 @@ import FontAwesome from 'react-native-vector-icons/FontAwesome';
 import Feather from 'react-native-vector-icons/Feather';
 import auth, { firebase } from '@react-native-firebase/auth';
 import { GoogleSignin, GoogleSigninButton, statusCodes } from '@react-native-google-signin/google-signin';
-
-
-
 import { useTheme } from 'react-native-paper';
+import { useAuth } from '../../context/AuthContext';
+import { ACTIONS } from '../../context/AuthContext/Action';
+import firestore from '@react-native-firebase/firestore';
 
 const SignInScreen = ({ navigation }) => {
+  const { dispatch } = useAuth()
   const { colors } = useTheme();
   const [data, setData] = React.useState({
     email: '',
@@ -80,7 +81,7 @@ const SignInScreen = ({ navigation }) => {
     if (emailError || passError) {
       return setLoginError('Please enter valid email or password.');
     }
-    
+
     auth()
       .signInWithEmailAndPassword(data.email, data.password)
       .catch(err => {
@@ -96,13 +97,30 @@ const SignInScreen = ({ navigation }) => {
 
   const signInWithGoogle = async () => {
     try {
+      dispatch({ type: ACTIONS.LOGIN, payload: auth().currentUser })
       const { idToken } = await GoogleSignin.signIn();
 
       // Create a Google credential with the token
       const googleCredential = auth.GoogleAuthProvider.credential(idToken);
 
       // Sign-in the user with the credential
-      return auth().signInWithCredential(googleCredential);
+      return auth()
+        .currentUser.linkWithCredential(googleCredential)
+        .then((user) => {
+          dispatch({ type: ACTIONS.LOGIN, payload: auth().currentUser });
+          firestore()
+            .collection('users')
+            .doc(auth().currentUser.uid)
+            .set({
+              username: user.additionalUserInfo.profile.name,
+            })
+            .catch(error => {
+              console.log(
+                'Something went wrong with added user to firestore: ',
+                error,
+              );
+            });
+        })
     } catch (error) {
       if (error.code === statusCodes.SIGN_IN_CANCELLED) {
         // sign in was cancelled
@@ -177,7 +195,7 @@ const SignInScreen = ({ navigation }) => {
           </Animatable.View>
         )}
 
-        <TouchableOpacity>
+        <TouchableOpacity onPress={() => navigation.navigate('ForgotPasswordScreen')}>
           <Text style={styles.forgotPass}>Forgot password?</Text>
         </TouchableOpacity>
         {!(loginError === '') && (
@@ -222,9 +240,10 @@ const styles = StyleSheet.create({
   },
   header: {
     flex: 1,
-    justifyContent: 'flex-end',
     paddingHorizontal: 20,
     paddingBottom: 50,
+    justifyContent: 'center',
+    alignItems: 'center',
   },
   footer: {
     flex: 3,
