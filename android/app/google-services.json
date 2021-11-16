@@ -1,6 +1,7 @@
 {
   "project_info": {
     "project_number": "269142696824",
+    "firebase_url": "https://englishlearning-ec586-default-rtdb.asia-southeast1.firebasedatabase.app",
     "project_id": "englishlearning-ec586",
     "storage_bucket": "englishlearning-ec586.appspot.com"
   },
@@ -13,6 +14,14 @@
         }
       },
       "oauth_client": [
+        {
+          "client_id": "269142696824-8fqcrdkhnb4shfhgmkc6b66b4ihmoa0r.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.englishlearning",
+            "certificate_hash": "2352500ab5938d2d3d4e2897637d26b946c029f1"
+          }
+        },
         {
           "client_id": "269142696824-qqfi3h5d5oi0uokvl0mer95rmct73u9e.apps.googleusercontent.com",
           "client_type": 3

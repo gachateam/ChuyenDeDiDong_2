@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import {
   View,
   Text,
@@ -12,18 +12,25 @@ import * as Animatable from 'react-native-animatable';
 import LinearGradient from 'react-native-linear-gradient';
 import FontAwesome from 'react-native-vector-icons/FontAwesome';
 import Feather from 'react-native-vector-icons/Feather';
-import auth from '@react-native-firebase/auth';
+import auth, { firebase } from '@react-native-firebase/auth';
+import { GoogleSignin, GoogleSigninButton, statusCodes } from '@react-native-google-signin/google-signin';
 
-import {useTheme} from 'react-native-paper';
 
-const SignInScreen = ({navigation}) => {
-  const {colors} = useTheme();
 
+import { useTheme } from 'react-native-paper';
+
+const SignInScreen = ({ navigation }) => {
+  const { colors } = useTheme();
   const [data, setData] = React.useState({
     email: '',
     password: '',
     checkInputChange: false,
   });
+  useEffect(() => {
+    GoogleSignin.configure({
+      webClientId: '269142696824-qqfi3h5d5oi0uokvl0mer95rmct73u9e.apps.googleusercontent.com',
+    });
+  }, []);
 
   // password charactor valid
   const passCharacter = 6;
@@ -73,7 +80,7 @@ const SignInScreen = ({navigation}) => {
     if (emailError || passError) {
       return setLoginError('Please enter valid email or password.');
     }
-
+    
     auth()
       .signInWithEmailAndPassword(data.email, data.password)
       .catch(err => {
@@ -86,6 +93,31 @@ const SignInScreen = ({navigation}) => {
         }
       });
   };
+
+  const signInWithGoogle = async () => {
+    try {
+      const { idToken } = await GoogleSignin.signIn();
+
+      // Create a Google credential with the token
+      const googleCredential = auth.GoogleAuthProvider.credential(idToken);
+
+      // Sign-in the user with the credential
+      return auth().signInWithCredential(googleCredential);
+    } catch (error) {
+      if (error.code === statusCodes.SIGN_IN_CANCELLED) {
+        // sign in was cancelled
+        console.log('cancelled');
+      } else if (error.code === statusCodes.IN_PROGRESS) {
+        // operation in progress already
+        console.log('in progress');
+      } else if (error.code === statusCodes.PLAY_SERVICES_NOT_AVAILABLE) {
+        console.log('play services not available or outdated');
+      } else {
+        console.log('Something went wrong:', error);
+      }
+    }
+  };
+
   return (
     <View style={styles.container}>
       <StatusBar backgroundColor="#009387" barStyle="light-content" />
@@ -170,6 +202,12 @@ const SignInScreen = ({navigation}) => {
             <Text style={styles.textSignUp}>Sign Up</Text>
           </TouchableOpacity>
         </View>
+        <GoogleSigninButton
+          style={{ width: '100%', height: 50 }}
+          size={GoogleSigninButton.Size.Wide}
+          color={GoogleSigninButton.Color.Dark}
+          onPress={signInWithGoogle}
+        />
       </Animatable.View>
     </View>
   );

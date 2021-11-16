@@ -13,7 +13,7 @@ import * as Animatable from 'react-native-animatable';
 import LinearGradient from 'react-native-linear-gradient';
 import FontAwesome from 'react-native-vector-icons/FontAwesome';
 import Feather from 'react-native-vector-icons/Feather';
-import auth from '@react-native-firebase/auth';
+import auth, { firebase } from '@react-native-firebase/auth';
 import firestore from '@react-native-firebase/firestore';
 
 const SignUpScreen = ({navigation}) => {
@@ -110,8 +110,10 @@ const SignUpScreen = ({navigation}) => {
       return setLoginError('Please enter valid password and comfirm password.');
     }
 
+    const cred = firebase.auth.EmailAuthProvider.credential(data.email, data.password);
+
     auth()
-      .createUserWithEmailAndPassword(data.email, data.password)
+      auth().currentUser.linkWithCredential(cred)
       .then(() => {
         firestore()
           .collection('users')
