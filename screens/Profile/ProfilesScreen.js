@@ -1,8 +1,10 @@
 import React from 'react';
-import {View, StyleSheet, SafeAreaView, TouchableOpacity} from 'react-native';
-import {Avatar, Title} from 'react-native-paper';
+import { View, StyleSheet, SafeAreaView, TouchableOpacity } from 'react-native';
+import { Avatar, Title } from 'react-native-paper';
+import auth from '@react-native-firebase/auth';
 
-const ProfilesScreen = ({navigation}) => {
+const ProfilesScreen = ({ navigation }) => {
+  console.log(auth().currentUser);
   return (
     <SafeAreaView style={styles.container}>
       <View style={styles.userInfor}>

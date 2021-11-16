@@ -12,7 +12,7 @@ import firestore from '@react-native-firebase/firestore';
 
 const AlreadySignInScreen = ({navigation}) => {
   const handleSignout = () => {
-    // auth().signOut();
+    auth().signOut();
   };
   console.log(auth().currentUser.uid);
   const [username, setUsername] = useState(null);
@@ -30,19 +30,6 @@ const AlreadySignInScreen = ({navigation}) => {
         }
       });
   }, [username]);
-  console.log(
-    firestore()
-      .collection('users')
-      .doc(auth().currentUser.uid)
-      .get()
-      .then(documentSnapshot => {
-        console.log('User exists: ', documentSnapshot.exists);
-
-        if (documentSnapshot.exists) {
-          console.log('User data: ', documentSnapshot.data().username);
-        }
-      }),
-  );
   return (
     <SafeAreaView style={styles.container}>
       <View style={styles.userInfor}>
