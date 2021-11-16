@@ -15,8 +15,9 @@ const DifficultLevel = ({
   navigation,
 }) => {
   const {hideTabBar, dispatch} = useGlobal();
+  const { hideTabBar, dispatch } = useGlobal();
   const onPress = () => {
-    dispatch({type: ACTIONS.HIDE_TAB_BAR, payload: !hideTabBar});
+    dispatch({ type: ACTIONS.HIDE_TAB_BAR, payload: !hideTabBar });
     navigation.navigate('SplashScreen');
   };
   return (
@@ -29,11 +30,10 @@ const DifficultLevel = ({
             borderWidth={4}
             color="#1597E5"
             shadowColor="#999"
-            bgColor="#fff">
+            bgColor={disabled && stage1 === 0 ? "#999" : "#fff"}>
             <IconButton
               icon="ballot-outline"
-              // color="#69DADB"
-              size={60}
+              size={32}
             />
           </ProgressCircle>
         </TouchableOpacity>
@@ -46,11 +46,10 @@ const DifficultLevel = ({
             borderWidth={4}
             color="#1597E5"
             shadowColor="#999"
-            bgColor="#fff">
+            bgColor={disabled && stage2 === 0 ? "#999" : "#fff"}>
             <IconButton
               icon="book-open-page-variant"
-              // color="#69DADB"
-              size={60}
+              size={32}
             />
           </ProgressCircle>
         </TouchableOpacity>
@@ -61,11 +60,10 @@ const DifficultLevel = ({
             borderWidth={4}
             color="#1597E5"
             shadowColor="#999"
-            bgColor="#fff">
+            bgColor={disabled && stage3 === 0 ? "#999" : "#fff"}>
             <IconButton
               icon="brain"
-              // color="#69DADB"
-              size={60}
+              size={32}
             />
           </ProgressCircle>
         </TouchableOpacity>

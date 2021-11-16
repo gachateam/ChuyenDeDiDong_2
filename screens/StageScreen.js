@@ -28,9 +28,9 @@ const StageScreen = ({navigation}) => {
       <ImageBackground source={image} resizeMode="cover" style={styles.image}>
         <ScrollView style={styles.scrollView} onScroll={handleScroll}>
           <DifficultLevel
-            stage1={30}
-            stage2={40}
-            stage3={50}
+            stage1={100}
+            stage2={100}
+            stage3={0}
             challengeUnlock={false}
             disabled={false}
             navigation={navigation}
