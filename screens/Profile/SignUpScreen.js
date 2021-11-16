@@ -113,7 +113,7 @@ const SignUpScreen = ({navigation}) => {
     const cred = firebase.auth.EmailAuthProvider.credential(data.email, data.password);
 
     auth()
-      auth().currentUser.linkWithCredential(cred)
+      .currentUser.linkWithCredential(cred)
       .then(() => {
         firestore()
           .collection('users')
