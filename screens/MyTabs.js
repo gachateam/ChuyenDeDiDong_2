@@ -61,6 +61,7 @@ const MyTabs = ({navigation}) => {
           left: 16,
           borderRadius: 10,
         },
+        tabBarHideOnKeyboard: true
       }}>
       <Tab.Screen
         name="Home"
