@@ -9,12 +9,16 @@ import {
 import {Avatar, IconButton, Title} from 'react-native-paper';
 import auth from '@react-native-firebase/auth';
 import firestore from '@react-native-firebase/firestore';
+import { useAuth } from '../../context/AuthContext';
+import { ACTIONS } from '../../context/AuthContext/Action';
 
 const AlreadySignInScreen = ({navigation}) => {
+  const {dispatch} = useAuth()
   const handleSignout = () => {
     auth().signOut();
+    dispatch({type: ACTIONS.LOGIN, payload: null})
   };
-  console.log(auth().currentUser.uid);
+  console.log(auth().currentUser);
   const [username, setUsername] = useState(null);
   useEffect(() => {
     firestore()
@@ -46,7 +50,7 @@ const AlreadySignInScreen = ({navigation}) => {
               <IconButton
                 icon="square-edit-outline"
                 size={20}
-                onPress={() => console.log('Pressed')}
+                onPress={() => navigation.navigate('EditProfileScreen')}
               />
             </View>
 
