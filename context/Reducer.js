@@ -17,6 +17,16 @@ const reducers = (state, action) => {
         ...state,
         unit: action.payload,
       };
+    case ACTIONS.GET_LIST_QUESTION:
+      return {
+        ...state,
+        listQuestion: action.payload,
+      };
+    case ACTIONS.GET_VOCABULARY:
+      return {
+        ...state,
+        vocabulary: action.payload,
+      };
     default:
       return state;
   }

@@ -35,7 +35,7 @@ function Home({navigation}) {
           });
       }
     });
-  }, []);
+  }, [dispatch]);
 
   const onShowPopup = () => {
     popupRef.show();

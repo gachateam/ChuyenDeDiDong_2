@@ -1,10 +1,10 @@
 import React from 'react';
-import { StyleSheet, Text, TouchableOpacity, View } from 'react-native';
-import { IconButton } from 'react-native-paper';
+import {StyleSheet, Text, TouchableOpacity, View} from 'react-native';
+import {IconButton} from 'react-native-paper';
 import ProgressCircle from 'react-native-progress-circle';
 import Entypo from 'react-native-vector-icons/Entypo';
-import { ACTIONS } from '../context/Action';
-import { useGlobal } from '../context/GlobalContext';
+import {ACTIONS} from '../context/Action';
+import {useGlobal} from '../context/GlobalContext';
 
 const DifficultLevel = ({
   stage1,
@@ -13,13 +13,16 @@ const DifficultLevel = ({
   challengeUnlock,
   disabled,
   navigation,
-  level
+  level,
 }) => {
-  const { hideTabBar, dispatch } = useGlobal();
-  const onPress = (stage) => {
-    dispatch({ type: ACTIONS.HIDE_TAB_BAR, payload: !hideTabBar });
+  const {hideTabBar, dispatch} = useGlobal();
+  const onPress = stage => {
+    dispatch({type: ACTIONS.HIDE_TAB_BAR, payload: !hideTabBar});
     navigation.navigate('SplashScreen');
-    dispatch({ type: ACTIONS.CHOOSE_UNIT, payload: { difficult: level, stage: stage } })
+    dispatch({
+      type: ACTIONS.CHOOSE_UNIT,
+      payload: {difficult: level, stage: stage},
+    });
   };
   return (
     <View>

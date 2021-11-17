@@ -1,13 +1,14 @@
-import React, {useEffect} from 'react';
+import React from 'react';
+import { useGlobal } from '../context/GlobalContext';
+import { useQuestion } from '../context/QuestionContext';
 import FourChoice from './FourChoice';
 import QuestionBoxFillWord from './QuestionBoxFillWord';
 
 const Grammar = ({navigation}) => {
-  const question = {
-    question: 'Tiger is stronger ... zebra',
-    meanQuestion: 'Con sói hú vào lúc trăng tròn',
-    ans: ['than', 'with', 'more', 'an'],
-  };
+  const {activeQuestion} = useQuestion();
+  const { listQuestion} = useGlobal();
+
+  const question = listQuestion[activeQuestion]
 
   return (
     <FourChoice navigation={navigation} ans={question.ans}>

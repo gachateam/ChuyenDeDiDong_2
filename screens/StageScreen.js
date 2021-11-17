@@ -1,9 +1,9 @@
-import React, { useEffect, useState } from 'react';
-import { StyleSheet, SafeAreaView, ScrollView } from 'react-native';
+import React, {useEffect, useState} from 'react';
+import {StyleSheet, SafeAreaView, ScrollView} from 'react-native';
 import DifficultLevel from '../components/DifficultLevel';
-import { useDrawerStatus } from '@react-navigation/drawer';
-import { useGlobal } from '../context/GlobalContext';
-import { ACTIONS } from '../context/Action';
+import {useDrawerStatus} from '@react-navigation/drawer';
+import {useGlobal} from '../context/GlobalContext';
+import {ACTIONS} from '../context/Action';
 import ImageBackground from 'react-native/Libraries/Image/ImageBackground';
 import firestore from '@react-native-firebase/firestore';
 import auth from '@react-native-firebase/auth';
@@ -12,10 +12,10 @@ const image = {
   uri: 'https://firebasestorage.googleapis.com/v0/b/englishlearning-ec586.appspot.com/o/250966642_559763815111848_1955696526273842802_n.png?alt=media&token=2378d749-8cfc-4722-b4e4-c00d51fdda78',
 };
 
-const StageScreen = ({ navigation }) => {
+const StageScreen = ({navigation}) => {
   const isDrawerOpen = useDrawerStatus() === 'open';
-  const { dispatch } = useGlobal();
-  const [stage, setStage] = useState()
+  const {dispatch} = useGlobal();
+  const [stage, setStage] = useState();
 
   useEffect(() => {
     firestore()
@@ -27,7 +27,7 @@ const StageScreen = ({ navigation }) => {
 
         if (documentSnapshot.exists) {
           console.log('document category data: ', documentSnapshot.data());
-          setStage(documentSnapshot.data())
+          setStage(documentSnapshot.data());
         }
       });
   }, []);
@@ -40,27 +40,45 @@ const StageScreen = ({ navigation }) => {
   };
 
   useEffect(() => {
-    dispatch({ type: ACTIONS.HIDE_TAB_BAR, payload: isDrawerOpen });
+    dispatch({type: ACTIONS.HIDE_TAB_BAR, payload: isDrawerOpen});
   }, [isDrawerOpen, dispatch]);
 
   return (
     <SafeAreaView style={styles.container}>
       <ImageBackground source={image} resizeMode="cover" style={styles.image}>
         <ScrollView style={styles.scrollView} onScroll={handleScroll}>
-          {
-            [0, 1, 2].map((e, i) => (
+          {[0, 1, 2].map((e, i) => {
+            return (
               <DifficultLevel
                 key={i}
-                stage1={(stage && stage.difficult >= e) ? stage.stage >= 0 ? 100 : 0 : 0}
-                stage2={(stage && stage.difficult >= e) ? stage.stage >= 1 ? 100 : 0 : 0}
-                stage3={(stage && stage.difficult >= e) ? stage.stage >= 2 ? 100 : 0 : 0}
+                stage1={
+                  stage && stage.difficult >= e
+                    ? stage.stage >= 0
+                      ? 100
+                      : 0
+                    : 0
+                }
+                stage2={
+                  stage && stage.difficult >= e
+                    ? stage.stage >= 1
+                      ? 100
+                      : 0
+                    : 0
+                }
+                stage3={
+                  stage && stage.difficult >= e
+                    ? stage.stage >= 2
+                      ? 100
+                      : 0
+                    : 0
+                }
                 challengeUnlock={false}
-                disabled={stage && stage.difficult <= e}
+                disabled={stage && stage.difficult < e}
                 navigation={navigation}
                 level={e}
               />
-            ))
-          }
+            );
+          })}
         </ScrollView>
       </ImageBackground>
     </SafeAreaView>

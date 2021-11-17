@@ -1,7 +1,7 @@
 {
     "category": {
         "animal": {
-            "easy": {
+            "0": {
                 "vocabulary": [
                     {
                         "word": "dog",
@@ -1738,7 +1738,7 @@
                     }
                 }
             },
-            "medium": {
+            "1": {
                 "vocabulary": [
                     {
                         "word": "frog",
@@ -3486,7 +3486,7 @@
                     }
                 }
             },
-            "hard": {
+            "2": {
                 "vocabulary": [
                     {
                         "vocabulary": "elephant",
@@ -5227,7 +5227,8 @@
                         ]
                     }
                 }
-            }
+            },
+            "name": "dog"
         }
     }
 }

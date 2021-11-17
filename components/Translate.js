@@ -1,18 +1,14 @@
 import React from 'react';
+import { useGlobal } from '../context/GlobalContext';
+import { useQuestion } from '../context/QuestionContext';
 import FourChoice from './FourChoice';
 import QuestionBoxTranslate from './QuestionBoxTranslate';
 
 const Translate = ({navigation}) => {
-  const question = {
-    type: 'translate',
-    question: 'Bee give honey',
-    ans: [
-      'Con vẹt cho mật ong',
-      'Con cá cho mật ong',
-      'Con ong cho mật ong',
-      'Con kiến cho mật ong',
-    ],
-  };
+  const {activeQuestion} = useQuestion();
+  const { listQuestion} = useGlobal();
+
+  const question = listQuestion[activeQuestion]
 
   return (
     <FourChoice navigation={navigation} ans={question.ans}>

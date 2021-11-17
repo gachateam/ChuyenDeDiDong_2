@@ -4,6 +4,7 @@ import Header from './Header';
 import {ACTIONS} from './../context/QuestionContext/Action';
 import {useQuestion} from '../context/QuestionContext';
 import Tts from 'react-native-tts';
+import ButtonNext from './ButtonNext';
 
 const FourChoice = ({navigation, children, ans, speak}) => {
   const {ansChoice, dispatch} = useQuestion();
@@ -38,9 +39,7 @@ const FourChoice = ({navigation, children, ans, speak}) => {
       </View>
 
       <View style={styles.bottom}>
-        <TouchableOpacity style={styles.button}>
-          <Text style={styles.buttonText}>KIỂM TRA</Text>
-        </TouchableOpacity>
+        <ButtonNext/>
       </View>
     </View>
   );
