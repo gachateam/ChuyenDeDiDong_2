@@ -29,14 +29,6 @@ const ForgotPasswordScreen = ({ navigation }) => {
     email: '',
   });
 
-  // email ref
-  const email = React.useRef(null);
-
-  React.useEffect(() => {
-    email.current.focus();
-    return () => { };
-  }, []);
-
   const userCharacter = 6;
   // user error
   const [userError, setUserError] = React.useState('');
@@ -111,16 +103,13 @@ const ForgotPasswordScreen = ({ navigation }) => {
         ]}
         animation="fadeInUpBig">
         {/* enter email */}
-        <Text style={[styles.text_footer, styles.mt10]}>Email</Text>
         <View style={styles.action}>
-          <FontAwesome name="user-o" color="#05375a" size={20} />
+          <Feather name="mail" color="#05375a" size={20} />
           <TextInput
-            ref={email}
             placeholder="Enter your email..."
             placeholderTextColor="#808080"
             style={styles.textInput}
             autoCapitalize="none"
-            returnKeyType="next"
             onChangeText={textInputChange}
           />
           {data.checkInputChange && (
@@ -154,15 +143,11 @@ const ForgotPasswordScreen = ({ navigation }) => {
             </LinearGradient>
           </TouchableOpacity>
           <TouchableOpacity
-            style={[styles.signIn, styles.signUpButton]}
-            onPress={() => navigation.navigate('SignInScreen')}>
-            <LinearGradient
-              colors={['#08d4c4', '#01ab9d']}
-              style={styles.signIn}>
-              <Text style={[styles.textSign, styles.colorWhite]}>
-                Sign In
-                </Text>
-            </LinearGradient>
+            onPress={() => navigation.navigate('SignInScreen')}
+            style={[styles.signIn, styles.signUpButton]}>
+            <Text style={[styles.textSign, styles.signUpButtonText]}>
+              Sign In
+              </Text>
           </TouchableOpacity>
 
           <TouchableOpacity

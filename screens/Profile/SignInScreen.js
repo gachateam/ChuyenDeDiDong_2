@@ -7,6 +7,7 @@ import {
   Platform,
   StyleSheet,
   StatusBar,
+  ScrollView,
 } from 'react-native';
 import * as Animatable from 'react-native-animatable';
 import LinearGradient from 'react-native-linear-gradient';
@@ -150,82 +151,84 @@ const SignInScreen = ({ navigation }) => {
             backgroundColor: colors.background,
           },
         ]}>
-        <View style={styles.action}>
-          <FontAwesome name="user-o" color={colors.text} size={20} />
-          <TextInput
-            placeholder="Email"
-            placeholderTextColor="grey"
-            style={[
-              styles.textInput,
-              {
-                color: colors.text,
-              },
-            ]}
-            autoCapitalize="none"
-            onChangeText={handleEmailChange}
-          />
-        </View>
+        <ScrollView>
+          <View style={styles.action}>
+            <Feather name="mail" color="#05375a" size={20} />
+            <TextInput
+              placeholder="Email"
+              placeholderTextColor="grey"
+              style={[
+                styles.textInput,
+                {
+                  color: colors.text,
+                },
+              ]}
+              autoCapitalize="none"
+              onChangeText={handleEmailChange}
+            />
+          </View>
 
-        {!(emailError === '') && (
-          <Animatable.View animation="fadeInLeft" duration={500}>
-            <Text style={styles.errorMsg}>{emailError}</Text>
-          </Animatable.View>
-        )}
+          {!(emailError === '') && (
+            <Animatable.View animation="fadeInLeft" duration={500}>
+              <Text style={styles.errorMsg}>{emailError}</Text>
+            </Animatable.View>
+          )}
 
-        <View style={styles.action}>
-          <Feather name="lock" color={colors.text} size={20} />
-          <TextInput
-            placeholder="Mật khẩu"
-            placeholderTextColor="grey"
-            style={[
-              styles.textInput,
-              {
-                color: colors.text,
-              },
-            ]}
-            autoCapitalize="none"
-            secureTextEntry={true}
-            onChangeText={handlePasswordChange}
-          />
-        </View>
+          <View style={styles.action}>
+            <Feather name="lock" color={colors.text} size={20} />
+            <TextInput
+              placeholder="Mật khẩu"
+              placeholderTextColor="grey"
+              style={[
+                styles.textInput,
+                {
+                  color: colors.text,
+                },
+              ]}
+              autoCapitalize="none"
+              secureTextEntry={true}
+              onChangeText={handlePasswordChange}
+            />
+          </View>
 
-        {!(passError === '') && (
-          <Animatable.View animation="fadeInLeft" duration={500}>
-            <Text style={styles.errorMsg}>{passError}</Text>
-          </Animatable.View>
-        )}
+          {!(passError === '') && (
+            <Animatable.View animation="fadeInLeft" duration={500}>
+              <Text style={styles.errorMsg}>{passError}</Text>
+            </Animatable.View>
+          )}
 
-        <TouchableOpacity onPress={() => navigation.navigate('ForgotPasswordScreen')}>
-          <Text style={styles.forgotPass}>Forgot password?</Text>
-        </TouchableOpacity>
-        {!(loginError === '') && (
-          <Animatable.View animation="tada" duration={1000}>
-            <Text style={[styles.errorMsg, styles.errPassMess]}>
-              {loginError}
-            </Text>
-          </Animatable.View>
-        )}
-        <View style={styles.button}>
-          <TouchableOpacity style={styles.signIn} onPress={loginHandle}>
-            <LinearGradient
-              colors={['#08d4c4', '#01ab9d']}
-              style={styles.signIn}>
-              <Text style={styles.textSignIn}>Sign In</Text>
-            </LinearGradient>
+          <TouchableOpacity onPress={() => navigation.navigate('ForgotPasswordScreen')}>
+            <Text style={styles.forgotPass}>Forgot password?</Text>
           </TouchableOpacity>
+          {!(loginError === '') && (
+            <Animatable.View animation="tada" duration={1000}>
+              <Text style={[styles.errorMsg, styles.errPassMess]}>
+                {loginError}
+              </Text>
+            </Animatable.View>
+          )}
+          <View style={styles.button}>
+            <TouchableOpacity style={styles.signIn} onPress={loginHandle}>
+              <LinearGradient
+                colors={['#08d4c4', '#01ab9d']}
+                style={styles.signIn}>
+                <Text style={styles.textSignIn}>Sign In</Text>
+              </LinearGradient>
+            </TouchableOpacity>
 
-          <TouchableOpacity
-            onPress={() => navigation.navigate('SignUpScreen')}
-            style={[styles.signIn, styles.buttonSignUp]}>
-            <Text style={styles.textSignUp}>Sign Up</Text>
-          </TouchableOpacity>
-        </View>
-        <GoogleSigninButton
-          style={{ width: '100%', height: 50 }}
-          size={GoogleSigninButton.Size.Wide}
-          color={GoogleSigninButton.Color.Dark}
-          onPress={signInWithGoogle}
-        />
+            <TouchableOpacity
+              onPress={() => navigation.navigate('SignUpScreen')}
+              style={[styles.signIn, styles.buttonSignUp]}>
+              <Text style={styles.textSignUp}>Sign Up</Text>
+            </TouchableOpacity>
+          </View>
+          <GoogleSigninButton
+            style={{ width: '100%', height: 60, marginTop: 15 }}
+            size={GoogleSigninButton.Size.Wide}
+            color={GoogleSigninButton.Color.Light}
+            onPress={signInWithGoogle}
+          />
+        </ScrollView>
       </Animatable.View>
     </View>
   );

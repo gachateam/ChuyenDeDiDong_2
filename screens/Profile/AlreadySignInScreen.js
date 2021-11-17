@@ -50,7 +50,7 @@ const AlreadySignInScreen = ({navigation}) => {
               <IconButton
                 icon="square-edit-outline"
                 size={20}
-                onPress={() => console.log('Pressed')}
+                onPress={() => navigation.navigate('EditProfileScreen')}
               />
             </View>
 

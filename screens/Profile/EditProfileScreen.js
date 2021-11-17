@@ -17,8 +17,9 @@ import auth, { firebase } from '@react-native-firebase/auth';
 import firestore from '@react-native-firebase/firestore';
 import { ACTIONS } from '../../context/AuthContext/Action';
 import { useAuth } from '../../context/AuthContext';
+import {Avatar} from 'react-native-paper';
 
-const SignUpScreen = ({navigation}) => {
+const EditProfileScreen = ({navigation}) => {
   const [data, setData] = React.useState({
     username: '',
     email: '',
@@ -141,6 +142,13 @@ const SignUpScreen = ({navigation}) => {
       <StatusBar backgroundColor="#009387" barStyle="light-content" />
       <View style={styles.header}>
         <Text style={styles.text_header}>Register Now!</Text>
+        <Avatar.Image
+        
+            size={70}
+            source={{
+              uri: 'https://cdn6.aptoide.com/imgs/3/7/b/37bdd8cc95f5aac3a85b0f2a2f1b6dc3_icon.png',
+            }}
+          />
       </View>
       <Animatable.View animation="fadeInUpBig" style={styles.footer}>
         <ScrollView>
@@ -245,7 +253,7 @@ const SignUpScreen = ({navigation}) => {
   );
 };
 
-export default SignUpScreen;
+export default EditProfileScreen;
 
 const styles = StyleSheet.create({
   container: {
