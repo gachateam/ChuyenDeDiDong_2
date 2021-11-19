@@ -1,11 +1,10 @@
 import React, {useState, useEffect} from 'react'
-import { StyleSheet, Text, View } from 'react-native'
 import {EventRegister} from 'react-native-event-listeners';
-import themeContext from './config/themeContext';
-import theme from './config/themeContext';
+import themeContext from '../config/themeContext';
+import theme from '../config/theme';
 
-
-const DarkMode = () => {
+export default function SettingsScreen () {
+    
     const [mode, setMode] = useState(false);
 
     useEffect(()=>{
@@ -18,7 +17,7 @@ const DarkMode = () => {
         
     });
     return(
-        <themeContext.Provider value = {mode === true ? theme.dark : theme.light}>
+        <themeContext.Provider value = {mode === true ? theme.light : theme.dark}>
         </themeContext.Provider>
     )
 }

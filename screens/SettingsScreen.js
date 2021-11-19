@@ -5,6 +5,8 @@ import { color } from 'react-native-reanimated';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 import {EventRegister} from 'react-native-event-listeners';
 import themeContext from "../config/themeContext";
+import theme from '../config/themeContext';
+
 
 
 
@@ -14,7 +16,7 @@ const SettingsScreen = () => {
   const theme = useContext(themeContext);
   const [mode,setMode] = useState(false);
   return (
-    <View style={[styles.container, {backgroundColor: theme.background}]} >
+    <View style={styles.container} >
       <View style={styles.top}>
         <Text style={styles.txtTitle}>Settings</Text>
       </View>
@@ -41,10 +43,6 @@ const SettingsScreen = () => {
             <TouchableOpacity style={styles.Selection}>
               <Text style={styles.text}><Icon style ={styles.icon} name="home" size={30}/>   Language</Text>
             </TouchableOpacity>
-            
-            <TouchableOpacity style={styles.Selection}>
-              <Text style={styles.text}><Icon style ={styles.icon} name="home" size={30}/>   LogOut</Text>
-            </TouchableOpacity>
        </ScrollView>
 
     </View>
@@ -55,6 +53,8 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     paddingHorizontal: 20,
+    backgroundColor: theme.background,
+
   },
   txtTitle: {
     fontSize: 35,
