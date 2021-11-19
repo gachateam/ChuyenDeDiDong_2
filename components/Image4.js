@@ -9,20 +9,20 @@ import {
   SafeAreaView,
 } from 'react-native';
 import Header from './Header';
-import { ACTIONS } from './../context/QuestionContext/Action';
-import { useQuestion } from '../context/QuestionContext';
-import { useGlobal } from '../context/GlobalContext';
+import {ACTIONS} from './../context/QuestionContext/Action';
+import {useQuestion} from '../context/QuestionContext';
+import {useGlobal} from '../context/GlobalContext';
 import ButtonNext from './ButtonNext';
 
 const height = Dimensions.get('screen').height;
 
-const Image4 = ({ navigation }) => {
-  const { ansChoice, dispatch } = useQuestion();
+const Image4 = ({navigation}) => {
+  const {ansChoice, dispatch} = useQuestion();
 
-  const { activeQuestion } = useQuestion();
-  const { listQuestion, vocabulary } = useGlobal();
+  const {activeQuestion} = useQuestion();
+  const {listQuestion, vocabulary} = useGlobal();
 
-  const question = listQuestion[activeQuestion]
+  const question = listQuestion[activeQuestion];
 
   return (
     <SafeAreaView style={styles.container}>
@@ -33,7 +33,7 @@ const Image4 = ({ navigation }) => {
       <View style={styles.options}>
         {question.ans.map((e, i) => {
           const hanldePress = () => {
-            dispatch({ type: ACTIONS.CHOICE_ANS, payload: i + 1 });
+            dispatch({type: ACTIONS.CHOICE_ANS, payload: i + 1});
           };
 
           return (
@@ -46,7 +46,7 @@ const Image4 = ({ navigation }) => {
               key={i}>
               <Image
                 source={{
-                  uri: vocabulary.find((value) => value.word === e).image,
+                  uri: vocabulary.find(value => value.word === e).image,
                 }}
                 style={styles.banner}
                 resizeMode="contain"

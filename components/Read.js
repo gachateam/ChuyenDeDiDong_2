@@ -3,8 +3,8 @@ import {StyleSheet, Text, View, Image, TouchableOpacity} from 'react-native';
 import Header from './Header';
 import Tts from 'react-native-tts';
 import QuestionBoxListen from './QuestionBoxListen';
-import { useQuestion } from '../context/QuestionContext';
-import { useGlobal } from '../context/GlobalContext';
+import {useQuestion} from '../context/QuestionContext';
+import {useGlobal} from '../context/GlobalContext';
 import ButtonNext from './ButtonNext';
 
 const handleVoice = () => {
@@ -14,11 +14,9 @@ const handleVoice = () => {
 
 const Read = ({navigation}) => {
   const {activeQuestion} = useQuestion();
-  const { listQuestion} = useGlobal();
-  
-  const question = listQuestion[activeQuestion]
+  const {listQuestion} = useGlobal();
 
-  console.log(question);
+  const question = listQuestion[activeQuestion];
 
   return (
     <View style={styles.container}>
@@ -47,7 +45,7 @@ const Read = ({navigation}) => {
         <Text style={styles.answertext}>Answer</Text>
       </View>
       <View style={styles.bottom}>
-        <ButtonNext/>
+        <ButtonNext />
       </View>
     </View>
   );

@@ -31,7 +31,7 @@ export function DrawerContent({navigation}) {
 
   useEffect(() => {
     getCategory();
-  }, []);
+  });
 
   return (
     <View>

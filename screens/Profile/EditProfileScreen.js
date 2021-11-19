@@ -13,10 +13,10 @@ import * as Animatable from 'react-native-animatable';
 import LinearGradient from 'react-native-linear-gradient';
 import FontAwesome from 'react-native-vector-icons/FontAwesome';
 import Feather from 'react-native-vector-icons/Feather';
-import auth, { firebase } from '@react-native-firebase/auth';
+import auth, {firebase} from '@react-native-firebase/auth';
 import firestore from '@react-native-firebase/firestore';
-import { ACTIONS } from '../../context/AuthContext/Action';
-import { useAuth } from '../../context/AuthContext';
+import {ACTIONS} from '../../context/AuthContext/Action';
+import {useAuth} from '../../context/AuthContext';
 import {Avatar} from 'react-native-paper';
 
 const EditProfileScreen = ({navigation}) => {
@@ -28,7 +28,7 @@ const EditProfileScreen = ({navigation}) => {
     check_textInputChange: false,
   });
 
-  const {dispatch} = useAuth()
+  const {dispatch} = useAuth();
   const usernameCharacter = 24;
   const emailRegex = /^[\w-.]+@([\w-]+\.)+[\w-]{2,4}$/;
   const passCharacter = 6;
@@ -92,7 +92,6 @@ const EditProfileScreen = ({navigation}) => {
     }
   };
 
-  
   const handleSignUp = () => {
     if (
       data.username === '' ||
@@ -115,13 +114,15 @@ const EditProfileScreen = ({navigation}) => {
       return setLoginError('Please enter valid password and comfirm password.');
     }
 
-    const cred = firebase.auth.EmailAuthProvider.credential(data.email, data.password);
-    
+    const cred = firebase.auth.EmailAuthProvider.credential(
+      data.email,
+      data.password,
+    );
 
     auth()
       .currentUser.linkWithCredential(cred)
       .then(() => {
-        dispatch({type: ACTIONS.LOGIN, payload: auth().currentUser})
+        dispatch({type: ACTIONS.LOGIN, payload: auth().currentUser});
         firestore()
           .collection('users')
           .doc(auth().currentUser.uid)
@@ -143,12 +144,11 @@ const EditProfileScreen = ({navigation}) => {
       <View style={styles.header}>
         <Text style={styles.text_header}>Register Now!</Text>
         <Avatar.Image
-        
-            size={70}
-            source={{
-              uri: 'https://cdn6.aptoide.com/imgs/3/7/b/37bdd8cc95f5aac3a85b0f2a2f1b6dc3_icon.png',
-            }}
-          />
+          size={70}
+          source={{
+            uri: 'https://cdn6.aptoide.com/imgs/3/7/b/37bdd8cc95f5aac3a85b0f2a2f1b6dc3_icon.png',
+          }}
+        />
       </View>
       <Animatable.View animation="fadeInUpBig" style={styles.footer}>
         <ScrollView>

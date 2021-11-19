@@ -3,5 +3,5 @@ export const ACTIONS = {
   HIDE_TAB_BAR: 'Hide tab bar',
   CHOOSE_UNIT: 'unit',
   GET_LIST_QUESTION: 'listquestion',
-  GET_VOCABULARY: 'vocabylary'
+  GET_VOCABULARY: 'vocabylary',
 };

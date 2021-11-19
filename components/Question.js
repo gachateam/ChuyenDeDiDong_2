@@ -1,9 +1,9 @@
-import React, { useEffect } from 'react';
-import { useQuestion } from '../context/QuestionContext';
+import React, {useEffect} from 'react';
+import {useQuestion} from '../context/QuestionContext';
 import Image4 from './Image4';
 import Vocabulary4 from './Vocabulary4';
 import Read from './Read';
-import { TYPE_QUESTION } from './../context/TypeQuestion';
+import {TYPE_QUESTION} from './../context/TypeQuestion';
 import Pronounciacion from './Pronounciacion';
 import Listen from './Listen';
 import Tts from 'react-native-tts';
@@ -11,21 +11,21 @@ import FillWord from './FillWord';
 import Translate from './Translate';
 import ChoiceMultiAnswer from './ChoiceMultiAnswer';
 import Grammar from './Grammar';
-import { useGlobal } from '../context/GlobalContext';
-import { ACTIONS } from './../context/QuestionContext/Action';
+import {useGlobal} from '../context/GlobalContext';
+import {ACTIONS} from './../context/QuestionContext/Action';
 
 Tts.setDefaultLanguage('en');
 
-const Question = ({ navigation }) => {
-  const { typeQuestion, activeQuestion, dispatch } = useQuestion();
-  const { listQuestion } = useGlobal();
+const Question = ({navigation}) => {
+  const {typeQuestion, activeQuestion, dispatch} = useQuestion();
+  const {listQuestion} = useGlobal();
 
   useEffect(() => {
-    if (listQuestion.length > activeQuestion + 1) {
-      dispatch({ type: ACTIONS.TYPE_QUESTION, payload: listQuestion[activeQuestion + 1].type })
-    }
-    console.log(listQuestion[activeQuestion].type);
-  }, [activeQuestion])
+    dispatch({
+      type: ACTIONS.TYPE_QUESTION,
+      payload: listQuestion[activeQuestion].type,
+    });
+  }, [activeQuestion, dispatch, listQuestion]);
 
   switch (typeQuestion) {
     case TYPE_QUESTION.IMAGE_4:

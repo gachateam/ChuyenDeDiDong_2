@@ -14,15 +14,15 @@ import * as Animatable from 'react-native-animatable';
 import LinearGradient from 'react-native-linear-gradient';
 import Feather from 'react-native-vector-icons/Feather';
 import FontAwesome from 'react-native-vector-icons/FontAwesome';
-import { useTheme } from '@react-navigation/native';
+import {useTheme} from '@react-navigation/native';
 import auth from '@react-native-firebase/auth';
 
 // load font for ios
 FontAwesome.loadFont();
 Feather.loadFont();
 
-const ForgotPasswordScreen = ({ navigation }) => {
-  const { colors } = useTheme();
+const ForgotPasswordScreen = ({navigation}) => {
+  const {colors} = useTheme();
 
   // data email and password
   const [data, setData] = React.useState({
@@ -70,10 +70,10 @@ const ForgotPasswordScreen = ({ navigation }) => {
         Alert.alert('Đã gửi', 'Go to Login', [
           {
             text: 'Cancel',
-            onPress: () => { },
+            onPress: () => {},
             style: 'cancel',
           },
-          { text: 'LOGIN', onPress: () => navigation.goBack() },
+          {text: 'LOGIN', onPress: () => navigation.goBack()},
         ]);
       })
       .catch(err => {
@@ -82,7 +82,7 @@ const ForgotPasswordScreen = ({ navigation }) => {
             text: 'Cancel',
             style: 'cancel',
           },
-          { text: 'OK' },
+          {text: 'OK'},
         ]);
       });
   };
@@ -147,7 +147,7 @@ const ForgotPasswordScreen = ({ navigation }) => {
             style={[styles.signIn, styles.signUpButton]}>
             <Text style={[styles.textSign, styles.signUpButtonText]}>
               Sign In
-              </Text>
+            </Text>
           </TouchableOpacity>
 
           <TouchableOpacity
@@ -155,7 +155,7 @@ const ForgotPasswordScreen = ({ navigation }) => {
             style={[styles.signIn, styles.signUpButton]}>
             <Text style={[styles.textSign, styles.signUpButtonText]}>
               Sign Up
-              </Text>
+            </Text>
           </TouchableOpacity>
         </View>
       </Animatable.View>
@@ -165,7 +165,7 @@ const ForgotPasswordScreen = ({ navigation }) => {
 
 export default ForgotPasswordScreen;
 
-const { height } = Dimensions.get('screen');
+const {height} = Dimensions.get('screen');
 const height_logo = height * 0.12;
 
 const styles = StyleSheet.create({

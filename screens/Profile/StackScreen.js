@@ -14,7 +14,10 @@ const StackScreen = ({navigation}) => {
       <Stack.Screen name="ProfilesScreen" component={ProfilesScreen} />
       <Stack.Screen name="SignInScreen" component={SignInScreen} />
       <Stack.Screen name="SignUpScreen" component={SignUpScreen} />
-      <Stack.Screen name="ForgotPasswordScreen" component={ForgotPasswordScreen} />
+      <Stack.Screen
+        name="ForgotPasswordScreen"
+        component={ForgotPasswordScreen}
+      />
     </Stack.Navigator>
   );
 };

@@ -1,12 +1,12 @@
-import React, { useEffect } from 'react';
-import { StyleSheet, View, Text, Image } from 'react-native';
-import { TouchableOpacity } from 'react-native-gesture-handler';
+import React, {useEffect} from 'react';
+import {StyleSheet, View, Text, Image} from 'react-native';
+import {TouchableOpacity} from 'react-native-gesture-handler';
 import database from './../database/database';
-import { useGlobal } from '../context/GlobalContext';
-import { ACTIONS } from './../context/Action';
+import {useGlobal} from '../context/GlobalContext';
+import {ACTIONS} from './../context/Action';
 
-const SplashScreen = ({ navigation }) => {
-  const { title, unit, dispatch } = useGlobal();
+const SplashScreen = ({navigation}) => {
+  const {title, unit, dispatch} = useGlobal();
 
   const getRndInteger = (min, max) => {
     return Math.floor(Math.random() * (max - min)) + min;
@@ -26,17 +26,15 @@ const SplashScreen = ({ navigation }) => {
             listQuestion.push(data.val());
           }
         });
-        dispatch({ type: ACTIONS.GET_LIST_QUESTION, payload: listQuestion });
+        dispatch({type: ACTIONS.GET_LIST_QUESTION, payload: listQuestion});
       });
     database
-      .ref(
-        `/category/${title}/${unit.difficult}/vocabulary`,
-      )
+      .ref(`/category/${title}/${unit.difficult}/vocabulary`)
       .once('value')
       .then(snapshot => {
-        dispatch({ type: ACTIONS.GET_VOCABULARY, payload: snapshot.val() });
+        dispatch({type: ACTIONS.GET_VOCABULARY, payload: snapshot.val()});
       });
-  }, [dispatch]);
+  }, [dispatch, title, unit.difficult, unit.stage]);
 
   return (
     <View style={styles.container}>

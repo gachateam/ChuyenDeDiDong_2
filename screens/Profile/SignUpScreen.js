@@ -13,10 +13,10 @@ import * as Animatable from 'react-native-animatable';
 import LinearGradient from 'react-native-linear-gradient';
 import FontAwesome from 'react-native-vector-icons/FontAwesome';
 import Feather from 'react-native-vector-icons/Feather';
-import auth, { firebase } from '@react-native-firebase/auth';
+import auth, {firebase} from '@react-native-firebase/auth';
 import firestore from '@react-native-firebase/firestore';
-import { ACTIONS } from '../../context/AuthContext/Action';
-import { useAuth } from '../../context/AuthContext';
+import {ACTIONS} from '../../context/AuthContext/Action';
+import {useAuth} from '../../context/AuthContext';
 
 const SignUpScreen = ({navigation}) => {
   const [data, setData] = React.useState({
@@ -27,7 +27,7 @@ const SignUpScreen = ({navigation}) => {
     check_textInputChange: false,
   });
 
-  const {dispatch} = useAuth()
+  const {dispatch} = useAuth();
   const usernameCharacter = 24;
   const emailRegex = /^[\w-.]+@([\w-]+\.)+[\w-]{2,4}$/;
   const passCharacter = 6;
@@ -91,7 +91,6 @@ const SignUpScreen = ({navigation}) => {
     }
   };
 
-  
   const handleSignUp = () => {
     if (
       data.username === '' ||
@@ -114,13 +113,15 @@ const SignUpScreen = ({navigation}) => {
       return setLoginError('Please enter valid password and comfirm password.');
     }
 
-    const cred = firebase.auth.EmailAuthProvider.credential(data.email, data.password);
-    
+    const cred = firebase.auth.EmailAuthProvider.credential(
+      data.email,
+      data.password,
+    );
 
     auth()
       .currentUser.linkWithCredential(cred)
       .then(() => {
-        dispatch({type: ACTIONS.LOGIN, payload: auth().currentUser})
+        dispatch({type: ACTIONS.LOGIN, payload: auth().currentUser});
         firestore()
           .collection('users')
           .doc(auth().currentUser.uid)

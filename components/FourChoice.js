@@ -15,31 +15,32 @@ const FourChoice = ({navigation, children, ans, speak}) => {
       {children}
 
       <View style={styles.options}>
-        {ans.map((e, i) => {
-          const hanldePress = () => {
-            dispatch({type: ACTIONS.CHOICE_ANS, payload: i + 1});
-            if (speak) {
-              Tts.stop();
-              Tts.speak(e);
-            }
-          };
+        {ans &&
+          ans.map((e, i) => {
+            const hanldePress = () => {
+              dispatch({type: ACTIONS.CHOICE_ANS, payload: i + 1});
+              if (speak) {
+                Tts.stop();
+                Tts.speak(e);
+              }
+            };
 
-          return (
-            <TouchableOpacity
-              onPress={hanldePress}
-              style={[
-                styles.optionButton,
-                ansChoice === i + 1 ? styles.choice : null,
-              ]}
-              key={i}>
-              <Text style={styles.option}>{e}</Text>
-            </TouchableOpacity>
-          );
-        })}
+            return (
+              <TouchableOpacity
+                onPress={hanldePress}
+                style={[
+                  styles.optionButton,
+                  ansChoice === i + 1 ? styles.choice : null,
+                ]}
+                key={i}>
+                <Text style={styles.option}>{e}</Text>
+              </TouchableOpacity>
+            );
+          })}
       </View>
 
       <View style={styles.bottom}>
-        <ButtonNext/>
+        <ButtonNext />
       </View>
     </View>
   );

@@ -11,11 +11,18 @@ const reducers = (state, action) => {
       return {
         ...state,
         ansChoice: action.payload,
-      };r
+      };
     case ACTIONS.NEXT_QUESTION:
       return {
         ...state,
-        activeQuestion: state.activeQuestion+1,
+        activeQuestion: state.activeQuestion + 1,
+        ansChoice: [],
+      };
+    case ACTIONS.CORRECT:
+      return {
+        ...state,
+        activeQuestion: state.activeQuestion + 1,
+        ansChoice: [],
       };
     default:
       return state;

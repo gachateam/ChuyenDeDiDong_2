@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, {useEffect} from 'react';
 import {
   View,
   Text,
@@ -11,18 +11,21 @@ import {
 } from 'react-native';
 import * as Animatable from 'react-native-animatable';
 import LinearGradient from 'react-native-linear-gradient';
-import FontAwesome from 'react-native-vector-icons/FontAwesome';
 import Feather from 'react-native-vector-icons/Feather';
-import auth, { firebase } from '@react-native-firebase/auth';
-import { GoogleSignin, GoogleSigninButton, statusCodes } from '@react-native-google-signin/google-signin';
-import { useTheme } from 'react-native-paper';
-import { useAuth } from '../../context/AuthContext';
-import { ACTIONS } from '../../context/AuthContext/Action';
+import auth from '@react-native-firebase/auth';
+import {
+  GoogleSignin,
+  GoogleSigninButton,
+  statusCodes,
+} from '@react-native-google-signin/google-signin';
+import {useTheme} from 'react-native-paper';
+import {useAuth} from '../../context/AuthContext';
+import {ACTIONS} from '../../context/AuthContext/Action';
 import firestore from '@react-native-firebase/firestore';
 
-const SignInScreen = ({ navigation }) => {
-  const { dispatch } = useAuth()
-  const { colors } = useTheme();
+const SignInScreen = ({navigation}) => {
+  const {dispatch} = useAuth();
+  const {colors} = useTheme();
   const [data, setData] = React.useState({
     email: '',
     password: '',
@@ -30,7 +33,8 @@ const SignInScreen = ({ navigation }) => {
   });
   useEffect(() => {
     GoogleSignin.configure({
-      webClientId: '269142696824-qqfi3h5d5oi0uokvl0mer95rmct73u9e.apps.googleusercontent.com',
+      webClientId:
+        '269142696824-qqfi3h5d5oi0uokvl0mer95rmct73u9e.apps.googleusercontent.com',
     });
   }, []);
 
@@ -98,8 +102,8 @@ const SignInScreen = ({ navigation }) => {
 
   const signInWithGoogle = async () => {
     try {
-      dispatch({ type: ACTIONS.LOGIN, payload: auth().currentUser })
-      const { idToken } = await GoogleSignin.signIn();
+      dispatch({type: ACTIONS.LOGIN, payload: auth().currentUser});
+      const {idToken} = await GoogleSignin.signIn();
 
       // Create a Google credential with the token
       const googleCredential = auth.GoogleAuthProvider.credential(idToken);
@@ -107,8 +111,8 @@ const SignInScreen = ({ navigation }) => {
       // Sign-in the user with the credential
       return auth()
         .currentUser.linkWithCredential(googleCredential)
-        .then((user) => {
-          dispatch({ type: ACTIONS.LOGIN, payload: auth().currentUser });
+        .then(user => {
+          dispatch({type: ACTIONS.LOGIN, payload: auth().currentUser});
           firestore()
             .collection('users')
             .doc(auth().currentUser.uid)
@@ -121,7 +125,7 @@ const SignInScreen = ({ navigation }) => {
                 error,
               );
             });
-        })
+        });
     } catch (error) {
       if (error.code === statusCodes.SIGN_IN_CANCELLED) {
         // sign in was cancelled
@@ -197,7 +201,8 @@ const SignInScreen = ({ navigation }) => {
             </Animatable.View>
           )}
 
-          <TouchableOpacity onPress={() => navigation.navigate('ForgotPasswordScreen')}>
+          <TouchableOpacity
+            onPress={() => navigation.navigate('ForgotPasswordScreen')}>
             <Text style={styles.forgotPass}>Forgot password?</Text>
           </TouchableOpacity>
           {!(loginError === '') && (
@@ -223,7 +228,7 @@ const SignInScreen = ({ navigation }) => {
             </TouchableOpacity>
           </View>
           <GoogleSigninButton
-            style={{ width: '100%', height: 60, marginTop: 15 }}
+            style={{width: '100%', height: 60, marginTop: 15}}
             size={GoogleSigninButton.Size.Wide}
             color={GoogleSigninButton.Color.Light}
             onPress={signInWithGoogle}

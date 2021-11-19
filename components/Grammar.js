@@ -1,14 +1,14 @@
 import React from 'react';
-import { useGlobal } from '../context/GlobalContext';
-import { useQuestion } from '../context/QuestionContext';
+import {useGlobal} from '../context/GlobalContext';
+import {useQuestion} from '../context/QuestionContext';
 import FourChoice from './FourChoice';
 import QuestionBoxFillWord from './QuestionBoxFillWord';
 
 const Grammar = ({navigation}) => {
   const {activeQuestion} = useQuestion();
-  const { listQuestion} = useGlobal();
+  const {listQuestion} = useGlobal();
 
-  const question = listQuestion[activeQuestion]
+  const question = listQuestion[activeQuestion];
 
   return (
     <FourChoice navigation={navigation} ans={question.ans}>
