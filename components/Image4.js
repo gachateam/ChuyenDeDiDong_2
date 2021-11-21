@@ -23,7 +23,7 @@ const Image4 = ({navigation}) => {
   const question = listQuestion[activeQuestion];
 
   const checkAns = (ansC, ans) => {
-    return ansC === ans
+    return ansC.ansC === ans
   }
 
   return (
@@ -59,7 +59,7 @@ const Image4 = ({navigation}) => {
         })}
       </View>
       <View style={styles.bottom}>
-        <ButtonNext />
+        <ButtonNext checkAns={checkAns}/>
       </View>
     </SafeAreaView>
   );

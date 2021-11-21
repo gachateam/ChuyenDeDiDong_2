@@ -15,12 +15,12 @@ const ChoiceMultiAnswer = ({navigation}) => {
   const checkAns = (ansC, ans) => {
     let check = true
 
-    if (ansC.length != ans.length) {
+    if (ansC.ansC.length != ans.length) {
         check = false
     }
 
     ans.filter((val) => {
-        if (!ansC.includes(val)) {
+        if (!ansC.ansC.includes(val)) {
             check = false
             return
         }
@@ -63,7 +63,7 @@ const ChoiceMultiAnswer = ({navigation}) => {
       </View>
 
       <View style={styles.bottom}>
-        <ButtonNext/>
+        <ButtonNext checkAns={checkAns}/>
       </View>
     </View>
   );

@@ -11,7 +11,7 @@ const Vocabulary4 = ({navigation}) => {
   const question = listQuestion[activeQuestion];
 
   const checkAns = (ansC, ans) => {
-    return ansC === ans
+    return ansC.ansC === ans
   }
 
   return (
