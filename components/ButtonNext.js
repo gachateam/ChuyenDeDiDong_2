@@ -1,19 +1,41 @@
 import React from 'react';
-import {StyleSheet, Text, TouchableOpacity} from 'react-native';
-import {useGlobal} from '../context/GlobalContext';
-import {useQuestion} from '../context/QuestionContext';
-import {ACTIONS} from './../context/QuestionContext/Action';
+import { StyleSheet, Text, TouchableOpacity } from 'react-native';
+import { useGlobal } from '../context/GlobalContext';
+import { useQuestion } from '../context/QuestionContext';
+import { ACTIONS } from './../context/QuestionContext/Action';
+import { TYPE_QUESTION } from './../context/TypeQuestion';
 
-const ButtonNext = () => {
-  const {dispatch, activeQuestion, ansChoice} = useQuestion();
-  const {listQuestion} = useGlobal();
+const ButtonNext = ({checkAns}) => {
+  const { dispatch, activeQuestion, ansChoice, questionIncorrect, ansQuestionIncorrect, typeQuestion } = useQuestion();
+  const { listQuestion } = useGlobal();
 
   const handleNextQuestion = () => {
-    if (listQuestion.length > activeQuestion + 1) {
-      if (ansChoice !== []) {
-        dispatch({type: ACTIONS.NEXT_QUESTION});
-        console.log(listQuestion[activeQuestion].ansC);
-        console.log(ansChoice);
+    if (ansQuestionIncorrect) {
+      if (!(typeof ansChoice == 'object' && ansChoice.length === 0)) {
+        // checkAns(listQuestion[activeQuestion],ansChoice)
+        if (listQuestion[activeQuestion].ansC != ansChoice) {
+          dispatch({ type: ACTIONS.INCORRECT, payload: activeQuestion });
+        }
+        if (questionIncorrect.length != 0) {
+          const next = questionIncorrect.pop()
+          dispatch({ type: ACTIONS.NEXT_QUESTION, payload: next });
+        }
+      } else if (typeQuestion == TYPE_QUESTION.READ && questionIncorrect.length != 0) {
+        const next = questionIncorrect.pop()
+        dispatch({ type: ACTIONS.NEXT_QUESTION, payload: next });
+      }
+    } else {
+      if (listQuestion.length > activeQuestion + 1) {
+        if (!(typeof ansChoice == 'object' && ansChoice.length === 0)) {
+          if (listQuestion[activeQuestion].ansC != ansChoice) {
+            dispatch({ type: ACTIONS.INCORRECT, payload: activeQuestion });
+          }
+          dispatch({ type: ACTIONS.NEXT_QUESTION, payload: activeQuestion + 1 });
+        } else if (typeQuestion == TYPE_QUESTION.READ) {
+          dispatch({ type: ACTIONS.NEXT_QUESTION, payload: activeQuestion + 1 });
+        }
+      } else {
+        dispatch({ type: ACTIONS.ANS_QUESTION_INCORRECT, payload: true });
       }
     }
   };
@@ -21,7 +43,7 @@ const ButtonNext = () => {
   return (
     <TouchableOpacity style={styles.button} onPress={handleNextQuestion}>
       <Text style={styles.buttonText}>
-        {listQuestion.length > activeQuestion + 1 ? 'KIỂM TRA' : 'HOÀN TẤT'}
+        {typeQuestion === TYPE_QUESTION.READ && (typeof ansChoice == 'object' && ansChoice.length === 0) ? 'BỎ QUA' : 'KIỂM TRA'}
       </Text>
     </TouchableOpacity>
   );

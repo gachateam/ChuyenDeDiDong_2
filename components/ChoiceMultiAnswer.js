@@ -4,28 +4,31 @@ import Header from './Header';
 import {useQuestion} from '../context/QuestionContext';
 import {ACTIONS} from './../context/QuestionContext/Action';
 import QuestionBoxFillWord from './QuestionBoxFillWord';
+import ButtonNext from './ButtonNext';
 
 const ChoiceMultiAnswer = ({navigation}) => {
-  const {ansChoice, dispatch} = useQuestion();
+  const {ansChoice, dispatch,activeQuestion} = useQuestion();
+  const { listQuestion } = useGlobal();
 
-  console.log(ansChoice);
+  const question = listQuestion[activeQuestion];
 
-  const question = {
-    question: "Which animal can't eat meat",
-    meanQuestion: 'Con vật nào không thể ăn thịt',
-    ans: [
-      'elephant',
-      'tiger',
-      'lion',
-      'wolf',
-      'whale',
-      'monkey',
-      'squirrel',
-      'leopard',
-      'giraffe',
-      'zebra',
-    ],
-  };
+  const checkAns = (ansC, ans) => {
+    let check = true
+
+    if (ansC.length != ans.length) {
+        check = false
+    }
+
+    ans.filter((val) => {
+        if (!ansC.includes(val)) {
+            check = false
+            return
+        }
+    })
+
+    return check
+}
+
   return (
     <View style={styles.container}>
       <Header navigation={navigation} />
@@ -60,9 +63,7 @@ const ChoiceMultiAnswer = ({navigation}) => {
       </View>
 
       <View style={styles.bottom}>
-        <TouchableOpacity style={styles.button}>
-          <Text style={styles.buttonText}>KIỂM TRA</Text>
-        </TouchableOpacity>
+        <ButtonNext/>
       </View>
     </View>
   );

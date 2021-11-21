@@ -6,7 +6,7 @@ import {useQuestion} from '../context/QuestionContext';
 import Tts from 'react-native-tts';
 import ButtonNext from './ButtonNext';
 
-const FourChoice = ({navigation, children, ans, speak}) => {
+const FourChoice = ({navigation, children, ans, speak,checkAns}) => {
   const {ansChoice, dispatch} = useQuestion();
 
   return (
@@ -40,7 +40,7 @@ const FourChoice = ({navigation, children, ans, speak}) => {
       </View>
 
       <View style={styles.bottom}>
-        <ButtonNext />
+        <ButtonNext checkAns={checkAns}/>
       </View>
     </View>
   );

@@ -15,7 +15,7 @@ const reducers = (state, action) => {
     case ACTIONS.NEXT_QUESTION:
       return {
         ...state,
-        activeQuestion: state.activeQuestion + 1,
+        activeQuestion: action.payload,
         ansChoice: [],
       };
     case ACTIONS.CORRECT:
@@ -23,6 +23,19 @@ const reducers = (state, action) => {
         ...state,
         activeQuestion: state.activeQuestion + 1,
         ansChoice: [],
+      };
+    case ACTIONS.INCORRECT:
+      return {
+        ...state,
+        questionIncorrect: [
+          ...state.questionIncorrect,
+          action.payload
+        ],
+      };
+    case ACTIONS.ANS_QUESTION_INCORRECT:
+      return {
+        ...state,
+        ansQuestionIncorrect: action.payload
       };
     default:
       return state;

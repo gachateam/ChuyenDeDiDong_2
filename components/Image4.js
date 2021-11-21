@@ -17,12 +17,14 @@ import ButtonNext from './ButtonNext';
 const height = Dimensions.get('screen').height;
 
 const Image4 = ({navigation}) => {
-  const {ansChoice, dispatch} = useQuestion();
-
-  const {activeQuestion} = useQuestion();
+  const {ansChoice, dispatch,activeQuestion} = useQuestion();
   const {listQuestion, vocabulary} = useGlobal();
 
   const question = listQuestion[activeQuestion];
+
+  const checkAns = (ansC, ans) => {
+    return ansC === ans
+  }
 
   return (
     <SafeAreaView style={styles.container}>

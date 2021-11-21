@@ -10,8 +10,12 @@ const Vocabulary4 = ({navigation}) => {
 
   const question = listQuestion[activeQuestion];
 
+  const checkAns = (ansC, ans) => {
+    return ansC === ans
+  }
+
   return (
-    <FourChoice navigation={navigation} ans={question.ans}>
+    <FourChoice navigation={navigation} ans={question.ans} checkAns={checkAns}>
       <QuestionBoxVocabulary question={question.question} />
     </FourChoice>
   );

@@ -10,6 +10,10 @@ const Listen = ({navigation}) => {
 
   const question = listQuestion[activeQuestion];
 
+  const checkAns = (ansC, ans) => {
+    return ansC === ans
+  }
+
   return (
     <FourChoice navigation={navigation} ans={question.ans}>
       <QuestionBoxListen

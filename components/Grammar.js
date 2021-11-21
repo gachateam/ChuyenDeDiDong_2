@@ -10,8 +10,12 @@ const Grammar = ({navigation}) => {
 
   const question = listQuestion[activeQuestion];
 
+  const checkAns = (ansC, ans) => {
+    return ansC === ans
+  }
+
   return (
-    <FourChoice navigation={navigation} ans={question.ans}>
+    <FourChoice navigation={navigation} ans={question.ans} checkAns={checkAns}>
       <QuestionBoxFillWord
         question={question.question}
         meanQuestion={question.meanQuestion}

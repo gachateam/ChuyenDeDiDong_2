@@ -18,6 +18,10 @@ const Read = ({navigation}) => {
 
   const question = listQuestion[activeQuestion];
 
+  const checkAns = (ansC, ans) => {
+    return ansC === ans
+  }
+
   return (
     <View style={styles.container}>
       <Header navigation={navigation} />
@@ -45,7 +49,7 @@ const Read = ({navigation}) => {
         <Text style={styles.answertext}>Answer</Text>
       </View>
       <View style={styles.bottom}>
-        <ButtonNext />
+        <ButtonNext checkAns={checkAns}/>
       </View>
     </View>
   );
