@@ -1,13 +1,15 @@
-import React, {useEffect, useState} from 'react';
-import {Animated, StyleSheet, View} from 'react-native';
+import React, { useEffect, useState } from 'react';
+import { Animated, StyleSheet, View } from 'react-native';
 import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
-import {useGlobal} from '../context/GlobalContext';
-import {ACTIONS} from './../context/Action';
+import { useGlobal } from '../context/GlobalContext';
+import { useQuestion } from '../context/QuestionContext';
+import { ACTIONS } from './../context/Action';
 
-const Header = ({navigation}) => {
+const Header = ({ navigation }) => {
   const [progressStatus, setProgressStatus] = useState(10);
+  const { activeQuestion, questionIncorrect, ansQuestionIncorrect } = useQuestion();
+  const { hideTabBar, dispatch, listQuestion } = useGlobal();
 
-  const {hideTabBar, dispatch} = useGlobal();
   const anim = new Animated.Value(0);
 
   useEffect(() => {
@@ -16,6 +18,14 @@ const Header = ({navigation}) => {
       anim.stopAnimation();
     };
   }, [onAnimate]);
+
+  useEffect(() => {
+    if (!ansQuestionIncorrect) {
+      setProgressStatus(((activeQuestion - questionIncorrect.length) * 100) / listQuestion.length)
+    } else {
+      setProgressStatus(((listQuestion.length - questionIncorrect.length) * 100) / listQuestion.length)
+    }
+  }, [activeQuestion])
 
   const onAnimate = () => {
     Animated.timing(anim, {
@@ -27,12 +37,12 @@ const Header = ({navigation}) => {
 
   const handlePress = () => {
     // navigation.navigate('Home');
-    dispatch({type: ACTIONS.HIDE_TAB_BAR, payload: !hideTabBar});
+    dispatch({ type: ACTIONS.HIDE_TAB_BAR, payload: !hideTabBar });
     navigation.reset({
       index: 0,
       routes: [
         {
-          name: 'Home',
+          name: 'StageScreen',
         },
       ],
     });
@@ -42,7 +52,7 @@ const Header = ({navigation}) => {
     <View style={styles.container}>
       <MaterialIcons name="arrow-back-ios" size={32} onPress={handlePress} />
       <View style={styles.containerProgress}>
-        <Animated.View style={[styles.inner, {width: progressStatus + '%'}]} />
+        <Animated.View style={[styles.inner, { width: progressStatus + '%' }]} />
       </View>
     </View>
   );

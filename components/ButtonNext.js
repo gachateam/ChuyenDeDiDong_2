@@ -16,11 +16,11 @@ const ButtonNext = ({ checkAns }) => {
           dispatch({ type: ACTIONS.INCORRECT, payload: activeQuestion });
         }
         if (questionIncorrect.length != 0) {
-          const next = questionIncorrect.pop()
+          const next = questionIncorrect.shift()
           dispatch({ type: ACTIONS.NEXT_QUESTION, payload: next });
         }
       } else if (typeQuestion == TYPE_QUESTION.READ && questionIncorrect.length != 0) {
-        const next = questionIncorrect.pop()
+        const next = questionIncorrect.shift()
         dispatch({ type: ACTIONS.NEXT_QUESTION, payload: next });
       }
     } else {
