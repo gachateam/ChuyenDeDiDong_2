@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React from 'react';
 import {
   Image,
   StyleSheet,
@@ -9,16 +9,22 @@ import {
   SafeAreaView,
 } from 'react-native';
 import Header from './Header';
+import {ACTIONS} from './../context/QuestionContext/Action';
+import {useQuestion} from '../context/QuestionContext';
+import {useGlobal} from '../context/GlobalContext';
+import ButtonNext from './ButtonNext';
 
 const height = Dimensions.get('screen').height;
 
 const Image4 = ({navigation}) => {
-  const [ansChoice, setAnsChoice] = useState(0);
+  const {ansChoice, dispatch,activeQuestion} = useQuestion();
+  const {listQuestion, vocabulary} = useGlobal();
 
-  const question = {
-    question: 'đâu là "con chó"',
-    ans: ['cat', 'dog', 'ant', 'fish'],
-  };
+  const question = listQuestion[activeQuestion];
+
+  const checkAns = (ansC, ans) => {
+    return ansC.ansC === ans
+  }
 
   return (
     <SafeAreaView style={styles.container}>
@@ -29,7 +35,7 @@ const Image4 = ({navigation}) => {
       <View style={styles.options}>
         {question.ans.map((e, i) => {
           const hanldePress = () => {
-            setAnsChoice(i + 1);
+            dispatch({type: ACTIONS.CHOICE_ANS, payload: i + 1});
           };
 
           return (
@@ -42,7 +48,7 @@ const Image4 = ({navigation}) => {
               key={i}>
               <Image
                 source={{
-                  uri: 'https://cdni.iconscout.com/illustration/premium/thumb/dog-holding-bone-in-mouth-4238889-3518614.png',
+                  uri: vocabulary.find(value => value.word === e).image,
                 }}
                 style={styles.banner}
                 resizeMode="contain"
@@ -53,9 +59,7 @@ const Image4 = ({navigation}) => {
         })}
       </View>
       <View style={styles.bottom}>
-        <TouchableOpacity style={styles.button}>
-          <Text style={styles.buttonText}>KIỂM TRA</Text>
-        </TouchableOpacity>
+        <ButtonNext checkAns={checkAns}/>
       </View>
     </SafeAreaView>
   );
@@ -114,6 +118,7 @@ const styles = StyleSheet.create({
     backgroundColor: '#ffffff',
     borderWidth: 2,
     borderColor: '#99FFFF',
+    width: '49%',
   },
   bottom: {
     marginBottom: 12,

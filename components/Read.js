@@ -1,38 +1,55 @@
 import React from 'react';
 import {StyleSheet, Text, View, Image, TouchableOpacity} from 'react-native';
+import Header from './Header';
+import Tts from 'react-native-tts';
+import QuestionBoxListen from './QuestionBoxListen';
+import {useQuestion} from '../context/QuestionContext';
+import {useGlobal} from '../context/GlobalContext';
+import ButtonNext from './ButtonNext';
+
+const handleVoice = () => {
+  Tts.speak('Hello everyone');
+  Tts.setDefaultLanguage('en');
+};
 
 const Read = ({navigation}) => {
+  const {activeQuestion} = useQuestion();
+  const {listQuestion} = useGlobal();
+
+  const question = listQuestion[activeQuestion];
+
+  const checkAns = (ansC, ans) => {
+    return ansC.question === ans
+  }
+
   return (
     <View style={styles.container}>
-      <View style={styles.top}>
-        <Text style={styles.questions}>Questions</Text>
-      </View>
+      <Header navigation={navigation} />
+      <QuestionBoxListen meanQuestion={question.question} />
 
-      <TouchableOpacity style={styles.listen}>
+      <TouchableOpacity style={styles.listen} onPress={() => handleVoice()}>
         <Image
           source={{
-            uri: 'https://cdn.iconscout.com/icon/premium/png-64-thumb/listening-music-2742467-2276710.png',
+            uri: 'https://cdn.iconscout.com/icon/free/png-64/music-1128-1131524.png',
           }}
           style={styles.banner1}
           resizeMode="contain"
         />
       </TouchableOpacity>
-
-      <View style={styles.bannerbottom}>
-        <TouchableOpacity style={styles.listen}>
-          <Image
-            source={{
-              uri: 'https://cdn.iconscout.com/icon/premium/png-64-thumb/voice-recorder-3334898-2789123.png',
-            }}
-            style={styles.banner2}
-            resizeMode="contain"
-          />
-        </TouchableOpacity>
+      <TouchableOpacity style={styles.listen}>
+        <Image
+          source={{
+            uri: 'https://cdn.iconscout.com/icon/free/png-64/recording-voice-recognization-speech-audio-record-4-14005.png',
+          }}
+          style={styles.banner2}
+          resizeMode="contain"
+        />
+      </TouchableOpacity>
+      <View style={styles.answer}>
+        <Text style={styles.answertext}>Answer</Text>
       </View>
       <View style={styles.bottom}>
-        <TouchableOpacity style={styles.button}>
-          <Text style={styles.buttonText}>KIỂM TRA</Text>
-        </TouchableOpacity>
+        <ButtonNext checkAns={checkAns}/>
       </View>
     </View>
   );
@@ -43,31 +60,16 @@ export default Read;
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    paddingHorizontal: 10,
+    paddingHorizontal: 20,
     height: '100%',
   },
-  top: {
-    marginVertical: 15,
-    textAlign: 'center',
-    justifyContent: 'center',
-    alignItems: 'center',
-    borderWidth: 1,
-    borderColor: '#99FFCC',
-    borderRadius: 12,
-    backgroundColor: '#CCFFCC',
-    height: 150,
-  },
-  questions: {
-    fontSize: 28,
-  },
   banner1: {
-    height: 100,
-    width: 60,
+    width: '25%',
+    height: '25%',
   },
   banner2: {
-    height: 110,
-    width: 80,
-    paddingTop: 600,
+    width: '15%',
+    paddingVertical: 80,
   },
   bottom: {
     marginBottom: 12,
@@ -81,7 +83,6 @@ const styles = StyleSheet.create({
     padding: 16,
     borderRadius: 50,
     alignItems: 'center',
-    marginBottom: 30,
     textAlign: 'center',
   },
   buttonText: {
@@ -94,8 +95,15 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     marginHorizontal: 10,
   },
-  bannerbottom: {
-    height: 340,
-    borderRadius: 50,
+  answer: {
+    marginVertical: 15,
+    textAlign: 'center',
+    justifyContent: 'center',
+    alignItems: 'center',
+    borderWidth: 1,
+    borderColor: '#99FFCC',
+    borderRadius: 12,
+    backgroundColor: '#CCFFCC',
+    height: 100,
   },
 });

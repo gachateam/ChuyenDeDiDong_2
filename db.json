@@ -1,57 +1,57 @@
 {
     "category": {
         "animal": {
-            "easy": {
+            "0": {
                 "vocabulary": [
                     {
                         "word": "dog",
                         "mean": "con chó",
-                        "image": "https://firebasestorage.googleapis.com/v0/b/englishlearning-ec586.appspot.com/o/dog.jpg?alt=media&token=6139623a-e0b0-4aba-8942-17e8b8ac25a6"
+                        "image": "https://firebasestorage.googleapis.com/v0/b/englishlearning-ec586.appspot.com/o/dog.jpg?alt=media&token=64872756-04f9-4e8f-be7e-5fceef2f5401"
                     },
                     {
                         "word": "cat",
                         "mean": "con mèo",
-                        "image": "https://firebasestorage.googleapis.com/v0/b/englishlearning-ec586.appspot.com/o/cat.jpg?alt=media&token=b7cf924c-38df-49db-9614-1047edcfdf51"
+                        "image": "https://firebasestorage.googleapis.com/v0/b/englishlearning-ec586.appspot.com/o/cat.jpg?alt=media&token=5f301eea-e9e3-4726-82a6-40c96ee48c08"
                     },
                     {
                         "word": "ant",
                         "mean": "con kiến",
-                        "image": "https://firebasestorage.googleapis.com/v0/b/englishlearning-ec586.appspot.com/o/ant.jpg?alt=media&token=394ec7c5-9bac-4893-878d-6d56efe69b50"
+                        "image": "https://firebasestorage.googleapis.com/v0/b/englishlearning-ec586.appspot.com/o/ant.jpg?alt=media&token=01aeef58-48fc-4aec-a1a5-9086e53bfe96"
                     },
                     {
                         "word": "bird",
                         "mean": "con chim",
-                        "image": "https://firebasestorage.googleapis.com/v0/b/englishlearning-ec586.appspot.com/o/bird.jpg?alt=media&token=d17ca895-de66-4c99-ae41-48b014e58d60"
+                        "image": "https://firebasestorage.googleapis.com/v0/b/englishlearning-ec586.appspot.com/o/bird.jpg?alt=media&token=131cd185-9952-4935-9c06-7f7f0d6ff4c6"
                     },
                     {
                         "word": "fish",
                         "mean": "con cá",
-                        "image": "https://firebasestorage.googleapis.com/v0/b/englishlearning-ec586.appspot.com/o/fish.jpg?alt=media&token=31bbded8-01db-4287-9fff-8b7ed83155fc"
+                        "image": "https://firebasestorage.googleapis.com/v0/b/englishlearning-ec586.appspot.com/o/fish.jpg?alt=media&token=1ad45fcb-7d59-4089-9a9d-11425634cf9a"
                     },
                     {
                         "word": "mouse",
                         "mean": "con chuột",
-                        "image": "https://firebasestorage.googleapis.com/v0/b/englishlearning-ec586.appspot.com/o/mouse.jpg?alt=media&token=6496aa4b-ee08-4563-aa42-25e29890fcdb"
+                        "image": "https://firebasestorage.googleapis.com/v0/b/englishlearning-ec586.appspot.com/o/mouse.jpg?alt=media&token=e71a52d5-d8a7-4dd2-90ee-2ca51eb34774"
                     },
                     {
                         "word": "crab",
                         "mean": "con cua",
-                        "image": "https://firebasestorage.googleapis.com/v0/b/englishlearning-ec586.appspot.com/o/crab.jpg?alt=media&token=4d4bf436-df37-4463-9924-a54cd75d5516"
+                        "image": "https://firebasestorage.googleapis.com/v0/b/englishlearning-ec586.appspot.com/o/crab.jpg?alt=media&token=80b094e2-26b0-4457-8cc3-22f9220885dc"
                     },
                     {
                         "word": "bee",
                         "mean": "con ong",
-                        "image": "https://firebasestorage.googleapis.com/v0/b/englishlearning-ec586.appspot.com/o/bee.jpg?alt=media&token=b488521a-ad1d-4137-b006-8f31c2ed158f"
+                        "image": "https://firebasestorage.googleapis.com/v0/b/englishlearning-ec586.appspot.com/o/bee.jpg?alt=media&token=3f7b401d-83c1-4a83-804f-836974d63420"
                     },
                     {
                         "word": "fly",
                         "mean": "con ruồi",
-                        "image": "https://firebasestorage.googleapis.com/v0/b/englishlearning-ec586.appspot.com/o/fly.jpg?alt=media&token=70fc1b0b-fc7a-480d-9eac-e993506ce878"
+                        "image": "https://firebasestorage.googleapis.com/v0/b/englishlearning-ec586.appspot.com/o/fly.jpg?alt=media&token=d2aa006d-1267-4ff2-8cff-7582cb6d6381"
                     },
                     {
                         "word": "parrot",
                         "mean": "con vẹt",
-                        "image": "https://firebasestorage.googleapis.com/v0/b/englishlearning-ec586.appspot.com/o/parrot.jpg?alt=media&token=2cb89e4c-54be-4723-a665-65f307b40492"
+                        "image": "https://firebasestorage.googleapis.com/v0/b/englishlearning-ec586.appspot.com/o/parrot.jpg?alt=media&token=83f42bc0-d1a4-451c-9fe1-c310cde92262"
                     }
                 ],
                 "question": {
@@ -752,7 +752,7 @@
                             },
                             {
                                 "id": 20,
-                                "type": "listenStage2",
+                                "type": "listen",
                                 "question": "Take your dog for a walk",
                                 "meanQuestion": "Dắt con chó của bạn đi dạo",
                                 "ans": [
@@ -765,7 +765,7 @@
                             },
                             {
                                 "id": 21,
-                                "type": "listenStage2",
+                                "type": "listen",
                                 "question": "The cat meowed",
                                 "meanQuestion": "Con mèo kêu meo",
                                 "ans": [
@@ -778,7 +778,7 @@
                             },
                             {
                                 "id": 22,
-                                "type": "listenStage2",
+                                "type": "listen",
                                 "question": "The ant eating candy",
                                 "meanQuestion": "Con kiến đang ăn kẹo",
                                 "ans": [
@@ -791,7 +791,7 @@
                             },
                             {
                                 "id": 23,
-                                "type": "listenStage2",
+                                "type": "listen",
                                 "question": "The bird catches the worm",
                                 "meanQuestion": "Con chim bắt con sâu",
                                 "ans": [
@@ -804,7 +804,7 @@
                             },
                             {
                                 "id": 24,
-                                "type": "listenStage2",
+                                "type": "listen",
                                 "question": "Fish live in the sea",
                                 "meanQuestion": "Con cá sống ở biển",
                                 "ans": [
@@ -817,7 +817,7 @@
                             },
                             {
                                 "id": 25,
-                                "type": "listenStage2",
+                                "type": "listen",
                                 "question": "Mouse eating cheese",
                                 "meanQuestion": "Con chuột đang ăn phô mai",
                                 "ans": [
@@ -830,7 +830,7 @@
                             },
                             {
                                 "id": 26,
-                                "type": "listenStage2",
+                                "type": "listen",
                                 "question": "Crab can only walk sideways",
                                 "meanQuestion": "Con cua chỉ có thể đi ngang",
                                 "ans": [
@@ -843,7 +843,7 @@
                             },
                             {
                                 "id": 27,
-                                "type": "listenStage2",
+                                "type": "listen",
                                 "question": "Bee give honey",
                                 "meanQuestion": "Con ong cho mật ong",
                                 "ans": [
@@ -856,7 +856,7 @@
                             },
                             {
                                 "id": 28,
-                                "type": "listenStage2",
+                                "type": "listen",
                                 "question": "The fly is flying",
                                 "meanQuestion": "Con ruồi đang bay",
                                 "ans": [
@@ -869,7 +869,7 @@
                             },
                             {
                                 "id": 29,
-                                "type": "listenStage2",
+                                "type": "listen",
                                 "question": "Parrot can imitate human speech",
                                 "meanQuestion": "Con vẹt có thể bắt chước giọng nói con người",
                                 "ans": [
@@ -1130,7 +1130,7 @@
                             },
                             {
                                 "id": 10,
-                                "type": "FillWordStage3",
+                                "type": "choiceMultiAnswer",
                                 "question": "..., ..., ... and ... can fly",
                                 "meanQuestion": "con ruồi, con chim, con vẹt và con ong biết bay",
                                 "ans": [
@@ -1154,7 +1154,7 @@
                             },
                             {
                                 "id": 11,
-                                "type": "FillWordStage3",
+                                "type": "choiceMultiAnswer",
                                 "question": "You can catch ... and ... at the beach ",
                                 "meanQuestion": "Bạn có thể bắt cua và cá ở biển",
                                 "ans": [
@@ -1176,7 +1176,7 @@
                             },
                             {
                                 "id": 12,
-                                "type": "FillWordStage3",
+                                "type": "choiceMultiAnswer",
                                 "question": "The ... is chasing the ... inside the house",
                                 "meanQuestion": "Con mèo đang đuổi con chuột trong nhà",
                                 "ans": [
@@ -1198,7 +1198,7 @@
                             },
                             {
                                 "id": 13,
-                                "type": "FillWordStage3",
+                                "type": "choiceMultiAnswer",
                                 "question": "You walk the ... in the park and saw an ... nest",
                                 "meanQuestion": "Bạn dắt con chó đi dạo trong công viên và thấy một tổ kiến",
                                 "ans": [
@@ -1220,7 +1220,7 @@
                             },
                             {
                                 "id": 14,
-                                "type": "FillWordStage3",
+                                "type": "choiceMultiAnswer",
                                 "question": "Your ... and ... don't get along well",
                                 "meanQuestion": "Con chó và mèo của bạn không hợp nhau",
                                 "ans": [
@@ -1244,6 +1244,7 @@
                                 "id": 15,
                                 "type": "Grammar",
                                 "question": "There is ... ant on your hand",
+                                "meanQuestion": "Có một con kiến trên tay bạn",
                                 "ans": [
                                     "a",
                                     "an",
@@ -1256,6 +1257,7 @@
                                 "id": 16,
                                 "type": "Grammar",
                                 "question": "There is ... bird on your hand",
+                                "meanQuestion": "Có một con chim trên tay bạn",
                                 "ans": [
                                     "a",
                                     "an",
@@ -1268,6 +1270,7 @@
                                 "id": 17,
                                 "type": "Grammar",
                                 "question": "There is ... bee on your hand",
+                                "meanQuestion": "Có một con ong trên tay bạn",
                                 "ans": [
                                     "a",
                                     "an",
@@ -1280,6 +1283,7 @@
                                 "id": 18,
                                 "type": "Grammar",
                                 "question": "There is ... fly on your hand",
+                                "meanQuestion": "Có một con ruồi trên tay bạn",
                                 "ans": [
                                     "a",
                                     "an",
@@ -1292,6 +1296,7 @@
                                 "id": 19,
                                 "type": "Grammar",
                                 "question": "There is ... mouse on your hand",
+                                "meanQuestion": "Có một con chuột trên tay bạn",
                                 "ans": [
                                     "a",
                                     "an",
@@ -1304,6 +1309,7 @@
                                 "id": 20,
                                 "type": "Grammar",
                                 "question": "How many fish ... you catch yesterday",
+                                "meanQuestion": "Bạn đã bắt được bao nhiêu con cá hôm qua",
                                 "ans": [
                                     "do",
                                     "did",
@@ -1316,6 +1322,7 @@
                                 "id": 21,
                                 "type": "Grammar",
                                 "question": "How many bird ... you catch yesterday",
+                                "meanQuestion": "Bạn đã bắt được bao nhiêu con chim hôm qua",
                                 "ans": [
                                     "do",
                                     "did",
@@ -1328,6 +1335,7 @@
                                 "id": 22,
                                 "type": "Grammar",
                                 "question": "How many mouse ... you catch yesterday",
+                                "meanQuestion": "Bạn đã bắt được bao nhiêu con chuột hôm qua",
                                 "ans": [
                                     "do",
                                     "did",
@@ -1340,6 +1348,7 @@
                                 "id": 23,
                                 "type": "Grammar",
                                 "question": "How many crab ... you catch yesterday",
+                                "meanQuestion": "Bạn đã bắt được bao nhiêu con cua hôm qua",
                                 "ans": [
                                     "do",
                                     "did",
@@ -1352,6 +1361,7 @@
                                 "id": 24,
                                 "type": "Grammar",
                                 "question": "How many ant ... you catch yesterday",
+                                "meanQuestion": "Bạn đã bắt được bao nhiêu con kiến hôm qua",
                                 "ans": [
                                     "do",
                                     "did",
@@ -1364,6 +1374,7 @@
                                 "id": 25,
                                 "type": "Grammar",
                                 "question": "I ... a dog lover",
+                                "meanQuestion": "Tôi là một người yêu chó",
                                 "ans": [
                                     "do",
                                     "is",
@@ -1376,6 +1387,7 @@
                                 "id": 26,
                                 "type": "Grammar",
                                 "question": "I ... a cat lover",
+                                "meanQuestion": "Tôi là một người yêu mèo",
                                 "ans": [
                                     "do",
                                     "is",
@@ -1388,6 +1400,7 @@
                                 "id": 27,
                                 "type": "Grammar",
                                 "question": "I ... a fish lover",
+                                "meanQuestion": "Tôi là một người yêu cá",
                                 "ans": [
                                     "do",
                                     "is",
@@ -1400,6 +1413,7 @@
                                 "id": 28,
                                 "type": "Grammar",
                                 "question": "I ... a mouse lover",
+                                "meanQuestion": "Tôi là một người yêu chuột",
                                 "ans": [
                                     "do",
                                     "is",
@@ -1412,6 +1426,7 @@
                                 "id": 29,
                                 "type": "Grammar",
                                 "question": "I ... a bird lover",
+                                "meanQuestion": "Tôi là một người yêu chim",
                                 "ans": [
                                     "do",
                                     "is",
@@ -1424,6 +1439,7 @@
                                 "id": 30,
                                 "type": "Grammar",
                                 "question": "My cat ... beautiful",
+                                "meanQuestion": "Con mèo của tôi thật đẹp",
                                 "ans": [
                                     "that",
                                     "am",
@@ -1436,6 +1452,7 @@
                                 "id": 31,
                                 "type": "Grammar",
                                 "question": "My dog ... beautiful",
+                                "meanQuestion": "Con chó của tôi thật đẹp",
                                 "ans": [
                                     "that",
                                     "am",
@@ -1448,6 +1465,7 @@
                                 "id": 32,
                                 "type": "Grammar",
                                 "question": "My parrot ... beautiful",
+                                "meanQuestion": "Con vẹt của tôi thật đẹp",
                                 "ans": [
                                     "that",
                                     "am",
@@ -1460,6 +1478,7 @@
                                 "id": 33,
                                 "type": "Grammar",
                                 "question": "My bird ... beautiful",
+                                "meanQuestion": "Con chim của tôi thật đẹp",
                                 "ans": [
                                     "that",
                                     "am",
@@ -1472,6 +1491,7 @@
                                 "id": 34,
                                 "type": "Grammar",
                                 "question": "My fish ... beautiful",
+                                "meanQuestion": "Con cá của tôi thật đẹp",
                                 "ans": [
                                     "that",
                                     "am",
@@ -1608,7 +1628,7 @@
                             },
                             {
                                 "id": 45,
-                                "type": "listenStage2",
+                                "type": "listen",
                                 "question": "The bird catches the worm",
                                 "meanQuestion": "Con chim bắt con sâu",
                                 "ans": [
@@ -1621,7 +1641,7 @@
                             },
                             {
                                 "id": 46,
-                                "type": "listenStage2",
+                                "type": "listen",
                                 "question": "Fish live in the sea",
                                 "meanQuestion": "Con cá sống ở biển",
                                 "ans": [
@@ -1634,7 +1654,7 @@
                             },
                             {
                                 "id": 47,
-                                "type": "listenStage2",
+                                "type": "listen",
                                 "question": "Mouse eating cheese",
                                 "meanQuestion": "Con chuột đang ăn phô mai",
                                 "ans": [
@@ -1647,7 +1667,7 @@
                             },
                             {
                                 "id": 48,
-                                "type": "listenStage2",
+                                "type": "listen",
                                 "question": "Crab can only walk sideways",
                                 "meanQuestion": "Con cua chỉ có thể đi ngang",
                                 "ans": [
@@ -1660,7 +1680,7 @@
                             },
                             {
                                 "id": 49,
-                                "type": "listenStage2",
+                                "type": "listen",
                                 "question": "Bee give honey",
                                 "meanQuestion": "Con ong cho mật ong",
                                 "ans": [
@@ -1718,13 +1738,60 @@
                     }
                 }
             },
-            "medium": {
+            "1": {
                 "vocabulary": [
                     {
-                        "vocabulary": "frog",
+                        "word": "frog",
                         "mean": "con ếch",
-                        "image": "https://firebasestorage.googleapis.com/v0/b/englishlearning-ec586.appspot.com/o/dog.jpg?alt=media&token=6139623a-e0b0-4aba-8942-17e8b8ac25a6"
+                        "image": "https://firebasestorage.googleapis.com/v0/b/englishlearning-ec586.appspot.com/o/frog.jpg?alt=media&token=37d89951-f385-41de-865d-7810c0c7cdbf"
+                    },
+                    {
+                        "word": "cow",
+                        "mean": "con bò ",
+                        "image": "https://firebasestorage.googleapis.com/v0/b/englishlearning-ec586.appspot.com/o/cow.jpg?alt=media&token=328ff88e-5049-4c59-9364-34374e1187a7"
+                    },
+                    {
+                        "word": "horse",
+                        "mean": "con ngựa ",
+                        "image": "https://firebasestorage.googleapis.com/v0/b/englishlearning-ec586.appspot.com/o/horse.jpg?alt=media&token=5e8c20d0-3a11-43ac-8b64-2a6fd16598e7"
+                    },
+                    {
+                        "word": "rabbit",
+                        "mean": "con thỏ ",
+                        "image": "https://firebasestorage.googleapis.com/v0/b/englishlearning-ec586.appspot.com/o/rabbit.jpg?alt=media&token=415d3949-959c-4df1-b3a8-f0b92aff5a80"
+                    },
+                    {
+                        "word": "chicken",
+                        "mean": "con gà",
+                        "image": "https://firebasestorage.googleapis.com/v0/b/englishlearning-ec586.appspot.com/o/chicken.jpg?alt=media&token=312c59d3-c139-4fd4-90ea-9276e26e75b4"
+                    },
+                    {
+                        "word": "pig",
+                        "mean": "con heo",
+                        "image": "https://firebasestorage.googleapis.com/v0/b/englishlearning-ec586.appspot.com/o/pig.jpg?alt=media&token=e61c8799-69eb-4c6f-9ac2-2607bb173f0a"
+                    },
+                    {
+                        "word": "sheep",
+                        "mean": "con cừu",
+                        "image": "https://firebasestorage.googleapis.com/v0/b/englishlearning-ec586.appspot.com/o/sheep.jpg?alt=media&token=c086d1b0-a7de-48b3-9896-63e54204e866"
+                    },
+                    {
+                        "word": "snake",
+                        "mean": "con rắn",
+                        "image": "https://firebasestorage.googleapis.com/v0/b/englishlearning-ec586.appspot.com/o/snake.jpg?alt=media&token=56c09755-cead-4c53-8bc6-6068c3b1990b"
+                    },
+                    {
+                        "word": "duck",
+                        "mean": "con vịt",
+                        "image": "https://firebasestorage.googleapis.com/v0/b/englishlearning-ec586.appspot.com/o/duck.jpg?alt=media&token=b48fe09c-9561-491a-8660-c85eef8ac45b"
+                    },
+                    {
+                        "word": "pigeon",
+                        "mean": "bồ câu ",
+                        "image": "https://firebasestorage.googleapis.com/v0/b/englishlearning-ec586.appspot.com/o/pigeon.jpg?alt=media&token=acf53df9-4d11-4480-8d0a-af8ea8de8fc5"
                     }
+                    
+
                 ],
                 "question": {
                     "stage1": {
@@ -2424,7 +2491,7 @@
                             },
                             {
                                 "id": 20,
-                                "type": "listenStage2",
+                                "type": "listen",
                                 "question": "Frog can jump and lay eggs",
                                 "meanQuestion": "Con ếch có thể nhảy và đẻ trứng",
                                 "ans": [
@@ -2437,7 +2504,7 @@
                             },
                             {
                                 "id": 21,
-                                "type": "listenStage2",
+                                "type": "listen",
                                 "question": "Cow give milk",
                                 "meanQuestion": "Con bò cho sữa",
                                 "ans": [
@@ -2450,7 +2517,7 @@
                             },
                             {
                                 "id": 22,
-                                "type": "listenStage2",
+                                "type": "listen",
                                 "question": "You can ride a horse",
                                 "meanQuestion": "Bạn có thể cưỡi ngựa",
                                 "ans": [
@@ -2463,7 +2530,7 @@
                             },
                             {
                                 "id": 23,
-                                "type": "listenStage2",
+                                "type": "listen",
                                 "question": "Rabbbit eat carrot",
                                 "meanQuestion": "Con thỏ ăn cà rốt",
                                 "ans": [
@@ -2476,7 +2543,7 @@
                             },
                             {
                                 "id": 24,
-                                "type": "listenStage2",
+                                "type": "listen",
                                 "question": "Chicken lay eggs",
                                 "meanQuestion": "Con gà đẻ trứng",
                                 "ans": [
@@ -2489,7 +2556,7 @@
                             },
                             {
                                 "id": 25,
-                                "type": "listenStage2",
+                                "type": "listen",
                                 "question": "Pig has a curly tail and short legs",
                                 "meanQuestion": "Con heo có đuôi xoăn và chân ngắn",
                                 "ans": [
@@ -2502,7 +2569,7 @@
                             },
                             {
                                 "id": 26,
-                                "type": "listenStage2",
+                                "type": "listen",
                                 "question": "Sheep provide us with wool",
                                 "meanQuestion": "Con cừu cho len",
                                 "ans": [
@@ -2515,7 +2582,7 @@
                             },
                             {
                                 "id": 27,
-                                "type": "listenStage2",
+                                "type": "listen",
                                 "question": "Some snakes are poisonous",
                                 "meanQuestion": "Một vài con rắn có độc",
                                 "ans": [
@@ -2528,7 +2595,7 @@
                             },
                             {
                                 "id": 28,
-                                "type": "listenStage2",
+                                "type": "listen",
                                 "question": "Duck can swim and fly",
                                 "meanQuestion": "Con vịt có thể bơi và bay",
                                 "ans": [
@@ -2541,7 +2608,7 @@
                             },
                             {
                                 "id": 29,
-                                "type": "listenStage2",
+                                "type": "listen",
                                 "question": "Feeding the pigeon in the park",
                                 "meanQuestion": "Cho con bồ câu ăn ở công viên",
                                 "ans": [
@@ -2554,52 +2621,52 @@
                             },
                             {
                                 "id": 30,
-                                "type": "readStage2",
+                                "type": "read",
                                 "question": "Frog can jump and lay eggs"
                             },
                             {
                                 "id": 31,
-                                "type": "readStage2",
+                                "type": "read",
                                 "question": "Cow give milk"
                             },
                             {
                                 "id": 32,
-                                "type": "readStage2",
+                                "type": "read",
                                 "question": "You can ride a horse"
                             },
                             {
                                 "id": 33,
-                                "type": "readStage2",
+                                "type": "read",
                                 "question": "Rabbbit eat carrot"
                             },
                             {
                                 "id": 34,
-                                "type": "readStage2",
+                                "type": "read",
                                 "question": "Chicken lay eggs"
                             },
                             {
                                 "id": 35,
-                                "type": "readStage2",
+                                "type": "read",
                                 "question": "Pig has a curly tail and short legs"
                             },
                             {
                                 "id": 36,
-                                "type": "readStage2",
+                                "type": "read",
                                 "question": "Sheep provide us with wool"
                             },
                             {
                                 "id": 37,
-                                "type": "readStage2",
+                                "type": "read",
                                 "question": "Some snakes are poisonous"
                             },
                             {
                                 "id": 38,
-                                "type": "readStage2",
+                                "type": "read",
                                 "question": "Duck can swim and fly"
                             },
                             {
                                 "id": 39,
-                                "type": "readStage2",
+                                "type": "read",
                                 "question": "Feeding the pigeon in the park"
                             }
                         ],
@@ -2803,7 +2870,7 @@
                             },
                             {
                                 "id": 10,
-                                "type": "FillWordStage3",
+                                "type": "choiceMultiAnswer",
                                 "question": "Farm animal are: ..., ..., ..., ..., ..., ...",
                                 "meanQuestion": "Động vật trang trại là: con bò, con ngựa, con heo, con gà, con vịt, con cừu",
                                 "ans": [
@@ -2829,7 +2896,7 @@
                             },
                             {
                                 "id": 11,
-                                "type": "FillWordStage3",
+                                "type": "choiceMultiAnswer",
                                 "question": "Wild animal are: ..., ..., ..., ...",
                                 "meanQuestion": "Động vật hoang dã là: con ếch, con thỏ, con rắn, bồ câu",
                                 "ans": [
@@ -2853,7 +2920,7 @@
                             },
                             {
                                 "id": 12,
-                                "type": "FillWordStage3",
+                                "type": "choiceMultiAnswer",
                                 "question": "... and ... live near the lake ",
                                 "meanQuestion": "con ếch và con vịt sống gần hồ",
                                 "ans": [
@@ -2875,7 +2942,7 @@
                             },
                             {
                                 "id": 13,
-                                "type": "FillWordStage3",
+                                "type": "choiceMultiAnswer",
                                 "question": "Some ... and ... are poisonous ",
                                 "meanQuestion": "Một vài con rắn và con ếch có độc",
                                 "ans": [
@@ -2897,7 +2964,7 @@
                             },
                             {
                                 "id": 14,
-                                "type": "FillWordStage3",
+                                "type": "choiceMultiAnswer",
                                 "question": "... can eat ..., ..., ..., ..., ...",
                                 "meanQuestion": "Con rắn có thể ăn được con ếch, con thỏ, con gà, con vịt, bồ câu",
                                 "ans": [
@@ -2925,6 +2992,7 @@
                                 "id": 15,
                                 "type": "Grammar",
                                 "question": "How ... chickens and ducks in your yard?",
+                                "meanQuestion": "Có bao nhiêu con gà và con vịt ở sân của bạn?",
                                 "ans": [
                                     "much",
                                     "an",
@@ -2937,6 +3005,7 @@
                                 "id": 16,
                                 "type": "Grammar",
                                 "question": "How ... sheeps and horses in your yard?",
+                                "meanQuestion": "Có bao nhiêu con cừu và con ngựa ở sân của bạn?",
                                 "ans": [
                                     "much",
                                     "an",
@@ -2949,6 +3018,7 @@
                                 "id": 17,
                                 "type": "Grammar",
                                 "question": "How ... frogs and cows in your yard?",
+                                "meanQuestion": "Có bao nhiêu con ếch và con bò ở sân của bạn?",
                                 "ans": [
                                     "much",
                                     "an",
@@ -2961,6 +3031,7 @@
                                 "id": 18,
                                 "type": "Grammar",
                                 "question": "How ... rabbbits and pigs in your yard?",
+                                "meanQuestion": "Có bao nhiêu con thỏ và con heo ở sân của bạn?",
                                 "ans": [
                                     "much",
                                     "an",
@@ -2973,6 +3044,7 @@
                                 "id": 19,
                                 "type": "Grammar",
                                 "question": "How ... ducks and pigeons in your yard?",
+                                "meanQuestion": "Có bao nhiêu con vịt và con bồ câu ở sân của bạn?",
                                 "ans": [
                                     "much",
                                     "an",
@@ -2985,6 +3057,7 @@
                                 "id": 20,
                                 "type": "Grammar",
                                 "question": "There ... two frogs inside my house",
+                                "meanQuestion": "Có hai con ếch ở trong nhà của tôi",
                                 "ans": [
                                     "is",
                                     "are",
@@ -2997,6 +3070,7 @@
                                 "id": 21,
                                 "type": "Grammar",
                                 "question": "There ... two snakes inside my house",
+                                "meanQuestion": "Có hai con rắn ở trong nhà của tôi",
                                 "ans": [
                                     "is",
                                     "are",
@@ -3009,6 +3083,7 @@
                                 "id": 22,
                                 "type": "Grammar",
                                 "question": "There ... two pigeons inside my house",
+                                "meanQuestion": "Có hai con bồ câu ở trong nhà của tôi",
                                 "ans": [
                                     "is",
                                     "are",
@@ -3021,6 +3096,7 @@
                                 "id": 23,
                                 "type": "Grammar",
                                 "question": "There ... two ducks inside my house",
+                                "meanQuestion": "Có hai con vịt ở trong nhà của tôi",
                                 "ans": [
                                     "is",
                                     "are",
@@ -3033,6 +3109,7 @@
                                 "id": 24,
                                 "type": "Grammar",
                                 "question": "There ... two chickens inside my house",
+                                "meanQuestion": "Có hai con gà ở trong nhà của tôi",
                                 "ans": [
                                     "is",
                                     "are",
@@ -3045,6 +3122,7 @@
                                 "id": 25,
                                 "type": "Grammar",
                                 "question": "... snakes are poisonous",
+                                "meanQuestion": "Một vài con rắn có độc",
                                 "ans": [
                                     "have",
                                     "are",
@@ -3057,6 +3135,7 @@
                                 "id": 26,
                                 "type": "Grammar",
                                 "question": "... frogs are poisonous",
+                                "meanQuestion": "Một vài con ếch có độc",
                                 "ans": [
                                     "have",
                                     "are",
@@ -3069,6 +3148,7 @@
                                 "id": 27,
                                 "type": "Grammar",
                                 "question": "Do you have ... food for my chicken?",
+                                "meanQuestion": "Bạn có đồ ăn cho con gà của tôi?",
                                 "ans": [
                                     "have",
                                     "are",
@@ -3081,6 +3161,7 @@
                                 "id": 28,
                                 "type": "Grammar",
                                 "question": "Do you have ... food for my duck?",
+                                "meanQuestion": "Bạn có đồ ăn cho con vịt của tôi?",
                                 "ans": [
                                     "have",
                                     "are",
@@ -3093,6 +3174,7 @@
                                 "id": 29,
                                 "type": "Grammar",
                                 "question": "Do you have ... food for my rabbit?",
+                                "meanQuestion": "Bạn có đồ ăn cho con thỏ của tôi?",
                                 "ans": [
                                     "have",
                                     "are",
@@ -3104,7 +3186,8 @@
                             {
                                 "id": 30,
                                 "type": "Grammar",
-                                "question": "How ... is this chicken",
+                                "question": "How ... is this chicken?",
+                                "meanQuestion": "Con gà này bao nhiêu tiền?",
                                 "ans": [
                                     "that",
                                     "am",
@@ -3116,7 +3199,8 @@
                             {
                                 "id": 31,
                                 "type": "Grammar",
-                                "question": "How ... is this duck",
+                                "question": "How ... is this duck?",
+                                "meanQuestion": "Con vịt này bao nhiêu tiền?",
                                 "ans": [
                                     "that",
                                     "am",
@@ -3128,7 +3212,8 @@
                             {
                                 "id": 32,
                                 "type": "Grammar",
-                                "question": "How ... is this pig",
+                                "question": "How ... is this pig?",
+                                "meanQuestion": "Con heo này bao nhiêu tiền?",
                                 "ans": [
                                     "that",
                                     "am",
@@ -3140,7 +3225,8 @@
                             {
                                 "id": 33,
                                 "type": "Grammar",
-                                "question": "How ... is this cow",
+                                "question": "How ... is this cow?",
+                                "meanQuestion": "Con bò này bao nhiêu tiền?",
                                 "ans": [
                                     "that",
                                     "am",
@@ -3152,7 +3238,8 @@
                             {
                                 "id": 34,
                                 "type": "Grammar",
-                                "question": "How ... is this horse",
+                                "question": "How ... is this horse?",
+                                "meanQuestion": "Con ngựa này bao nhiêu tiền?",
                                 "ans": [
                                     "that",
                                     "am",
@@ -3289,7 +3376,7 @@
                             },
                             {
                                 "id": 45,
-                                "type": "listenStage3",
+                                "type": "listen",
                                 "question": "Rabbbit eat carrot",
                                 "meanQuestion": "Con thỏ ăn cà rốt",
                                 "ans": [
@@ -3302,7 +3389,7 @@
                             },
                             {
                                 "id": 46,
-                                "type": "listenStage3",
+                                "type": "listen",
                                 "question": "Chicken lay eggs",
                                 "meanQuestion": "Con gà đẻ trứng",
                                 "ans": [
@@ -3315,7 +3402,7 @@
                             },
                             {
                                 "id": 47,
-                                "type": "listenStage3",
+                                "type": "listen",
                                 "question": "Pig has a curly tail and short legs",
                                 "meanQuestion": "Con heo có đuôi xoăn và chân ngắn",
                                 "ans": [
@@ -3328,7 +3415,7 @@
                             },
                             {
                                 "id": 48,
-                                "type": "listenStage3",
+                                "type": "listen",
                                 "question": "Sheep provide us with wool",
                                 "meanQuestion": "Con cừu cho len",
                                 "ans": [
@@ -3341,7 +3428,7 @@
                             },
                             {
                                 "id": 49,
-                                "type": "listenStage3",
+                                "type": "listen",
                                 "question": "Some snakes are poisonous",
                                 "meanQuestion": "Một vài con rắn có độc",
                                 "ans": [
@@ -3399,13 +3486,60 @@
                     }
                 }
             },
-            "hard": {
+            "2": {
                 "vocabulary": [
                     {
-                        "vocabulary": "dog",
-                        "mean": "con chó",
-                        "image": "https://firebasestorage.googleapis.com/v0/b/englishlearning-ec586.appspot.com/o/dog.jpg?alt=media&token=6139623a-e0b0-4aba-8942-17e8b8ac25a6"
+                        "vocabulary": "elephant",
+                        "mean": "con voi",
+                        "image": "https://firebasestorage.googleapis.com/v0/b/englishlearning-ec586.appspot.com/o/elephant.jpg?alt=media&token=1464786b-c19a-4266-9676-1fa9782f2439"
+                    },
+                    {
+                        "vocabulary": "tiger",
+                        "mean": "con hổ",
+                        "image": "https://firebasestorage.googleapis.com/v0/b/englishlearning-ec586.appspot.com/o/tiger.jpg?alt=media&token=53e7ede0-7c16-4a9e-af54-99eed3ca1c3e"
+                    },
+                    {
+                        "word": "lion",
+                        "mean": "con sư tử ",
+                        "image": "https://firebasestorage.googleapis.com/v0/b/englishlearning-ec586.appspot.com/o/lion.jpg?alt=media&token=fdec9b21-9ac2-45e9-a551-b255c1778c04"
+                    },
+                    {
+                        "word": "wolf",
+                        "mean": "con sói ",
+                        "image": "https://firebasestorage.googleapis.com/v0/b/englishlearning-ec586.appspot.com/o/wolf.jpg?alt=media&token=a260e0c3-427d-4cb0-bbc7-89577632f885"
+                    },
+                    {
+                        "word": "whale",
+                        "mean": "con cá voi",
+                        "image": "https://firebasestorage.googleapis.com/v0/b/englishlearning-ec586.appspot.com/o/whale.jpg?alt=media&token=7639b6f7-3b6c-4f54-a770-b351e94a4e4e"
+                    },
+                    {
+                        "word": "monkey",
+                        "mean": "con khỉ",
+                        "image": "https://firebasestorage.googleapis.com/v0/b/englishlearning-ec586.appspot.com/o/monkey.jpg?alt=media&token=16b20235-88e7-45a0-924a-9d927cb58a83"
+                    },
+                    {
+                        "word": "squirrel",
+                        "mean": "con sóc",
+                        "image": "https://firebasestorage.googleapis.com/v0/b/englishlearning-ec586.appspot.com/o/squirrel.jpg?alt=media&token=6eb42d2b-0850-45ef-bff3-a982e433dae3"
+                    },
+                    {
+                        "word": "leopard",
+                        "mean": "con báo",
+                        "image": "https://firebasestorage.googleapis.com/v0/b/englishlearning-ec586.appspot.com/o/leopard.jpg?alt=media&token=0727b7b0-8362-4150-8427-196558d2281c"
+                    },
+                    {
+                        "word": "giraffe",
+                        "mean": "con hươu cao cổ ",
+                        "image": "https://firebasestorage.googleapis.com/v0/b/englishlearning-ec586.appspot.com/o/giraffe.jpg?alt=media&token=9a9d6cf6-cf95-4bd3-b600-a47588fa3fc8"
+                    },
+                    {
+                        "word": "zebra",
+                        "mean": "con ngựa vằn ",
+                        "image": "https://firebasestorage.googleapis.com/v0/b/englishlearning-ec586.appspot.com/o/zebra.jpg?alt=media&token=65421ec5-a837-4c90-b173-c8dc5859df70"
                     }
+                    
+                    
                 ],
                 "question": {
                     "stage1": {
@@ -4105,7 +4239,7 @@
                             },
                             {
                                 "id": 20,
-                                "type": "listenStage2",
+                                "type": "listen",
                                 "question": "An elephant has a long nose",
                                 "meanQuestion": "Con voi có cái mũi dài",
                                 "ans": [
@@ -4118,7 +4252,7 @@
                             },
                             {
                                 "id": 21,
-                                "type": "listenStage2",
+                                "type": "listen",
                                 "question": "Tiger have stripes",
                                 "meanQuestion": "Con hổ có sọc",
                                 "ans": [
@@ -4131,7 +4265,7 @@
                             },
                             {
                                 "id": 22,
-                                "type": "listenStage2",
+                                "type": "listen",
                                 "question": "The lion is the king of beasts",
                                 "meanQuestion": "Con sư tử là vua của các loài thú",
                                 "ans": [
@@ -4144,7 +4278,7 @@
                             },
                             {
                                 "id": 23,
-                                "type": "listenStage2",
+                                "type": "listen",
                                 "question": "The wolf is howling at the full moon",
                                 "meanQuestion": "Con sóc hú vào lúc trăng tròn",
                                 "ans": [
@@ -4157,7 +4291,7 @@
                             },
                             {
                                 "id": 24,
-                                "type": "listenStage2",
+                                "type": "listen",
                                 "question": "Whale is the biggest animal",
                                 "meanQuestion": "Con cá voi là loài động vật lớn nhất",
                                 "ans": [
@@ -4170,7 +4304,7 @@
                             },
                             {
                                 "id": 25,
-                                "type": "listenStage2",
+                                "type": "listen",
                                 "question": "Monkey eat banana",
                                 "meanQuestion": "Con khỉ ăn chuối",
                                 "ans": [
@@ -4183,7 +4317,7 @@
                             },
                             {
                                 "id": 26,
-                                "type": "listenStage2",
+                                "type": "listen",
                                 "question": "Squirrels eat chestnut and can climb tree",
                                 "meanQuestion": "Con sóc ăn hạt dẻ và có thể leo cây",
                                 "ans": [
@@ -4196,7 +4330,7 @@
                             },
                             {
                                 "id": 27,
-                                "type": "listenStage2",
+                                "type": "listen",
                                 "question": "Leopard have spots",
                                 "meanQuestion": "Con báo có đốm",
                                 "ans": [
@@ -4209,7 +4343,7 @@
                             },
                             {
                                 "id": 28,
-                                "type": "listenStage2",
+                                "type": "listen",
                                 "question": "Giraffe is the tallest animal",
                                 "meanQuestion": "Con hươu cao cổ là loài động vật cao nhất",
                                 "ans": [
@@ -4222,7 +4356,7 @@
                             },
                             {
                                 "id": 29,
-                                "type": "listenStage2",
+                                "type": "listen",
                                 "question": "Zebra have stripes and eat grass",
                                 "meanQuestion": "Con ngựa vằn có sọc vằn và ăn cỏ",
                                 "ans": [
@@ -4235,52 +4369,52 @@
                             },
                             {
                                 "id": 30,
-                                "type": "readStage2",
+                                "type": "read",
                                 "question": "An elephant has a long nose"
                             },
                             {
                                 "id": 31,
-                                "type": "readStage2",
+                                "type": "read",
                                 "question": "Tiger have stripes"
                             },
                             {
                                 "id": 32,
-                                "type": "readStage2",
+                                "type": "read",
                                 "question": "The lion is the king of beasts"
                             },
                             {
                                 "id": 33,
-                                "type": "readStage2",
+                                "type": "read",
                                 "question": "The wolf is howling at the full moon"
                             },
                             {
                                 "id": 34,
-                                "type": "readStage2",
+                                "type": "read",
                                 "question": "Whale is the biggest animal"
                             },
                             {
                                 "id": 35,
-                                "type": "readStage2",
+                                "type": "read",
                                 "question": "Monkey eat banana"
                             },
                             {
                                 "id": 36,
-                                "type": "readStage2",
+                                "type": "read",
                                 "question": "Squirrels eat chestnut and can climb tree"
                             },
                             {
                                 "id": 37,
-                                "type": "readStage2",
+                                "type": "read",
                                 "question": "Leopard have spots"
                             },
                             {
                                 "id": 38,
-                                "type": "readStage2",
+                                "type": "read",
                                 "question": "Giraffe is the tallest animal"
                             },
                             {
                                 "id": 39,
-                                "type": "readStage2",
+                                "type": "read",
                                 "question": "Zebra have stripes and eat grass"
                             }
                         ],
@@ -4486,7 +4620,7 @@
                             },
                             {
                                 "id": 10,
-                                "type": "FillWordStage3",
+                                "type": "choiceMultiAnswer",
                                 "question": "..., ..., ... can climb tree",
                                 "meanQuestion": "con báo, con khỉ, con sóc có thể leo cây",
                                 "ans": [
@@ -4509,7 +4643,7 @@
                             },
                             {
                                 "id": 11,
-                                "type": "FillWordStage3",
+                                "type": "choiceMultiAnswer",
                                 "question": "... is the largeset animal in the sea and ... is the biggest animal on the land",
                                 "meanQuestion": "con cá voi là động vật lớn nhất ở biển và con voi là động vật to nhất ở đất liền",
                                 "ans": [
@@ -4531,7 +4665,7 @@
                             },
                             {
                                 "id": 12,
-                                "type": "FillWordStage3",
+                                "type": "choiceMultiAnswer",
                                 "question": "..., ..., ... can’t eat meat",
                                 "meanQuestion": "con voi, con ngựa vằn, con hươu cao cổ không thể ăn được thịt",
                                 "ans": [
@@ -4554,7 +4688,7 @@
                             },
                             {
                                 "id": 13,
-                                "type": "FillWordStage3",
+                                "type": "choiceMultiAnswer",
                                 "question": "... and ... hunt in group",
                                 "meanQuestion": "con sư tử và con sói săn theo bầy",
                                 "ans": [
@@ -4576,7 +4710,7 @@
                             },
                             {
                                 "id": 14,
-                                "type": "FillWordStage3",
+                                "type": "choiceMultiAnswer",
                                 "question": "A pack of ... is hunting down a ...",
                                 "meanQuestion": "một bầy sói đang săn một con ngựa vằn",
                                 "ans": [
@@ -4600,6 +4734,7 @@
                                 "id": 15,
                                 "type": "Grammar",
                                 "question": "Lion is stronger ... tiger",
+                                "meanQuestion": "Con sư tử khỏe hơn con hổ",
                                 "ans": [
                                     "an",
                                     "than",
@@ -4612,6 +4747,7 @@
                                 "id": 16,
                                 "type": "Grammar",
                                 "question": "Elephant is stronger ... lion",
+                                "meanQuestion": "Con voi khỏe hơn con sư tử",
                                 "ans": [
                                     "than",
                                     "with",
@@ -4624,6 +4760,7 @@
                                 "id": 17,
                                 "type": "Grammar",
                                 "question": "Leopard is stronger ... wolf",
+                                "meanQuestion": "Con báo khỏe hơn con sói",
                                 "ans": [
                                     "than",
                                     "with",
@@ -4636,6 +4773,7 @@
                                 "id": 18,
                                 "type": "Grammar",
                                 "question": "Tiger is stronger ... zebra",
+                                "meanQuestion": "Con hổ khỏe hơn con ngựa vằn",
                                 "ans": [
                                     "than",
                                     "with",
@@ -4648,6 +4786,7 @@
                                 "id": 19,
                                 "type": "Grammar",
                                 "question": "Lion is stronger ... wolf",
+                                "meanQuestion": "Con sư tử khỏe hơn con sói",
                                 "ans": [
                                     "than",
                                     "with",
@@ -4660,6 +4799,7 @@
                                 "id": 20,
                                 "type": "Grammar",
                                 "question": "Elephant is the ...",
+                                "meanQuestion": "Con voi bự nhất",
                                 "ans": [
                                     "big",
                                     "biggest",
@@ -4672,6 +4812,7 @@
                                 "id": 21,
                                 "type": "Grammar",
                                 "question": "This wolf is the ... in the pack",
+                                "meanQuestion": "Đây là con sói nhỏ nhất trong đàn",
                                 "ans": [
                                     "high",
                                     "smallest",
@@ -4684,6 +4825,7 @@
                                 "id": 22,
                                 "type": "Grammar",
                                 "question": "This lion is the ... one",
+                                "meanQuestion": "Đây là con sư tử khỏe nhất trong đàn",
                                 "ans": [
                                     "smart",
                                     "strongest",
@@ -4696,6 +4838,7 @@
                                 "id": 23,
                                 "type": "Grammar",
                                 "question": "Whale is the ... animal in the sea",
+                                "meanQuestion": "Cá voi là loài động vật lớn nhất ở biển",
                                 "ans": [
                                     "smart",
                                     "largest",
@@ -4708,6 +4851,7 @@
                                 "id": 24,
                                 "type": "Grammar",
                                 "question": "This is the ... monkey",
+                                "meanQuestion": "Đây là con khỉ thông minh nhất",
                                 "ans": [
                                     "weak",
                                     "smartest",
@@ -4720,6 +4864,7 @@
                                 "id": 25,
                                 "type": "Grammar",
                                 "question": "Wolf is ... than leopard",
+                                "meanQuestion": "Con sói nhỏ hơn con báo",
                                 "ans": [
                                     "weak",
                                     "small",
@@ -4732,6 +4877,7 @@
                                 "id": 26,
                                 "type": "Grammar",
                                 "question": "Whale is ... than elephant",
+                                "meanQuestion": "Con cá voi bự hơn con voi",
                                 "ans": [
                                     "big",
                                     "strong",
@@ -4744,6 +4890,7 @@
                                 "id": 27,
                                 "type": "Grammar",
                                 "question": "Lion is ... than tiger",
+                                "meanQuestion": "Con sư tử khỏe hơn con hổ",
                                 "ans": [
                                     "weak",
                                     "high",
@@ -4756,6 +4903,7 @@
                                 "id": 28,
                                 "type": "Grammar",
                                 "question": "Leopard is ... than lion",
+                                "meanQuestion": "Con báo nhanh hơn con sư tử",
                                 "ans": [
                                     "fast",
                                     "slow",
@@ -4768,6 +4916,7 @@
                                 "id": 29,
                                 "type": "Grammar",
                                 "question": "Squirrel is ... than zebra",
+                                "meanQuestion": "Con sóc thông minh hơn con ngựa vằn",
                                 "ans": [
                                     "high",
                                     "big",
@@ -4780,6 +4929,7 @@
                                 "id": 30,
                                 "type": "Grammar",
                                 "question": "Giraffe ... long neck",
+                                "meanQuestion": "Con hươu cao cổ có cái cổ dài",
                                 "ans": [
                                     "have",
                                     "is",
@@ -4792,6 +4942,7 @@
                                 "id": 31,
                                 "type": "Grammar",
                                 "question": "Elephant ... long nose",
+                                "meanQuestion": "Con voi có cái mũi dài",
                                 "ans": [
                                     "have",
                                     "is",
@@ -4804,6 +4955,7 @@
                                 "id": 32,
                                 "type": "Grammar",
                                 "question": "Tiger ... stripes",
+                                "meanQuestion": "Con hổ có sọc",
                                 "ans": [
                                     "have",
                                     "is",
@@ -4816,6 +4968,7 @@
                                 "id": 33,
                                 "type": "Grammar",
                                 "question": "Leopard ... spot",
+                                "meanQuestion": "Con báo có đốm",
                                 "ans": [
                                     "have",
                                     "is",
@@ -4828,6 +4981,7 @@
                                 "id": 34,
                                 "type": "Grammar",
                                 "question": "Zebra ... stripes",
+                                "meanQuestion": "Con ngựa vằn có sọc",
                                 "ans": [
                                     "have",
                                     "is",
@@ -4964,7 +5118,7 @@
                             },
                             {
                                 "id": 45,
-                                "type": "listenStage3",
+                                "type": "listen",
                                 "question": "The wolf is howling at the full moon",
                                 "meanQuestion": "Con sóc hú vào lúc trăng tròn",
                                 "ans": [
@@ -4977,7 +5131,7 @@
                             },
                             {
                                 "id": 46,
-                                "type": "listenStage3",
+                                "type": "listen",
                                 "question": "Whale is the biggest animal",
                                 "meanQuestion": "Con cá voi là loài động vật lớn nhất",
                                 "ans": [
@@ -4990,7 +5144,7 @@
                             },
                             {
                                 "id": 47,
-                                "type": "listenStage3",
+                                "type": "listen",
                                 "question": "Monkey eat banana",
                                 "meanQuestion": "Con khỉ ăn chuối",
                                 "ans": [
@@ -5003,7 +5157,7 @@
                             },
                             {
                                 "id": 48,
-                                "type": "listenStage3",
+                                "type": "listen",
                                 "question": "Squirrels eat chestnut and can climb tree",
                                 "meanQuestion": "Con sóc ăn hạt dẻ và có thể leo cây",
                                 "ans": [
@@ -5016,7 +5170,7 @@
                             },
                             {
                                 "id": 49,
-                                "type": "listenStage3",
+                                "type": "listen",
                                 "question": "Leopard have spots",
                                 "meanQuestion": "Con báo có đốm",
                                 "ans": [
@@ -5073,7 +5227,8 @@
                         ]
                     }
                 }
-            }
+            },
+            "name": "dog"
         }
     }
 }

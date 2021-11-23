@@ -1,10 +1,10 @@
 import React from 'react';
-import QuestionBoxVocabulary from './QuestionBoxVocabulary';
-import FourChoice from './FourChoice';
-import {useQuestion} from '../context/QuestionContext';
 import {useGlobal} from '../context/GlobalContext';
+import {useQuestion} from '../context/QuestionContext';
+import FourChoice from './FourChoice';
+import QuestionBoxTranslate from './QuestionBoxTranslate';
 
-const Vocabulary4 = ({navigation}) => {
+const Translate = ({navigation}) => {
   const {activeQuestion} = useQuestion();
   const {listQuestion} = useGlobal();
 
@@ -16,9 +16,9 @@ const Vocabulary4 = ({navigation}) => {
 
   return (
     <FourChoice navigation={navigation} ans={question.ans} checkAns={checkAns}>
-      <QuestionBoxVocabulary question={question.question} />
+      <QuestionBoxTranslate question={question.question} />
     </FourChoice>
   );
 };
 
-export default Vocabulary4;
+export default Translate;

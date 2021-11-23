@@ -7,15 +7,25 @@ const reducers = (state, action) => {
         ...state,
         title: action.payload,
       };
-    case ACTIONS.TYPE_QUESTION:
-      return {
-        ...state,
-        typeQuestion: action.payload,
-      };
     case ACTIONS.HIDE_TAB_BAR:
       return {
         ...state,
         hideTabBar: action.payload,
+      };
+    case ACTIONS.CHOOSE_UNIT:
+      return {
+        ...state,
+        unit: action.payload,
+      };
+    case ACTIONS.GET_LIST_QUESTION:
+      return {
+        ...state,
+        listQuestion: action.payload,
+      };
+    case ACTIONS.GET_VOCABULARY:
+      return {
+        ...state,
+        vocabulary: action.payload,
       };
     default:
       return state;

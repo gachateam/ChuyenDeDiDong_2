@@ -10,17 +10,21 @@ export const useGlobal = () => {
 
 const GlobalContextProvider = ({children}) => {
   const initialState = {
-    title: '',
-    typeQuestion: '4vocabulary',
+    title: 'read',
     hideTabBar: false,
+    unit: null,
+    listQuestion: null,
+    vocabulary: null,
   };
   const [state, dispatch] = useReducer(reducers, initialState);
-  const {title, typeQuestion, hideTabBar} = state;
+  const {title, hideTabBar, unit, listQuestion, vocabulary} = state;
   const value = {
     dispatch,
     title,
-    typeQuestion,
     hideTabBar,
+    unit,
+    listQuestion,
+    vocabulary,
   };
   return (
     <GlobalContext.Provider value={value}>{children}</GlobalContext.Provider>

@@ -1,5 +1,7 @@
 export const ACTIONS = {
   CHOOSE_TITLES: 'Choose titles',
-  TYPE_QUESTION: 'Type question',
   HIDE_TAB_BAR: 'Hide tab bar',
+  CHOOSE_UNIT: 'unit',
+  GET_LIST_QUESTION: 'listquestion',
+  GET_VOCABULARY: 'vocabylary',
 };
