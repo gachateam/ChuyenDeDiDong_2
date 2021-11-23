@@ -1,4 +1,4 @@
-import { ACTIONS } from './Action';
+import {ACTIONS} from './Action';
 
 const reducers = (state, action) => {
   switch (action.type) {
@@ -27,15 +27,12 @@ const reducers = (state, action) => {
     case ACTIONS.INCORRECT:
       return {
         ...state,
-        questionIncorrect: [
-          ...state.questionIncorrect,
-          action.payload
-        ],
+        questionIncorrect: [...state.questionIncorrect, action.payload],
       };
     case ACTIONS.ANS_QUESTION_INCORRECT:
       return {
         ...state,
-        ansQuestionIncorrect: action.payload
+        ansQuestionIncorrect: action.payload,
       };
     default:
       return state;

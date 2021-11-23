@@ -4,5 +4,5 @@ export const ACTIONS = {
   NEXT_QUESTION: 'next',
   CORRECT: 'correct',
   INCORRECT: 'incorrect',
-  ANS_QUESTION_INCORRECT: 'answer the wrong question'
+  ANS_QUESTION_INCORRECT: 'answer the wrong question',
 };
