@@ -1,16 +1,21 @@
 import React from 'react';
 import QuestionBoxFillWord from './QuestionBoxFillWord';
 import FourChoice from './FourChoice';
+import { useQuestion } from '../context/QuestionContext';
+import { useGlobal } from '../context/GlobalContext';
 
-const FillWord = ({navigation}) => {
-  const question = {
-    question: 'The ... meowed',
-    meanQuestion: 'Con mèo kêu meo',
-    ans: ['cat', 'dog', 'mouse', 'fish'],
-  };
+const FillWord = ({ navigation }) => {
+  const { activeQuestion } = useQuestion();
+  const { listQuestion } = useGlobal();
+
+  const question = listQuestion[activeQuestion];
+
+  const checkAns = (ansC, ans) => {
+    return ansC.ansC === ans
+  }
 
   return (
-    <FourChoice navigation={navigation} ans={question.ans}>
+    <FourChoice navigation={navigation} ans={question.ans} checkAns={checkAns}>
       <QuestionBoxFillWord
         question={question.question}
         meanQuestion={question.meanQuestion}

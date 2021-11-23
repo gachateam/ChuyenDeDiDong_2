@@ -8,7 +8,10 @@ const Stack = createStackNavigator();
 const StackProfileScreen = ({navigation}) => {
   return (
     <Stack.Navigator screenOptions={{headerShown: false}}>
-      <Stack.Screen name="AlreadySignInScreen" component={AlreadySignInScreen}/>
+      <Stack.Screen
+        name="AlreadySignInScreen"
+        component={AlreadySignInScreen}
+      />
       <Stack.Screen name="EditProfileScreen" component={EditProfileScreen} />
     </Stack.Navigator>
   );

@@ -3,20 +3,29 @@ import {StyleSheet, Text, View, Image, TouchableOpacity} from 'react-native';
 import Header from './Header';
 import Tts from 'react-native-tts';
 import QuestionBoxListen from './QuestionBoxListen';
+import {useQuestion} from '../context/QuestionContext';
+import {useGlobal} from '../context/GlobalContext';
+import ButtonNext from './ButtonNext';
 
 const handleVoice = () => {
   Tts.speak('Hello everyone');
   Tts.setDefaultLanguage('en');
 };
-const question = {
-  question: 'Reading',
-  ans: ['Hello everyone'],
-};
+
 const Read = ({navigation}) => {
+  const {activeQuestion} = useQuestion();
+  const {listQuestion} = useGlobal();
+
+  const question = listQuestion[activeQuestion];
+
+  const checkAns = (ansC, ans) => {
+    return ansC.question === ans
+  }
+
   return (
     <View style={styles.container}>
       <Header navigation={navigation} />
-      <QuestionBoxListen question={question.question} />
+      <QuestionBoxListen meanQuestion={question.question} />
 
       <TouchableOpacity style={styles.listen} onPress={() => handleVoice()}>
         <Image
@@ -40,9 +49,7 @@ const Read = ({navigation}) => {
         <Text style={styles.answertext}>Answer</Text>
       </View>
       <View style={styles.bottom}>
-        <TouchableOpacity style={styles.button}>
-          <Text style={styles.buttonText}>KIỂM TRA</Text>
-        </TouchableOpacity>
+        <ButtonNext checkAns={checkAns}/>
       </View>
     </View>
   );
@@ -53,7 +60,7 @@ export default Read;
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    paddingHorizontal: 10,
+    paddingHorizontal: 20,
     height: '100%',
   },
   banner1: {

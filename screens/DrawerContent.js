@@ -10,21 +10,28 @@ import database from './../database/database';
 export function DrawerContent({navigation}) {
   const {dispatch} = useGlobal();
   const [category, setCategory] = useState([]);
-  useEffect(() => {
+
+  const getCategory = () => {
     database
       .ref('/category')
       .once('value')
       .then(snapshot => {
         snapshot.forEach(val => {
-          setCategory(
-            [].concat(category, {
+          const temp = [
+            ...category,
+            {
               title: val.key,
               name: val.child('name').val(),
-            }),
-          );
+            },
+          ];
+          setCategory(temp);
         });
       });
-  }, []);
+  };
+
+  useEffect(() => {
+    getCategory();
+  },[]);
 
   return (
     <View>

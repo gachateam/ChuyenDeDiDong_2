@@ -13,7 +13,7 @@ import * as Animatable from 'react-native-animatable';
 import LinearGradient from 'react-native-linear-gradient';
 import FontAwesome from 'react-native-vector-icons/FontAwesome';
 import Feather from 'react-native-vector-icons/Feather';
-import auth, { firebase } from '@react-native-firebase/auth';
+import auth, {firebase} from '@react-native-firebase/auth';
 import firestore from '@react-native-firebase/firestore';
 import { ACTIONS } from '../../context/AuthContext/Action';
 import { useAuth } from '../../context/AuthContext';
@@ -66,17 +66,17 @@ const EditProfileScreen = ({ navigation }) => {
         }
     };
 
-    const handlePasswordChange = val => {
-        setData({
-            ...data,
-            password: val.trim(),
-        });
-        if (val.trim().length < passCharacter - 1) {
-            return setErrPass(`Password must be ${passCharacter} characters long.`);
-        } else {
-            return setErrPass('');
-        }
-    };
+  const handleSignUp = () => {
+    if (
+      data.username === '' ||
+      data.email === '' ||
+      data.password === '' ||
+      data.confirm_password === ''
+    ) {
+      return setLoginError(
+        "Can't empty username, email, password, comfirm password.",
+      );
+    }
 
     const handleConfirmPasswordChange = val => {
         setData({

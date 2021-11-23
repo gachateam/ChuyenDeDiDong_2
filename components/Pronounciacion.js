@@ -1,15 +1,21 @@
 import React from 'react';
+import {useGlobal} from '../context/GlobalContext';
+import {useQuestion} from '../context/QuestionContext';
 import FourChoice from './FourChoice';
 import QuestionBoxPronounciation from './QuestionBoxPronounciation';
 
 const Pronounciacion = ({navigation}) => {
-  const question = {
-    describe: 'Từ nào có âm tiết khác với các từ còn lại',
-    ans: ['wolf', 'monkey', 'giraffe', 'squirrel'],
-  };
+  const {activeQuestion} = useQuestion();
+  const {listQuestion} = useGlobal();
+
+  const question = listQuestion[activeQuestion];
+
+  const checkAns = (ansC, ans) => {
+    return ansC.ansC === ans
+  }
 
   return (
-    <FourChoice navigation={navigation} ans={question.ans} speak={true}>
+    <FourChoice navigation={navigation} ans={question.ans} speak={true} checkAns={checkAns}>
       <QuestionBoxPronounciation describe={question.describe} />
     </FourChoice>
   );

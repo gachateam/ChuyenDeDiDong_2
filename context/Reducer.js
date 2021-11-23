@@ -1,4 +1,4 @@
-import { ACTIONS } from './Action';
+import {ACTIONS} from './Action';
 
 const reducers = (state, action) => {
   switch (action.type) {
@@ -16,6 +16,16 @@ const reducers = (state, action) => {
       return {
         ...state,
         unit: action.payload,
+      };
+    case ACTIONS.GET_LIST_QUESTION:
+      return {
+        ...state,
+        listQuestion: action.payload,
+      };
+    case ACTIONS.GET_VOCABULARY:
+      return {
+        ...state,
+        vocabulary: action.payload,
       };
     default:
       return state;

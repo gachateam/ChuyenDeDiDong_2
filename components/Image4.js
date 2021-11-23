@@ -11,16 +11,20 @@ import {
 import Header from './Header';
 import {ACTIONS} from './../context/QuestionContext/Action';
 import {useQuestion} from '../context/QuestionContext';
+import {useGlobal} from '../context/GlobalContext';
+import ButtonNext from './ButtonNext';
 
 const height = Dimensions.get('screen').height;
 
 const Image4 = ({navigation}) => {
-  const {ansChoice, dispatch} = useQuestion();
+  const {ansChoice, dispatch,activeQuestion} = useQuestion();
+  const {listQuestion, vocabulary} = useGlobal();
 
-  const question = {
-    question: 'đâu là "con chó"',
-    ans: ['cat', 'dog', 'ant', 'fish'],
-  };
+  const question = listQuestion[activeQuestion];
+
+  const checkAns = (ansC, ans) => {
+    return ansC.ansC === ans
+  }
 
   return (
     <SafeAreaView style={styles.container}>
@@ -44,7 +48,7 @@ const Image4 = ({navigation}) => {
               key={i}>
               <Image
                 source={{
-                  uri: 'https://cdni.iconscout.com/illustration/premium/thumb/dog-holding-bone-in-mouth-4238889-3518614.png',
+                  uri: vocabulary.find(value => value.word === e).image,
                 }}
                 style={styles.banner}
                 resizeMode="contain"
@@ -55,9 +59,7 @@ const Image4 = ({navigation}) => {
         })}
       </View>
       <View style={styles.bottom}>
-        <TouchableOpacity style={styles.button}>
-          <Text style={styles.buttonText}>KIỂM TRA</Text>
-        </TouchableOpacity>
+        <ButtonNext checkAns={checkAns}/>
       </View>
     </SafeAreaView>
   );

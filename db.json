@@ -1,7 +1,7 @@
 {
     "category": {
-        "Animal": {
-            "easy": {
+        "animal": {
+            "0": {
                 "vocabulary": [
                     {
                         "word": "dog",
@@ -1869,7 +1869,7 @@
                     }
                 }
             },
-            "medium": {
+            "1": {
                 "vocabulary": [
                     {
                         "word": "frog",
@@ -3658,7 +3658,7 @@
                             },
                             {
                                 "id": 45,
-                                "type": "listenStage3",
+                                "type": "listen",
                                 "question": "Rabbbit eat carrot",
                                 "meanQuestion": "Con thỏ ăn cà rốt",
                                 "ans": [
@@ -3672,7 +3672,7 @@
                             },
                             {
                                 "id": 46,
-                                "type": "listenStage3",
+                                "type": "listen",
                                 "question": "Chicken lay eggs",
                                 "meanQuestion": "Con gà đẻ trứng",
                                 "ans": [
@@ -3686,7 +3686,7 @@
                             },
                             {
                                 "id": 47,
-                                "type": "listenStage3",
+                                "type": "listen",
                                 "question": "Pig has a curly tail and short legs",
                                 "meanQuestion": "Con heo có đuôi xoăn và chân ngắn",
                                 "ans": [
@@ -3700,7 +3700,7 @@
                             },
                             {
                                 "id": 48,
-                                "type": "listenStage3",
+                                "type": "listen",
                                 "question": "Sheep provide us with wool",
                                 "meanQuestion": "Con cừu cho len",
                                 "ans": [
@@ -3714,7 +3714,7 @@
                             },
                             {
                                 "id": 49,
-                                "type": "listenStage3",
+                                "type": "listen",
                                 "question": "Some snakes are poisonous",
                                 "meanQuestion": "Một vài con rắn có độc",
                                 "ans": [
@@ -3773,7 +3773,7 @@
                     }
                 }
             },
-            "hard": {
+            "2": {
                 "vocabulary": [
                     {
                         "vocabulary": "elephant",
@@ -28224,7 +28224,7 @@
                             },
                             {
                                 "id": 45,
-                                "type": "listenStage3",
+                                "type": "listen",
                                 "question": "The wolf is howling at the full moon",
                                 "meanQuestion": "Con sóc hú vào lúc trăng tròn",
                                 "ans": [
@@ -28238,7 +28238,7 @@
                             },
                             {
                                 "id": 46,
-                                "type": "listenStage3",
+                                "type": "listen",
                                 "question": "Whale is the biggest animal",
                                 "meanQuestion": "Con cá voi là loài động vật lớn nhất",
                                 "ans": [
@@ -28252,7 +28252,7 @@
                             },
                             {
                                 "id": 47,
-                                "type": "listenStage3",
+                                "type": "listen",
                                 "question": "Monkey eat banana",
                                 "meanQuestion": "Con khỉ ăn chuối",
                                 "ans": [
@@ -28266,7 +28266,7 @@
                             },
                             {
                                 "id": 48,
-                                "type": "listenStage3",
+                                "type": "listen",
                                 "question": "Squirrels eat chestnut and can climb tree",
                                 "meanQuestion": "Con sóc ăn hạt dẻ và có thể leo cây",
                                 "ans": [
@@ -28280,7 +28280,7 @@
                             },
                             {
                                 "id": 49,
-                                "type": "listenStage3",
+                                "type": "listen",
                                 "question": "Leopard have spots",
                                 "meanQuestion": "Con báo có đốm",
                                 "ans": [
@@ -28338,7 +28338,8 @@
                         ]
                     }
                 }
-            }
+            },
+            "name": "dog"
         }
     }
 }
