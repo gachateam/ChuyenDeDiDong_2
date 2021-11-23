@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import {
     View,
     Text,
@@ -13,142 +13,74 @@ import * as Animatable from 'react-native-animatable';
 import LinearGradient from 'react-native-linear-gradient';
 import FontAwesome from 'react-native-vector-icons/FontAwesome';
 import Feather from 'react-native-vector-icons/Feather';
-import auth, {firebase} from '@react-native-firebase/auth';
+import auth, { firebase } from '@react-native-firebase/auth';
 import firestore from '@react-native-firebase/firestore';
 import { ACTIONS } from '../../context/AuthContext/Action';
 import { useAuth } from '../../context/AuthContext';
 import { Avatar } from 'react-native-paper';
+import { launchImageLibrary } from 'react-native-image-picker';
+import { utils } from '@react-native-firebase/app';
+import storage from '@react-native-firebase/storage';
+
 
 const EditProfileScreen = ({ navigation }) => {
-    const [data, setData] = React.useState({
-        username: '',
-        email: '',
-        password: '',
-        confirm_password: '',
-        check_textInputChange: false,
-    });
 
-    const { dispatch } = useAuth()
-    const usernameCharacter = 24;
-    const emailRegex = /^[\w-.]+@([\w-]+\.)+[\w-]{2,4}$/;
-    const passCharacter = 6;
-    const [errUsername, setErrUsername] = useState('');
-    const [errEmail, setErrEmail] = useState('');
-    const [errPass, setErrPass] = useState('');
-    const [errConfirmPass, setErrConfirmPass] = useState('');
-    // login error when sent email and password to firebase
-    const [loginError, setLoginError] = React.useState('');
+    const [username, setUsername] = useState(null);
+    const [imageUriGallary, setimageUriGallary] = useState(null);
+    const [fileName, setfileName] = useState(null);
+    useEffect(() => {
+        firestore()
+            .collection('users')
+            .doc(auth().currentUser.uid)
+            .get()
+            .then(documentSnapshot => {
+                console.log('User exists: ', documentSnapshot.exists);
 
-    const handleUsernameChange = val => {
-        setData({
-            ...data,
-            username: val.trim(),
+                if (documentSnapshot.exists) {
+                    console.log('User data: ', documentSnapshot.data().username);
+                    setUsername(documentSnapshot.data().username);
+                }
+            });
+    }, [username]);
+
+    const openGallery = () => {
+        const options = {
+            storageOptions: {
+                path: 'images',
+                mediaType: 'photo',
+            },
+            includeBase64: true,
+        };
+
+        launchImageLibrary(options, response => {
+
+            console.log('Response = ', response.assets[0].uri);
+            console.log(123);
+            if (response.didCancel) {
+                console.log('User cancelled image picker');
+            } else if (response.error) {
+                console.log('ImagePicker Error: ', response.error);
+            } else if (response.customButton) {
+                console.log('User tapped custom button: ', response.customButton);
+            } else {
+                // You can also display the image using data:
+                const source = { uri: response.assets[0].uri };
+                setimageUriGallary(source);
+                setfileName(response.assets[0].fileName)
+            }
+
         });
-        if (val.trim().length > usernameCharacter) {
-            return setErrUsername(
-                `Username can't be ${usernameCharacter} characters long.`,
-            );
-        } else {
-            return setErrUsername('');
-        }
-    };
-
-    const handleEmailChange = val => {
-        setData({
-            ...data,
-            email: val.trim(),
-            check_textInputChange: val.trim().length !== 0,
-        });
-        if (!emailRegex.test(val.trim())) {
-            return setErrEmail('Please enter valid email');
-        } else {
-            return setErrEmail('');
-        }
-    };
-
-  const handleSignUp = () => {
-    if (
-      data.username === '' ||
-      data.email === '' ||
-      data.password === '' ||
-      data.confirm_password === ''
-    ) {
-      return setLoginError(
-        "Can't empty username, email, password, comfirm password.",
-      );
-    }
-
-    const handleConfirmPasswordChange = val => {
-        setData({
-            ...data,
-            confirm_password: val.trim(),
-        });
-        if (val.trim().length < passCharacter - 1) {
-            return setErrConfirmPass(
-                `Password must be ${passCharacter} characters long.`,
-            );
-        } else {
-            return setErrConfirmPass('');
-        }
-    };
-
-
-    const handleSignUp = () => {
-        if (
-            data.username === '' ||
-            data.email === '' ||
-            data.password === '' ||
-            data.confirm_password === ''
-        ) {
-            return setLoginError(
-                "Can't empty username, email, password, comfirm password.",
-            );
-        }
-
-        if (errUsername || errEmail || errPass || errConfirmPass) {
-            return setLoginError(
-                'Please enter valid username, email, password, comfirm password.',
-            );
-        }
-
-        if (data.password !== data.confirm_password) {
-            return setLoginError('Please enter valid password and comfirm password.');
-        }
-
-        const cred = firebase.auth.EmailAuthProvider.credential(data.email, data.password);
-
-
-        auth()
-            .currentUser.linkWithCredential(cred)
-            .then(() => {
-                dispatch({ type: ACTIONS.LOGIN, payload: auth().currentUser })
-                firestore()
-                    .collection('users')
-                    .doc(auth().currentUser.uid)
-                    .set({
-                        username: data.username,
-                    })
-                    .catch(error => {
-                        console.log(
-                            'Something went wrong with added user to firestore: ',
-                            error,
-                        );
-                    });
-            })
-            .catch(err => setLoginError(err.message));
     };
     return (
         <View style={styles.container}>
             <StatusBar backgroundColor="#009387" barStyle="light-content" />
             <View style={styles.header}>
                 <Text style={styles.text_header}>Edit Profile</Text>
-                <TouchableOpacity onPress={() => console.log('Pressed')}>
+                <TouchableOpacity onPress={() => openGallery()}>
                     <Avatar.Image
                         style={{ marginTop: 15 }}
                         size={70}
-                        source={{
-                            uri: 'https://cdn6.aptoide.com/imgs/3/7/b/37bdd8cc95f5aac3a85b0f2a2f1b6dc3_icon.png',
-                        }}
+                        source={imageUriGallary}
                     />
                 </TouchableOpacity>
             </View>
@@ -157,33 +89,24 @@ const EditProfileScreen = ({ navigation }) => {
                     <View style={styles.action}>
                         <FontAwesome name="user-o" color="#05375a" size={20} />
                         <TextInput
-                            placeholder="Họ tên"
+                            placeholder={username}
                             placeholderTextColor="grey"
                             style={styles.textInput}
                             autoCapitalize="none"
-                            onChangeText={val => handleUsernameChange(val)}
                         />
                     </View>
-                    {!(errUsername === '') && (
-                        <Animatable.View animation="fadeInLeft" duration={500}>
-                            <Text style={styles.errorMsg}>{errUsername}</Text>
-                        </Animatable.View>
-                    )}
+
                     <View style={styles.action}>
                         <Feather name="mail" color="#05375a" size={20} />
                         <TextInput
-                            placeholder="Email"
+                            placeholder={auth().currentUser.email}
                             placeholderTextColor="grey"
                             style={styles.textInput}
                             autoCapitalize="none"
-                            onChangeText={val => handleEmailChange(val)}
+                            editable={false}
                         />
                     </View>
-                    {!(errEmail === '') && (
-                        <Animatable.View animation="fadeInLeft" duration={500}>
-                            <Text style={styles.errorMsg}>{errEmail}</Text>
-                        </Animatable.View>
-                    )}
+
                     <View style={styles.action}>
                         <Feather name="lock" color="#05375a" size={20} />
                         <TextInput
@@ -206,11 +129,7 @@ const EditProfileScreen = ({ navigation }) => {
                             onChangeText={val => handlePasswordChange(val)}
                         />
                     </View>
-                    {!(errPass === '') && (
-                        <Animatable.View animation="fadeInLeft" duration={500}>
-                            <Text style={styles.errorMsg}>{errPass}</Text>
-                        </Animatable.View>
-                    )}
+
                     <View style={styles.action}>
                         <Feather name="lock" color="#05375a" size={20} />
                         <TextInput
@@ -222,23 +141,18 @@ const EditProfileScreen = ({ navigation }) => {
                             onChangeText={val => handleConfirmPasswordChange(val)}
                         />
                     </View>
-                    {!(errConfirmPass === '') && (
-                        <Animatable.View animation="fadeInLeft" duration={500}>
-                            <Text style={styles.errorMsg}>{errConfirmPass}</Text>
-                        </Animatable.View>
-                    )}
-                    {!(loginError === '') && (
-                        <Animatable.View animation="tada" duration={1000}>
-                            <Text style={[styles.errorMsg, styles.errLoginMess]}>
-                                {loginError}
-                                {console.log(loginError)}
-                            </Text>
-                        </Animatable.View>
-                    )}
+
                     <View style={styles.button}>
                         <TouchableOpacity
                             style={styles.signIn}
-                            onPress={() => console.log('Pressed')}>
+                            onPress={async () => {
+                                // path to existing file on filesystem
+                                const reference = storage().ref(fileName);
+                                console.log(fileName);
+                                
+                                // uploads file
+                                await reference.putFile(imageUriGallary.uri);
+                            }}>
                             <LinearGradient
                                 colors={['#08d4c4', '#01ab9d']}
                                 style={styles.signIn}>
