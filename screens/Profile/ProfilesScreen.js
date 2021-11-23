@@ -4,8 +4,6 @@ import {Avatar, Title} from 'react-native-paper';
 import auth from '@react-native-firebase/auth';
 
 const ProfilesScreen = ({navigation}) => {
-  console.log(auth().currentUser);
-  // const credential = EmailAuthProvider.credential('hi@mail.com', '123456');
 
   return (
     <SafeAreaView style={styles.container}>
