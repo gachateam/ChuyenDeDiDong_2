@@ -15,9 +15,10 @@ const GlobalContextProvider = ({children}) => {
     unit: null,
     listQuestion: null,
     vocabulary: null,
+    stage: null,
   };
   const [state, dispatch] = useReducer(reducers, initialState);
-  const {title, hideTabBar, unit, listQuestion, vocabulary} = state;
+  const {title, hideTabBar, unit, listQuestion, vocabulary, stage} = state;
   const value = {
     dispatch,
     title,
@@ -25,6 +26,7 @@ const GlobalContextProvider = ({children}) => {
     unit,
     listQuestion,
     vocabulary,
+    stage,
   };
   return (
     <GlobalContext.Provider value={value}>{children}</GlobalContext.Provider>

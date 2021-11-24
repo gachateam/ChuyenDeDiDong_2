@@ -11,11 +11,15 @@ const Pronounciacion = ({navigation}) => {
   const question = listQuestion[activeQuestion];
 
   const checkAns = (ansC, ans) => {
-    return ansC.ansC === ans
-  }
+    return ansC.ansC === ans;
+  };
 
   return (
-    <FourChoice navigation={navigation} ans={question.ans} speak={true} checkAns={checkAns}>
+    <FourChoice
+      navigation={navigation}
+      ans={question.ans}
+      speak={true}
+      checkAns={checkAns}>
       <QuestionBoxPronounciation describe={question.describe} />
     </FourChoice>
   );

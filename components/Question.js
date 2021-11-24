@@ -29,7 +29,10 @@ const Question = ({navigation}) => {
 
   switch (typeQuestion) {
     case TYPE_QUESTION.IMAGE_4:
-      return <Image4 navigation={navigation} />;
+      return <>
+        <Image4 navigation={navigation} />
+        
+      </>;
     case TYPE_QUESTION.VOCABULARY_4:
       return <Vocabulary4 navigation={navigation} />;
     case TYPE_QUESTION.READ:
