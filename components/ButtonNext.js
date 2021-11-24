@@ -2,8 +2,11 @@ import React from 'react';
 import { StyleSheet, Text, TouchableOpacity } from 'react-native';
 import { useGlobal } from '../context/GlobalContext';
 import { useQuestion } from '../context/QuestionContext';
+import { BottomPopup } from '../screens/BottomPopup';
 import { ACTIONS } from './../context/QuestionContext/Action';
 import { TYPE_QUESTION } from './../context/TypeQuestion';
+import Question from './Question';
+import { Alert } from 'react-native';
 
 const ButtonNext = ({ checkAns }) => {
   const { dispatch, activeQuestion, ansChoice, questionIncorrect, ansQuestionIncorrect, typeQuestion } = useQuestion();
@@ -15,6 +18,7 @@ const ButtonNext = ({ checkAns }) => {
         if (!checkAns(listQuestion[activeQuestion], ansChoice)) {
           dispatch({ type: ACTIONS.INCORRECT, payload: activeQuestion });
         }
+
         if (questionIncorrect.length != 0) {
           const next = questionIncorrect.shift()
           dispatch({ type: ACTIONS.NEXT_QUESTION, payload: next });
@@ -22,13 +26,15 @@ const ButtonNext = ({ checkAns }) => {
       } else if (typeQuestion == TYPE_QUESTION.READ && questionIncorrect.length != 0) {
         const next = questionIncorrect.shift()
         dispatch({ type: ACTIONS.NEXT_QUESTION, payload: next });
-      }
+      }else(typeQuestion == TYPE_QUESTION.IMAGE_4 && BottomPopup)
+
     } else {
       if (listQuestion.length > activeQuestion + 1) {
         if (!(typeof ansChoice == 'object' && ansChoice.length === 0)) {
           if (!checkAns(listQuestion[activeQuestion], ansChoice)) {
             dispatch({ type: ACTIONS.INCORRECT, payload: activeQuestion });
-          }
+          } 
+
           dispatch({ type: ACTIONS.NEXT_QUESTION, payload: activeQuestion + 1 });
         } else if (typeQuestion == TYPE_QUESTION.READ) {
           dispatch({ type: ACTIONS.NEXT_QUESTION, payload: activeQuestion + 1 });
@@ -66,4 +72,10 @@ const styles = StyleSheet.create({
     fontWeight: '400',
     color: 'white',
   },
+    showPopup: {
+      flex: 1,
+      alignItems: 'center',
+      justifyContent: 'center',
+    },
+
 });
