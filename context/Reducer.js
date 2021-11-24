@@ -27,6 +27,11 @@ const reducers = (state, action) => {
         ...state,
         vocabulary: action.payload,
       };
+    case ACTIONS.STAGE:
+      return {
+        ...state,
+        stage: action.payload,
+      };
     default:
       return state;
   }

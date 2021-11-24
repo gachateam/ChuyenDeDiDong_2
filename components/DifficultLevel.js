@@ -5,6 +5,7 @@ import ProgressCircle from 'react-native-progress-circle';
 import Entypo from 'react-native-vector-icons/Entypo';
 import {ACTIONS} from '../context/Action';
 import {useGlobal} from '../context/GlobalContext';
+import {Stage} from './../Model/Stage';
 
 const DifficultLevel = ({
   stage1,
@@ -21,13 +22,15 @@ const DifficultLevel = ({
     navigation.navigate('SplashScreen');
     dispatch({
       type: ACTIONS.CHOOSE_UNIT,
-      payload: {difficult: level, stage: stage},
+      payload: new Stage({difficult: level, stage: stage}),
     });
   };
   return (
     <View>
       <View style={styles.stage1}>
-        <TouchableOpacity onPress={() => onPress(0)} disabled={disabled||stage1===0}>
+        <TouchableOpacity
+          onPress={() => onPress(0)}
+          disabled={disabled || stage1 === 0}>
           <ProgressCircle
             percent={stage1}
             radius={50}
@@ -40,7 +43,9 @@ const DifficultLevel = ({
         </TouchableOpacity>
       </View>
       <View style={styles.stage23}>
-        <TouchableOpacity onPress={() => onPress(1)} disabled={disabled||stage2===0}>
+        <TouchableOpacity
+          onPress={() => onPress(1)}
+          disabled={disabled || stage2 === 0}>
           <ProgressCircle
             percent={stage2}
             radius={50}
@@ -51,7 +56,9 @@ const DifficultLevel = ({
             <IconButton icon="book-open-page-variant" size={32} />
           </ProgressCircle>
         </TouchableOpacity>
-        <TouchableOpacity onPress={() => onPress(2)} disabled={disabled||stage3===0}>
+        <TouchableOpacity
+          onPress={() => onPress(2)}
+          disabled={disabled || stage3 === 0}>
           <ProgressCircle
             percent={stage3}
             radius={50}

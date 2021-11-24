@@ -5,29 +5,30 @@ import {useQuestion} from '../context/QuestionContext';
 import {ACTIONS} from './../context/QuestionContext/Action';
 import QuestionBoxFillWord from './QuestionBoxFillWord';
 import ButtonNext from './ButtonNext';
+import {useGlobal} from '../context/GlobalContext';
 
 const ChoiceMultiAnswer = ({navigation}) => {
-  const {ansChoice, dispatch,activeQuestion} = useQuestion();
-  const { listQuestion } = useGlobal();
+  const {ansChoice, dispatch, activeQuestion} = useQuestion();
+  const {listQuestion} = useGlobal();
 
   const question = listQuestion[activeQuestion];
 
   const checkAns = (ansC, ans) => {
-    let check = true
+    let check = true;
 
-    if (ansC.ansC.length != ans.length) {
-        check = false
+    if (ansC.ansC.length !== ans.length) {
+      check = false;
     }
 
-    ans.filter((val) => {
-        if (!ansC.ansC.includes(val)) {
-            check = false
-            return
-        }
-    })
+    ans.filter(val => {
+      if (!ansC.ansC.includes(val)) {
+        check = false;
+        return;
+      }
+    });
 
-    return check
-}
+    return check;
+  };
 
   return (
     <View style={styles.container}>
@@ -42,9 +43,9 @@ const ChoiceMultiAnswer = ({navigation}) => {
           const hanldePress = () => {
             dispatch({
               type: ACTIONS.CHOICE_ANS,
-              payload: ansChoice.includes(i + 1)
-                ? ansChoice.filter(item => item !== i + 1)
-                : ansChoice.concat(i + 1),
+              payload: ansChoice.includes(e)
+                ? ansChoice.filter(item => item !== e)
+                : ansChoice.concat(e),
             });
           };
 
@@ -53,7 +54,7 @@ const ChoiceMultiAnswer = ({navigation}) => {
               onPress={hanldePress}
               style={[
                 styles.optionButton,
-                ansChoice.includes(i + 1) ? styles.choice : null,
+                ansChoice.includes(e) ? styles.choice : null,
               ]}
               key={i}>
               <Text style={styles.option}>{e}</Text>
@@ -63,7 +64,7 @@ const ChoiceMultiAnswer = ({navigation}) => {
       </View>
 
       <View style={styles.bottom}>
-        <ButtonNext checkAns={checkAns}/>
+        <ButtonNext checkAns={checkAns} navigation={navigation} />
       </View>
     </View>
   );
