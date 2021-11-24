@@ -27,7 +27,7 @@ const DifficultLevel = ({
   return (
     <View>
       <View style={styles.stage1}>
-        <TouchableOpacity onPress={() => onPress(0)} disabled={disabled}>
+        <TouchableOpacity onPress={() => onPress(0)} disabled={disabled||stage1===0}>
           <ProgressCircle
             percent={stage1}
             radius={50}
@@ -40,7 +40,7 @@ const DifficultLevel = ({
         </TouchableOpacity>
       </View>
       <View style={styles.stage23}>
-        <TouchableOpacity onPress={() => onPress(1)} disabled={disabled}>
+        <TouchableOpacity onPress={() => onPress(1)} disabled={disabled||stage2===0}>
           <ProgressCircle
             percent={stage2}
             radius={50}
@@ -51,7 +51,7 @@ const DifficultLevel = ({
             <IconButton icon="book-open-page-variant" size={32} />
           </ProgressCircle>
         </TouchableOpacity>
-        <TouchableOpacity onPress={() => onPress(2)} disabled={disabled}>
+        <TouchableOpacity onPress={() => onPress(2)} disabled={disabled||stage3===0}>
           <ProgressCircle
             percent={stage3}
             radius={50}

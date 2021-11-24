@@ -1,4 +1,4 @@
-import React, {useEffect} from 'react';
+import React, { useEffect } from 'react';
 import {
   View,
   Text,
@@ -18,14 +18,14 @@ import {
   GoogleSigninButton,
   statusCodes,
 } from '@react-native-google-signin/google-signin';
-import {useTheme} from 'react-native-paper';
-import {useAuth} from '../../context/AuthContext';
-import {ACTIONS} from '../../context/AuthContext/Action';
+import { useTheme } from 'react-native-paper';
+import { useAuth } from '../../context/AuthContext';
+import { ACTIONS } from '../../context/AuthContext/Action';
 import firestore from '@react-native-firebase/firestore';
 
-const SignInScreen = ({navigation}) => {
-  const {dispatch} = useAuth();
-  const {colors} = useTheme();
+const SignInScreen = ({ navigation }) => {
+  const { dispatch } = useAuth();
+  const { colors } = useTheme();
   const [data, setData] = React.useState({
     email: '',
     password: '',
@@ -102,8 +102,8 @@ const SignInScreen = ({navigation}) => {
 
   const signInWithGoogle = async () => {
     try {
-      dispatch({type: ACTIONS.LOGIN, payload: auth().currentUser});
-      const {idToken} = await GoogleSignin.signIn();
+      dispatch({ type: ACTIONS.LOGIN, payload: auth().currentUser });
+      const { idToken } = await GoogleSignin.signIn();
 
       // Create a Google credential with the token
       const googleCredential = auth.GoogleAuthProvider.credential(idToken);
@@ -112,7 +112,7 @@ const SignInScreen = ({navigation}) => {
       return auth()
         .currentUser.linkWithCredential(googleCredential)
         .then(user => {
-          dispatch({type: ACTIONS.LOGIN, payload: auth().currentUser});
+          dispatch({ type: ACTIONS.LOGIN, payload: auth().currentUser });
           firestore()
             .collection('users')
             .doc(auth().currentUser.uid)
@@ -125,6 +125,27 @@ const SignInScreen = ({navigation}) => {
                 error,
               );
             });
+        })
+        .catch(error => {
+          switch (error.code) {
+            case 'auth/email-already-in-use':
+              console.log(`Email address ${this.state.email} already in use.`);
+              break;
+            case 'auth/invalid-email':
+              console.log(`Email address ${this.state.email} is invalid.`);
+              break;
+            case 'auth/operation-not-allowed':
+              console.log(`Error during sign up.`);
+              break;
+            case 'auth/weak-password':
+              console.log('Password is not strong enough. Add additional characters including special characters and numbers.');
+              break;
+            case 'auth/credential-already-in-use':
+              return auth().signInWithCredential(googleCredential);
+            default:
+              console.log(error.message);
+              break;
+          }
         });
     } catch (error) {
       if (error.code === statusCodes.SIGN_IN_CANCELLED) {
@@ -228,7 +249,7 @@ const SignInScreen = ({navigation}) => {
             </TouchableOpacity>
           </View>
           <GoogleSigninButton
-            style={{width: '100%', height: 60, marginTop: 15}}
+            style={{ width: '100%', height: 60, marginTop: 15 }}
             size={GoogleSigninButton.Size.Wide}
             color={GoogleSigninButton.Color.Light}
             onPress={signInWithGoogle}

@@ -1,9 +1,9 @@
-import React, {useEffect, useState} from 'react';
-import {StyleSheet, SafeAreaView, ScrollView} from 'react-native';
+import React, { useEffect, useState } from 'react';
+import { StyleSheet, SafeAreaView, ScrollView } from 'react-native';
 import DifficultLevel from '../components/DifficultLevel';
-import {useDrawerStatus} from '@react-navigation/drawer';
-import {useGlobal} from '../context/GlobalContext';
-import {ACTIONS} from '../context/Action';
+import { useDrawerStatus } from '@react-navigation/drawer';
+import { useGlobal } from '../context/GlobalContext';
+import { ACTIONS } from '../context/Action';
 import ImageBackground from 'react-native/Libraries/Image/ImageBackground';
 import firestore from '@react-native-firebase/firestore';
 import auth from '@react-native-firebase/auth';
@@ -12,15 +12,14 @@ const image = {
   uri: 'https://firebasestorage.googleapis.com/v0/b/englishlearning-ec586.appspot.com/o/250966642_559763815111848_1955696526273842802_n.png?alt=media&token=2378d749-8cfc-4722-b4e4-c00d51fdda78',
 };
 
-const StageScreen = ({navigation}) => {
+const StageScreen = ({ navigation }) => {
   const isDrawerOpen = useDrawerStatus() === 'open';
-  const {dispatch} = useGlobal();
+  const { dispatch, title } = useGlobal();
   const [stage, setStage] = useState();
-
   useEffect(() => {
     firestore()
       .collection('users/' + auth().currentUser.uid + '/category')
-      .doc('animal')
+      .doc(title)
       .get()
       .then(documentSnapshot => {
         console.log('document category exists: ', documentSnapshot.exists);
@@ -28,6 +27,8 @@ const StageScreen = ({navigation}) => {
         if (documentSnapshot.exists) {
           console.log('document category data: ', documentSnapshot.data());
           setStage(documentSnapshot.data());
+        } else {
+          setStage({ difficult: 0, stage: 0 });
         }
       });
   }, []);
@@ -40,7 +41,7 @@ const StageScreen = ({navigation}) => {
   };
 
   useEffect(() => {
-    dispatch({type: ACTIONS.HIDE_TAB_BAR, payload: isDrawerOpen});
+    dispatch({ type: ACTIONS.HIDE_TAB_BAR, payload: isDrawerOpen });
   }, [isDrawerOpen, dispatch]);
 
   return (
