@@ -7,27 +7,27 @@ import QuestionBoxFillWord from './QuestionBoxFillWord';
 import ButtonNext from './ButtonNext';
 
 const ChoiceMultiAnswer = ({navigation}) => {
-  const {ansChoice, dispatch,activeQuestion} = useQuestion();
-  const { listQuestion } = useGlobal();
+  const {ansChoice, dispatch, activeQuestion} = useQuestion();
+  const {listQuestion} = useGlobal();
 
   const question = listQuestion[activeQuestion];
 
   const checkAns = (ansC, ans) => {
-    let check = true
+    let check = true;
 
     if (ansC.ansC.length != ans.length) {
-        check = false
+      check = false;
     }
 
-    ans.filter((val) => {
-        if (!ansC.ansC.includes(val)) {
-            check = false
-            return
-        }
-    })
+    ans.filter(val => {
+      if (!ansC.ansC.includes(val)) {
+        check = false;
+        return;
+      }
+    });
 
-    return check
-}
+    return check;
+  };
 
   return (
     <View style={styles.container}>
@@ -63,7 +63,7 @@ const ChoiceMultiAnswer = ({navigation}) => {
       </View>
 
       <View style={styles.bottom}>
-        <ButtonNext checkAns={checkAns}/>
+        <ButtonNext checkAns={checkAns} />
       </View>
     </View>
   );
