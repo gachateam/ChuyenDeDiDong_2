@@ -27,16 +27,17 @@ const ButtonNext = ({checkAns, navigation}) => {
         }
         if (questionIncorrect.length !== 0) {
           const next = questionIncorrect.shift();
-          dispatch({type: ACTIONS.NEXT_QUESTION, payload: next});
+          dispatch({type: ACTIONS.NEXT_QUESTION, payload: next});//chuyển đến câu hỏi sai tiếp theo
         }
       } else if (
         typeQuestion === TYPE_QUESTION.READ &&
         questionIncorrect.length !== 0
-      ) {
+      ) {//bỏ qua câu hỏi đọc
         const next = questionIncorrect.shift();
-        dispatch({type: ACTIONS.NEXT_QUESTION, payload: next});
+        dispatch({type: ACTIONS.NEXT_QUESTION, payload: next});//lấy câu hỏi đầu tiên trong list câu hỏi sai
       }
       if (questionIncorrect.length === 0 && unit.compare(stage) === 0) {
+        //update stage in firestore
         firestore()
           .collection('users/' + auth().currentUser.uid + '/category')
           .doc(title)
@@ -45,6 +46,7 @@ const ButtonNext = ({checkAns, navigation}) => {
             console.log('User updated!');
           });
 
+        // trở về màn hình chính
         dispatch({type: ACTIONS_GLOBAL.HIDE_TAB_BAR, payload: !hideTabBar});
         navigation.reset({
           index: 0,
@@ -57,15 +59,15 @@ const ButtonNext = ({checkAns, navigation}) => {
       }
     } else {
       if (listQuestion.length > activeQuestion + 1) {
-        if (!(typeof ansChoice === 'object' && ansChoice.length === 0)) {
-          if (!checkAns(listQuestion[activeQuestion], ansChoice)) {
-            dispatch({type: ACTIONS.INCORRECT, payload: activeQuestion});
+        if (!(typeof ansChoice === 'object' && ansChoice.length === 0)) {//check người dụng có chọn đáp án chưa
+          if (!checkAns(listQuestion[activeQuestion], ansChoice)) {//check câu trả lời người dùng
+            dispatch({type: ACTIONS.INCORRECT, payload: activeQuestion});//set người dùng trả lời sai
           }
           dispatch({type: ACTIONS.NEXT_QUESTION, payload: activeQuestion + 1});
-        } else if (typeQuestion === TYPE_QUESTION.READ) {
-          dispatch({type: ACTIONS.NEXT_QUESTION, payload: activeQuestion + 1});
+        } else if (typeQuestion === TYPE_QUESTION.READ) {//bỏ qua câu hỏi đọc
+          dispatch({type: ACTIONS.NEXT_QUESTION, payload: activeQuestion + 1});//next question
         }
-        if (listQuestion.length <= activeQuestion + 2) {
+        if (listQuestion.length <= activeQuestion + 2) {//bắt đầu làm lại câu hỏi sai
           dispatch({type: ACTIONS.ANS_QUESTION_INCORRECT, payload: true});
         }
       }
