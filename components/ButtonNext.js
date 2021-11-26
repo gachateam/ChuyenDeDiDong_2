@@ -17,7 +17,15 @@ const ButtonNext = ({ checkAns }) => {
       if (!(typeof ansChoice == 'object' && ansChoice.length === 0)) {
         if (!checkAns(listQuestion[activeQuestion], ansChoice)) {
           dispatch({ type: ACTIONS.INCORRECT, payload: activeQuestion });
-        }
+        }else{
+          Alert.alert(
+            "Thông báo!",
+            "Sai",
+            [
+                { text: "ukm" }
+            ] 
+        );
+            }
 
         if (questionIncorrect.length != 0) {
           const next = questionIncorrect.shift()
@@ -26,7 +34,15 @@ const ButtonNext = ({ checkAns }) => {
       } else if (typeQuestion == TYPE_QUESTION.READ && questionIncorrect.length != 0) {
         const next = questionIncorrect.shift()
         dispatch({ type: ACTIONS.NEXT_QUESTION, payload: next });
-      }else(typeQuestion == TYPE_QUESTION.IMAGE_4 && BottomPopup)
+      }else{
+        Alert.alert(
+          "Thông báo!",
+          "Đúng r?i",
+          [
+              { text: "ukm" }
+          ] 
+      );
+          }
 
     } else {
       if (listQuestion.length > activeQuestion + 1) {
