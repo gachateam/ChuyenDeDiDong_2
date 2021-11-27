@@ -1,5 +1,5 @@
 import React from 'react';
-import {StyleSheet, Text, TouchableOpacity} from 'react-native';
+import { StyleSheet, Text, TouchableOpacity, Alert } from 'react-native';
 import {useGlobal} from '../context/GlobalContext';
 import {useQuestion} from '../context/QuestionContext';
 import {ACTIONS} from './../context/QuestionContext/Action';
@@ -19,20 +19,31 @@ const ButtonNext = ({ checkAns, navigation }) => {
   } = useQuestion();
   const { listQuestion, unit, stage, title, hideTabBar } = useGlobal();
 
+  const checkAnsCorrect = (checkAns,listQuestion,activeQuestion,ansChoice)=>{
+    if (!checkAns(listQuestion[activeQuestion], ansChoice)) {
+      dispatch({ type: ACTIONS.INCORRECT, payload: activeQuestion });
+      Alert.alert(
+        "Thông báo!",
+        "Sai rồi",
+        [
+          { text: "ukm" }
+        ]
+      );
+    } else {
+      Alert.alert(
+        "Thông báo!",
+        "Đúng rồi",
+        [
+          { text: "ukm" }
+        ]
+      );
+    }
+  }
+
   const handleNextQuestion = () => {
     if (ansQuestionIncorrect) {
       if (!(typeof ansChoice === 'object' && ansChoice.length === 0)) {
-        if (!checkAns(listQuestion[activeQuestion], ansChoice)) {
-          dispatch({ type: ACTIONS.INCORRECT, payload: activeQuestion });
-        } else {
-          Alert.alert(
-            "Thông báo!",
-            "Sai",
-            [
-              { text: "ukm" }
-            ]
-          );
-        }
+        checkAnsCorrect(checkAns,listQuestion,activeQuestion,ansChoice)
         if (questionIncorrect.length !== 0) {
           const next = questionIncorrect.shift();
           dispatch({ type: ACTIONS.NEXT_QUESTION, payload: next });
@@ -43,14 +54,6 @@ const ButtonNext = ({ checkAns, navigation }) => {
       ) {
         const next = questionIncorrect.shift();
         dispatch({ type: ACTIONS.NEXT_QUESTION, payload: next });
-      } else {
-        Alert.alert(
-          "Thông báo!",
-          "Đúng r?i",
-          [
-            { text: "ukm" }
-          ]
-        );
       }
       if (questionIncorrect.length === 0 && unit.compare(stage) === 0) {
         firestore()
@@ -74,9 +77,7 @@ const ButtonNext = ({ checkAns, navigation }) => {
     } else {
       if (listQuestion.length > activeQuestion + 1) {
         if (!(typeof ansChoice === 'object' && ansChoice.length === 0)) {
-          if (!checkAns(listQuestion[activeQuestion], ansChoice)) {
-            dispatch({ type: ACTIONS.INCORRECT, payload: activeQuestion });
-          }
+          checkAnsCorrect(checkAns,listQuestion,activeQuestion,ansChoice)
           dispatch({ type: ACTIONS.NEXT_QUESTION, payload: activeQuestion + 1 });
         } else if (typeQuestion === TYPE_QUESTION.READ) {
           dispatch({ type: ACTIONS.NEXT_QUESTION, payload: activeQuestion + 1 });
