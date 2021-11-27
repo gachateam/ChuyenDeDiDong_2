@@ -18,7 +18,7 @@ const AlreadySignInScreen = ({navigation}) => {
     auth().signOut();
     dispatch({type: ACTIONS.LOGIN, payload: null});
   };
-  console.log(auth().currentUser);
+  console.log(auth().currentUser.providerData);
   const [username, setUsername] = useState(null);
   useEffect(() => {
     firestore()
@@ -33,7 +33,7 @@ const AlreadySignInScreen = ({navigation}) => {
           setUsername(documentSnapshot.data().username);
         }
       });
-  }, [username]);
+  }, []);
   return (
     <SafeAreaView style={styles.container}>
       <View style={styles.userInfor}>

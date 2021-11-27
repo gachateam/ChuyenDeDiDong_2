@@ -1,9 +1,9 @@
-import React, {useEffect} from 'react';
-import {useQuestion} from '../context/QuestionContext';
+import React, { useEffect } from 'react';
+import { useQuestion } from '../context/QuestionContext';
 import Image4 from './Image4';
 import Vocabulary4 from './Vocabulary4';
 import Read from './Read';
-import {TYPE_QUESTION} from './../context/TypeQuestion';
+import { TYPE_QUESTION } from './../context/TypeQuestion';
 import Pronounciacion from './Pronounciacion';
 import Listen from './Listen';
 import Tts from 'react-native-tts';
@@ -11,9 +11,9 @@ import FillWord from './FillWord';
 import Translate from './Translate';
 import ChoiceMultiAnswer from './ChoiceMultiAnswer';
 import Grammar from './Grammar';
-import {useGlobal} from '../context/GlobalContext';
-import {ACTIONS} from './../context/QuestionContext/Action';
-import {BottomPopup} from './../screens/BottomPopup';
+import { useGlobal } from '../context/GlobalContext';
+import { ACTIONS } from './../context/QuestionContext/Action';
+import { BottomPopup } from './../screens/BottomPopup';
 
 
 Tts.setDefaultLanguage('en');
@@ -33,11 +33,11 @@ const popupList = [
   },
 ];
 
-  let popupRef = React.createRef();
+let popupRef = React.createRef();
 
-const Question = ({navigation}) => {
-  const {typeQuestion, activeQuestion, dispatch} = useQuestion();
-  const {listQuestion} = useGlobal();
+const Question = ({ navigation }) => {
+  const { typeQuestion, activeQuestion, dispatch } = useQuestion();
+  const { listQuestion } = useGlobal();
 
   const onShowPopup = () => {
     popupRef.show();
@@ -57,15 +57,15 @@ const Question = ({navigation}) => {
   switch (typeQuestion) {
     case TYPE_QUESTION.IMAGE_4:
       return <>
-      <Image4 onPress={onShowPopup} navigation={navigation} />
+        <Image4 onPress={onShowPopup} navigation={navigation} />
 
-      <BottomPopup 
-        title="YOU đã chọn đúng , tiếp tục phát huy đi ...."
-        ref={target => (popupRef = target)}
-        onTouchOutside={onClosePopup}
-        data={popupList}
-      />
-      
+        <BottomPopup
+          title="YOU đã chọn đúng , tiếp tục phát huy đi ...."
+          ref={target => (popupRef = target)}
+          onTouchOutside={onClosePopup}
+          data={popupList}
+        />
+
       </>;
     case TYPE_QUESTION.VOCABULARY_4:
       return <Vocabulary4 navigation={navigation} />;

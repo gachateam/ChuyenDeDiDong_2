@@ -7,6 +7,7 @@ import {ACTIONS} from '../context/Action';
 import ImageBackground from 'react-native/Libraries/Image/ImageBackground';
 import firestore from '@react-native-firebase/firestore';
 import auth from '@react-native-firebase/auth';
+import {Stage} from './../Model/Stage';
 
 const image = {
   uri: 'https://firebasestorage.googleapis.com/v0/b/englishlearning-ec586.appspot.com/o/250966642_559763815111848_1955696526273842802_n.png?alt=media&token=2378d749-8cfc-4722-b4e4-c00d51fdda78',
@@ -14,20 +15,27 @@ const image = {
 
 const StageScreen = ({navigation}) => {
   const isDrawerOpen = useDrawerStatus() === 'open';
-  const {dispatch} = useGlobal();
-  const [stage, setStage] = useState();
+  const {dispatch, title, stage} = useGlobal();
 
   useEffect(() => {
     firestore()
       .collection('users/' + auth().currentUser.uid + '/category')
-      .doc('animal')
+      .doc(title)
       .get()
       .then(documentSnapshot => {
         console.log('document category exists: ', documentSnapshot.exists);
 
         if (documentSnapshot.exists) {
           console.log('document category data: ', documentSnapshot.data());
-          setStage(documentSnapshot.data());
+          dispatch({
+            type: ACTIONS.STAGE,
+            payload: new Stage(documentSnapshot.data()),
+          });
+        } else {
+          dispatch({
+            type: ACTIONS.STAGE,
+            payload: new Stage({difficult: 0, stage: 0}),
+          });
         }
       });
   }, []);
@@ -51,27 +59,9 @@ const StageScreen = ({navigation}) => {
             return (
               <DifficultLevel
                 key={i}
-                stage1={
-                  stage && stage.difficult >= e
-                    ? stage.stage >= 0
-                      ? 100
-                      : 0
-                    : 0
-                }
-                stage2={
-                  stage && stage.difficult >= e
-                    ? stage.stage >= 1
-                      ? 100
-                      : 0
-                    : 0
-                }
-                stage3={
-                  stage && stage.difficult >= e
-                    ? stage.stage >= 2
-                      ? 100
-                      : 0
-                    : 0
-                }
+                stage1={stage && stage.getStage(e, 0)}
+                stage2={stage && stage.getStage(e, 1)}
+                stage3={stage && stage.getStage(e, 2)}
                 challengeUnlock={false}
                 disabled={stage && stage.difficult < e}
                 navigation={navigation}

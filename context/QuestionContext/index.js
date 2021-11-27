@@ -14,18 +14,24 @@ const QuestionContextProvider = ({children}) => {
     typeQuestion: TYPE_QUESTION.GRAMMAR,
     ansChoice: [],
     activeQuestion: 0,
-    questionIncorrect:[],
-    ansQuestionIncorrect: false
+    questionIncorrect: [],
+    ansQuestionIncorrect: false,
   };
   const [state, dispatch] = useReducer(reducers, initialState);
-  const {typeQuestion, ansChoice, activeQuestion,questionIncorrect,ansQuestionIncorrect} = state;
+  const {
+    typeQuestion,
+    ansChoice,
+    activeQuestion,
+    questionIncorrect,
+    ansQuestionIncorrect,
+  } = state;
   const value = {
     dispatch,
     typeQuestion,
     ansChoice,
     activeQuestion,
     questionIncorrect,
-    ansQuestionIncorrect
+    ansQuestionIncorrect,
   };
   return (
     <QuestionContext.Provider value={value}>
