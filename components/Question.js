@@ -46,7 +46,6 @@ const Question = ({ navigation }) => {
     popupRef.close();
   };
 
-
   useEffect(() => {
     dispatch({
       type: ACTIONS.TYPE_QUESTION,
