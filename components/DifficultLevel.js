@@ -1,11 +1,11 @@
 import React from 'react';
-import {StyleSheet, Text, TouchableOpacity, View} from 'react-native';
-import {IconButton} from 'react-native-paper';
+import { StyleSheet, Text, TouchableOpacity, View } from 'react-native';
+import { IconButton } from 'react-native-paper';
 import ProgressCircle from 'react-native-progress-circle';
 import Entypo from 'react-native-vector-icons/Entypo';
-import {ACTIONS} from '../context/Action';
-import {useGlobal} from '../context/GlobalContext';
-import {Stage} from './../Model/Stage';
+import { ACTIONS } from '../context/Action';
+import { useGlobal } from '../context/GlobalContext';
+import { Stage } from './../Model/Stage';
 
 const DifficultLevel = ({
   stage1,
@@ -17,22 +17,26 @@ const DifficultLevel = ({
   level,
   challengeTouchable,
 }) => {
-  const {hideTabBar, dispatch} = useGlobal();
+  const { hideTabBar, dispatch } = useGlobal();
   const onPress = stage => {
-    dispatch({type: ACTIONS.HIDE_TAB_BAR, payload: !hideTabBar});
+    dispatch({ type: ACTIONS.HIDE_TAB_BAR, payload: !hideTabBar });
     navigation.navigate('SplashScreen');
     dispatch({
       type: ACTIONS.CHOOSE_UNIT,
-      payload: new Stage({difficult: level, stage: stage}),
+      payload: new Stage({ difficult: level, stage: stage }),
     });
   };
   const handleChallengeTouch = () => {
-    dispatch({type: ACTIONS.HIDE_TAB_BAR, payload: !hideTabBar});
+    dispatch({ type: ACTIONS.HIDE_TAB_BAR, payload: !hideTabBar });
     navigation.navigate('SplashScreen');
     dispatch({
       type: ACTIONS.CHOOSE_UNIT,
-      payload: new Stage({difficult: level, stage: 2}),
+      payload: new Stage({ difficult: level, stage: 2 }),
     });
+    dispatch({
+      type: ACTIONS.SET_REVIEW,
+      payload: true
+    })
   };
   return (
     <View>

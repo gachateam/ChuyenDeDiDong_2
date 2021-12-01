@@ -16,7 +16,7 @@ const GlobalContextProvider = ({children}) => {
     listQuestion: null,
     vocabulary: null,
     stage: null,
-    review: true,
+    review: false,
   };
   const [state, dispatch] = useReducer(reducers, initialState);
   const {title, hideTabBar, unit, listQuestion, vocabulary, stage, review} =
