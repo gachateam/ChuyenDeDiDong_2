@@ -37,48 +37,35 @@ const AlreadySignInScreen = ({navigation}) => {
   return (
     <SafeAreaView style={styles.container}>
       <View style={styles.userInfor}>
-        {auth().currentUser.providerData[0].providerId === 'google.com' ? (
-          <View style={styles.innerUserInfor}>
-            <Avatar.Image
-              size={70}
-              source={{
-                uri: auth().currentUser.providerData[0].photoURL,
-              }}
-            />
-            <View>
-              <View style={styles.content}>
-                <Title>{auth().currentUser.providerData[0].displayName}</Title>
-              </View>
-
-              <TouchableOpacity onPress={handleSignout}>
-                <Text style={styles.signOutButton}>Sign Out</Text>
-              </TouchableOpacity>
-            </View>
-          </View>
-        ) : (
-          <View style={styles.innerUserInfor}>
-            <Avatar.Image
-              size={70}
-              source={{
-                uri: auth().currentUser.providerData[0].photoURL
-              }}
-            />
-            <View>
-              <View style={styles.content}>
-                <Title>{username}</Title>
+        <View style={styles.innerUserInfor}>
+          <Avatar.Image
+            size={70}
+            source={{
+              uri: auth().currentUser.providerData[0].photoURL,
+            }}
+          />
+          <View>
+            <View style={styles.content}>
+              <Title>
+                {auth().currentUser.providerData[0].providerId === 'google.com'
+                  ? auth().currentUser.providerData[0].displayName
+                  : username}
+              </Title>
+              {!auth().currentUser.providerData[0].providerId ===
+                'google.com' && (
                 <IconButton
                   icon="square-edit-outline"
                   size={20}
                   onPress={() => navigation.navigate('EditProfileScreen')}
                 />
-              </View>
-
-              <TouchableOpacity onPress={handleSignout}>
-                <Text style={styles.signOutButton}>Sign Out</Text>
-              </TouchableOpacity>
+              )}
             </View>
+
+            <TouchableOpacity onPress={handleSignout}>
+              <Text style={styles.signOutButton}>Sign Out</Text>
+            </TouchableOpacity>
           </View>
-        )}
+        </View>
       </View>
     </SafeAreaView>
   );

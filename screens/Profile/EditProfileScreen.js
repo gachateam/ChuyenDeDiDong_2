@@ -36,7 +36,9 @@ const EditProfileScreen = ({navigation}) => {
   const [errNewPass, setErrNewPass] = useState('');
   const [errConfirmNewPass, setErrConfirmCurrentPass] = useState('');
   const [username, setUsername] = useState(null);
-  const [imageUriGallary, setimageUriGallary] = useState({uri: auth().currentUser.providerData[0].photoURL});
+  const [imageUriGallary, setimageUriGallary] = useState({
+    uri: auth().currentUser.providerData[0].photoURL,
+  });
   const [fileName, setfileName] = useState(null);
   useEffect(() => {
     firestore()
@@ -279,7 +281,8 @@ const EditProfileScreen = ({navigation}) => {
             <TouchableOpacity style={styles.signIn} onPress={updateProfile}>
               <LinearGradient
                 colors={['#08d4c4', '#01ab9d']}
-                style={styles.signIn}>
+                style={styles.signIn}
+              >
                 <Text style={styles.textSignUp}>Update</Text>
               </LinearGradient>
             </TouchableOpacity>
