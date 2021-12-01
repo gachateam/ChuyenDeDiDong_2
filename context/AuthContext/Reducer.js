@@ -1,4 +1,4 @@
-import {ACTIONS} from './Action';
+import { ACTIONS } from './Action';
 
 const reducers = (state, action) => {
   switch (action.type) {
@@ -6,6 +6,11 @@ const reducers = (state, action) => {
       return {
         ...state,
         user: action.payload,
+      };
+    case ACTIONS.SIGNIN_ANONYMOUS:
+      return {
+        ...state,
+        signinAnonymous: action.payload
       };
     default:
       return state;

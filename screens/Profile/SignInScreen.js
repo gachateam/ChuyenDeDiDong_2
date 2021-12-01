@@ -1,4 +1,4 @@
-import React, {useEffect} from 'react';
+import React, { useEffect } from 'react';
 import {
   View,
   Text,
@@ -18,14 +18,14 @@ import {
   GoogleSigninButton,
   statusCodes,
 } from '@react-native-google-signin/google-signin';
-import {useTheme} from 'react-native-paper';
-import {useAuth} from '../../context/AuthContext';
-import {ACTIONS} from '../../context/AuthContext/Action';
+import { useTheme } from 'react-native-paper';
+import { useAuth } from '../../context/AuthContext';
+import { ACTIONS } from '../../context/AuthContext/Action';
 import firestore from '@react-native-firebase/firestore';
 
-const SignInScreen = ({navigation}) => {
-  const {dispatch} = useAuth();
-  const {colors} = useTheme();
+const SignInScreen = ({ navigation }) => {
+  const { dispatch } = useAuth();
+  const { colors } = useTheme();
   const [data, setData] = React.useState({
     email: '',
     password: '',
@@ -78,7 +78,7 @@ const SignInScreen = ({navigation}) => {
     );
   };
 
-  const loginHandle = e => {
+  const loginHandle = async e => {
     if (data.email === '' || data.password === '') {
       return setLoginError("Can't empty Email or Password.");
     }
@@ -86,6 +86,11 @@ const SignInScreen = ({navigation}) => {
     if (emailError || passError) {
       return setLoginError('Please enter valid email or password.');
     }
+
+    await dispatch({ type: ACTIONS.SIGNIN_ANONYMOUS, payload: false })
+    await auth().currentUser.delete().then((value) => {
+      console.log(value);
+    });
 
     auth()
       .signInWithEmailAndPassword(data.email, data.password)
@@ -102,8 +107,8 @@ const SignInScreen = ({navigation}) => {
 
   const signInWithGoogle = async () => {
     try {
-      dispatch({type: ACTIONS.LOGIN, payload: auth().currentUser});
-      const {idToken} = await GoogleSignin.signIn();
+      dispatch({ type: ACTIONS.LOGIN, payload: auth().currentUser });
+      const { idToken } = await GoogleSignin.signIn();
 
       // Create a Google credential with the token
       const googleCredential = auth.GoogleAuthProvider.credential(idToken);
@@ -112,7 +117,7 @@ const SignInScreen = ({navigation}) => {
       return auth()
         .currentUser.linkWithCredential(googleCredential)
         .then(user => {
-          dispatch({type: ACTIONS.LOGIN, payload: auth().currentUser});
+          dispatch({ type: ACTIONS.LOGIN, payload: auth().currentUser });
           firestore()
             .collection('users')
             .doc(auth().currentUser.uid)
@@ -126,23 +131,13 @@ const SignInScreen = ({navigation}) => {
               );
             });
         })
-        .catch(error => {
+        .catch(async error => {
           switch (error.code) {
-            case 'auth/email-already-in-use':
-              console.log(`Email address ${this.state.email} already in use.`);
-              break;
-            case 'auth/invalid-email':
-              console.log(`Email address ${this.state.email} is invalid.`);
-              break;
-            case 'auth/operation-not-allowed':
-              console.log('Error during sign up.');
-              break;
-            case 'auth/weak-password':
-              console.log(
-                'Password is not strong enough. Add additional characters including special characters and numbers.',
-              );
-              break;
             case 'auth/credential-already-in-use':
+              await dispatch({ type: ACTIONS.SIGNIN_ANONYMOUS, payload: false })
+              await auth().currentUser.delete().then((value) => {
+                console.log(value);
+              });
               return auth().signInWithCredential(googleCredential);
             default:
               console.log(error.message);

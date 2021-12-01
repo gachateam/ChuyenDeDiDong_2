@@ -14,11 +14,11 @@ import {ACTIONS} from '../../context/AuthContext/Action';
 
 const AlreadySignInScreen = ({navigation}) => {
   const {dispatch} = useAuth();
-  const handleSignout = () => {
+  const handleSignout = async () => {
     auth().signOut();
     dispatch({type: ACTIONS.LOGIN, payload: null});
+    await dispatch({ type: ACTIONS.SIGNIN_ANONYMOUS, payload: true })
   };
-  console.log(auth().currentUser.providerData);
   const [username, setUsername] = useState(null);
   useEffect(() => {
     firestore()
