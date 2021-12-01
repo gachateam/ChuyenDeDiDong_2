@@ -180,7 +180,7 @@ const styles = StyleSheet.create({
   header: {
     flex: 1,
     paddingHorizontal: 20,
-    paddingBottom: 50,
+    paddingBottom: 70,
     justifyContent: 'center',
     alignItems: 'center',
   },

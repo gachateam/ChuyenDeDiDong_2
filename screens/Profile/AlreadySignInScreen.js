@@ -37,28 +37,48 @@ const AlreadySignInScreen = ({navigation}) => {
   return (
     <SafeAreaView style={styles.container}>
       <View style={styles.userInfor}>
-        <View style={styles.innerUserInfor}>
-          <Avatar.Image
-            size={70}
-            source={{
-              uri: 'https://cdn6.aptoide.com/imgs/3/7/b/37bdd8cc95f5aac3a85b0f2a2f1b6dc3_icon.png',
-            }}
-          />
-          <View>
-            <View style={styles.content}>
-              <Title>{username}</Title>
-              <IconButton
-                icon="square-edit-outline"
-                size={20}
-                onPress={() => navigation.navigate('EditProfileScreen')}
-              />
-            </View>
+        {auth().currentUser.providerData[0].providerId === 'google.com' ? (
+          <View style={styles.innerUserInfor}>
+            <Avatar.Image
+              size={70}
+              source={{
+                uri: auth().currentUser.providerData[0].photoURL,
+              }}
+            />
+            <View>
+              <View style={styles.content}>
+                <Title>{auth().currentUser.providerData[0].displayName}</Title>
+              </View>
 
-            <TouchableOpacity onPress={handleSignout}>
-              <Text style={styles.signOutButton}>Sign Out</Text>
-            </TouchableOpacity>
+              <TouchableOpacity onPress={handleSignout}>
+                <Text style={styles.signOutButton}>Sign Out</Text>
+              </TouchableOpacity>
+            </View>
           </View>
-        </View>
+        ) : (
+          <View style={styles.innerUserInfor}>
+            <Avatar.Image
+              size={70}
+              source={{
+                uri: auth().currentUser.providerData[0].photoURL
+              }}
+            />
+            <View>
+              <View style={styles.content}>
+                <Title>{username}</Title>
+                <IconButton
+                  icon="square-edit-outline"
+                  size={20}
+                  onPress={() => navigation.navigate('EditProfileScreen')}
+                />
+              </View>
+
+              <TouchableOpacity onPress={handleSignout}>
+                <Text style={styles.signOutButton}>Sign Out</Text>
+              </TouchableOpacity>
+            </View>
+          </View>
+        )}
       </View>
     </SafeAreaView>
   );
