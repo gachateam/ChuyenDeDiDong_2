@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react';
+import React, { useEffect, useState } from 'react';
 import {
   View,
   StyleSheet,
@@ -6,17 +6,18 @@ import {
   TouchableOpacity,
   Text,
 } from 'react-native';
-import {Avatar, IconButton, Title} from 'react-native-paper';
+import { Avatar, IconButton, Title } from 'react-native-paper';
 import auth from '@react-native-firebase/auth';
 import firestore from '@react-native-firebase/firestore';
-import {useAuth} from '../../context/AuthContext';
-import {ACTIONS} from '../../context/AuthContext/Action';
+import { useAuth } from '../../context/AuthContext';
+import { ACTIONS } from '../../context/AuthContext/Action';
+import Rank from '../../components/Rank';
 
-const AlreadySignInScreen = ({navigation}) => {
-  const {dispatch} = useAuth();
+const AlreadySignInScreen = ({ navigation }) => {
+  const { dispatch } = useAuth();
   const handleSignout = async () => {
     auth().signOut();
-    dispatch({type: ACTIONS.LOGIN, payload: null});
+    dispatch({ type: ACTIONS.LOGIN, payload: null });
     await dispatch({ type: ACTIONS.SIGNIN_ANONYMOUS, payload: true })
   };
   const [username, setUsername] = useState(null);
@@ -53,12 +54,12 @@ const AlreadySignInScreen = ({navigation}) => {
               </Title>
               {!auth().currentUser.providerData[0].providerId ===
                 'google.com' && (
-                <IconButton
-                  icon="square-edit-outline"
-                  size={20}
-                  onPress={() => navigation.navigate('EditProfileScreen')}
-                />
-              )}
+                  <IconButton
+                    icon="square-edit-outline"
+                    size={20}
+                    onPress={() => navigation.navigate('EditProfileScreen')}
+                  />
+                )}
             </View>
 
             <TouchableOpacity onPress={handleSignout}>
@@ -67,6 +68,7 @@ const AlreadySignInScreen = ({navigation}) => {
           </View>
         </View>
       </View>
+      <Rank />
     </SafeAreaView>
   );
 };
