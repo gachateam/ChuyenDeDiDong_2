@@ -33,7 +33,7 @@ const AlreadySignInScreen = ({navigation}) => {
           setUsername(documentSnapshot.data().username);
         }
       });
-  }, [username]);
+  }, []);
   return (
     <SafeAreaView style={styles.container}>
       <View style={styles.userInfor}>

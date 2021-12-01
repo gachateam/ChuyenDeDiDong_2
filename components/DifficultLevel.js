@@ -1,10 +1,11 @@
 import React from 'react';
-import {StyleSheet, Text, TouchableOpacity, View} from 'react-native';
-import {IconButton} from 'react-native-paper';
+import { StyleSheet, Text, TouchableOpacity, View } from 'react-native';
+import { IconButton } from 'react-native-paper';
 import ProgressCircle from 'react-native-progress-circle';
 import Entypo from 'react-native-vector-icons/Entypo';
-import {ACTIONS} from '../context/Action';
-import {useGlobal} from '../context/GlobalContext';
+import { ACTIONS } from '../context/Action';
+import { useGlobal } from '../context/GlobalContext';
+import { Stage } from './../Model/Stage';
 
 const DifficultLevel = ({
   stage1,
@@ -14,65 +15,94 @@ const DifficultLevel = ({
   disabled,
   navigation,
   level,
+  challengeTouchable,
 }) => {
-  const {hideTabBar, dispatch} = useGlobal();
+  const { hideTabBar, dispatch } = useGlobal();
   const onPress = stage => {
-    dispatch({type: ACTIONS.HIDE_TAB_BAR, payload: !hideTabBar});
+    dispatch({ type: ACTIONS.HIDE_TAB_BAR, payload: !hideTabBar });
     navigation.navigate('SplashScreen');
     dispatch({
       type: ACTIONS.CHOOSE_UNIT,
-      payload: {difficult: level, stage: stage},
+      payload: new Stage({ difficult: level, stage: stage }),
     });
+  };
+  const handleChallengeTouch = () => {
+    dispatch({ type: ACTIONS.HIDE_TAB_BAR, payload: !hideTabBar });
+    navigation.navigate('SplashScreen');
+    dispatch({
+      type: ACTIONS.CHOOSE_UNIT,
+      payload: new Stage({ difficult: level, stage: 2 }),
+    });
+    dispatch({
+      type: ACTIONS.SET_REVIEW,
+      payload: true
+    })
   };
   return (
     <View>
       <View style={styles.stage1}>
-        <TouchableOpacity onPress={() => onPress(0)} disabled={disabled}>
+        <TouchableOpacity
+          onPress={() => onPress(0)}
+          disabled={disabled || stage1 === 0}
+        >
           <ProgressCircle
-            percent={stage1}
+            percent={stage1 ? stage1 : 0}
             radius={50}
             borderWidth={4}
             color="#1597E5"
             shadowColor="#999"
-            bgColor={disabled && stage1 === 0 ? '#999' : '#fff'}>
+            bgColor={disabled && stage1 === 0 ? '#999' : '#fff'}
+          >
             <IconButton icon="ballot-outline" size={32} />
           </ProgressCircle>
         </TouchableOpacity>
       </View>
       <View style={styles.stage23}>
-        <TouchableOpacity onPress={() => onPress(1)} disabled={disabled}>
+        <TouchableOpacity
+          onPress={() => onPress(1)}
+          disabled={disabled || stage2 === 0}
+        >
           <ProgressCircle
-            percent={stage2}
+            percent={stage2 ? stage1 : 0}
             radius={50}
             borderWidth={4}
             color="#1597E5"
             shadowColor="#999"
-            bgColor={disabled && stage2 === 0 ? '#999' : '#fff'}>
+            bgColor={disabled && stage2 === 0 ? '#999' : '#fff'}
+          >
             <IconButton icon="book-open-page-variant" size={32} />
           </ProgressCircle>
         </TouchableOpacity>
-        <TouchableOpacity onPress={() => onPress(2)} disabled={disabled}>
+        <TouchableOpacity
+          onPress={() => onPress(2)}
+          disabled={disabled || stage3 === 0}
+        >
           <ProgressCircle
-            percent={stage3}
+            percent={stage3 ? stage1 : 0}
             radius={50}
             borderWidth={4}
             color="#1597E5"
             shadowColor="#999"
-            bgColor={disabled && stage3 === 0 ? '#999' : '#fff'}>
+            bgColor={disabled && stage3 === 0 ? '#999' : '#fff'}
+          >
             <IconButton icon="brain" size={32} />
           </ProgressCircle>
         </TouchableOpacity>
       </View>
 
       <View style={styles.challenge}>
-        <View style={styles.challengeBox}>
+        <TouchableOpacity
+          disabled={challengeTouchable}
+          style={styles.challengeBox}
+          onPress={handleChallengeTouch}
+        >
           <Entypo
             name={challengeUnlock ? 'lock-open' : 'lock'}
             size={32}
             style={styles.lock}
           />
           <Text style={styles.textOnTap}>Ôn tập</Text>
-        </View>
+        </TouchableOpacity>
       </View>
     </View>
   );

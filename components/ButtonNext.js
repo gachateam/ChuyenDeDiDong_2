@@ -1,11 +1,14 @@
 import React from 'react';
-import {StyleSheet, Text, TouchableOpacity} from 'react-native';
+import {StyleSheet, Text, TouchableOpacity, Alert} from 'react-native';
 import {useGlobal} from '../context/GlobalContext';
 import {useQuestion} from '../context/QuestionContext';
 import {ACTIONS} from './../context/QuestionContext/Action';
 import {TYPE_QUESTION} from './../context/TypeQuestion';
+import auth from '@react-native-firebase/auth';
+import firestore from '@react-native-firebase/firestore';
+import {ACTIONS as ACTIONS_GLOBAL} from './../context/Action';
 
-const ButtonNext = ({checkAns}) => {
+const ButtonNext = ({checkAns, navigation}) => {
   const {
     dispatch,
     activeQuestion,
@@ -14,33 +17,62 @@ const ButtonNext = ({checkAns}) => {
     ansQuestionIncorrect,
     typeQuestion,
   } = useQuestion();
-  const {listQuestion} = useGlobal();
+  const {listQuestion, unit, stage, title, hideTabBar} = useGlobal();
+
+  const checkAnsCorrect = (
+    checkAnsFunc,
+    listQuestionFunc,
+    activeQuestionFunc,
+    ansChoiceFunc,
+  ) => {
+    if (!checkAnsFunc(listQuestionFunc[activeQuestionFunc], ansChoiceFunc)) {
+      dispatch({type: ACTIONS.INCORRECT, payload: activeQuestionFunc});
+      Alert.alert('Thông báo!', 'Sai rồi', [{text: 'ukm'}]);
+    } else {
+      Alert.alert('Thông báo!', 'Đúng rồi', [{text: 'ukm'}]);
+    }
+  };
 
   const handleNextQuestion = () => {
     if (ansQuestionIncorrect) {
       if (!(typeof ansChoice === 'object' && ansChoice.length === 0)) {
-        if (!checkAns(listQuestion[activeQuestion], ansChoice)) {
-          dispatch({type: ACTIONS.INCORRECT, payload: activeQuestion});
-        }
-        if (questionIncorrect.length != 0) {
+        checkAnsCorrect(checkAns, listQuestion, activeQuestion, ansChoice);
+        if (questionIncorrect.length !== 0) {
           const next = questionIncorrect.shift();
           dispatch({type: ACTIONS.NEXT_QUESTION, payload: next});
         }
       } else if (
-        typeQuestion == TYPE_QUESTION.READ &&
-        questionIncorrect.length != 0
+        typeQuestion === TYPE_QUESTION.READ &&
+        questionIncorrect.length !== 0
       ) {
         const next = questionIncorrect.shift();
         dispatch({type: ACTIONS.NEXT_QUESTION, payload: next});
       }
+      if (questionIncorrect.length === 0 && unit.compare(stage) === 0) {
+        firestore()
+          .collection('users/' + auth().currentUser.uid + '/category')
+          .doc(title)
+          .update(unit.nextStage())
+          .then(() => {
+            console.log('User updated!');
+          });
+
+        dispatch({type: ACTIONS_GLOBAL.HIDE_TAB_BAR, payload: !hideTabBar});
+        navigation.reset({
+          index: 0,
+          routes: [
+            {
+              name: 'StageScreen',
+            },
+          ],
+        });
+      }
     } else {
       if (listQuestion.length > activeQuestion + 1) {
         if (!(typeof ansChoice === 'object' && ansChoice.length === 0)) {
-          if (!checkAns(listQuestion[activeQuestion], ansChoice)) {
-            dispatch({type: ACTIONS.INCORRECT, payload: activeQuestion});
-          }
+          checkAnsCorrect(checkAns, listQuestion, activeQuestion, ansChoice);
           dispatch({type: ACTIONS.NEXT_QUESTION, payload: activeQuestion + 1});
-        } else if (typeQuestion == TYPE_QUESTION.READ) {
+        } else if (typeQuestion === TYPE_QUESTION.READ) {
           dispatch({type: ACTIONS.NEXT_QUESTION, payload: activeQuestion + 1});
         }
         if (listQuestion.length <= activeQuestion + 2) {
@@ -79,5 +111,10 @@ const styles = StyleSheet.create({
     fontSize: 18,
     fontWeight: '400',
     color: 'white',
+  },
+  showPopup: {
+    flex: 1,
+    alignItems: 'center',
+    justifyContent: 'center',
   },
 });

@@ -16,6 +16,10 @@ const QuestionContextProvider = ({children}) => {
     activeQuestion: 0,
     questionIncorrect: [],
     ansQuestionIncorrect: false,
+    check: {
+      max: 3,
+      current: 3,
+    },
   };
   const [state, dispatch] = useReducer(reducers, initialState);
   const {
@@ -24,6 +28,7 @@ const QuestionContextProvider = ({children}) => {
     activeQuestion,
     questionIncorrect,
     ansQuestionIncorrect,
+    check,
   } = state;
   const value = {
     dispatch,
@@ -32,6 +37,7 @@ const QuestionContextProvider = ({children}) => {
     activeQuestion,
     questionIncorrect,
     ansQuestionIncorrect,
+    check,
   };
   return (
     <QuestionContext.Provider value={value}>

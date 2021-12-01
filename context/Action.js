@@ -4,4 +4,6 @@ export const ACTIONS = {
   CHOOSE_UNIT: 'unit',
   GET_LIST_QUESTION: 'listquestion',
   GET_VOCABULARY: 'vocabylary',
+  STAGE: 'stage',
+  SET_REVIEW: 'review',
 };

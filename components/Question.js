@@ -13,12 +13,37 @@ import ChoiceMultiAnswer from './ChoiceMultiAnswer';
 import Grammar from './Grammar';
 import {useGlobal} from '../context/GlobalContext';
 import {ACTIONS} from './../context/QuestionContext/Action';
+import {BottomPopup} from './../screens/BottomPopup';
 
 Tts.setDefaultLanguage('en');
+
+const popupList = [
+  {
+    id: 1,
+    name: 'Task',
+  },
+  {
+    id: 2,
+    name: 'Message',
+  },
+  {
+    id: 3,
+    name: 'Note',
+  },
+];
+
+let popupRef = React.createRef();
 
 const Question = ({navigation}) => {
   const {typeQuestion, activeQuestion, dispatch} = useQuestion();
   const {listQuestion} = useGlobal();
+
+  const onShowPopup = () => {
+    popupRef.show();
+  };
+  const onClosePopup = () => {
+    popupRef.close();
+  };
 
   useEffect(() => {
     dispatch({
@@ -29,7 +54,18 @@ const Question = ({navigation}) => {
 
   switch (typeQuestion) {
     case TYPE_QUESTION.IMAGE_4:
-      return <Image4 navigation={navigation} />;
+      return (
+        <>
+          <Image4 onPress={onShowPopup} navigation={navigation} />
+
+          <BottomPopup
+            title="YOU đã chọn đúng , tiếp tục phát huy đi ...."
+            ref={target => (popupRef = target)}
+            onTouchOutside={onClosePopup}
+            data={popupList}
+          />
+        </>
+      );
     case TYPE_QUESTION.VOCABULARY_4:
       return <Vocabulary4 navigation={navigation} />;
     case TYPE_QUESTION.READ:

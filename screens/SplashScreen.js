@@ -26,14 +26,14 @@ const SplashScreen = ({navigation}) => {
             listQuestion.push(data.val());
           }
         });
-        dispatch({type: ACTIONS.GET_LIST_QUESTION, payload: listQuestion});
+        dispatch({type: ACTIONS.GET_LIST_QUESTION, payload: listQuestion}); //get random unit
       });
     database
       .ref(`/category/${title}/${unit.difficult}/vocabulary`)
       .once('value')
       .then(snapshot => {
         dispatch({type: ACTIONS.GET_VOCABULARY, payload: snapshot.val()});
-      });
+      }); //lấy từ vựng
   }, [dispatch, title, unit.difficult, unit.stage]);
 
   return (
@@ -52,7 +52,8 @@ const SplashScreen = ({navigation}) => {
       </View>
       <TouchableOpacity
         onPress={() => navigation.navigate('QuestionScreen')}
-        style={styles.button}>
+        style={styles.button}
+      >
         <Text style={styles.buttonText}>Start</Text>
       </TouchableOpacity>
     </View>

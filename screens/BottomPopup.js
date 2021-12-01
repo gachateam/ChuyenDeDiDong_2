@@ -83,7 +83,8 @@ export class BottomPopup extends React.Component {
         animationType={'fade'}
         transparent={true}
         visible={show}
-        onRequestClose={this.close}>
+        onRequestClose={this.close}
+      >
         <View style={styles.topModel}>
           {this.renderOutsideTouchable(onTouchOutside)}
           <View style={styles.model}>

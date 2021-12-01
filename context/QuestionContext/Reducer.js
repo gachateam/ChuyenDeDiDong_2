@@ -34,6 +34,22 @@ const reducers = (state, action) => {
         ...state,
         ansQuestionIncorrect: action.payload,
       };
+    case ACTIONS.CHECK:
+      return {
+        ...state,
+        check: {
+          ...state.check,
+          current: state.check.max - state.questionIncorrect.length,
+        },
+      };
+    case ACTIONS.SET_CHECK_DEFAULT:
+      return {
+        ...state,
+        check: {
+          ...state.check,
+          current: state.check.max,
+        },
+      };
     default:
       return state;
   }
