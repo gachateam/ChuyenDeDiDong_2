@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react';
+import React, {useEffect} from 'react';
 import {StyleSheet, SafeAreaView, ScrollView} from 'react-native';
 import DifficultLevel from '../components/DifficultLevel';
 import {useDrawerStatus} from '@react-navigation/drawer';
@@ -38,6 +38,7 @@ const StageScreen = ({navigation}) => {
           });
         }
       });
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const handleScroll = e => {
@@ -62,8 +63,9 @@ const StageScreen = ({navigation}) => {
                 stage1={stage && stage.getStage(e, 0)}
                 stage2={stage && stage.getStage(e, 1)}
                 stage3={stage && stage.getStage(e, 2)}
-                challengeUnlock={false}
+                challengeUnlock={!(stage && stage.difficult <= e)}
                 disabled={stage && stage.difficult < e}
+                challengeTouchable={stage && stage.difficult < e}
                 navigation={navigation}
                 level={e}
               />

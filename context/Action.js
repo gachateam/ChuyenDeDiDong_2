@@ -5,4 +5,5 @@ export const ACTIONS = {
   GET_LIST_QUESTION: 'listquestion',
   GET_VOCABULARY: 'vocabylary',
   STAGE: 'stage',
+  SET_REVIEW: 'review',
 };

@@ -101,7 +101,8 @@ const ForgotPasswordScreen = ({navigation}) => {
             backgroundColor: colors.background,
           },
         ]}
-        animation="fadeInUpBig">
+        animation="fadeInUpBig"
+      >
         {/* enter email */}
         <View style={styles.action}>
           <Feather name="mail" color="#05375a" size={20} />
@@ -138,13 +139,15 @@ const ForgotPasswordScreen = ({navigation}) => {
           <TouchableOpacity style={styles.signIn} onPress={loginHandle}>
             <LinearGradient
               colors={['#08d4c4', '#01ab9d']}
-              style={styles.signIn}>
+              style={styles.signIn}
+            >
               <Text style={[styles.textSign, styles.colorWhite]}>Reset</Text>
             </LinearGradient>
           </TouchableOpacity>
           <TouchableOpacity
             onPress={() => navigation.navigate('SignInScreen')}
-            style={[styles.signIn, styles.signUpButton]}>
+            style={[styles.signIn, styles.signUpButton]}
+          >
             <Text style={[styles.textSign, styles.signUpButtonText]}>
               Sign In
             </Text>
@@ -152,7 +155,8 @@ const ForgotPasswordScreen = ({navigation}) => {
 
           <TouchableOpacity
             onPress={() => navigation.navigate('SignUpScreen')}
-            style={[styles.signIn, styles.signUpButton]}>
+            style={[styles.signIn, styles.signUpButton]}
+          >
             <Text style={[styles.textSign, styles.signUpButtonText]}>
               Sign Up
             </Text>

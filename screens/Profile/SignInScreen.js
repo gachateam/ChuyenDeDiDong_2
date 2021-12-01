@@ -177,7 +177,8 @@ const SignInScreen = ({navigation}) => {
           {
             backgroundColor: colors.background,
           },
-        ]}>
+        ]}
+      >
         <ScrollView>
           <View style={styles.action}>
             <Feather name="mail" color="#05375a" size={20} />
@@ -225,7 +226,8 @@ const SignInScreen = ({navigation}) => {
           )}
 
           <TouchableOpacity
-            onPress={() => navigation.navigate('ForgotPasswordScreen')}>
+            onPress={() => navigation.navigate('ForgotPasswordScreen')}
+          >
             <Text style={styles.forgotPass}>Forgot password?</Text>
           </TouchableOpacity>
           {!(loginError === '') && (
@@ -239,19 +241,21 @@ const SignInScreen = ({navigation}) => {
             <TouchableOpacity style={styles.signIn} onPress={loginHandle}>
               <LinearGradient
                 colors={['#08d4c4', '#01ab9d']}
-                style={styles.signIn}>
+                style={styles.signIn}
+              >
                 <Text style={styles.textSignIn}>Sign In</Text>
               </LinearGradient>
             </TouchableOpacity>
 
             <TouchableOpacity
               onPress={() => navigation.navigate('SignUpScreen')}
-              style={[styles.signIn, styles.buttonSignUp]}>
+              style={[styles.signIn, styles.buttonSignUp]}
+            >
               <Text style={styles.textSignUp}>Sign Up</Text>
             </TouchableOpacity>
           </View>
           <GoogleSigninButton
-            style={{width: '100%', height: 60, marginTop: 15}}
+            style={styles.googleButton}
             size={GoogleSigninButton.Size.Wide}
             color={GoogleSigninButton.Color.Light}
             onPress={signInWithGoogle}
@@ -346,5 +350,10 @@ const styles = StyleSheet.create({
     fontSize: 18,
     fontWeight: 'bold',
     color: '#009387',
+  },
+  googleButton: {
+    width: '100%',
+    height: 60,
+    marginTop: 15,
   },
 });

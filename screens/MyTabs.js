@@ -33,7 +33,8 @@ const TabButton = props => {
     <TouchableOpacity
       onPress={onPress}
       style={styles.container}
-      activeOpacity={1}>
+      activeOpacity={1}
+    >
       <Animatable.View ref={viewRef} style={styles.container} duration={1000}>
         <AntDesign
           name={name}
@@ -62,7 +63,8 @@ const MyTabs = ({navigation}) => {
           borderRadius: 10,
         },
         tabBarHideOnKeyboard: true,
-      }}>
+      }}
+    >
       <Tab.Screen
         name="Home"
         component={HomeScreen}

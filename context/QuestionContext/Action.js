@@ -5,4 +5,6 @@ export const ACTIONS = {
   CORRECT: 'correct',
   INCORRECT: 'incorrect',
   ANS_QUESTION_INCORRECT: 'answer the wrong question',
+  CHECK: 'check',
+  SET_CHECK_DEFAULT: 'default',
 };

@@ -16,11 +16,13 @@ const ProfilesScreen = ({navigation}) => {
           <View>
             <View style={styles.content}>
               <TouchableOpacity
-                onPress={() => navigation.navigate('SignInScreen')}>
+                onPress={() => navigation.navigate('SignInScreen')}
+              >
                 <Title>Đăng nhập /</Title>
               </TouchableOpacity>
               <TouchableOpacity
-                onPress={() => navigation.navigate('SignUpScreen')}>
+                onPress={() => navigation.navigate('SignUpScreen')}
+              >
                 <Title>Đăng kí</Title>
               </TouchableOpacity>
             </View>

@@ -32,7 +32,8 @@ const FourChoice = ({navigation, children, ans, speak, checkAns}) => {
                   styles.optionButton,
                   ansChoice === i + 1 ? styles.choice : null,
                 ]}
-                key={i}>
+                key={i}
+              >
                 <Text style={styles.option}>{e}</Text>
               </TouchableOpacity>
             );
@@ -74,7 +75,7 @@ const styles = StyleSheet.create({
     marginVertical: 5,
     flex: 1,
     marginHorizontal: 10,
-    justifyContent: 'center'
+    justifyContent: 'center',
   },
   bottom: {
     marginBottom: 5,

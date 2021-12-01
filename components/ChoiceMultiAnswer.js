@@ -56,7 +56,8 @@ const ChoiceMultiAnswer = ({navigation}) => {
                 styles.optionButton,
                 ansChoice.includes(e) ? styles.choice : null,
               ]}
-              key={i}>
+              key={i}
+            >
               <Text style={styles.option}>{e}</Text>
             </TouchableOpacity>
           );
