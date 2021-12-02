@@ -1,117 +1,177 @@
-import React, { useState } from 'react'
-import { StyleSheet, Text, View, ScrollView, Image, Alert } from 'react-native'
-import { ButtonGroup } from 'react-native-elements';
+import React, {useState, useEffect} from 'react';
+import {StyleSheet, Text, View, Image, Alert} from 'react-native';
+import {ButtonGroup} from 'react-native-elements';
 import Leaderboard from 'react-native-leaderboard';
+import firestore from '@react-native-firebase/firestore';
+import auth from '@react-native-firebase/auth';
 
 const Rank = () => {
   const state1 = {
-    globalData: [
-      { name: 'We Tu Lo', score: null, iconUrl: 'https://st2.depositphotos.com/1006318/5909/v/950/depositphotos_59094043-stock-illustration-profile-icon-male-avatar.jpg' },
-      { name: 'Adam Savage', score: 12, iconUrl: 'https://www.shareicon.net/data/128x128/2016/09/15/829473_man_512x512.png' },
-      { name: 'Derek Black', score: 244, iconUrl: 'http://ttsbilisim.com/wp-content/uploads/2014/09/20120807.png' },
-      { name: 'Erika White', score: 0, iconUrl: 'http://www.lovemarks.com/wp-content/uploads/profile-avatars/default-avatar-eskimo-girl.png' },
-      { name: 'Jimmy John', score: 20, iconUrl: 'https://static.witei.com/static/img/profile_pics/avatar4.png' },
-      { name: 'Joe Roddy', score: 69, iconUrl: 'http://www.lovemarks.com/wp-content/uploads/profile-avatars/default-avatar-braindead-zombie.png' },
-      { name: 'Ericka Johannesburg', score: 101, iconUrl: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcShPis8NLdplTV1AJx40z-KS8zdgaSPaCfNINLtQ-ENdPvrtMWz' },
-      { name: 'Tim Thomas', score: 41, iconUrl: 'http://conserveindia.org/wp-content/uploads/2017/07/teamMember4.png' },
-      { name: 'John Davis', score: 80, iconUrl: 'http://www.lovemarks.com/wp-content/uploads/profile-avatars/default-avatar-afro-guy.png' },
-      { name: 'Tina Turner', score: 22, iconUrl: 'https://cdn.dribbble.com/users/223408/screenshots/2134810/me-dribbble-size-001-001_1x.png' },
-      { name: 'Harry Reynolds', score: null, iconUrl: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRsSlzi6GEickw2Ft62IdJTfXWsDFrOIbwXhzddXXt4FvsbNGhp' },
-      { name: 'Betty Davis', score: 25, iconUrl: 'https://landofblogging.files.wordpress.com/2014/01/bitstripavatarprofilepic.jpeg?w=300&h=300' },
-      { name: 'Lauren Leonard', score: 30, iconUrl: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSr27ZFBaclzKcxg2FgJh6xi3Z5-9vP_U1DPcB149bYXxlPKqv-' },
-    ],
     friendData: [
-      { name: 'Joe Roddy', score: 69, iconUrl: 'http://www.lovemarks.com/wp-content/uploads/profile-avatars/default-avatar-braindead-zombie.png' },
-      { name: 'Ericka Johannesburg', score: 101, iconUrl: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcShPis8NLdplTV1AJx40z-KS8zdgaSPaCfNINLtQ-ENdPvrtMWz' },
-      { name: 'Tim Thomas', score: 41, iconUrl: 'http://conserveindia.org/wp-content/uploads/2017/07/teamMember4.png' },
+      {
+        username: 'Joe Roddy',
+        score: 69,
+        photoURL:
+          'http://www.lovemarks.com/wp-content/uploads/profile-avatars/default-avatar-braindead-zombie.png',
+      },
+      {
+        username: 'Ericka Johannesburg',
+        score: 101,
+        photoURL:
+          'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcShPis8NLdplTV1AJx40z-KS8zdgaSPaCfNINLtQ-ENdPvrtMWz',
+      },
+      {
+        username: 'Tim Thomas',
+        score: 41,
+        photoURL:
+          'http://conserveindia.org/wp-content/uploads/2017/07/teamMember4.png',
+      },
     ],
-    filter: 0,
-    userRank: 1,
-    user: {
-      name: 'Joe Roddy',
-      score: 69,
-    }
-  }
+  };
 
-  const [globalData, setGlobalData] = useState(state1.globalData)
-  const [friendData, setFriendData] = useState(state1.friendData)
-  const [filter, setFilter] = useState(state1.filter)
-  const [userRank, setUserRank] = useState(state1.userRank)
-  const [user, setUser] = useState(state1.user)
+  const [globalData, setGlobalData] = useState();
+  // eslint-disable-next-line no-unused-vars
+  const [friendData, setFriendData] = useState(state1.friendData);
+  const [filter, setFilter] = useState(0);
+  const [userRank, setUserRank] = useState(1);
+  const [user, setUser] = useState();
+
+  useEffect(() => {
+    let globalData1 = [];
+
+    firestore()
+      .collection('users')
+      .orderBy('score', 'desc')
+      .limit(2)
+      .get()
+      .then(querySnapshot => {
+        querySnapshot.forEach(documentSnapshot => {
+          globalData1 = [...globalData1, documentSnapshot.data()];
+          if (documentSnapshot.id === auth().currentUser.uid) {
+            setUser(documentSnapshot.data());
+          }
+        });
+        setGlobalData(globalData1);
+      });
+  }, []);
 
   const alert = (title, body) => {
-    Alert.alert(
-      title, body, [{ text: 'OK', onPress: () => { } },],
-      { cancelable: false }
-    )
-  }
+    Alert.alert(title, body, [{text: 'OK', onPress: () => {}}], {
+      cancelable: false,
+    });
+  };
 
-  const sort = (data) => {
-    const sorted = data && data.sort((item1, item2) => {
-      return item2.score - item1.score;
-    })
-    let userRank = sorted.findIndex((item) => {
-      return item.name === user.name;
-    })
-    setUserRank(userRank + 1)
+  const sort = data => {
+    const sorted =
+      data &&
+      data.sort((item1, item2) => {
+        return item2.score - item1.score;
+      });
+    let userRankTemp = sorted.findIndex(item => {
+      return item.username === user.username;
+    });
+    setUserRank(userRankTemp + 1);
     return sorted;
-  }
+  };
 
   const props = {
-    labelBy: 'name',
+    labelBy: 'username',
     sortBy: 'score',
     data: filter > 0 ? friendData : globalData,
-    icon: 'iconUrl',
-    onRowPress: (item, index) => { alert(item.name + " clicked", item.score + " points, wow!") },
-    sort: sort
-  }
+    icon: 'photoURL',
+    onRowPress: item => {
+      alert(item.username + ' clicked', item.score + ' points, wow!');
+    },
+    sort: sort,
+  };
 
   return (
     <View>
-      <View colors={[, '#1da2c6', '#1695b7']}
-        style={{ backgroundColor: '#119abf', padding: 15, paddingTop: 35, alignItems: 'center' }}>
-        <Text style={{ fontSize: 25, color: 'white', }}>Leaderboard</Text>
-        <View style={{
-          flexDirection: 'row', justifyContent: 'center', alignItems: 'center',
-          marginBottom: 15, marginTop: 20
-        }}>
-          <Text style={{ color: 'white', fontSize: 25, flex: 1, textAlign: 'right', marginRight: 40 }}>
+      <View colors={['#1da2c6', '#1695b7']} style={styles.topLeaderboard}>
+        <Text style={styles.leaderboardText}>Leaderboard</Text>
+        <View style={styles.leaderboardRank}>
+          <Text style={styles.leaderboardRankText}>
             {ordinal_suffix_of(userRank)}
           </Text>
-          <Image style={{ flex: .66, height: 60, width: 60, borderRadius: 60 / 2 }}
-            source={{ uri: 'http://www.lovemarks.com/wp-content/uploads/profile-avatars/default-avatar-braindead-zombie.png' }} />
-          <Text style={{ color: 'white', fontSize: 25, flex: 1, marginLeft: 40 }}>
-            {user.score}pts
+          <Image
+            style={styles.leaderboardRankAvatar}
+            source={{
+              uri: user
+                ? user.photoURL
+                : 'https://img.pokemondb.net/artwork/riolu.jpg',
+            }}
+          />
+          <Text style={styles.leaderboardRankScore}>
+            {user && user.score}pts
           </Text>
         </View>
         <ButtonGroup
-          onPress={(x) => { setFilter(x) }}
+          onPress={x => {
+            setFilter(x);
+          }}
           selectedIndex={filter}
           buttons={['Global', 'Friends']}
-          containerStyle={{ height: 30 }} />
+          containerStyle={styles.buttonGroup}
+        />
       </View>
-      <Leaderboard {...props} />
+      {globalData && friendData && user && <Leaderboard {...props} />}
     </View>
-  )
-}
+  );
+};
 
-export default Rank
+export default Rank;
 
-const ordinal_suffix_of = (i) => {
+const ordinal_suffix_of = i => {
   var j = i % 10,
     k = i % 100;
-  if (j == 1 && k != 11) {
-    return i + "st";
+  if (j === 1 && k !== 11) {
+    return i + 'st';
   }
-  if (j == 2 && k != 12) {
-    return i + "nd";
+  if (j === 2 && k !== 12) {
+    return i + 'nd';
   }
-  if (j == 3 && k != 13) {
-    return i + "rd";
+  if (j === 3 && k !== 13) {
+    return i + 'rd';
   }
-  return i + "th";
-}
+  return i + 'th';
+};
 
 const styles = StyleSheet.create({
-
-})
+  topLeaderboard: {
+    backgroundColor: '#119abf',
+    padding: 15,
+    paddingTop: 35,
+    alignItems: 'center',
+  },
+  leaderboardText: {
+    fontSize: 25,
+    color: 'white',
+  },
+  leaderboardRank: {
+    flexDirection: 'row',
+    justifyContent: 'center',
+    alignItems: 'center',
+    marginBottom: 15,
+    marginTop: 20,
+  },
+  leaderboardRankText: {
+    color: 'white',
+    fontSize: 25,
+    flex: 1,
+    textAlign: 'right',
+    marginRight: 40,
+  },
+  leaderboardRankAvatar: {
+    flex: 0.66,
+    height: 60,
+    width: 60,
+    borderRadius: 60 / 2,
+  },
+  leaderboardRankScore: {
+    color: 'white',
+    fontSize: 25,
+    flex: 1,
+    marginLeft: 40,
+  },
+  buttonGroup: {height: 30},
+});

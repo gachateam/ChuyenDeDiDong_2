@@ -11,14 +11,14 @@ export const useAuth = () => {
 const AuthContextProvider = ({children}) => {
   const initialState = {
     user: null,
-    signinAnonymous: true
+    signinAnonymous: true,
   };
   const [state, dispatch] = useReducer(reducers, initialState);
-  const {user,signinAnonymous} = state;
+  const {user, signinAnonymous} = state;
   const value = {
     dispatch,
     user,
-    signinAnonymous
+    signinAnonymous,
   };
   return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>;
 };

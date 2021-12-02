@@ -112,11 +112,8 @@ const EditProfileScreen = ({navigation}) => {
   };
 
   const reauthenticate = currentpassword => {
-    var user = firebase.auth().currentUser;
-    var cred = firebase.auth.EmailAuthProvider.credential(
-      user.email,
-      currentpassword,
-    );
+    var user = auth().currentUser;
+    var cred = auth.EmailAuthProvider.credential(user.email, currentpassword);
     return user.reauthenticateWithCredential(cred);
   };
 
@@ -156,7 +153,7 @@ const EditProfileScreen = ({navigation}) => {
     await reference.getDownloadURL().then(url => {
       getUrl = url;
     });
-    
+
     firestore()
       .collection('users')
       .doc(auth().currentUser.uid)
@@ -170,8 +167,8 @@ const EditProfileScreen = ({navigation}) => {
 
     reauthenticate(data.currentpassword)
       .then(() => {
-        auth().currentUser
-          .updatePassword(data.newpassword)
+        auth()
+          .currentUser.updatePassword(data.newpassword)
           .then(() => {
             Alert.alert('Password was changed');
           })
@@ -190,7 +187,7 @@ const EditProfileScreen = ({navigation}) => {
         <Text style={styles.text_header}>Edit Profile</Text>
         <TouchableOpacity onPress={() => openGallery()}>
           <Avatar.Image
-            style={{marginTop: 15}}
+            style={styles.avatar}
             size={70}
             source={imageUriGallary}
           />
@@ -375,4 +372,5 @@ const styles = StyleSheet.create({
     color: '#FF0000',
     fontSize: 14,
   },
+  avatar: {marginTop: 15},
 });
