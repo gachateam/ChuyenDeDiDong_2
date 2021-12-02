@@ -123,6 +123,7 @@ const SignInScreen = ({ navigation }) => {
             .doc(auth().currentUser.uid)
             .set({
               username: user.additionalUserInfo.profile.name,
+              photoURL: user.additionalUserInfo.profile.picture
             })
             .catch(error => {
               console.log(
@@ -138,7 +139,7 @@ const SignInScreen = ({ navigation }) => {
               await auth().currentUser.delete().then((value) => {
                 console.log(value);
               });
-              return auth().signInWithCredential(googleCredential);
+              return auth().signInWithCredential(googleCredential)
             default:
               console.log(error.message);
               break;

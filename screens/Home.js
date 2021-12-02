@@ -22,13 +22,11 @@ const popupList = [
 function Home({ navigation }) {
   let popupRef = React.createRef();
   const { dispatch, signinAnonymous } = useAuth();
-  console.log(auth().currentUser);
   useEffect(() => {
     const unsubcribe = auth().onAuthStateChanged(u => {
       if (u) {
         dispatch({ type: ACTIONS.LOGIN, payload: u });
       } else {
-        console.log(signinAnonymous);
         if (signinAnonymous) {
           auth()
             .signInAnonymously()

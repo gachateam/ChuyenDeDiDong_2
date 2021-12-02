@@ -14,7 +14,7 @@ import * as Animatable from 'react-native-animatable';
 import LinearGradient from 'react-native-linear-gradient';
 import FontAwesome from 'react-native-vector-icons/FontAwesome';
 import Feather from 'react-native-vector-icons/Feather';
-import auth, {firebase} from '@react-native-firebase/auth';
+import auth from '@react-native-firebase/auth';
 import firestore from '@react-native-firebase/firestore';
 import {Avatar} from 'react-native-paper';
 import {launchImageLibrary} from 'react-native-image-picker';
@@ -131,7 +131,6 @@ const EditProfileScreen = ({navigation}) => {
 
     launchImageLibrary(options, response => {
       console.log('Response = ', response.assets[0].uri);
-      console.log(123);
       if (response.didCancel) {
         console.log('User cancelled image picker');
       } else if (response.error) {
@@ -151,31 +150,27 @@ const EditProfileScreen = ({navigation}) => {
     let getUrl = '';
     // path to existing file on filesystem
     const reference = storage().ref(fileName);
-    console.log(fileName);
 
     // uploads file
     await reference.putFile(imageUriGallary.uri);
     await reference.getDownloadURL().then(url => {
       getUrl = url;
     });
-    console.log(getUrl);
+    
     firestore()
       .collection('users')
       .doc(auth().currentUser.uid)
       .update({
         username: data.username,
+        photoURL: getUrl,
       })
       .then(() => {
         console.log('User updated!');
       });
-    auth().currentUser.updateProfile({
-      photoURL: getUrl,
-    });
-    console.log(data.newpassword);
+
     reauthenticate(data.currentpassword)
       .then(() => {
-        var user = firebase.auth().currentUser;
-        user
+        auth().currentUser
           .updatePassword(data.newpassword)
           .then(() => {
             Alert.alert('Password was changed');

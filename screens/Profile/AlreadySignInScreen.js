@@ -11,7 +11,6 @@ import auth from '@react-native-firebase/auth';
 import firestore from '@react-native-firebase/firestore';
 import { useAuth } from '../../context/AuthContext';
 import { ACTIONS } from '../../context/AuthContext/Action';
-import Rank from '../../components/Rank';
 
 const AlreadySignInScreen = ({ navigation }) => {
   const { dispatch } = useAuth();
@@ -21,6 +20,7 @@ const AlreadySignInScreen = ({ navigation }) => {
     await dispatch({ type: ACTIONS.SIGNIN_ANONYMOUS, payload: true })
   };
   const [username, setUsername] = useState(null);
+  const [avatar, setAvatar] = useState('')
   useEffect(() => {
     firestore()
       .collection('users')
@@ -32,6 +32,7 @@ const AlreadySignInScreen = ({ navigation }) => {
         if (documentSnapshot.exists) {
           console.log('User data: ', documentSnapshot.data().username);
           setUsername(documentSnapshot.data().username);
+          setAvatar(documentSnapshot.data().photoURL)
         }
       });
   }, []);
@@ -42,8 +43,9 @@ const AlreadySignInScreen = ({ navigation }) => {
           <Avatar.Image
             size={70}
             source={{
-              uri: auth().currentUser.providerData[0].photoURL,
+              uri: avatar,
             }}
+            style={styles.backgroundAvatar}
           />
           <View>
             <View style={styles.content}>
@@ -68,7 +70,6 @@ const AlreadySignInScreen = ({ navigation }) => {
           </View>
         </View>
       </View>
-      <Rank />
     </SafeAreaView>
   );
 };
@@ -93,6 +94,9 @@ const styles = StyleSheet.create({
   signOutButton: {
     marginLeft: 20,
   },
+  backgroundAvatar: {
+    backgroundColor: '#fff' 
+  }
 });
 
 export default AlreadySignInScreen;

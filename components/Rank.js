@@ -1,9 +1,10 @@
-import React, {useState} from 'react'
+import React, { useState } from 'react'
 import { StyleSheet, Text, View, ScrollView, Image, Alert } from 'react-native'
+import { ButtonGroup } from 'react-native-elements';
 import Leaderboard from 'react-native-leaderboard';
 
 const Rank = () => {
-  const [profile, setprofile] = useState({
+  const state1 = {
     globalData: [
       { name: 'We Tu Lo', score: null, iconUrl: 'https://st2.depositphotos.com/1006318/5909/v/950/depositphotos_59094043-stock-illustration-profile-icon-male-avatar.jpg' },
       { name: 'Adam Savage', score: 12, iconUrl: 'https://www.shareicon.net/data/128x128/2016/09/15/829473_man_512x512.png' },
@@ -30,7 +31,13 @@ const Rank = () => {
       name: 'Joe Roddy',
       score: 69,
     }
-  });
+  }
+
+  const [globalData, setGlobalData] = useState(state1.globalData)
+  const [friendData, setFriendData] = useState(state1.friendData)
+  const [filter, setFilter] = useState(state1.filter)
+  const [userRank, setUserRank] = useState(state1.userRank)
+  const [user, setUser] = useState(state1.user)
 
   const alert = (title, body) => {
     Alert.alert(
@@ -44,19 +51,19 @@ const Rank = () => {
       return item2.score - item1.score;
     })
     let userRank = sorted.findIndex((item) => {
-      return item.name === profile.user.name;
+      return item.name === user.name;
     })
-    setprofile({ userRank: ++userRank });
+    setUserRank(userRank + 1)
     return sorted;
   }
 
   const props = {
     labelBy: 'name',
     sortBy: 'score',
-    data: profile.filter > 0 ? profile.friendData : profile.globalData,
+    data: filter > 0 ? friendData : globalData,
     icon: 'iconUrl',
     onRowPress: (item, index) => { alert(item.name + " clicked", item.score + " points, wow!") },
-    sort: sort()
+    sort: sort
   }
 
   return (
@@ -69,17 +76,17 @@ const Rank = () => {
           marginBottom: 15, marginTop: 20
         }}>
           <Text style={{ color: 'white', fontSize: 25, flex: 1, textAlign: 'right', marginRight: 40 }}>
-            {ordinal_suffix_of(profile.userRank)}
+            {ordinal_suffix_of(userRank)}
           </Text>
           <Image style={{ flex: .66, height: 60, width: 60, borderRadius: 60 / 2 }}
             source={{ uri: 'http://www.lovemarks.com/wp-content/uploads/profile-avatars/default-avatar-braindead-zombie.png' }} />
           <Text style={{ color: 'white', fontSize: 25, flex: 1, marginLeft: 40 }}>
-            {profile.user.score}pts
-                    </Text>
+            {user.score}pts
+          </Text>
         </View>
         <ButtonGroup
-          onPress={(x) => { setprofile({ filter: x }) }}
-          selectedIndex={profile.filter}
+          onPress={(x) => { setFilter(x) }}
+          selectedIndex={filter}
           buttons={['Global', 'Friends']}
           containerStyle={{ height: 30 }} />
       </View>
