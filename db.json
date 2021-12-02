@@ -5668,57 +5668,57 @@
                 }
             }
         },
-        "Fruit": {
+        "Food": {
             "easy": {
                 "vocabulary": [
                     {
-                        "word": "dog",
-                        "mean": "con chó",
+                        "word": "apple",
+                        "mean": "trái táo",
                         "image": "https://firebasestorage.googleapis.com/v0/b/englishlearning-ec586.appspot.com/o/dog.jpg?alt=media&token=64872756-04f9-4e8f-be7e-5fceef2f5401"
                     },
                     {
-                        "word": "cat",
-                        "mean": "con mèo",
+                        "word": "banana",
+                        "mean": "trái chuối",
                         "image": "https://firebasestorage.googleapis.com/v0/b/englishlearning-ec586.appspot.com/o/cat.jpg?alt=media&token=5f301eea-e9e3-4726-82a6-40c96ee48c08"
                     },
                     {
-                        "word": "ant",
-                        "mean": "con kiến",
+                        "word": "coconut",
+                        "mean": "trái dừa",
                         "image": "https://firebasestorage.googleapis.com/v0/b/englishlearning-ec586.appspot.com/o/ant.jpg?alt=media&token=01aeef58-48fc-4aec-a1a5-9086e53bfe96"
                     },
                     {
-                        "word": "bird",
-                        "mean": "con chim",
+                        "word": "lemon",
+                        "mean": "trái chanh",
                         "image": "https://firebasestorage.googleapis.com/v0/b/englishlearning-ec586.appspot.com/o/bird.jpg?alt=media&token=131cd185-9952-4935-9c06-7f7f0d6ff4c6"
                     },
                     {
-                        "word": "fish",
-                        "mean": "con cá",
+                        "word": "pear",
+                        "mean": "trái lê",
                         "image": "https://firebasestorage.googleapis.com/v0/b/englishlearning-ec586.appspot.com/o/fish.jpg?alt=media&token=1ad45fcb-7d59-4089-9a9d-11425634cf9a"
                     },
                     {
-                        "word": "mouse",
-                        "mean": "con chuột",
+                        "word": "grape",
+                        "mean": "trái nho",
                         "image": "https://firebasestorage.googleapis.com/v0/b/englishlearning-ec586.appspot.com/o/mouse.jpg?alt=media&token=e71a52d5-d8a7-4dd2-90ee-2ca51eb34774"
                     },
                     {
-                        "word": "crab",
-                        "mean": "con cua",
+                        "word": "mango",
+                        "mean": "trái xoài",
                         "image": "https://firebasestorage.googleapis.com/v0/b/englishlearning-ec586.appspot.com/o/crab.jpg?alt=media&token=80b094e2-26b0-4457-8cc3-22f9220885dc"
                     },
                     {
-                        "word": "bee",
-                        "mean": "con ong",
+                        "word": "strawberry",
+                        "mean": "trái dâu",
                         "image": "https://firebasestorage.googleapis.com/v0/b/englishlearning-ec586.appspot.com/o/bee.jpg?alt=media&token=3f7b401d-83c1-4a83-804f-836974d63420"
                     },
                     {
-                        "word": "fly",
-                        "mean": "con ruồi",
+                        "word": "peach",
+                        "mean": "trái đào",
                         "image": "https://firebasestorage.googleapis.com/v0/b/englishlearning-ec586.appspot.com/o/fly.jpg?alt=media&token=d2aa006d-1267-4ff2-8cff-7582cb6d6381"
                     },
                     {
-                        "word": "parrot",
-                        "mean": "con vẹt",
+                        "word": "orange",
+                        "mean": "trái cam",
                         "image": "https://firebasestorage.googleapis.com/v0/b/englishlearning-ec586.appspot.com/o/parrot.jpg?alt=media&token=83f42bc0-d1a4-451c-9fe1-c310cde92262"
                     }
                 ],
@@ -5728,452 +5728,452 @@
                             {
                                 "id": 0,
                                 "type": "4image",
-                                "question": "đâu là \"con chó\"",
+                                "question": "đâu là \"trái táo\"",
                                 "ans": [
-                                    "cat",
-                                    "dog",
-                                    "ant",
-                                    "fish"
+                                    "banana",
+                                    "apple",
+                                    "coconut",
+                                    "pear"
                                 ],
                                 "ansC": 2,
-                                "hint": "dog"
+                                "hint": "apple"
                             },
                             {
                                 "id": 1,
                                 "type": "4image",
-                                "question": "đâu là \"con mèo\"",
+                                "question": "đâu là \"trái chuối\"",
                                 "ans": [
-                                    "cat",
-                                    "fish",
-                                    "ant",
-                                    "dog"
+                                    "banana",
+                                    "pear",
+                                    "coconut",
+                                    "apple"
                                 ],
                                 "ansC": 1,
-                                "hint": "cat"
+                                "hint": "banana"
                             },
                             {
                                 "id": 2,
                                 "type": "4image",
-                                "question": "đâu là \"con kiến\"",
+                                "question": "đâu là \"trái dừa\"",
                                 "ans": [
-                                    "dog",
-                                    "cat",                                    
-                                    "fish",
-                                    "ant"
+                                    "apple",
+                                    "banana",                                    
+                                    "pear",
+                                    "coconut"
                                 ],
                                 "ansC": 4,
-                                "hint": "ant"
+                                "hint": "coconut"
                             },
                             {
                                 "id": 3,
                                 "type": "4image",
-                                "question": "đâu là \"con cá\"",
+                                "question": "đâu là \"trái lê\"",
                                 "ans": [
-                                    "dog",
-                                    "fish",
-                                    "ant",
-                                    "cat"
+                                    "apple",
+                                    "pear",
+                                    "coconut",
+                                    "banana"
                                 ],
                                 "ansC": 2,
-                                "hint": "fish"
+                                "hint": "pear"
                             },
                             {
                                 "id": 4,
                                 "type": "4image",
-                                "question": "dịch \"con chim\"",
+                                "question": "dịch \"trái chanh\"",
                                 "ans": [
-                                    "ant",
-                                    "mouse",
-                                    "bird",
-                                    "fish"
+                                    "coconut",
+                                    "grape",
+                                    "lemon",
+                                    "pear"
                                 ],
                                 "ansC": 3,
-                                "hint": "bird"
+                                "hint": "lemon"
                             },
                             {
                                 "id": 5,
                                 "type": "4image",
-                                "question": "dịch \"con chuột\"",
+                                "question": "dịch \"trái nho\"",
                                 "ans": [
-                                    "mouse",
-                                    "cat",
-                                    "bird",
-                                    "ant"
+                                    "grape",
+                                    "banana",
+                                    "lemon",
+                                    "coconut"
                                 ],
                                 "ansC": 1,
-                                "hint": "mouse"
+                                "hint": "grape"
                             },
                             {
                                 "id": 6,
                                 "type": "4image",
-                                "question": "đâu là \"con cua\"",
+                                "question": "đâu là \"trái xoài\"",
                                 "ans": [
-                                    "crab",
-                                    "bee",
-                                    "ant",
-                                    "mouse"
+                                    "mango",
+                                    "strawberry",
+                                    "coconut",
+                                    "grape"
                                 ],
                                 "ansC": 1,
-                                "hint": "crab"
+                                "hint": "mango"
                             },
                             {
                                 "id": 7,
                                 "type": "4image",
-                                "question": "đâu là \"con ong\"",
+                                "question": "đâu là \"trái dâu\"",
                                 "ans": [
-                                    "parrot",
-                                    "fish",
-                                    "bee",
-                                    "fly"
+                                    "orange",
+                                    "pear",
+                                    "strawberry",
+                                    "peach"
                                 ],
                                 "ansC": 3,
-                                "hint": "bee"
+                                "hint": "strawberry"
                             },
                             {
                                 "id": 8,
                                 "type": "4image",
-                                "question": "đâu là \"con ruồi\"",
+                                "question": "đâu là \"trái đào\"",
                                 "ans": [
-                                    "bee",
-                                    "fly",                                    
-                                    "parrot",
-                                    "crab"
+                                    "strawberry",
+                                    "peach",                                    
+                                    "orange",
+                                    "mango"
                                 ],
                                 "ansC": 2,
-                                "hint": "fly"
+                                "hint": "peach"
                             },
                             {
                                 "id": 9,
                                 "type": "4image",
-                                "question": "đâu là \"con vẹt\"",
+                                "question": "đâu là \"trái cam\"",
                                 "ans": [
-                                    "fly",
-                                    "crab",
-                                    "ant",
-                                    "parrot"
+                                    "peach",
+                                    "mango",
+                                    "coconut",
+                                    "orange"
                                 ],
                                 "ansC": 4,
-                                "hint": "parrot"
+                                "hint": "orange"
                             },
                             {
                                 "id": 10,
                                 "type": "4vocabulary",
-                                "question": "dịch \"con chuột\"",
+                                "question": "dịch \"trái nho\"",
                                 "ans": [
-                                    "cat",
-                                    "mouse",
-                                    "ant",
-                                    "fish"
+                                    "banana",
+                                    "grape",
+                                    "coconut",
+                                    "pear"
                                 ],
                                 "ansC": 2,
-                                "hint": "mouse"
+                                "hint": "grape"
                             },
                             {
                                 "id": 11,
                                 "type": "4vocabulary",
-                                "question": "dịch \"con chim\"",
+                                "question": "dịch \"trái chanh\"",
                                 "ans": [
-                                    "bird",
-                                    "mouse",
-                                    "ant",
-                                    "fish"
+                                    "lemon",
+                                    "grape",
+                                    "coconut",
+                                    "pear"
                                 ],
                                 "ansC": 1,
-                                "hint": "bird"
+                                "hint": "lemon"
                             },
                             {
                                 "id": 12,
                                 "type": "4vocabulary",
-                                "question": "dịch \"con kiến\"",
+                                "question": "dịch \"trái dừa\"",
                                 "ans": [
-                                    "cat",
-                                    "fish",
-                                    "ant",
-                                    "dog"
+                                    "banana",
+                                    "pear",
+                                    "coconut",
+                                    "apple"
                                 ],
                                 "ansC": 3,
-                                "hint": "ant"
+                                "hint": "coconut"
                             },
                             {
                                 "id": 13,
                                 "type": "4vocabulary",
-                                "question": "dịch \"con cá\"",
+                                "question": "dịch \"trái lê\"",
                                 "ans": [
-                                    "mouse",
-                                    "dog",
-                                    "bird",
-                                    "fish"
+                                    "grape",
+                                    "apple",
+                                    "lemon",
+                                    "pear"
                                 ],
                                 "ansC": 4,
-                                "hint": "fish"
+                                "hint": "pear"
                             },
                             {
                                 "id": 14,
                                 "type": "4vocabulary",
-                                "question": "dịch \"con vẹt\"",
+                                "question": "dịch \"trái cam\"",
                                 "ans": [
-                                    "parrot",
-                                    "bee",
-                                    "fly",                                    
-                                    "crab"
+                                    "orange",
+                                    "strawberry",
+                                    "peach",                                    
+                                    "mango"
                                 ],
                                 "ansC": 1,
-                                "hint": "parrot"
+                                "hint": "orange"
                             },
                             {
                                 "id": 15,
                                 "type": "4vocabulary",
-                                "question": "dịch \"con ruồi\"",
+                                "question": "dịch \"trái đào\"",
                                 "ans": [
-                                    "crab",
-                                    "bee",
-                                    "fly",
-                                    "mouse"
+                                    "mango",
+                                    "strawberry",
+                                    "peach",
+                                    "grape"
                                 ],
                                 "ansC": 3,
-                                "hint": "fly"
+                                "hint": "peach"
                             },
                             {
                                 "id": 16,
                                 "type": "4vocabulary",
-                                "question": "dịch \"con cua\"",
+                                "question": "dịch \"trái xoài\"",
                                 "ans": [
-                                    "fly",
-                                    "crab",
-                                    "ant",
-                                    "parrot"
+                                    "peach",
+                                    "mango",
+                                    "coconut",
+                                    "orange"
                                 ],
                                 "ansC": 2,
-                                "hint": "crab"
+                                "hint": "mango"
                             },
                             {
                                 "id": 17,
                                 "type": "4vocabulary",
-                                "question": "dịch \"con ong\"",
+                                "question": "dịch \"trái dâu\"",
                                 "ans": [
-                                    "parrot",
-                                    "fish",
-                                    "fly",
-                                    "bee"
+                                    "orange",
+                                    "pear",
+                                    "peach",
+                                    "strawberry"
                                 ],
                                 "ansC": 4,
-                                "hint": "bee"
+                                "hint": "strawberry"
                             },
                             {
                                 "id": 18,
                                 "type": "4vocabulary",
-                                "question": "dịch \"con chó\"",
+                                "question": "dịch \"trái táo\"",
                                 "ans": [
-                                    "fly",
-                                    "crab",
-                                    "ant",
-                                    "dog"
+                                    "peach",
+                                    "mango",
+                                    "coconut",
+                                    "apple"
                                 ],
                                 "ansC": 4,
-                                "hint": "dog"
+                                "hint": "apple"
                             },
                             {
                                 "id": 19,
                                 "type": "4vocabulary",
-                                "question": "dịch \"con mèo\"",
+                                "question": "dịch \"trái chuối\"",
                                 "ans": [
-                                    "parrot",
-                                    "fish",
-                                    "cat",
-                                    "bee"
+                                    "orange",
+                                    "pear",
+                                    "banana",
+                                    "strawberry"
                                 ],
                                 "ansC": 3,
-                                "hint": "cat"
+                                "hint": "banana"
                             },
                             {
                                 "id": 20,
                                 "type": "listen",
-                                "question": "ant",
-                                "meanQuestion": "con kiến",
+                                "question": "coconut",
+                                "meanQuestion": "trái dừa",
                                 "ans": [
-                                    "bird",
-                                    "mouse",
-                                    "dog",
-                                    "ant"
+                                    "lemon",
+                                    "grape",
+                                    "apple",
+                                    "coconut"
                                 ],
                                 "ansC": 4,
-                                "hint": "ant"
+                                "hint": "coconut"
                             },
                             {
                                 "id": 21,
                                 "type": "listen",
-                                "question": "cat",
-                                "meanQuestion": "con mèo",
+                                "question": "banana",
+                                "meanQuestion": "trái chuối",
                                 "ans": [
-                                    "mouse",
-                                    "cat",
-                                    "ant",
-                                    "fish"
+                                    "grape",
+                                    "banana",
+                                    "coconut",
+                                    "pear"
                                 ],
                                 "ansC": 2,
-                                "hint": "cat"
+                                "hint": "banana"
                             },
                             {
                                 "id": 22,
                                 "type": "listen",
-                                "question": "parrot",
-                                "meanQuestion": "con vẹt",
+                                "question": "orange",
+                                "meanQuestion": "trái cam",
                                 "ans": [
-                                    "bird",
-                                    "mouse",
-                                    "dog",
-                                    "parrot"
+                                    "lemon",
+                                    "grape",
+                                    "apple",
+                                    "orange"
                                 ],
                                 "ansC": 4,
-                                "hint": "parrot"
+                                "hint": "orange"
                             },
                             {
                                 "id": 23,
                                 "type": "listen",
-                                "question": "fly",
-                                "meanQuestion": "con ruồi",
+                                "question": "peach",
+                                "meanQuestion": "trái đào",
                                 "ans": [
-                                    "mouse",
-                                    "fly",
-                                    "ant",
-                                    "fish"
+                                    "grape",
+                                    "peach",
+                                    "coconut",
+                                    "pear"
                                 ],
                                 "ansC": 2,
-                                "hint": "fly"
+                                "hint": "peach"
                             },
                             {
                                 "id": 24,
                                 "type": "listen",
-                                "question": "dog",
-                                "meanQuestion": "con chó",
+                                "question": "apple",
+                                "meanQuestion": "trái táo",
                                 "ans": [
-                                    "bird",
-                                    "mouse",
-                                    "dog",
-                                    "ant"
+                                    "lemon",
+                                    "grape",
+                                    "apple",
+                                    "coconut"
                                 ],
                                 "ansC": 3,
-                                "hint": "dog"
+                                "hint": "apple"
                             },
                             {
                                 "id": 25,
                                 "type": "listen",
-                                "question": "bird",
-                                "meanQuestion": "con chim",
+                                "question": "lemon",
+                                "meanQuestion": "trái chanh",
                                 "ans": [
-                                    "bird",
-                                    "cat",
-                                    "ant",
-                                    "fish"
+                                    "lemon",
+                                    "banana",
+                                    "coconut",
+                                    "pear"
                                 ],
                                 "ansC": 1,
-                                "hint": "bird"
+                                "hint": "lemon"
                             },
                             {
                                 "id": 26,
                                 "type": "listen",
-                                "question": "fish",
-                                "meanQuestion": "con cá",
+                                "question": "pear",
+                                "meanQuestion": "trái lê",
                                 "ans": [
-                                    "bird",
-                                    "mouse",
-                                    "dog",
-                                    "fish"
+                                    "lemon",
+                                    "grape",
+                                    "apple",
+                                    "pear"
                                 ],
                                 "ansC": 4,
-                                "hint": "fish"
+                                "hint": "pear"
                             },
                             {
                                 "id": 27,
                                 "type": "listen",
-                                "question": "mouse",
-                                "meanQuestion": "con chuột",
+                                "question": "grape",
+                                "meanQuestion": "trái nho",
                                 "ans": [
-                                    "parrot",
-                                    "mouse",
-                                    "ant",
-                                    "fish"
+                                    "orange",
+                                    "grape",
+                                    "coconut",
+                                    "pear"
                                 ],
                                 "ansC": 2,
-                                "hint": "mouse"
+                                "hint": "grape"
                             },
                             {
                                 "id": 28,
                                 "type": "listen",
-                                "question": "crab",
-                                "meanQuestion": "con cua",
+                                "question": "mango",
+                                "meanQuestion": "trái xoài",
                                 "ans": [
-                                    "bird",
-                                    "mouse",
-                                    "crab",
-                                    "parrot"
+                                    "lemon",
+                                    "grape",
+                                    "mango",
+                                    "orange"
                                 ],
                                 "ansC": 3,
-                                "hint": "crab"
+                                "hint": "mango"
                             },
                             {
                                 "id": 29,
                                 "type": "listen",
-                                "question": "bee",
-                                "meanQuestion": "con ong",
+                                "question": "strawberry",
+                                "meanQuestion": "trái dâu",
                                 "ans": [
-                                    "mouse",
-                                    "fly",
-                                    "ant",
-                                    "bee"
+                                    "grape",
+                                    "peach",
+                                    "coconut",
+                                    "strawberry"
                                 ],
                                 "ansC": 4,
-                                "hint": "bee"
+                                "hint": "strawberry"
                             },
                             {
                                 "id": 30,
                                 "type": "read",
-                                "question": "bird"
+                                "question": "lemon"
                             },
                             {
                                 "id": 31,
                                 "type": "read",
-                                "question": "fish"
+                                "question": "pear"
                             },
                             {
                                 "id": 32,
                                 "type": "read",
-                                "question": "bee"
+                                "question": "strawberry"
                             },
                             {
                                 "id": 33,
                                 "type": "read",
-                                "question": "crab"
+                                "question": "mango"
                             },
                             {
                                 "id": 34,
                                 "type": "read",
-                                "question": "dog"
+                                "question": "apple"
                             },
                             {
                                 "id": 35,
                                 "type": "read",
-                                "question": "cat"
+                                "question": "banana"
                             },
                             {
                                 "id": 36,
                                 "type": "read",
-                                "question": "mouse"
+                                "question": "grape"
                             },
                             {
                                 "id": 37,
                                 "type": "read",
-                                "question": "ant"
+                                "question": "coconut"
                             },
                             {
                                 "id": 38,
                                 "type": "read",
-                                "question": "fly"
+                                "question": "peach"
                             },
                             {
                                 "id": 39,
                                 "type": "read",
-                                "question": "parrot"
+                                "question": "orange"
                             }
                         ],
                         "unit": [

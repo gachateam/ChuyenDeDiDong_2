@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, {useEffect, useState} from 'react';
 import {
   View,
   StyleSheet,
@@ -6,21 +6,21 @@ import {
   TouchableOpacity,
   Text,
 } from 'react-native';
-import { Avatar, IconButton, Title } from 'react-native-paper';
+import {Avatar, IconButton, Title} from 'react-native-paper';
 import auth from '@react-native-firebase/auth';
 import firestore from '@react-native-firebase/firestore';
-import { useAuth } from '../../context/AuthContext';
-import { ACTIONS } from '../../context/AuthContext/Action';
-import Rank from '../../components/Rank';
+import {useAuth} from '../../context/AuthContext';
+import {ACTIONS} from '../../context/AuthContext/Action';
 
-const AlreadySignInScreen = ({ navigation }) => {
-  const { dispatch } = useAuth();
+const AlreadySignInScreen = ({navigation}) => {
+  const {dispatch} = useAuth();
   const handleSignout = async () => {
     auth().signOut();
-    dispatch({ type: ACTIONS.LOGIN, payload: null });
-    await dispatch({ type: ACTIONS.SIGNIN_ANONYMOUS, payload: true })
+    dispatch({type: ACTIONS.LOGIN, payload: null});
+    await dispatch({type: ACTIONS.SIGNIN_ANONYMOUS, payload: true});
   };
   const [username, setUsername] = useState(null);
+  const [avatar, setAvatar] = useState();
   useEffect(() => {
     firestore()
       .collection('users')
@@ -32,6 +32,7 @@ const AlreadySignInScreen = ({ navigation }) => {
         if (documentSnapshot.exists) {
           console.log('User data: ', documentSnapshot.data().username);
           setUsername(documentSnapshot.data().username);
+          setAvatar(documentSnapshot.data().photoURL);
         }
       });
   }, []);
@@ -39,12 +40,15 @@ const AlreadySignInScreen = ({ navigation }) => {
     <SafeAreaView style={styles.container}>
       <View style={styles.userInfor}>
         <View style={styles.innerUserInfor}>
-          <Avatar.Image
-            size={70}
-            source={{
-              uri: auth().currentUser.providerData[0].photoURL,
-            }}
-          />
+          {avatar && (
+            <Avatar.Image
+              size={70}
+              source={{
+                uri: avatar,
+              }}
+              style={styles.backgroundAvatar}
+            />
+          )}
           <View>
             <View style={styles.content}>
               <Title>
@@ -54,12 +58,12 @@ const AlreadySignInScreen = ({ navigation }) => {
               </Title>
               {!auth().currentUser.providerData[0].providerId ===
                 'google.com' && (
-                  <IconButton
-                    icon="square-edit-outline"
-                    size={20}
-                    onPress={() => navigation.navigate('EditProfileScreen')}
-                  />
-                )}
+                <IconButton
+                  icon="square-edit-outline"
+                  size={20}
+                  onPress={() => navigation.navigate('EditProfileScreen')}
+                />
+              )}
             </View>
 
             <TouchableOpacity onPress={handleSignout}>
@@ -68,7 +72,6 @@ const AlreadySignInScreen = ({ navigation }) => {
           </View>
         </View>
       </View>
-      <Rank />
     </SafeAreaView>
   );
 };
@@ -92,6 +95,9 @@ const styles = StyleSheet.create({
   },
   signOutButton: {
     marginLeft: 20,
+  },
+  backgroundAvatar: {
+    backgroundColor: '#fff',
   },
 });
 

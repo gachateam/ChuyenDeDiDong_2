@@ -1,4 +1,4 @@
 export const ACTIONS = {
   LOGIN: 'login',
-  SIGNIN_ANONYMOUS: 'anonymus'
+  SIGNIN_ANONYMOUS: 'anonymus',
 };

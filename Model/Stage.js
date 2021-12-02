@@ -30,4 +30,7 @@ export class Stage {
       return {difficult: this.difficult, stage: this.stage + 1};
     }
   }
+  getExp(currentExp = 0) {
+    return {score: currentExp + this.difficult * 3 + this.stage + 1};
+  }
 }

@@ -1,9 +1,9 @@
-import React, { useEffect } from 'react';
-import { View, Text, StyleSheet } from 'react-native';
-import { BottomPopup } from './BottomPopup';
+import React, {useEffect} from 'react';
+import {View, Text, StyleSheet} from 'react-native';
+import {BottomPopup} from './BottomPopup';
 import auth from '@react-native-firebase/auth';
-import { useAuth } from '../context/AuthContext';
-import { ACTIONS } from './../context/AuthContext/Action';
+import {useAuth} from '../context/AuthContext';
+import {ACTIONS} from './../context/AuthContext/Action';
 
 const popupList = [
   {
@@ -19,16 +19,14 @@ const popupList = [
     name: 'Note',
   },
 ];
-function Home({ navigation }) {
+function Home({navigation}) {
   let popupRef = React.createRef();
-  const { dispatch, signinAnonymous } = useAuth();
-  console.log(auth().currentUser);
+  const {dispatch, signinAnonymous} = useAuth();
   useEffect(() => {
     const unsubcribe = auth().onAuthStateChanged(u => {
       if (u) {
-        dispatch({ type: ACTIONS.LOGIN, payload: u });
+        dispatch({type: ACTIONS.LOGIN, payload: u});
       } else {
-        console.log(signinAnonymous);
         if (signinAnonymous) {
           auth()
             .signInAnonymously()
@@ -38,7 +36,7 @@ function Home({ navigation }) {
         }
       }
     });
-    return () => unsubcribe()
+    return () => unsubcribe();
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [signinAnonymous]);
 

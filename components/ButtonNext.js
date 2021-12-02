@@ -19,21 +19,44 @@ const ButtonNext = ({checkAns, navigation}) => {
   } = useQuestion();
   const {listQuestion, unit, stage, title, hideTabBar} = useGlobal();
 
-  const checkAnsCorrect = (
-    checkAnsFunc,
-    listQuestionFunc,
-    activeQuestionFunc,
-    ansChoiceFunc,
-  ) => {
-    if (!checkAnsFunc(listQuestionFunc[activeQuestionFunc], ansChoiceFunc)) {
-      dispatch({type: ACTIONS.INCORRECT, payload: activeQuestionFunc});
+  const checkAnsCorrect = () => {
+    if (!checkAns(listQuestion[activeQuestion], ansChoice)) {
+      dispatch({type: ACTIONS.INCORRECT, payload: activeQuestion});
       Alert.alert('Thông báo!', 'Sai rồi', [{text: 'ukm'}]);
     } else {
       Alert.alert('Thông báo!', 'Đúng rồi', [{text: 'ukm'}]);
     }
   };
 
-  const handleNextQuestion = () => {
+  const updateState = () => {
+    return firestore()
+      .collection('users/' + auth().currentUser.uid + '/category')
+      .doc(title)
+      .set(unit.nextStage(), {merge: true})
+      .then(() => {
+        console.log('User updated!');
+      });
+  };
+
+  const updateScore = async () => {
+    let score = 0;
+    await firestore()
+      .collection('users')
+      .doc(auth().currentUser.uid)
+      .get()
+      .then(documentSnapshot => {
+        score = documentSnapshot.data().score;
+      });
+    await firestore()
+      .collection('users')
+      .doc(auth().currentUser.uid)
+      .set(unit.getExp(score), {merge: true})
+      .then(() => {
+        console.log('User updated!');
+      });
+  };
+
+  const handleNextQuestion = async () => {
     if (ansQuestionIncorrect) {
       if (!(typeof ansChoice === 'object' && ansChoice.length === 0)) {
         checkAnsCorrect(checkAns, listQuestion, activeQuestion, ansChoice);
@@ -49,13 +72,8 @@ const ButtonNext = ({checkAns, navigation}) => {
         dispatch({type: ACTIONS.NEXT_QUESTION, payload: next});
       }
       if (questionIncorrect.length === 0 && unit.compare(stage) === 0) {
-        firestore()
-          .collection('users/' + auth().currentUser.uid + '/category')
-          .doc(title)
-          .update(unit.nextStage())
-          .then(() => {
-            console.log('User updated!');
-          });
+        await updateState();
+        await updateScore();
 
         dispatch({type: ACTIONS_GLOBAL.HIDE_TAB_BAR, payload: !hideTabBar});
         navigation.reset({
