@@ -1,9 +1,10 @@
-import React, {useState, useEffect} from 'react';
-import {StyleSheet, Text, View, Image, Alert} from 'react-native';
-import {ButtonGroup} from 'react-native-elements';
+import React, { useState, useEffect } from 'react';
+import { StyleSheet, Text, View, Image, Alert } from 'react-native';
+import { ButtonGroup } from 'react-native-elements';
 import Leaderboard from 'react-native-leaderboard';
 import firestore from '@react-native-firebase/firestore';
 import auth from '@react-native-firebase/auth';
+import { useAuth } from '../context/AuthContext';
 
 const Rank = () => {
   const state1 = {
@@ -29,12 +30,14 @@ const Rank = () => {
     ],
   };
 
+  const { user } = useAuth()
+
   const [globalData, setGlobalData] = useState();
   // eslint-disable-next-line no-unused-vars
   const [friendData, setFriendData] = useState(state1.friendData);
   const [filter, setFilter] = useState(0);
   const [userRank, setUserRank] = useState(1);
-  const [user, setUser] = useState();
+  const [userInRank, setUser] = useState();
 
   useEffect(() => {
     let globalData1 = [];
@@ -53,10 +56,19 @@ const Rank = () => {
         });
         setGlobalData(globalData1);
       });
-  }, []);
+
+    auth().currentUser && firestore()
+      .collection('users')
+      .doc(auth().currentUser.uid)
+      .get()
+      .then(documentSnapshot => {
+        setUser(documentSnapshot.data());
+      });
+
+  }, [user]);
 
   const alert = (title, body) => {
-    Alert.alert(title, body, [{text: 'OK', onPress: () => {}}], {
+    Alert.alert(title, body, [{ text: 'OK', onPress: () => { } }], {
       cancelable: false,
     });
   };
@@ -67,9 +79,10 @@ const Rank = () => {
       data.sort((item1, item2) => {
         return item2.score - item1.score;
       });
-    let userRankTemp = sorted.findIndex(item => {
-      return item.username === user.username;
-    });
+    let userRankTemp = userInRank && sorted[sorted.length - 1].score < userInRank.score ? sorted.findIndex(item => {
+      let name = (userInRank && userInRank.username) || ""
+      return item.username === name;
+    }) : -1;
     setUserRank(userRankTemp + 1);
     return sorted;
   };
@@ -96,13 +109,13 @@ const Rank = () => {
           <Image
             style={styles.leaderboardRankAvatar}
             source={{
-              uri: user
-                ? user.photoURL
+              uri: userInRank
+                ? userInRank.photoURL
                 : 'https://img.pokemondb.net/artwork/riolu.jpg',
             }}
           />
           <Text style={styles.leaderboardRankScore}>
-            {user && user.score}pts
+            {userInRank ? userInRank.score : 0}pts
           </Text>
         </View>
         <ButtonGroup
@@ -114,7 +127,7 @@ const Rank = () => {
           containerStyle={styles.buttonGroup}
         />
       </View>
-      {globalData && friendData && user && <Leaderboard {...props} />}
+      {globalData && friendData && <Leaderboard {...props} />}
     </View>
   );
 };
@@ -173,5 +186,5 @@ const styles = StyleSheet.create({
     flex: 1,
     marginLeft: 40,
   },
-  buttonGroup: {height: 30},
+  buttonGroup: { height: 30 },
 });
