@@ -43,9 +43,9 @@ const ChoiceMultiAnswer = ({navigation}) => {
           const hanldePress = () => {
             dispatch({
               type: ACTIONS.CHOICE_ANS,
-              payload: ansChoice.includes(i + 1)
-                ? ansChoice.filter(item => item !== i + 1)
-                : ansChoice.concat(i + 1),
+              payload: ansChoice.includes(e)
+                ? ansChoice.filter(item => item !== e)
+                : ansChoice.concat(e),
             });
           };
 
@@ -54,9 +54,10 @@ const ChoiceMultiAnswer = ({navigation}) => {
               onPress={hanldePress}
               style={[
                 styles.optionButton,
-                ansChoice.includes(i + 1) ? styles.choice : null,
+                ansChoice.includes(e) ? styles.choice : null,
               ]}
-              key={i}>
+              key={i}
+            >
               <Text style={styles.option}>{e}</Text>
             </TouchableOpacity>
           );
@@ -64,7 +65,7 @@ const ChoiceMultiAnswer = ({navigation}) => {
       </View>
 
       <View style={styles.bottom}>
-        <ButtonNext checkAns={checkAns} />
+        <ButtonNext checkAns={checkAns} navigation={navigation} />
       </View>
     </View>
   );

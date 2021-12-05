@@ -7,6 +7,11 @@ const reducers = (state, action) => {
         ...state,
         user: action.payload,
       };
+    case ACTIONS.SIGNIN_ANONYMOUS:
+      return {
+        ...state,
+        signinAnonymous: action.payload,
+      };
     default:
       return state;
   }

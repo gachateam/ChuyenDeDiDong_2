@@ -2,12 +2,13 @@ import React from 'react';
 import {StyleSheet, Text, View} from 'react-native';
 import AntDesign from 'react-native-vector-icons/AntDesign';
 import Tts from 'react-native-tts';
+import {stylesQuestionBox} from './../style/QuestionBoxStyle';
 
 const QuestionBoxListen = ({question, meanQuestion}) => {
   return (
     <View style={styles.top}>
       <AntDesign
-        style={styles.icon}
+        style={stylesQuestionBox.icon}
         name="sound"
         size={32}
         color="blue"
@@ -18,8 +19,8 @@ const QuestionBoxListen = ({question, meanQuestion}) => {
           });
         }}
       />
-      <View>
-        <Text style={styles.questions}>{meanQuestion}</Text>
+      <View style={stylesQuestionBox.textBox}>
+        <Text style={stylesQuestionBox.questions}>{meanQuestion}</Text>
       </View>
     </View>
   );
@@ -37,14 +38,5 @@ const styles = StyleSheet.create({
     backgroundColor: '#CCFFCC',
     height: 100,
     flexDirection: 'row',
-  },
-  questions: {
-    fontSize: 28,
-    textAlign: 'center',
-    alignItems: 'center',
-    textTransform: 'capitalize',
-  },
-  icon: {
-    paddingHorizontal: 30,
   },
 });

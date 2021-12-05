@@ -4,12 +4,13 @@ import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
 import {useGlobal} from '../context/GlobalContext';
 import {useQuestion} from '../context/QuestionContext';
 import {ACTIONS} from './../context/Action';
+import ChallengeHeart from './ChallengeHeart';
 
 const Header = ({navigation}) => {
   const [progressStatus, setProgressStatus] = useState(10);
   const {activeQuestion, questionIncorrect, ansQuestionIncorrect} =
     useQuestion();
-  const {hideTabBar, dispatch, listQuestion} = useGlobal();
+  const {hideTabBar, dispatch, listQuestion, review} = useGlobal();
 
   const anim = new Animated.Value(0);
 
@@ -18,6 +19,7 @@ const Header = ({navigation}) => {
     return () => {
       anim.stopAnimation();
     };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [onAnimate]);
 
   useEffect(() => {
@@ -32,12 +34,8 @@ const Header = ({navigation}) => {
           listQuestion.length,
       );
     }
-  }, [
-    activeQuestion,
-    ansQuestionIncorrect,
-    listQuestion.length,
-    questionIncorrect.length,
-  ]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [activeQuestion]);
 
   const onAnimate = () => {
     Animated.timing(anim, {
@@ -48,7 +46,6 @@ const Header = ({navigation}) => {
   };
 
   const handlePress = () => {
-    // navigation.navigate('Home');
     dispatch({type: ACTIONS.HIDE_TAB_BAR, payload: !hideTabBar});
     navigation.reset({
       index: 0,
@@ -61,12 +58,17 @@ const Header = ({navigation}) => {
   };
 
   return (
-    <View style={styles.container}>
-      <MaterialIcons name="arrow-back-ios" size={32} onPress={handlePress} />
-      <View style={styles.containerProgress}>
-        <Animated.View style={[styles.inner, {width: progressStatus + '%'}]} />
+    <>
+      <View style={styles.container}>
+        <MaterialIcons name="arrow-back-ios" size={32} onPress={handlePress} />
+        <View style={styles.containerProgress}>
+          <Animated.View
+            style={[styles.inner, {width: progressStatus + '%'}]}
+          />
+        </View>
       </View>
-    </View>
+      {review && <ChallengeHeart navigation={navigation} />}
+    </>
   );
 };
 

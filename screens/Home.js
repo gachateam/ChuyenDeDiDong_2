@@ -21,21 +21,24 @@ const popupList = [
 ];
 function Home({navigation}) {
   let popupRef = React.createRef();
-  const {dispatch} = useAuth();
-
+  const {dispatch, signinAnonymous} = useAuth();
   useEffect(() => {
-    auth().onAuthStateChanged(u => {
+    const unsubcribe = auth().onAuthStateChanged(u => {
       if (u) {
         dispatch({type: ACTIONS.LOGIN, payload: u});
       } else {
-        auth()
-          .signInAnonymously()
-          .then(() => {
-            console.log('User signed in anonymously');
-          });
+        if (signinAnonymous) {
+          auth()
+            .signInAnonymously()
+            .then(() => {
+              console.log('User signed in anonymously');
+            });
+        }
       }
     });
-  }, [dispatch]);
+    return () => unsubcribe();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [signinAnonymous]);
 
   const onShowPopup = () => {
     popupRef.show();

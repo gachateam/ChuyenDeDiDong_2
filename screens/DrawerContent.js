@@ -11,7 +11,7 @@ export function DrawerContent({navigation}) {
   const {dispatch} = useGlobal();
   const [category, setCategory] = useState([]);
 
-  const getCategory = () => {
+  useEffect(() => {
     database
       .ref('/category')
       .once('value')
@@ -27,10 +27,7 @@ export function DrawerContent({navigation}) {
           setCategory(temp);
         });
       });
-  };
-
-  useEffect(() => {
-    getCategory();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (

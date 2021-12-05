@@ -7,6 +7,7 @@ import {StyleSheet, TouchableOpacity} from 'react-native';
 import * as Animatable from 'react-native-animatable';
 import {useGlobal} from '../context/GlobalContext';
 import AuthChange from './Profile/AuthChange';
+import Rank from './../components/Rank';
 
 const Tab = createBottomTabNavigator();
 
@@ -33,7 +34,8 @@ const TabButton = props => {
     <TouchableOpacity
       onPress={onPress}
       style={styles.container}
-      activeOpacity={1}>
+      activeOpacity={1}
+    >
       <Animatable.View ref={viewRef} style={styles.container} duration={1000}>
         <AntDesign
           name={name}
@@ -62,7 +64,8 @@ const MyTabs = ({navigation}) => {
           borderRadius: 10,
         },
         tabBarHideOnKeyboard: true,
-      }}>
+      }}
+    >
       <Tab.Screen
         name="Home"
         component={HomeScreen}
@@ -77,6 +80,14 @@ const MyTabs = ({navigation}) => {
         options={{
           tabBarShowLabel: false,
           tabBarButton: props => <TabButton {...props} name="setting" />,
+        }}
+      />
+      <Tab.Screen
+        name="Rank"
+        component={Rank}
+        options={{
+          tabBarShowLabel: false,
+          tabBarButton: props => <TabButton {...props} name="Trophy" />,
         }}
       />
       <Tab.Screen

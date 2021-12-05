@@ -16,7 +16,8 @@ const HomeScreen = ({navigation}) => {
     <NavigationContainer independent={true}>
       <Drawer.Navigator
         initialRouteName="Home"
-        drawerContent={props => <DrawerContent {...props} />}>
+        drawerContent={props => <DrawerContent {...props} />}
+      >
         <Drawer.Screen name="Home" component={Home} />
         <Drawer.Screen
           name="StageScreen"

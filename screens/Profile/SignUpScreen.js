@@ -27,6 +27,8 @@ const SignUpScreen = ({navigation}) => {
     check_textInputChange: false,
   });
 
+  const avtDefault =
+    'https://firebasestorage.googleapis.com/v0/b/englishlearning-ec586.appspot.com/o/img_264570.png?alt=media&token=f962d79f-1063-4a9a-8c10-81855af97368';
   const {dispatch} = useAuth();
   const usernameCharacter = 24;
   const emailRegex = /^[\w-.]+@([\w-]+\.)+[\w-]{2,4}$/;
@@ -127,6 +129,7 @@ const SignUpScreen = ({navigation}) => {
           .doc(auth().currentUser.uid)
           .set({
             username: data.username,
+            photoURL: avtDefault,
           })
           .catch(error => {
             console.log(
@@ -226,17 +229,20 @@ const SignUpScreen = ({navigation}) => {
           <View style={styles.button}>
             <TouchableOpacity
               style={styles.signIn}
-              onPress={() => handleSignUp()}>
+              onPress={() => handleSignUp()}
+            >
               <LinearGradient
                 colors={['#08d4c4', '#01ab9d']}
-                style={styles.signIn}>
+                style={styles.signIn}
+              >
                 <Text style={styles.textSignUp}>Sign Up</Text>
               </LinearGradient>
             </TouchableOpacity>
 
             <TouchableOpacity
               onPress={() => navigation.navigate('SignInScreen')}
-              style={[styles.signIn, styles.buttonSignIn]}>
+              style={[styles.signIn, styles.buttonSignIn]}
+            >
               <Text style={styles.textSignIn}>Sign In</Text>
             </TouchableOpacity>
           </View>

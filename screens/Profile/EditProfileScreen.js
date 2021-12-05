@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import {
   View,
   Text,
@@ -8,36 +8,52 @@ import {
   StyleSheet,
   ScrollView,
   StatusBar,
+  Alert,
 } from 'react-native';
 import * as Animatable from 'react-native-animatable';
 import LinearGradient from 'react-native-linear-gradient';
 import FontAwesome from 'react-native-vector-icons/FontAwesome';
 import Feather from 'react-native-vector-icons/Feather';
-import auth, {firebase} from '@react-native-firebase/auth';
+import auth from '@react-native-firebase/auth';
 import firestore from '@react-native-firebase/firestore';
-import {ACTIONS} from '../../context/AuthContext/Action';
-import {useAuth} from '../../context/AuthContext';
 import {Avatar} from 'react-native-paper';
+import {launchImageLibrary} from 'react-native-image-picker';
+import storage from '@react-native-firebase/storage';
 
 const EditProfileScreen = ({navigation}) => {
   const [data, setData] = React.useState({
     username: '',
-    email: '',
-    password: '',
+    currentpassword: '',
+    newpassword: '',
     confirm_password: '',
     check_textInputChange: false,
   });
 
-  const {dispatch} = useAuth();
   const usernameCharacter = 24;
-  const emailRegex = /^[\w-.]+@([\w-]+\.)+[\w-]{2,4}$/;
   const passCharacter = 6;
   const [errUsername, setErrUsername] = useState('');
-  const [errEmail, setErrEmail] = useState('');
-  const [errPass, setErrPass] = useState('');
-  const [errConfirmPass, setErrConfirmPass] = useState('');
-  // login error when sent email and password to firebase
-  const [loginError, setLoginError] = React.useState('');
+  const [errCurrentPass, setErrCurrentPass] = useState('');
+  const [errNewPass, setErrNewPass] = useState('');
+  const [errConfirmNewPass, setErrConfirmCurrentPass] = useState('');
+  const [username, setUsername] = useState(null);
+  const [imageUriGallary, setimageUriGallary] = useState({
+    uri: auth().currentUser.providerData[0].photoURL,
+  });
+  const [fileName, setfileName] = useState(null);
+  useEffect(() => {
+    firestore()
+      .collection('users')
+      .doc(auth().currentUser.uid)
+      .get()
+      .then(documentSnapshot => {
+        console.log('User exists: ', documentSnapshot.exists);
+
+        if (documentSnapshot.exists) {
+          console.log('User data: ', documentSnapshot.data().username);
+          setUsername(documentSnapshot.data().username);
+        }
+      });
+  }, [username]);
 
   const handleUsernameChange = val => {
     setData({
@@ -53,109 +69,136 @@ const EditProfileScreen = ({navigation}) => {
     }
   };
 
-  const handleEmailChange = val => {
+  const handleCurrentPasswordChange = val => {
     setData({
       ...data,
-      email: val.trim(),
-      check_textInputChange: val.trim().length !== 0,
-    });
-    if (!emailRegex.test(val.trim())) {
-      return setErrEmail('Please enter valid email');
-    } else {
-      return setErrEmail('');
-    }
-  };
-
-  const handlePasswordChange = val => {
-    setData({
-      ...data,
-      password: val.trim(),
+      currentpassword: val.trim(),
     });
     if (val.trim().length < passCharacter - 1) {
-      return setErrPass(`Password must be ${passCharacter} characters long.`);
+      return setErrCurrentPass(
+        `Password must be ${passCharacter} characters long.`,
+      );
     } else {
-      return setErrPass('');
+      return setErrCurrentPass('');
     }
   };
 
-  const handleConfirmPasswordChange = val => {
+  const handleNewPasswordChange = val => {
+    setData({
+      ...data,
+      newpassword: val.trim(),
+    });
+    if (val.trim().length < passCharacter - 1) {
+      return setErrNewPass(
+        `Password must be ${passCharacter} characters long.`,
+      );
+    } else {
+      return setErrNewPass('');
+    }
+  };
+
+  const handleConfirmNewPasswordChange = val => {
     setData({
       ...data,
       confirm_password: val.trim(),
     });
     if (val.trim().length < passCharacter - 1) {
-      return setErrConfirmPass(
+      return setErrConfirmCurrentPass(
         `Password must be ${passCharacter} characters long.`,
       );
     } else {
-      return setErrConfirmPass('');
+      return setErrConfirmCurrentPass('');
     }
   };
 
-  const handleSignUp = () => {
-    if (
-      data.username === '' ||
-      data.email === '' ||
-      data.password === '' ||
-      data.confirm_password === ''
-    ) {
-      return setLoginError(
-        "Can't empty username, email, password, comfirm password.",
-      );
-    }
+  const reauthenticate = currentpassword => {
+    var user = auth().currentUser;
+    var cred = auth.EmailAuthProvider.credential(user.email, currentpassword);
+    return user.reauthenticateWithCredential(cred);
+  };
 
-    if (errUsername || errEmail || errPass || errConfirmPass) {
-      return setLoginError(
-        'Please enter valid username, email, password, comfirm password.',
-      );
-    }
+  const openGallery = () => {
+    const options = {
+      storageOptions: {
+        path: 'images',
+        mediaType: 'photo',
+      },
+      includeBase64: true,
+    };
 
-    if (data.password !== data.confirm_password) {
-      return setLoginError('Please enter valid password and comfirm password.');
-    }
+    launchImageLibrary(options, response => {
+      console.log('Response = ', response.assets[0].uri);
+      if (response.didCancel) {
+        console.log('User cancelled image picker');
+      } else if (response.error) {
+        console.log('ImagePicker Error: ', response.error);
+      } else if (response.customButton) {
+        console.log('User tapped custom button: ', response.customButton);
+      } else {
+        // You can also display the image using data:
+        const source = {uri: response.assets[0].uri};
+        setimageUriGallary(source);
+        setfileName(response.assets[0].fileName);
+      }
+    });
+  };
 
-    const cred = firebase.auth.EmailAuthProvider.credential(
-      data.email,
-      data.password,
-    );
+  const updateProfile = async () => {
+    let getUrl = '';
+    // path to existing file on filesystem
+    const reference = storage().ref(fileName);
 
-    auth()
-      .currentUser.linkWithCredential(cred)
+    // uploads file
+    await reference.putFile(imageUriGallary.uri);
+    await reference.getDownloadURL().then(url => {
+      getUrl = url;
+    });
+
+    firestore()
+      .collection('users')
+      .doc(auth().currentUser.uid)
+      .update({
+        username: data.username,
+        photoURL: getUrl,
+      })
       .then(() => {
-        dispatch({type: ACTIONS.LOGIN, payload: auth().currentUser});
-        firestore()
-          .collection('users')
-          .doc(auth().currentUser.uid)
-          .set({
-            username: data.username,
+        console.log('User updated!');
+      });
+
+    reauthenticate(data.currentpassword)
+      .then(() => {
+        auth()
+          .currentUser.updatePassword(data.newpassword)
+          .then(() => {
+            Alert.alert('Password was changed');
           })
           .catch(error => {
-            console.log(
-              'Something went wrong with added user to firestore: ',
-              error,
-            );
+            console.log(error.message);
           });
       })
-      .catch(err => setLoginError(err.message));
+      .catch(error => {
+        console.log(error.message);
+      });
   };
   return (
     <View style={styles.container}>
       <StatusBar backgroundColor="#009387" barStyle="light-content" />
       <View style={styles.header}>
-        <Text style={styles.text_header}>Register Now!</Text>
-        <Avatar.Image
-          size={70}
-          source={{
-            uri: 'https://cdn6.aptoide.com/imgs/3/7/b/37bdd8cc95f5aac3a85b0f2a2f1b6dc3_icon.png',
-          }}
-        />
+        <Text style={styles.text_header}>Edit Profile</Text>
+        <TouchableOpacity onPress={() => openGallery()}>
+          <Avatar.Image
+            style={styles.avatar}
+            size={70}
+            source={imageUriGallary}
+          />
+        </TouchableOpacity>
       </View>
       <Animatable.View animation="fadeInUpBig" style={styles.footer}>
         <ScrollView>
           <View style={styles.action}>
             <FontAwesome name="user-o" color="#05375a" size={20} />
             <TextInput
-              placeholder="Họ tên"
+              placeholder={username}
               placeholderTextColor="grey"
               style={styles.textInput}
               autoCapitalize="none"
@@ -170,81 +213,70 @@ const EditProfileScreen = ({navigation}) => {
           <View style={styles.action}>
             <Feather name="mail" color="#05375a" size={20} />
             <TextInput
-              placeholder="Email"
+              placeholder={auth().currentUser.email}
               placeholderTextColor="grey"
               style={styles.textInput}
               autoCapitalize="none"
-              onChangeText={val => handleEmailChange(val)}
+              editable={false}
             />
           </View>
-          {!(errEmail === '') && (
+
+          <View style={styles.action}>
+            <Feather name="lock" color="#05375a" size={20} />
+            <TextInput
+              placeholder="Mật khẩu cũ"
+              placeholderTextColor="grey"
+              style={styles.textInput}
+              autoCapitalize="none"
+              secureTextEntry={true}
+              onChangeText={val => handleCurrentPasswordChange(val)}
+            />
+          </View>
+          {!(errCurrentPass === '') && (
             <Animatable.View animation="fadeInLeft" duration={500}>
-              <Text style={styles.errorMsg}>{errEmail}</Text>
+              <Text style={styles.errorMsg}>{errCurrentPass}</Text>
             </Animatable.View>
           )}
           <View style={styles.action}>
             <Feather name="lock" color="#05375a" size={20} />
             <TextInput
-              placeholder="Mật khẩu"
+              placeholder="Mật khẩu mới"
               placeholderTextColor="grey"
               style={styles.textInput}
               autoCapitalize="none"
               secureTextEntry={true}
-              onChangeText={val => handlePasswordChange(val)}
+              onChangeText={val => handleNewPasswordChange(val)}
             />
           </View>
-          {!(errPass === '') && (
+          {!(errNewPass === '') && (
             <Animatable.View animation="fadeInLeft" duration={500}>
-              <Text style={styles.errorMsg}>{errPass}</Text>
+              <Text style={styles.errorMsg}>{errNewPass}</Text>
             </Animatable.View>
           )}
           <View style={styles.action}>
             <Feather name="lock" color="#05375a" size={20} />
             <TextInput
-              placeholder="Xác nhận mật khẩu"
+              placeholder="Xác nhận mật khẩu mới"
               placeholderTextColor="grey"
               style={styles.textInput}
               autoCapitalize="none"
               secureTextEntry={true}
-              onChangeText={val => handleConfirmPasswordChange(val)}
+              onChangeText={val => handleConfirmNewPasswordChange(val)}
             />
           </View>
-          {!(errConfirmPass === '') && (
+          {!(errConfirmNewPass === '') && (
             <Animatable.View animation="fadeInLeft" duration={500}>
-              <Text style={styles.errorMsg}>{errConfirmPass}</Text>
+              <Text style={styles.errorMsg}>{errConfirmNewPass}</Text>
             </Animatable.View>
           )}
-          {!(loginError === '') && (
-            <Animatable.View animation="tada" duration={1000}>
-              <Text style={[styles.errorMsg, styles.errLoginMess]}>
-                {loginError}
-                {console.log(loginError)}
-              </Text>
-            </Animatable.View>
-          )}
-          <View style={styles.textPrivate}>
-            <Text style={styles.color_textPrivate}>
-              By signing up you agree to our
-            </Text>
-            <Text style={styles.color_textPrivateBold}>Terms of service</Text>
-            <Text style={styles.color_textPrivate}> and</Text>
-            <Text style={styles.color_textPrivateBold}>Privacy policy</Text>
-          </View>
           <View style={styles.button}>
-            <TouchableOpacity
-              style={styles.signIn}
-              onPress={() => handleSignUp()}>
+            <TouchableOpacity style={styles.signIn} onPress={updateProfile}>
               <LinearGradient
                 colors={['#08d4c4', '#01ab9d']}
-                style={styles.signIn}>
-                <Text style={styles.textSignUp}>Sign Up</Text>
+                style={styles.signIn}
+              >
+                <Text style={styles.textSignUp}>Update</Text>
               </LinearGradient>
-            </TouchableOpacity>
-
-            <TouchableOpacity
-              onPress={() => navigation.navigate('SignInScreen')}
-              style={[styles.signIn, styles.buttonSignIn]}>
-              <Text style={styles.textSignIn}>Sign In</Text>
             </TouchableOpacity>
           </View>
         </ScrollView>
@@ -268,7 +300,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   footer: {
-    flex: Platform.OS === 'ios' ? 3 : 5,
+    flex: 3,
     backgroundColor: '#fff',
     borderTopLeftRadius: 30,
     borderTopRightRadius: 30,
@@ -279,6 +311,7 @@ const styles = StyleSheet.create({
     color: '#fff',
     fontWeight: 'bold',
     fontSize: 30,
+    marginTop: 40,
   },
   text_footer: {
     color: '#05375a',
@@ -339,4 +372,5 @@ const styles = StyleSheet.create({
     color: '#FF0000',
     fontSize: 14,
   },
+  avatar: {marginTop: 15},
 });

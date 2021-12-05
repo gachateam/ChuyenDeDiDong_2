@@ -29,6 +29,7 @@ const Image4 = ({navigation}) => {
   return (
     <SafeAreaView style={styles.container}>
       <Header navigation={navigation} />
+
       <View style={styles.top}>
         <Text style={styles.questions}>{question.question}</Text>
       </View>
@@ -45,7 +46,8 @@ const Image4 = ({navigation}) => {
                 styles.optionButton,
                 ansChoice === i + 1 ? styles.choice : null,
               ]}
-              key={i}>
+              key={i}
+            >
               <Image
                 source={{
                   uri: vocabulary.find(value => value.word === e).image,
@@ -59,7 +61,7 @@ const Image4 = ({navigation}) => {
         })}
       </View>
       <View style={styles.bottom}>
-        <ButtonNext checkAns={checkAns} />
+        <ButtonNext checkAns={checkAns} navigation={navigation} />
       </View>
     </SafeAreaView>
   );
@@ -92,7 +94,7 @@ const styles = StyleSheet.create({
   },
   banner: {
     height: height / 4,
-    width: 171,
+    width: "100%",
   },
   options: {
     display: 'flex',
@@ -139,5 +141,10 @@ const styles = StyleSheet.create({
     fontSize: 18,
     fontWeight: '400',
     color: 'white',
+  },
+  review: {
+    paddingTop: 5,
+    alignItems: 'flex-end',
+    flexDirection: 'row-reverse',
   },
 });

@@ -19,7 +19,8 @@ const Pronounciacion = ({navigation}) => {
       navigation={navigation}
       ans={question.ans}
       speak={true}
-      checkAns={checkAns}>
+      checkAns={checkAns}
+    >
       <QuestionBoxPronounciation describe={question.describe} />
     </FourChoice>
   );

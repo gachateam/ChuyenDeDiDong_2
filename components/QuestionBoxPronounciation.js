@@ -1,11 +1,12 @@
 import React from 'react';
 import {StyleSheet, Text, View} from 'react-native';
+import {stylesQuestionBox} from './../style/QuestionBoxStyle';
 
 const QuestionBoxPronounciation = ({describe}) => {
   return (
     <View style={styles.top}>
-      <View style={styles.textBox}>
-        <Text style={styles.questions}>{describe}</Text>
+      <View style={stylesQuestionBox.textBox}>
+        <Text style={stylesQuestionBox.questions}>{describe}</Text>
       </View>
     </View>
   );
@@ -25,15 +26,5 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     borderColor: '#99FFCC',
     flexDirection: 'row',
-  },
-  questions: {
-    fontSize: 24,
-    textAlign: 'center',
-    alignItems: 'center',
-    textTransform: 'capitalize',
-  },
-  textBox: {
-    justifyContent: 'center',
-    alignItems: 'center',
   },
 });

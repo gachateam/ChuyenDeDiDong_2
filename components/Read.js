@@ -49,7 +49,7 @@ const Read = ({navigation}) => {
         <Text style={styles.answertext}>Answer</Text>
       </View>
       <View style={styles.bottom}>
-        <ButtonNext checkAns={checkAns} />
+        <ButtonNext checkAns={checkAns} navigation={navigation} />
       </View>
     </View>
   );

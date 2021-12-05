@@ -24,7 +24,7 @@ const styles = StyleSheet.create({
     height: 100,
   },
   questions: {
-    fontSize: 28,
+    fontSize: 20,
     textAlign: 'center',
     alignItems: 'center',
     textTransform: 'capitalize',
