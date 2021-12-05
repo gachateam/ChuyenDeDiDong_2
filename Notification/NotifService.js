@@ -17,8 +17,8 @@ export default class NotifService {
         PushNotification.setApplicationIconBadgeNumber(0);
       }
     });
-    
-    PushNotification.getChannels(function(channels) {
+
+    PushNotification.getChannels(function (channels) {
       console.log(channels);
     });
   }
@@ -26,25 +26,27 @@ export default class NotifService {
   createDefaultChannels() {
     PushNotification.createChannel(
       {
-        channelId: "default-channel-id", // (required)
-        channelName: `Default channel`, // (required)
-        channelDescription: "A default channel", // (optional) default: undefined.
-        soundName: "default", // (optional) See `soundName` parameter of `localNotification` function
+        channelId: 'default-channel-id', // (required)
+        channelName: 'Default channel', // (required)
+        channelDescription: 'A default channel', // (optional) default: undefined.
+        soundName: 'default', // (optional) See `soundName` parameter of `localNotification` function
         importance: Importance.HIGH, // (optional) default: Importance.HIGH. Int value of the Android notification importance
         vibrate: true, // (optional) default: true. Creates the default vibration pattern if true.
       },
-      (created) => console.log(`createChannel 'default-channel-id' returned '${created}'`) // (optional) callback returns whether the channel was created, false means it already existed.
+      created =>
+        console.log(`createChannel 'default-channel-id' returned '${created}'`), // (optional) callback returns whether the channel was created, false means it already existed.
     );
     PushNotification.createChannel(
       {
-        channelId: "sound-channel-id", // (required)
-        channelName: `Sound channel`, // (required)
-        channelDescription: "A sound channel", // (optional) default: undefined.
-        soundName: "sample.mp3", // (optional) See `soundName` parameter of `localNotification` function
+        channelId: 'sound-channel-id', // (required)
+        channelName: 'Sound channel', // (required)
+        channelDescription: 'A sound channel', // (optional) default: undefined.
+        soundName: 'sample.mp3', // (optional) See `soundName` parameter of `localNotification` function
         importance: Importance.HIGH, // (optional) default: Importance.HIGH. Int value of the Android notification importance
         vibrate: true, // (optional) default: true. Creates the default vibration pattern if true.
       },
-      (created) => console.log(`createChannel 'sound-channel-id' returned '${created}'`) // (optional) callback returns whether the channel was created, false means it already existed.
+      created =>
+        console.log(`createChannel 'sound-channel-id' returned '${created}'`), // (optional) callback returns whether the channel was created, false means it already existed.
     );
   }
 

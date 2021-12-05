@@ -94,7 +94,7 @@ const styles = StyleSheet.create({
   },
   banner: {
     height: height / 4,
-    width: "100%",
+    width: '100%',
   },
   options: {
     display: 'flex',

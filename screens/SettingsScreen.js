@@ -1,43 +1,77 @@
-import React from 'react';
-import {View, StyleSheet, Text, TouchableOpacity} from 'react-native';
-import {ScrollView, Switch} from 'react-native-gesture-handler';
-import {color} from 'react-native-reanimated';
+import React, {useState} from 'react';
+import {
+  View,
+  StyleSheet,
+  Text,
+  TouchableOpacity,
+  Modal,
+  Alert,
+  Pressable,
+} from 'react-native';
+import {FlatList} from 'react-native-gesture-handler';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
+import ModelNNHT from '../components/ModelNNHT';
 
 const SettingsScreen = () => {
+  const [modalVisibleQLTB, setModalVisibleQLTB] = useState(false);
+  const [modalVisibleNNHT, setModalVisibleNNHT] = useState(false);
+
   return (
     <View style={styles.container}>
-      <View style={styles.top}>
-        <Text style={styles.txtTitle}>Settings</Text>
-      </View>
-      <ScrollView style={styles.SelectionView}>
-        <TouchableOpacity style={styles.Selection}>
-          <Text style={styles.text}>
-            <Icon style={styles.icon} name="home" size={30} /> My Info
-          </Text>
-        </TouchableOpacity>
-        <TouchableOpacity style={styles.Selection}>
-          <Text style={styles.text}>
-            <Icon style={styles.icon} name="home" size={30} /> Account
-          </Text>
-        </TouchableOpacity>
-        <View style={styles.Selection}>
-          <View style={styles.preference}>
-            <Text style={styles.text}>
-              <Icon name="home" size={30} /> Dark Theme{' '}
-            </Text>
-            <TouchableOpacity>
-              <Switch
-              />
-            </TouchableOpacity>
+      <Modal
+        animationType="slide"
+        transparent={true}
+        visible={modalVisibleQLTB}
+        onRequestClose={() => {
+          Alert.alert('Modal has been closed.');
+          setModalVisibleQLTB(!modalVisibleQLTB);
+        }}
+      >
+        <TouchableOpacity
+          style={styles.centeredView}
+          onPress={() => setModalVisibleQLTB(!modalVisibleQLTB)}
+        >
+          <View style={styles.modalView}>
+            <Text style={styles.modalText}>Hello World!</Text>
+            <Pressable
+              style={[styles.button, styles.buttonClose]}
+              onPress={() => setModalVisibleQLTB(!modalVisibleQLTB)}
+            >
+              <Text style={styles.textStyle}>Hide Modal</Text>
+            </Pressable>
           </View>
-        </View>
-        <TouchableOpacity style={styles.Selection}>
-          <Text style={styles.text}>
-            <Icon style={styles.icon} name="home" size={30} /> Language
-          </Text>
         </TouchableOpacity>
-      </ScrollView>
+      </Modal>
+      {/* Nhắc nhở học tập */}
+      <ModelNNHT
+        setModalVisibleNNHT={setModalVisibleNNHT}
+        modalVisibleNNHT={modalVisibleNNHT}
+      />
+      <FlatList
+        data={[
+          {
+            key: 'Quản lý thông báo',
+            visibleModal: () => {
+              setModalVisibleQLTB(true);
+            },
+          },
+          {
+            key: 'Nhắc nhở học tập',
+            visibleModal: () => {
+              setModalVisibleNNHT(true);
+            },
+          },
+        ]}
+        renderItem={({item}) => (
+          <Pressable
+            style={[styles.button, styles.buttonOpen, styles.container]}
+            onPress={item.visibleModal}
+          >
+            <Text style={styles.item}>{item.key}</Text>
+            <Icon style={styles.icon} name="arrow-right" size={30} />
+          </Pressable>
+        )}
+      />
     </View>
   );
 };
@@ -45,38 +79,52 @@ export default SettingsScreen;
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    paddingHorizontal: 20,
-  },
-  txtTitle: {
-    fontSize: 35,
-    fontWeight: 'bold',
-  },
-  top: {
-    marginVertical: 15,
-    textAlign: 'center',
-    justifyContent: 'center',
-    alignItems: 'center',
-  },
-  text: {
-    fontSize: 20,
-  },
-  SelectionView: {
-    backgroundColor: color.grey,
-    height: 0.5,
-  },
-  Selection: {
-    flex: 1,
-    paddingVertical: 20,
-    paddingHorizontal: 10,
-  },
-  icon: {
-    flex: 1,
-    paddingVertical: 20,
-    paddingHorizontal: 10,
-    paddingLeft: 30,
-  },
-  preference: {
     flexDirection: 'row',
     justifyContent: 'space-between',
+    paddingHorizontal: 5,
+  },
+  centeredView: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+    backgroundColor: 'rgba(0,0,0,0.5)',
+  },
+  modalView: {
+    margin: 20,
+    backgroundColor: 'white',
+    borderRadius: 20,
+    padding: 35,
+    alignItems: 'center',
+    shadowColor: '#000',
+    shadowOffset: {
+      width: 0,
+      height: 2,
+    },
+    shadowOpacity: 0.25,
+    shadowRadius: 4,
+    elevation: 5,
+  },
+  button: {
+    padding: 8,
+    paddingHorizontal: 50,
+    borderRadius: 30,
+  },
+  buttonClose: {
+    backgroundColor: '#2196F3',
+  },
+  textStyle: {
+    color: 'white',
+    fontWeight: 'bold',
+    textAlign: 'center',
+  },
+  modalText: {
+    marginBottom: 15,
+    textAlign: 'center',
+    fontSize: 20,
+  },
+  time: {
+    flexDirection: 'row',
+    justifyContent: 'center',
+    alignItems: 'baseline',
   },
 });

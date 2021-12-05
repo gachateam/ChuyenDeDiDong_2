@@ -78,8 +78,9 @@ const MyTabs = ({navigation}) => {
         name="Settings"
         component={SettingsScreen}
         options={{
-          tabBarShowLabel: false,
+          headerShown: true,
           tabBarButton: props => <TabButton {...props} name="setting" />,
+          headerTitle: 'Cài đặt',
         }}
       />
       <Tab.Screen

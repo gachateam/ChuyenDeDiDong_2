@@ -18,7 +18,11 @@ const HomeScreen = ({navigation}) => {
         initialRouteName="Home"
         drawerContent={props => <DrawerContent {...props} />}
       >
-        <Drawer.Screen name="Home" component={Home} />
+        <Drawer.Screen
+          name="Home"
+          component={Home}
+          options={{headerTitle: 'Trang Chủ'}}
+        />
         <Drawer.Screen
           name="StageScreen"
           component={StageScreen}

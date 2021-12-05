@@ -56,8 +56,9 @@ const AlreadySignInScreen = ({navigation}) => {
                   ? auth().currentUser.providerData[0].displayName
                   : username}
               </Title>
-              {!auth().currentUser.providerData[0].providerId ===
-                'google.com' && (
+              {!(
+                auth().currentUser.providerData[0].providerId === 'google.com'
+              ) && (
                 <IconButton
                   icon="square-edit-outline"
                   size={20}

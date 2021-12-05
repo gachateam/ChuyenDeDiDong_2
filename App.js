@@ -15,10 +15,10 @@ import AuthContextProvider from './context/AuthContext';
 import NotifService from './Notification/NotifService';
 
 const App = () => {
-  const notif = new NotifService()
+  const notif = new NotifService();
 
-  notif.scheduleNotif()
-  notif.getScheduledLocalNotifications(notifs => console.log(notifs))
+  // notif.scheduleNotif()
+  // notif.getScheduledLocalNotifications(notifs => console.log(notifs))
 
   return (
     <GlobalContextProvider>
