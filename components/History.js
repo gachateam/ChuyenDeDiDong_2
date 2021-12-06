@@ -1,0 +1,116 @@
+import React, { useEffect, useState } from 'react'
+import { ScrollView, StyleSheet, Text, View } from 'react-native'
+import ProgressCircle from 'react-native-progress-circle';
+import { IconButton } from 'react-native-paper';
+import firestore from '@react-native-firebase/firestore';
+import auth from '@react-native-firebase/auth';
+import { Stage } from './../Model/Stage';
+import database from '../database/database';
+
+const History = () => {
+  const [stages, setStages] = useState([])
+  const [categorys, setCategorys] = useState([])
+
+  useEffect(() => {
+    firestore()
+      .collection(`users/${auth().currentUser.uid}/category`)
+      .get()
+      .then(querySnapshot => {
+        querySnapshot.forEach(documentSnapshot => {
+          setStages([
+            ...stages,
+            {
+              stage: new Stage(documentSnapshot.data()),
+              category: documentSnapshot.id
+            }
+          ])
+        })
+      });
+  }, [])
+
+  useEffect(() => {
+    if (stages.length !== 0) {
+      database
+        .ref('/category')
+        .once('value')
+        .then(snapshot => {
+          snapshot.forEach(val => {
+            if (checkInclude(stages, val.key)) {
+              const temp = [
+                ...categorys,
+                {
+                  title: val.key,
+                  name: val.child('name').val(),
+                },
+              ];
+              setCategorys(temp);
+            }
+          });
+        });
+    }
+  }, [stages])
+
+  const checkInclude = (arr = [], value) => {
+    let result = false
+
+    arr.forEach((e) => {
+      if (e.category === value) {
+        return result = true
+      }
+    })
+
+    return result
+  }
+
+  const getPercent = (title) => {
+    let result = 0
+
+    stages.forEach((e) => {
+      if (e.category === title) {
+        return result = e.stage.getTienDo()
+      }
+    })
+    
+    return result
+  }
+
+  return (
+    <ScrollView style={styles.scrollView} horizontal={true}>
+      {
+        categorys && categorys.map((e, i) => (
+          <View
+            style={styles.element}
+            key={i}
+          >
+            <ProgressCircle
+              percent={getPercent(e.title)}
+              radius={50}
+              borderWidth={4}
+              color="#1597E5"
+              shadowColor="#999"
+              bgColor={'#fff'}
+            >
+              <IconButton icon={e.name} size={32} />
+              <Text>{e.title}</Text>
+            </ProgressCircle>
+          </View>
+        ))
+      }
+    </ScrollView>
+  )
+}
+
+export default History
+
+const styles = StyleSheet.create({
+  scrollView: {
+    marginHorizontal: 10,
+    paddingTop: 20
+  },
+  text: {
+    fontSize: 42,
+  },
+  element: {
+    paddingHorizontal: 10
+  }
+})
