@@ -80,7 +80,7 @@ const Rank = () => {
         return item2.score - item1.score;
       });
     let userRankTemp =
-      userInRank && sorted[sorted.length - 1].score < userInRank.score
+      userInRank && sorted[sorted.length - 1].score <= userInRank.score
         ? sorted.findIndex(item => {
             let name = (userInRank && userInRank.username) || '';
             return item.username === name;
