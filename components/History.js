@@ -1,13 +1,16 @@
 import React, { useEffect, useState } from 'react'
-import { ScrollView, StyleSheet, Text, View } from 'react-native'
+import { ScrollView, StyleSheet, Text, TouchableOpacity, View } from 'react-native'
 import ProgressCircle from 'react-native-progress-circle';
 import { IconButton } from 'react-native-paper';
 import firestore from '@react-native-firebase/firestore';
 import auth from '@react-native-firebase/auth';
 import { Stage } from './../Model/Stage';
 import database from '../database/database';
+import { ACTIONS } from './../context/Action';
+import { useGlobal } from '../context/GlobalContext';
 
-const History = () => {
+const History = ({ navigation }) => {
+  const { dispatch } = useGlobal();
   const [stages, setStages] = useState([])
   const [categorys, setCategorys] = useState([])
 
@@ -70,17 +73,23 @@ const History = () => {
         return result = e.stage.getTienDo()
       }
     })
-    
+
     return result
+  }
+
+  const handlePress = (title) => {
+    dispatch({ type: ACTIONS.CHOOSE_TITLES, payload: title });
+    navigation.navigate('StageScreen');
   }
 
   return (
     <ScrollView style={styles.scrollView} horizontal={true}>
       {
         categorys && categorys.map((e, i) => (
-          <View
+          <TouchableOpacity
             style={styles.element}
             key={i}
+            onPress={() => handlePress(e.title)}
           >
             <ProgressCircle
               percent={getPercent(e.title)}
@@ -93,7 +102,7 @@ const History = () => {
               <IconButton icon={e.name} size={32} />
               <Text>{e.title}</Text>
             </ProgressCircle>
-          </View>
+          </TouchableOpacity>
         ))
       }
     </ScrollView>

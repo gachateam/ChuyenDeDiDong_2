@@ -27,7 +27,7 @@ function Home({ navigation }) {
   return (
     <SafeAreaView style={styles.container} >
       <Text style={styles.text}>Lịch sử</Text>
-      <History />
+      <History navigation={navigation} />
       <Text style={styles.text}>Chủ đề</Text>
     </SafeAreaView>
   );
