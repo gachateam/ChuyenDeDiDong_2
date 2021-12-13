@@ -39,7 +39,7 @@ const StageScreen = ({navigation}) => {
         }
       });
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+  }, [title]);
 
   const handleScroll = e => {
     dispatch({
