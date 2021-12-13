@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react';
+import React, { useState, useEffect } from 'react';
 import {
   View,
   Text,
@@ -16,11 +16,11 @@ import FontAwesome from 'react-native-vector-icons/FontAwesome';
 import Feather from 'react-native-vector-icons/Feather';
 import auth from '@react-native-firebase/auth';
 import firestore from '@react-native-firebase/firestore';
-import {Avatar} from 'react-native-paper';
-import {launchImageLibrary} from 'react-native-image-picker';
+import { Avatar } from 'react-native-paper';
+import { launchImageLibrary } from 'react-native-image-picker';
 import storage from '@react-native-firebase/storage';
 
-const EditProfileScreen = ({navigation}) => {
+const EditProfileScreen = ({ navigation }) => {
   const [data, setData] = React.useState({
     username: '',
     currentpassword: '',
@@ -51,6 +51,9 @@ const EditProfileScreen = ({navigation}) => {
         if (documentSnapshot.exists) {
           console.log('User data: ', documentSnapshot.data().username);
           setUsername(documentSnapshot.data().username);
+          const source = { uri: documentSnapshot.data().photoURL };
+          setimageUriGallary(source);
+          console.log(imageUriGallary);
         }
       });
   }, [username]);
@@ -127,7 +130,6 @@ const EditProfileScreen = ({navigation}) => {
     };
 
     launchImageLibrary(options, response => {
-      console.log('Response = ', response.assets[0].uri);
       if (response.didCancel) {
         console.log('User cancelled image picker');
       } else if (response.error) {
@@ -136,7 +138,8 @@ const EditProfileScreen = ({navigation}) => {
         console.log('User tapped custom button: ', response.customButton);
       } else {
         // You can also display the image using data:
-        const source = {uri: response.assets[0].uri};
+
+        const source = { uri: response.assets[0].uri };
         setimageUriGallary(source);
         setfileName(response.assets[0].fileName);
       }
@@ -144,11 +147,13 @@ const EditProfileScreen = ({navigation}) => {
   };
 
   const updateProfile = async () => {
+
     let getUrl = '';
     // path to existing file on filesystem
     const reference = storage().ref(fileName);
 
     // uploads file
+
     await reference.putFile(imageUriGallary.uri);
     await reference.getDownloadURL().then(url => {
       getUrl = url;
@@ -162,23 +167,31 @@ const EditProfileScreen = ({navigation}) => {
         photoURL: getUrl,
       })
       .then(() => {
-        console.log('User updated!');
+        Alert.alert('User update!', 'Go to Profile', [
+          {
+            text: 'Cancel',
+            style: 'cancel',
+          },
+          { text: 'OK', onPress: () => navigation.goBack() },
+        ]);
       });
 
-    reauthenticate(data.currentpassword)
-      .then(() => {
-        auth()
-          .currentUser.updatePassword(data.newpassword)
-          .then(() => {
-            Alert.alert('Password was changed');
-          })
-          .catch(error => {
-            console.log(error.message);
-          });
-      })
-      .catch(error => {
-        console.log(error.message);
-      });
+    if (data.currentpassword != '' || data.newpassword != '' || data.confirm_password != '') {
+      reauthenticate(data.currentpassword)
+        .then(() => {
+          auth()
+            .currentUser.updatePassword(data.newpassword)
+            .then(() => {
+              Alert.alert('Password was changed');
+            })
+            .catch(error => {
+              console.log(error.message);
+            });
+        })
+        .catch(error => {
+          console.log(error.message);
+        });
+    }
   };
   return (
     <View style={styles.container}>
@@ -186,6 +199,7 @@ const EditProfileScreen = ({navigation}) => {
       <View style={styles.header}>
         <Text style={styles.text_header}>Edit Profile</Text>
         <TouchableOpacity onPress={() => openGallery()}>
+
           <Avatar.Image
             style={styles.avatar}
             size={70}
@@ -198,8 +212,7 @@ const EditProfileScreen = ({navigation}) => {
           <View style={styles.action}>
             <FontAwesome name="user-o" color="#05375a" size={20} />
             <TextInput
-              placeholder={username}
-              placeholderTextColor="grey"
+              defaultValue={username}
               style={styles.textInput}
               autoCapitalize="none"
               onChangeText={val => handleUsernameChange(val)}
@@ -372,5 +385,5 @@ const styles = StyleSheet.create({
     color: '#FF0000',
     fontSize: 14,
   },
-  avatar: {marginTop: 15},
+  avatar: { marginTop: 15 },
 });
