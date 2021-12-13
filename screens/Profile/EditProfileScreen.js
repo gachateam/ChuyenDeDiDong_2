@@ -19,8 +19,11 @@ import firestore from '@react-native-firebase/firestore';
 import { Avatar } from 'react-native-paper';
 import { launchImageLibrary } from 'react-native-image-picker';
 import storage from '@react-native-firebase/storage';
+import { useAuth } from '../../context/AuthContext';
+import { ACTIONS } from './../../context/AuthContext/Action';
 
 const EditProfileScreen = ({ navigation }) => {
+  const { dispatch, update } = useAuth();
   const [data, setData] = React.useState({
     username: '',
     currentpassword: '',
@@ -35,10 +38,11 @@ const EditProfileScreen = ({ navigation }) => {
   const [errCurrentPass, setErrCurrentPass] = useState('');
   const [errNewPass, setErrNewPass] = useState('');
   const [errConfirmNewPass, setErrConfirmCurrentPass] = useState('');
-  const [username, setUsername] = useState(null);
+  const [username, setUsername] = useState();
   const [imageUriGallary, setimageUriGallary] = useState({
     uri: auth().currentUser.providerData[0].photoURL,
   });
+  const [getFileFormDevice, setGetFileFormDevice] = useState(false)
   const [fileName, setfileName] = useState(null);
   useEffect(() => {
     firestore()
@@ -49,11 +53,10 @@ const EditProfileScreen = ({ navigation }) => {
         console.log('User exists: ', documentSnapshot.exists);
 
         if (documentSnapshot.exists) {
-          console.log('User data: ', documentSnapshot.data().username);
+          handleUsernameChange(documentSnapshot.data().username)
           setUsername(documentSnapshot.data().username);
           const source = { uri: documentSnapshot.data().photoURL };
           setimageUriGallary(source);
-          console.log(imageUriGallary);
         }
       });
   }, [username]);
@@ -142,31 +145,34 @@ const EditProfileScreen = ({ navigation }) => {
         const source = { uri: response.assets[0].uri };
         setimageUriGallary(source);
         setfileName(response.assets[0].fileName);
+        setGetFileFormDevice(true)
       }
     });
   };
 
   const updateProfile = async () => {
-
     let getUrl = '';
-    // path to existing file on filesystem
-    const reference = storage().ref(fileName);
 
-    // uploads file
+    if (getFileFormDevice) {
+      // path to existing file on filesystem
+      const reference = storage().ref(fileName);
 
-    await reference.putFile(imageUriGallary.uri);
-    await reference.getDownloadURL().then(url => {
-      getUrl = url;
-    });
+      // uploads file
+      await reference.putFile(imageUriGallary.uri);
+      await reference.getDownloadURL().then(url => {
+        getUrl = url;
+      });
+    }
 
     firestore()
       .collection('users')
       .doc(auth().currentUser.uid)
       .update({
         username: data.username,
-        photoURL: getUrl,
+        photoURL: getUrl ? getUrl : imageUriGallary.uri
       })
       .then(() => {
+        dispatch({ type: ACTIONS.UPDATE })
         Alert.alert('User update!', 'Go to Profile', [
           {
             text: 'Cancel',

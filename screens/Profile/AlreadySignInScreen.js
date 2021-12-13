@@ -13,13 +13,13 @@ import {useAuth} from '../../context/AuthContext';
 import {ACTIONS} from '../../context/AuthContext/Action';
 
 const AlreadySignInScreen = ({navigation}) => {
-  const {dispatch} = useAuth();
+  const {dispatch,update} = useAuth();
   const handleSignout = async () => {
     auth().signOut();
     dispatch({type: ACTIONS.LOGIN, payload: null});
     await dispatch({type: ACTIONS.SIGNIN_ANONYMOUS, payload: true});
   };
-  const [username, setUsername] = useState(null);
+  const [username, setUsername] = useState();
   const [avatar, setAvatar] = useState();
   useEffect(() => {
     firestore()
@@ -30,12 +30,11 @@ const AlreadySignInScreen = ({navigation}) => {
         console.log('User exists: ', documentSnapshot.exists);
 
         if (documentSnapshot.exists) {
-          console.log('User data: ', documentSnapshot.data().username);
           setUsername(documentSnapshot.data().username);
           setAvatar(documentSnapshot.data().photoURL);
         }
       });
-  }, []);
+  }, [update]);
   return (
     <SafeAreaView style={styles.container}>
       <View style={styles.userInfor}>
