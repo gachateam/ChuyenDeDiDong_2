@@ -10,7 +10,7 @@ export const stylesQuestionBox = StyleSheet.create({
   textBox: {
     justifyContent: 'center',
     alignItems: 'flex-start',
-    width: '80%',
+    width: '70%',
   },
   icon: {
     paddingHorizontal: 30,
