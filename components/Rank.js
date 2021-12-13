@@ -45,7 +45,7 @@ const Rank = () => {
     firestore()
       .collection('users')
       .orderBy('score', 'desc')
-      .limit(2)
+      .limit(10)
       .get()
       .then(querySnapshot => {
         querySnapshot.forEach(documentSnapshot => {
