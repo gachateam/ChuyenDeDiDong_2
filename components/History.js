@@ -1,31 +1,36 @@
-import React, {useEffect, useState} from 'react';
-import {ScrollView, StyleSheet, Text, TouchableOpacity} from 'react-native';
+import React, { useEffect, useState } from 'react';
+import { ScrollView, StyleSheet, Text, TouchableOpacity } from 'react-native';
 import ProgressCircle from 'react-native-progress-circle';
-import {IconButton} from 'react-native-paper';
+import { IconButton } from 'react-native-paper';
 import firestore from '@react-native-firebase/firestore';
 import auth from '@react-native-firebase/auth';
-import {Stage} from './../Model/Stage';
+import { Stage } from './../Model/Stage';
 import database from '../database/database';
-import {ACTIONS} from './../context/Action';
-import {useGlobal} from '../context/GlobalContext';
+import { ACTIONS } from './../context/Action';
+import { useGlobal } from '../context/GlobalContext';
 
-const History = ({navigation}) => {
-  const {dispatch} = useGlobal();
+const History = ({ navigation }) => {
+  const { dispatch } = useGlobal();
   const [stages, setStages] = useState([]);
   const [categorys, setCategorys] = useState([]);
-
   useEffect(() => {
-    firestore()
-      .collection(`users/${auth().currentUser.uid}/category`)
-      .get()
-      .then(querySnapshot => {
-        querySnapshot.forEach(documentSnapshot => {
-          stages.push({
-            stage: new Stage(documentSnapshot.data()),
-            category: documentSnapshot.id,
+    if (auth().currentUser) {
+      firestore()
+        .collection(`users/${auth().currentUser.uid}/category`)
+        .get()
+        .then(querySnapshot => {
+          let cate = []
+
+          querySnapshot.forEach(documentSnapshot => {
+            cate.push({
+              stage: new Stage(documentSnapshot.data()),
+              category: documentSnapshot.id,
+            });
           });
+
+          setStages(cate)
         });
-      });
+    }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
@@ -76,7 +81,7 @@ const History = ({navigation}) => {
   };
 
   const handlePress = title => {
-    dispatch({type: ACTIONS.CHOOSE_TITLES, payload: title});
+    dispatch({ type: ACTIONS.CHOOSE_TITLES, payload: title });
     navigation.navigate('StageScreen');
   };
 

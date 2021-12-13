@@ -106,6 +106,7 @@ const SignInScreen = ({navigation}) => {
         }
       });
   };
+  console.log(auth().currentUser);
 
   const signInWithGoogle = async () => {
     try {
