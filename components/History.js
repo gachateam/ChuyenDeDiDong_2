@@ -40,18 +40,18 @@ const History = ({ navigation }) => {
         .ref('/category')
         .once('value')
         .then(snapshot => {
+          let cate = []
+
           snapshot.forEach(val => {
             if (checkInclude(stages, val.key)) {
-              const temp = [
-                ...categorys,
-                {
-                  title: val.key,
-                  name: val.child('name').val(),
-                },
-              ];
-              setCategorys(temp);
+              cate.push({
+                title: val.key,
+                name: val.child('name').val(),
+              })
             }
           });
+
+          setCategorys(cate);
         });
     }
   }, [stages]);
