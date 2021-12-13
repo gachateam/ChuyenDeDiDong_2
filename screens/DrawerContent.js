@@ -16,15 +16,11 @@ export function DrawerContent({navigation}) {
       .ref('/category')
       .once('value')
       .then(snapshot => {
-        snapshot.forEach(val => {
-          const temp = [
-            ...category,
-            {
-              title: val.key,
-              name: val.child('name').val(),
-            },
-          ];
-          setCategory(temp);
+        snapshot.forEach(async val => {
+          category.push({
+            title: val.key,
+            name: val.child('name').val(),
+          });
         });
       });
     // eslint-disable-next-line react-hooks/exhaustive-deps

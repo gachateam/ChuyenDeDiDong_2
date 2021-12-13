@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, {useEffect, useState} from 'react';
 import {
   Alert,
   Modal,
@@ -13,32 +13,35 @@ import {
 import DateTimePicker from '@react-native-community/datetimepicker';
 import NotifService from './../Notification/NotifService';
 
-const ModelNNHT = ({ setModalVisibleNNHT, modalVisibleNNHT }) => {
+const ModelNNHT = ({setModalVisibleNNHT, modalVisibleNNHT}) => {
   const [mode, setMode] = useState('date');
   const [show, setShow] = useState(false);
   const [date, setDate] = useState(new Date());
-  const [notif, setNotif] = useState()
-  const title = "Tới giờ học rồi kìa"
-  const message = "Đi học đi má"
+  const [notif, setNotif] = useState();
+  const title = 'Tới giờ học rồi kìa';
+  const message = 'Đi học đi má';
   useEffect(() => {
-    setNotif(new NotifService())
-  }, [])
+    setNotif(new NotifService());
+  }, []);
 
-  const getDate = (date) => {
-    return `${date.getHours().toString().padStart(2, 0)}:${date.getMinutes().toString().padStart(2, 0)}`
-  }
+  const getDate = date => {
+    return `${date.getHours().toString().padStart(2, 0)}:${date
+      .getMinutes()
+      .toString()
+      .padStart(2, 0)}`;
+  };
 
   const [text, setText] = useState(getDate(date));
 
   const [isEnabled, setIsEnabled] = useState(false);
   const toggleSwitch = async () => {
-    await setIsEnabled(previousState => !previousState)
+    await setIsEnabled(previousState => !previousState);
     if (isEnabled) {
-      notif.cancelAll()
-      notif.getScheduledLocalNotifications(notifi => console.log(notifi))
+      notif.cancelAll();
+      notif.getScheduledLocalNotifications(notifi => console.log(notifi));
     } else {
-      notif.scheduleNotif("dihoc", date, title, message)
-      notif.getScheduledLocalNotifications(notifi => console.log(notifi))
+      notif.scheduleNotif('dihoc', date, title, message);
+      notif.getScheduledLocalNotifications(notifi => console.log(notifi));
     }
   };
 
@@ -80,7 +83,7 @@ const ModelNNHT = ({ setModalVisibleNNHT, modalVisibleNNHT }) => {
           <View style={styles.time}>
             <Text style={styles.modalText}>{text}</Text>
             <Switch
-              trackColor={{ false: '#767577', true: '#81b0ff' }}
+              trackColor={{false: '#767577', true: '#81b0ff'}}
               thumbColor={isEnabled ? '#f5dd4b' : '#f4f3f4'}
               ios_backgroundColor="#3e3e3e"
               onValueChange={toggleSwitch}
@@ -89,7 +92,7 @@ const ModelNNHT = ({ setModalVisibleNNHT, modalVisibleNNHT }) => {
           </View>
           <Pressable
             onPress={showTimepicker}
-            style={[styles.button, styles.buttonClose, { marginBottom: 10 }]}
+            style={[styles.button, styles.buttonClose, {marginBottom: 10}]}
           >
             <Text style={styles.textStyle}>Chọn thời gian</Text>
           </Pressable>

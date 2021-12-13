@@ -1,20 +1,19 @@
-import React, { useEffect, useState } from 'react';
-import { StyleSheet, Text, View, Image, TouchableOpacity } from 'react-native';
+import React, {useEffect, useState} from 'react';
+import {StyleSheet, Text, View, Image, TouchableOpacity} from 'react-native';
 import Header from './Header';
 import Tts from 'react-native-tts';
 import QuestionBoxListen from './QuestionBoxListen';
-import { useQuestion } from '../context/QuestionContext';
-import { useGlobal } from '../context/GlobalContext';
+import {useQuestion} from '../context/QuestionContext';
+import {useGlobal} from '../context/GlobalContext';
 import ButtonNext from './ButtonNext';
 import Voice from '@react-native-community/voice';
-import { ACTIONS } from './../context/QuestionContext/Action';
+import {ACTIONS} from './../context/QuestionContext/Action';
 
+const Read = ({navigation}) => {
+  const {activeQuestion, dispatch} = useQuestion();
+  const {listQuestion} = useGlobal();
 
-const Read = ({ navigation }) => {
-  const { activeQuestion, dispatch } = useQuestion();
-  const { listQuestion } = useGlobal();
-
-  const [result, setResult] = useState()
+  const [result, setResult] = useState();
 
   const question = listQuestion[activeQuestion];
 
@@ -22,8 +21,8 @@ const Read = ({ navigation }) => {
     return ansC.question === ans;
   };
 
-  const handleVoice = (tu) => {
-    Tts.stop()
+  const handleVoice = tu => {
+    Tts.stop();
     Tts.speak(tu);
   };
 
@@ -33,22 +32,22 @@ const Read = ({ navigation }) => {
     Voice.onSpeechResults = onSpeechResultsHandler;
 
     return () => {
-      Voice.destroy().then(Voice.removeAllListeners)
-    }
-  }, [])
+      Voice.destroy().then(Voice.removeAllListeners);
+    };
+  }, []);
 
-  const onSpeechStartHandler = (e) => {
+  const onSpeechStartHandler = e => {
     console.log('onSpeechStart: ', e);
   };
 
-  const onSpeechEndHandler = (e) => {
+  const onSpeechEndHandler = e => {
     console.log('onSpeechEnd: ', e);
   };
 
-  const onSpeechResultsHandler = (e) => {
+  const onSpeechResultsHandler = e => {
     console.log('onSpeechResults: ', e);
-    setResult(e.value[0])
-    dispatch({ type: ACTIONS.CHOICE_ANS, payload: e.value[0] });
+    setResult(e.value[0]);
+    dispatch({type: ACTIONS.CHOICE_ANS, payload: e.value[0]});
   };
 
   const startRecognizing = async () => {
@@ -57,14 +56,17 @@ const Read = ({ navigation }) => {
     } catch (e) {
       console.error(e);
     }
-  }
+  };
 
   return (
     <View style={styles.container}>
       <Header navigation={navigation} />
       <QuestionBoxListen meanQuestion={question.question} />
 
-      <TouchableOpacity style={styles.listen} onPress={() => handleVoice(question.question)}>
+      <TouchableOpacity
+        style={styles.listen}
+        onPress={() => handleVoice(question.question)}
+      >
         <Image
           source={{
             uri: 'https://cdn.iconscout.com/icon/free/png-64/music-1128-1131524.png',
@@ -144,6 +146,6 @@ const styles = StyleSheet.create({
     height: 100,
   },
   answerText: {
-    textTransform: 'capitalize'
-  }
+    textTransform: 'capitalize',
+  },
 });

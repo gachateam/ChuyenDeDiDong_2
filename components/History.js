@@ -1,18 +1,18 @@
-import React, { useEffect, useState } from 'react'
-import { ScrollView, StyleSheet, Text, TouchableOpacity, View } from 'react-native'
+import React, {useEffect, useState} from 'react';
+import {ScrollView, StyleSheet, Text, TouchableOpacity} from 'react-native';
 import ProgressCircle from 'react-native-progress-circle';
-import { IconButton } from 'react-native-paper';
+import {IconButton} from 'react-native-paper';
 import firestore from '@react-native-firebase/firestore';
 import auth from '@react-native-firebase/auth';
-import { Stage } from './../Model/Stage';
+import {Stage} from './../Model/Stage';
 import database from '../database/database';
-import { ACTIONS } from './../context/Action';
-import { useGlobal } from '../context/GlobalContext';
+import {ACTIONS} from './../context/Action';
+import {useGlobal} from '../context/GlobalContext';
 
-const History = ({ navigation }) => {
-  const { dispatch } = useGlobal();
-  const [stages, setStages] = useState([])
-  const [categorys, setCategorys] = useState([])
+const History = ({navigation}) => {
+  const {dispatch} = useGlobal();
+  const [stages, setStages] = useState([]);
+  const [categorys, setCategorys] = useState([]);
 
   useEffect(() => {
     firestore()
@@ -20,16 +20,14 @@ const History = ({ navigation }) => {
       .get()
       .then(querySnapshot => {
         querySnapshot.forEach(documentSnapshot => {
-          setStages([
-            ...stages,
-            {
-              stage: new Stage(documentSnapshot.data()),
-              category: documentSnapshot.id
-            }
-          ])
-        })
+          stages.push({
+            stage: new Stage(documentSnapshot.data()),
+            category: documentSnapshot.id,
+          });
+        });
       });
-  }, [])
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   useEffect(() => {
     if (stages.length !== 0) {
@@ -51,41 +49,41 @@ const History = ({ navigation }) => {
           });
         });
     }
-  }, [stages])
+  }, [stages]);
 
   const checkInclude = (arr = [], value) => {
-    let result = false
+    let result = false;
 
-    arr.forEach((e) => {
+    arr.forEach(e => {
       if (e.category === value) {
-        return result = true
+        return (result = true);
       }
-    })
+    });
 
-    return result
-  }
+    return result;
+  };
 
-  const getPercent = (title) => {
-    let result = 0
+  const getPercent = title => {
+    let result = 0;
 
-    stages.forEach((e) => {
+    stages.forEach(e => {
       if (e.category === title) {
-        return result = e.stage.getTienDo()
+        return (result = e.stage.getTienDo());
       }
-    })
+    });
 
-    return result
-  }
+    return result;
+  };
 
-  const handlePress = (title) => {
-    dispatch({ type: ACTIONS.CHOOSE_TITLES, payload: title });
+  const handlePress = title => {
+    dispatch({type: ACTIONS.CHOOSE_TITLES, payload: title});
     navigation.navigate('StageScreen');
-  }
+  };
 
   return (
     <ScrollView style={styles.scrollView} horizontal={true}>
-      {
-        categorys && categorys.map((e, i) => (
+      {categorys &&
+        categorys.map((e, i) => (
           <TouchableOpacity
             style={styles.element}
             key={i}
@@ -103,23 +101,22 @@ const History = ({ navigation }) => {
               <Text>{e.title}</Text>
             </ProgressCircle>
           </TouchableOpacity>
-        ))
-      }
+        ))}
     </ScrollView>
-  )
-}
+  );
+};
 
-export default History
+export default History;
 
 const styles = StyleSheet.create({
   scrollView: {
     marginHorizontal: 10,
-    paddingTop: 20
+    paddingTop: 20,
   },
   text: {
     fontSize: 42,
   },
   element: {
-    paddingHorizontal: 10
-  }
-})
+    paddingHorizontal: 10,
+  },
+});

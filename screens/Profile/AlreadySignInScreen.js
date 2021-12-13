@@ -13,7 +13,7 @@ import {useAuth} from '../../context/AuthContext';
 import {ACTIONS} from '../../context/AuthContext/Action';
 
 const AlreadySignInScreen = ({navigation}) => {
-  const {dispatch,update} = useAuth();
+  const {dispatch, update} = useAuth();
   const handleSignout = async () => {
     auth().signOut();
     dispatch({type: ACTIONS.LOGIN, payload: null});

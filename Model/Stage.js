@@ -34,6 +34,6 @@ export class Stage {
     return {score: currentExp + this.difficult * 3 + this.stage + 1};
   }
   getTienDo() {
-    return (this.difficult * 3 + this.stage + 1) / 9 * 100
+    return ((this.difficult * 3 + this.stage + 1) / 9) * 100;
   }
 }

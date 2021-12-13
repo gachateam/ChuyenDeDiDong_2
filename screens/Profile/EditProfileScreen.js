@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, {useState, useEffect} from 'react';
 import {
   View,
   Text,
@@ -16,14 +16,14 @@ import FontAwesome from 'react-native-vector-icons/FontAwesome';
 import Feather from 'react-native-vector-icons/Feather';
 import auth from '@react-native-firebase/auth';
 import firestore from '@react-native-firebase/firestore';
-import { Avatar } from 'react-native-paper';
-import { launchImageLibrary } from 'react-native-image-picker';
+import {Avatar} from 'react-native-paper';
+import {launchImageLibrary} from 'react-native-image-picker';
 import storage from '@react-native-firebase/storage';
-import { useAuth } from '../../context/AuthContext';
-import { ACTIONS } from './../../context/AuthContext/Action';
+import {useAuth} from '../../context/AuthContext';
+import {ACTIONS} from './../../context/AuthContext/Action';
 
-const EditProfileScreen = ({ navigation }) => {
-  const { dispatch, update } = useAuth();
+const EditProfileScreen = ({navigation}) => {
+  const {dispatch} = useAuth();
   const [data, setData] = React.useState({
     username: '',
     currentpassword: '',
@@ -42,7 +42,7 @@ const EditProfileScreen = ({ navigation }) => {
   const [imageUriGallary, setimageUriGallary] = useState({
     uri: auth().currentUser.providerData[0].photoURL,
   });
-  const [getFileFormDevice, setGetFileFormDevice] = useState(false)
+  const [getFileFormDevice, setGetFileFormDevice] = useState(false);
   const [fileName, setfileName] = useState(null);
   useEffect(() => {
     firestore()
@@ -53,9 +53,9 @@ const EditProfileScreen = ({ navigation }) => {
         console.log('User exists: ', documentSnapshot.exists);
 
         if (documentSnapshot.exists) {
-          handleUsernameChange(documentSnapshot.data().username)
+          handleUsernameChange(documentSnapshot.data().username);
           setUsername(documentSnapshot.data().username);
-          const source = { uri: documentSnapshot.data().photoURL };
+          const source = {uri: documentSnapshot.data().photoURL};
           setimageUriGallary(source);
         }
       });
@@ -142,10 +142,10 @@ const EditProfileScreen = ({ navigation }) => {
       } else {
         // You can also display the image using data:
 
-        const source = { uri: response.assets[0].uri };
+        const source = {uri: response.assets[0].uri};
         setimageUriGallary(source);
         setfileName(response.assets[0].fileName);
-        setGetFileFormDevice(true)
+        setGetFileFormDevice(true);
       }
     });
   };
@@ -169,20 +169,24 @@ const EditProfileScreen = ({ navigation }) => {
       .doc(auth().currentUser.uid)
       .update({
         username: data.username,
-        photoURL: getUrl ? getUrl : imageUriGallary.uri
+        photoURL: getUrl ? getUrl : imageUriGallary.uri,
       })
       .then(() => {
-        dispatch({ type: ACTIONS.UPDATE })
+        dispatch({type: ACTIONS.UPDATE});
         Alert.alert('User update!', 'Go to Profile', [
           {
             text: 'Cancel',
             style: 'cancel',
           },
-          { text: 'OK', onPress: () => navigation.goBack() },
+          {text: 'OK', onPress: () => navigation.goBack()},
         ]);
       });
 
-    if (data.currentpassword != '' || data.newpassword != '' || data.confirm_password != '') {
+    if (
+      data.currentpassword !== '' ||
+      data.newpassword !== '' ||
+      data.confirm_password !== ''
+    ) {
       reauthenticate(data.currentpassword)
         .then(() => {
           auth()
@@ -205,7 +209,6 @@ const EditProfileScreen = ({ navigation }) => {
       <View style={styles.header}>
         <Text style={styles.text_header}>Edit Profile</Text>
         <TouchableOpacity onPress={() => openGallery()}>
-
           <Avatar.Image
             style={styles.avatar}
             size={70}
@@ -391,5 +394,5 @@ const styles = StyleSheet.create({
     color: '#FF0000',
     fontSize: 14,
   },
-  avatar: { marginTop: 15 },
+  avatar: {marginTop: 15},
 });

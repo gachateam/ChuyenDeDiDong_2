@@ -38,7 +38,7 @@ export default class NotifService {
     );
   }
 
-  scheduleNotif(soundName,date,title,message) {
+  scheduleNotif(soundName, date, title, message) {
     this.lastId++;
     PushNotification.localNotificationSchedule({
       date: date, // in 30 secs
@@ -51,9 +51,9 @@ export default class NotifService {
       allowWhileIdle: true,
       repeatTime: 10000,
       repeatType: 'day',
-      soundName: soundName?soundName:'default',
+      soundName: soundName ? soundName : 'default',
       playSound: !!soundName,
-      actions: ['Yes', 'No']
+      actions: ['Yes', 'No'],
     });
   }
 
